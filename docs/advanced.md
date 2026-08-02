@@ -26,7 +26,7 @@ a local file), create a named secret once:
 
 ```bash
 uv run modal secret create explaining-markets \
-  EM_API_KEY=... EM_WEBHOOK_SECRET=whsec_... OPENAI_API_KEY=...
+  EM_API_KEY=... EM_WEBHOOK_SECRET=whsec_... GEMINI_API_KEY=...
 ```
 
 then swap the decorator in `modal_app.py`:

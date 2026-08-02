@@ -4,11 +4,11 @@
 already been verified for you. Return one prediction per focal asset. Everything
 else in this repo (webhook verification, dedupe, submission) is plumbing.
 
-The default implementation asks an OpenAI model for a calibrated percentile. If
-`OPENAI_API_KEY` is not set, it returns a 0.5 baseline so the full deploy →
-receive → submit round-trip still works without burning credits. Replace the body
-of `predict` with whatever strategy you like — the only contract is the return
-shape documented below.
+The default implementation asks the provider-qualified model configured below for
+a calibrated percentile. If that provider's API key is not set, it returns a 0.5
+baseline so the full deploy → receive → submit round-trip still works without
+burning credits. Replace the body of `predict` with whatever strategy you like —
+the only contract is the return shape documented below.
 """
 
 from __future__ import annotations
@@ -17,13 +17,21 @@ import json
 import os
 
 import httpx
-from openai import OpenAI
+from litellm import completion
 from pydantic import BaseModel, Field
 
-from explaining_markets.config import openai_model
+# This is the only value to change when switching models. The provider prefix
+# selects both the LiteLLM backend and the corresponding environment variable.
+# Examples: "openai/gpt-5.4", "anthropic/claude-sonnet-4-5"
+MODEL = "gemini/gemini-2.5-flash"
 
-_openai: OpenAI | None = None  # lazy: importing this file must not require a key
-_openai_warned = False         # one-shot warning when no key is configured
+PROVIDER_API_KEYS = {
+    "gemini": "GEMINI_API_KEY",
+    "openai": "OPENAI_API_KEY",
+    "anthropic": "ANTHROPIC_API_KEY",
+}
+
+_missing_key_warnings: set[str] = set()
 
 # Timeouts, sized against the 5-minute prediction window that opens when your
 # handler ACKs the webhook. Worst case is 15 + (120 x 2) + 15 = 270s, which
@@ -83,9 +91,8 @@ def predict(event: dict) -> list[dict]:
 class Prediction(BaseModel):
     """Structured response shape for the LLM call.
 
-    The `Field(ge=0, le=1)` constraint flows through into the JSON schema OpenAI's
-    structured-outputs mode enforces during decoding, so the model is guaranteed to
-    return a percentile in [0, 1] — no manual clamping or fallback parsing needed.
+    Every provider response is validated locally. This keeps the competition-facing
+    contract identical even when providers differ in their structured-output support.
     """
 
     predicted_percentile: float = Field(ge=0.0, le=1.0)
@@ -113,26 +120,16 @@ Calibration discipline:
 
 
 def _ask_llm(*, summary: dict, ticker: str, event_type: str) -> float:
-    """Ask the configured model for a calibrated percentile via structured outputs.
-
-    Returns the model's `predicted_percentile`. Falls back to 0.5 if no
-    `OPENAI_API_KEY` is configured or the model refuses; the [0, 1] bound is
-    enforced by the JSON schema, not by us.
-    """
-    global _openai, _openai_warned
-    if not os.environ.get("OPENAI_API_KEY"):
-        if not _openai_warned:
+    """Ask MODEL for a calibrated percentile, falling back safely to 0.5."""
+    api_key_name = _required_api_key(MODEL)
+    if not os.environ.get(api_key_name):
+        if api_key_name not in _missing_key_warnings:
             print(
-                "[WARN] OPENAI_API_KEY not set — submitting 0.5 placeholder. "
-                "Set the key (or edit predict.py) for real predictions."
+                f"[WARN] {api_key_name} not set for {MODEL} — submitting 0.5 "
+                "placeholder. Set the key in .env and re-deploy for real predictions."
             )
-            _openai_warned = True
+            _missing_key_warnings.add(api_key_name)
         return 0.5
-    if _openai is None:
-        # picks up OPENAI_API_KEY from env
-        _openai = OpenAI(
-            timeout=LLM_TIMEOUT_SECONDS, max_retries=LLM_MAX_RETRIES
-        )
 
     summary_text = summary.get("summary") if isinstance(summary, dict) else None
     if not summary_text:
@@ -152,15 +149,43 @@ def _ask_llm(*, summary: dict, ticker: str, event_type: str) -> float:
         f"Predict the next-day unexpected-return percentile for {ticker}."
     )
 
-    resp = _openai.chat.completions.parse(
-        model=openai_model(),
-        messages=[
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": user_prompt},
-        ],
-        response_format=Prediction,
-    )
-    parsed = resp.choices[0].message.parsed
-    if parsed is None:
-        return 0.5  # model refused; competition expects a number
-    return parsed.predicted_percentile
+    try:
+        resp = completion(
+            model=MODEL,
+            messages=[
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "user", "content": user_prompt},
+            ],
+            # JSON mode is supported across the three target providers. Pydantic
+            # below remains the source of truth for shape and numeric bounds.
+            response_format={"type": "json_object"},
+            temperature=0,
+            timeout=LLM_TIMEOUT_SECONDS,
+            num_retries=LLM_MAX_RETRIES,
+        )
+        content = resp.choices[0].message.content
+        return Prediction.model_validate_json(content).predicted_percentile
+    except Exception as exc:
+        # A prediction must always be submitted, even on a provider outage,
+        # refusal, malformed response, timeout, or schema violation.
+        print(f"[ERROR] {MODEL} prediction failed: {type(exc).__name__}: {exc}")
+        return 0.5
+
+
+def _required_api_key(model: str) -> str:
+    """Return the environment variable used by a provider-qualified model name."""
+    if not isinstance(model, str) or "/" not in model:
+        raise ValueError(
+            "MODEL must be provider-qualified, for example "
+            "'gemini/gemini-2.5-flash'"
+        )
+    provider, model_name = model.split("/", 1)
+    if not model_name:
+        raise ValueError("MODEL must include a model name after the provider prefix")
+    try:
+        return PROVIDER_API_KEYS[provider]
+    except KeyError as exc:
+        supported = ", ".join(sorted(PROVIDER_API_KEYS))
+        raise ValueError(
+            f"Unsupported MODEL provider {provider!r}; choose one of: {supported}"
+        ) from exc

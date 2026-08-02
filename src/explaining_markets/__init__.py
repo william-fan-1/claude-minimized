@@ -3,7 +3,7 @@
 You almost never need to touch this package — edit ``predict.py`` instead.
 
 Modules:
-  config               — reads EM_* / OPENAI_* environment variables
+  config               — reads EM_* environment variables
   webhook_verification — vendored HMAC-SHA256 verifier (stdlib only)
   client               — submits predictions to the competition API
   event_utils          — small helpers for working with event payloads

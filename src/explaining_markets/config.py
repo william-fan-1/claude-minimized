@@ -9,9 +9,8 @@ Required:
 
 Optional:
   EM_API_BASE_URL    API base URL (default: production)
-  OPENAI_API_KEY     when set, predict.py makes real LLM calls; otherwise it
-                     falls back to a 0.5 baseline so the round-trip still works
-  OPENAI_MODEL       model name for predict.py (default: gpt-5.4-nano)
+  Provider API keys are documented in .env.example and selected by MODEL in
+  predict.py. They are prediction-strategy configuration, not app plumbing.
 """
 
 from __future__ import annotations
@@ -20,7 +19,6 @@ import os
 from dataclasses import dataclass
 
 DEFAULT_API_BASE_URL = "https://api.explainingmarkets.ai/v1"
-DEFAULT_OPENAI_MODEL = "gpt-5.4-nano"
 
 
 @dataclass(frozen=True)
@@ -47,7 +45,3 @@ def _require(name: str) -> str:
             f"(copy .env.example to .env), then re-deploy. See the README."
         )
     return value
-
-
-def openai_model() -> str:
-    return os.environ.get("OPENAI_MODEL", DEFAULT_OPENAI_MODEL)
