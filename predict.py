@@ -158,7 +158,7 @@ def _ask_llm(*, summary: dict, ticker: str, event_type: str) -> float:
             ],
             # JSON mode is supported across the three target providers. Pydantic
             # below remains the source of truth for shape and numeric bounds.
-            response_format={"type": "json_object"},
+            response_format=Prediction,
             temperature=0,
             timeout=LLM_TIMEOUT_SECONDS,
             num_retries=LLM_MAX_RETRIES,
