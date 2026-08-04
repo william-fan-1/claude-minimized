@@ -103,7 +103,7 @@ class Prediction(BaseModel):
     contract identical even when providers differ in their structured-output support.
     """
 
-    predicted_percentile: float = Field(ge=0.0, le=1.0)
+    predicted_percentile: float #= Field(ge=0.0, le=1.0)
 
 
 SYSTEM_PROMPT = """\
@@ -166,7 +166,17 @@ def load_prompt_rules(industry: str) -> tuple[str, str]:
         sort_keys=False,
     )
 
-    return core_directive, industry_rules
+    return core_directive, 
+    
+# Normalization function as a safeguard 
+def _normalize_percentile(value: float) -> float:
+    """Check if 0 <= prediction <= 1. Normalize if not."""
+    value = float(value)
+
+    if value > 1:
+        value /= 100.0
+
+    return max(0.0, min(1.0, value))
 
 def _ask_llm(*, summary: dict, ticker: str, event_type: str) -> float:
     """Ask MODEL for a calibrated percentile, falling back safely to 0.5."""
@@ -198,7 +208,7 @@ def _ask_llm(*, summary: dict, ticker: str, event_type: str) -> float:
         prompt_template
         # Summary of transcript
         .replace("{event_bullets}", summary_text)
-        #
+        # Objective to complete
         .replace("{core_directive}", core_directive)
         # Industry specific trends to consider
         .replace("{industry_rules}", industry_rules)
@@ -220,7 +230,8 @@ def _ask_llm(*, summary: dict, ticker: str, event_type: str) -> float:
             num_retries=LLM_MAX_RETRIES,
         )
         content = resp.choices[0].message.content
-        return Prediction.model_validate_json(content).predicted_percentile
+        result = Prediction.model_validate_json(content).predicted_percentile
+        return _normalize_percentile(result)
     except Exception as exc:
         # A prediction must always be submitted, even on a provider outage,
         # refusal, malformed response, timeout, or schema violation.
