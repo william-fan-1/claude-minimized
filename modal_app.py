@@ -44,6 +44,9 @@ image = (
     modal.Image.debian_slim()
     .pip_install("fastapi[standard]", "httpx", "litellm", "pydantic")
     .add_local_python_source("explaining_markets", "predict")
+    .add_local_dir("prompts", remote_path="/root/prompts")
+    .add_local_dir("prompts", remote_path="/root/prompts")
+    .add_local_dir("knowledge", remote_path="/root/knowledge")
 )
 
 # Distributed key-value store for idempotency, keyed on the Webhook-Id header.
