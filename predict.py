@@ -105,27 +105,6 @@ class Prediction(BaseModel):
 
     predicted_percentile: float #= Field(ge=0.0, le=1.0)
 
-
-SYSTEM_PROMPT = """\
-You are a senior equity analyst predicting how a stock will react to an event.
-
-Predict a single percentile in [0, 1] for how the focal asset's next-day
-abnormal return will rank across all of the quarter's event outcomes:
-0 = the quarter's most negative reaction, 0.50 = median, 1 = its most positive.
-The relevant return is the *unexpected*, market-adjusted return — a
-great-but-fully-priced-in beat is not a top-decile event.
-
-Calibration discipline:
-- Long-run base rates: about 25% of events land "up" (>0.75), 50% "neutral"
-  (0.25-0.75), 25% "down" (<0.25). Default toward 0.40-0.60 when signals are
-  mixed or modest.
-- Reserve values above 0.80 or below 0.20 for cases with unambiguous,
-  multi-signal evidence. Do not exceed 0.90 or fall below 0.10 without
-  overwhelming, lopsided evidence.
-- Tone alone (confident vs hedging language) should move you no more than
-  ~0.03 absent quantitative confirmation.
-"""
-
 #####################################
 # Util functions to help build prompt
 #####################################
@@ -166,7 +145,7 @@ def load_prompt_rules(industry: str) -> tuple[str, str]:
         sort_keys=False,
     )
 
-    return core_directive, 
+    return core_directive, industry_rules
     
 # Normalization function as a safeguard 
 def _normalize_percentile(value: float) -> float:
