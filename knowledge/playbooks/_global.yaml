@@ -1,0 +1,464 @@
+# =============================================================================
+# _global.yaml — cross-market rulebook
+# Explaining Markets · Q3 2026
+# =============================================================================
+# Applies to EVERY event regardless of industry. Industry playbooks
+# (busequ.yaml, health.yaml, fin.yaml, ...) layer on top and win on conflict.
+#
+# HOW THE PIPELINE CONSUMES THIS FILE
+#   1. Inject `principles` verbatim as the prompt's core directive.
+#   2. Filter `rules` by scope against the event's dossier.
+#   3. Apply SETTER rules (action.percentile_range) to establish a base.
+#   4. Apply MODIFIER rules (action.adjust / action.widen) afterwards.
+#   5. Resolve conflicts via `precedence`.
+#   6. Pass matched rule IDs to the model; it returns `rules_applied`
+#      so the nightly job can score each rule against realized outcomes.
+#
+# PROVENANCE — treat these differently when rules underperform:
+#   koijen_levy_2026 : from the paper's GEPA prompt / ACE rulebook. Trust most.
+#   literature       : established accounting & asset-pricing findings.
+#   team_prior       : our hypothesis, UNVALIDATED. Retire these first.
+# =============================================================================
+
+meta:
+  version: 0.1.0
+  scope: global
+  owner: ahi
+  added: 2026-08-03
+  next_review: 2026-09-01          # mid-quarter refinement pass
+  notes: >
+    v0 ships before Aug 10 with zero live evidence. Every `evidence` block
+    is empty by design. Do not promote, demote, or retire any rule on the
+    basis of a single event.
+
+# -----------------------------------------------------------------------------
+# CORE PRINCIPLES — injected verbatim into the prompt as the core directive
+# -----------------------------------------------------------------------------
+principles:
+  - id: P1
+    text: >
+      Announcement returns are driven by BELIEF REVISION relative to prior
+      expectations, not by absolute performance. The question is never "were
+      these good results?" but "are these results different from what the
+      market already assumed?"
+    source: koijen_levy_2026
+
+  - id: P2
+    text: >
+      Good is already priced in. Public companies are EXPECTED to grow, beat,
+      and expand margins. A company reporting record profits and strong growth
+      that merely meets elevated expectations is a NEUTRAL outcome, not a
+      positive one.
+    source: koijen_levy_2026
+
+  - id: P3
+    text: >
+      Forward guidance generally dominates the headline beat. The market prices
+      the path of future cash flows; the quarter just reported is largely a
+      historical artifact by the time it is announced.
+    source: koijen_levy_2026
+
+  - id: P4
+    text: >
+      Distinguish transitory from permanent. Earnings inflated by one-time,
+      non-recurring, or accounting items receive little credit because they do
+      not change the forward path.
+    source: literature
+
+  - id: P5
+    text: >
+      A concrete negative operational specific can override an otherwise
+      positive narrative. Specific bad news beats general good news.
+    source: koijen_levy_2026
+
+  - id: P6
+    text: >
+      The bar for an extreme positive is very high. To justify a percentile
+      above 0.85 the news must be genuinely SURPRISING, not merely good.
+      Extreme negatives are easier to reach: the market punishes broken
+      expectations faster than it rewards exceeded ones.
+    source: koijen_levy_2026
+
+  - id: P7
+    text: >
+      Your task is RELATIVE RANKING across the full quarter's cross-section,
+      not estimating a percentage move. Use the entire 0-1 range and commit.
+      Clustering predictions near 0.50 produces no explanatory power and is
+      the primary failure mode.
+    source: team_prior
+
+# -----------------------------------------------------------------------------
+# PRECEDENCE — how to resolve conflicting rules
+# -----------------------------------------------------------------------------
+precedence:
+  - order: 1
+    rule: >
+      More specific scope wins. An industry playbook rule overrides a global
+      rule; a rule scoped to a company profile overrides an unscoped rule.
+  - order: 2
+    rule: >
+      When a positive-narrative rule and a negative-operational-specific rule
+      both fire, the NEGATIVE rule wins (principle P5).
+  - order: 3
+    rule: >
+      Guidance-based rules outrank headline-result rules (principle P3).
+  - order: 4
+    rule: >
+      SETTER rules establish the base range first; MODIFIER rules then adjust.
+      Modifiers never fully override a setter — cap total modifier adjustment
+      at +/- 0.20.
+  - order: 5
+    rule: >
+      If two setters of equal specificity conflict, take the midpoint of their
+      ranges and downgrade confidence to "low".
+
+# -----------------------------------------------------------------------------
+# SETTER RULES — establish a base percentile range
+# -----------------------------------------------------------------------------
+rules:
+
+  # --- Expectations framing -------------------------------------------------
+  - id: GLB-EXPECT-01
+    type: setter
+    scope: {applies_to: all}
+    trigger: >
+      Strong operational results (record profit, margin expansion, solid
+      double-digit growth) that are broadly in line with what the market
+      already expected. No change to the forward path.
+    action: {percentile_range: [0.40, 0.60]}
+    rationale: >
+      Meeting elevated expectations is not new information. This is the single
+      most common error in unoptimized models: reading "good results" as a
+      positive surprise.
+    confidence: high
+    source: koijen_levy_2026
+    evidence: {n: 0, hit_rate: null}
+
+  - id: GLB-EXPECT-02
+    type: setter
+    scope: {applies_to: all}
+    trigger: >
+      An incremental "beat and raise" where the raise is modest and roughly
+      what was already anticipated.
+    action: {percentile_range: [0.45, 0.60]}
+    rationale: >
+      The graveyard of good news. Traders sell the news when the raise merely
+      confirms the consensus path.
+    confidence: high
+    source: koijen_levy_2026
+    evidence: {n: 0, hit_rate: null}
+
+  - id: GLB-EXPECT-03
+    type: setter
+    scope: {applies_to: all}
+    trigger: >
+      Genuinely shocking positive news: guidance raised dramatically, a
+      transformative strategic announcement, a buyback very large relative to
+      market cap, or the reversal of a widely-held negative thesis.
+    action: {percentile_range: [0.85, 0.97]}
+    rationale: >
+      Reserved for real surprise. If this rule fires more than ~10% of the
+      time, our threshold has drifted and needs re-tightening.
+    confidence: high
+    source: koijen_levy_2026
+    evidence: {n: 0, hit_rate: null}
+
+  # --- Guidance -------------------------------------------------------------
+  - id: GLB-GUID-01
+    type: setter
+    scope: {applies_to: all}
+    trigger: >
+      Headline results beat expectations BUT forward guidance is below
+      consensus, lowered, or guided to the low end of the prior range.
+    action: {percentile_range: [0.12, 0.28]}
+    rationale: >
+      The classic beat-and-lower. Markets price the forward path; a lowered
+      path outweighs a backward-looking beat.
+    confidence: high
+    source: koijen_levy_2026
+    evidence: {n: 0, hit_rate: null}
+
+  - id: GLB-GUID-02
+    type: setter
+    scope: {applies_to: all}
+    trigger: >
+      Forward-quarter guidance implies a deceleration greater than ~50% from
+      recent organic growth rates.
+    action: {percentile_range: [0.10, 0.25]}
+    rationale: >
+      Sharp deceleration resets the growth thesis, not just one quarter.
+    confidence: high
+    source: koijen_levy_2026
+    evidence: {n: 0, hit_rate: null}
+
+  - id: GLB-GUID-03
+    type: setter
+    scope: {applies_to: all}
+    trigger: >
+      Guidance is withdrawn, suspended, or the company declines to guide where
+      it has previously guided.
+    action: {percentile_range: [0.05, 0.18]}
+    rationale: >
+      Removing guidance is read as management losing visibility. Uncertainty
+      is priced as risk, and the absence of a number is worse than a bad one.
+    confidence: medium
+    source: literature
+    evidence: {n: 0, hit_rate: null}
+
+  - id: GLB-GUID-04
+    type: setter
+    scope: {applies_to: all}
+    trigger: >
+      Miss on the headline quarter BUT guidance raised or the forward path
+      credibly improved (e.g. a one-off drag explicitly behind them).
+    action: {percentile_range: [0.55, 0.75]}
+    rationale: >
+      Mirror image of GLB-GUID-01. The forward path is what gets priced, so a
+      credible improvement can absorb a backward-looking miss.
+    confidence: medium
+    source: literature
+    evidence: {n: 0, hit_rate: null}
+
+  # --- Earnings quality -----------------------------------------------------
+  - id: GLB-QUAL-01
+    type: setter
+    scope: {applies_to: all}
+    trigger: >
+      Headline EPS or margins inflated by one-time or non-recurring items
+      (asset revaluations, inventory gains, tax benefits, favourable mix)
+      with no corresponding forward acceleration.
+    action: {percentile_range: [0.10, 0.22]}
+    rationale: >
+      Transitory components do not change the forward path, and their presence
+      signals the underlying run-rate is weaker than the headline implies.
+    confidence: high
+    source: koijen_levy_2026
+    evidence: {n: 0, hit_rate: null}
+
+  - id: GLB-QUAL-02
+    type: setter
+    scope: {applies_to: all}
+    trigger: >
+      Record or near-record margins attributed to non-recurring benefits AND a
+      concrete operational execution failure in the same quarter (downtime,
+      supply disruption, facility issue) AND a major segment declining
+      materially.
+    action: {percentile_range: [0.08, 0.20]}
+    rationale: >
+      The paper's canonical interaction rule. Compounding negatives override
+      positive demand narratives elsewhere in the call.
+    confidence: high
+    source: koijen_levy_2026
+    evidence: {n: 0, hit_rate: null}
+
+  - id: GLB-QUAL-03
+    type: setter
+    scope: {profile: pre_profit}
+    trigger: >
+      Pre-profit company reports strong revenue growth (>30% YoY) BUT operating
+      losses remain flat or worsen — losses not narrowing proportionally.
+    action: {percentile_range: [0.10, 0.20]}
+    rationale: >
+      Markets demand that high growth translate into financial improvement.
+      Growth without operating leverage reads as unprofitable scaling.
+    confidence: high
+    source: koijen_levy_2026
+    evidence: {n: 0, hit_rate: null}
+
+  - id: GLB-QUAL-04
+    type: setter
+    scope: {applies_to: all}
+    trigger: >
+      Revenue growth driven predominantly by price increases while volumes
+      decline, with no acknowledgement of volume recovery.
+    action: {percentile_range: [0.25, 0.40]}
+    rationale: >
+      Price-led growth without volume is read as a ceiling on the runway and
+      raises demand-destruction concerns.
+    confidence: low
+    source: team_prior
+    evidence: {n: 0, hit_rate: null}
+
+  # --- Tone and language ----------------------------------------------------
+  - id: GLB-TONE-01
+    type: setter
+    scope: {applies_to: all}
+    trigger: >
+      Management uses cautionary forward-looking language — "aggressive
+      consensus", "gradual recovery", "measured", "prudent", guiding to the
+      low end, or hedging on the outlook.
+    action: {percentile_range: [0.35, 0.50]}
+    rationale: >
+      Cautionary framing lowers the expected path of cash flows even when the
+      quantitative guide is unchanged. Managements hedge deliberately.
+    confidence: high
+    source: koijen_levy_2026
+    evidence: {n: 0, hit_rate: null}
+
+  - id: GLB-TONE-02
+    type: modifier
+    scope: {applies_to: all}
+    trigger: >
+      Analysts press repeatedly on a single issue in Q&A and management
+      answers evasively, deflects, or declines to quantify.
+    action: {adjust: -0.10}
+    rationale: >
+      Sustained analyst focus identifies the issue the market cares about;
+      evasion on that issue signals the answer is unfavourable.
+    confidence: medium
+    source: literature
+    evidence: {n: 0, hit_rate: null}
+
+  # --- Capital allocation and structure -------------------------------------
+  - id: GLB-CAP-01
+    type: modifier
+    scope: {applies_to: all}
+    trigger: >
+      A buyback or dividend is announced that is routine in size relative to
+      the company's history and market cap.
+    action: {adjust: 0.0}
+    rationale: >
+      Routine capital return is standard operating procedure, not a catalyst.
+      Explicitly a no-op rule: it exists to stop the model treating any
+      buyback headline as positive.
+    confidence: high
+    source: koijen_levy_2026
+    evidence: {n: 0, hit_rate: null}
+
+  - id: GLB-CAP-02
+    type: modifier
+    scope: {applies_to: all}
+    trigger: >
+      CFO or CEO departure, restatement, auditor issue, or material control
+      weakness disclosed alongside results.
+    action: {adjust: -0.15}
+    rationale: >
+      Governance and credibility shocks are priced independently of the
+      quarter's numbers and often dominate them.
+    confidence: medium
+    source: literature
+    evidence: {n: 0, hit_rate: null}
+
+  - id: GLB-CAP-03
+    type: modifier
+    scope: {applies_to: all}
+    trigger: >
+      Equity raise, convertible issuance, or dilutive financing announced with
+      results.
+    action: {adjust: -0.10}
+    rationale: >
+      Dilution is an immediate, mechanical negative and often signals the
+      balance sheet was tighter than assumed.
+    confidence: low
+    source: team_prior
+    evidence: {n: 0, hit_rate: null}
+
+  # --- Uncertainty and stock-specific modifiers -----------------------------
+  - id: GLB-MOD-01
+    type: modifier
+    scope: {requires: dossier.reaction_profile}
+    trigger: >
+      The dossier's reaction_profile shows this stock reacts asymmetrically —
+      e.g. beats poorly rewarded but misses heavily punished.
+    action: {adjust: conditional, direction: follow_profile, magnitude: 0.10}
+    rationale: >
+      How a stock has historically traded its own news is among the cheapest
+      and most reliable signals available to us, and is entirely absent from
+      the event bullets. Shift toward the documented asymmetry.
+    confidence: medium
+    source: team_prior
+    evidence: {n: 0, hit_rate: null}
+
+  - id: GLB-MOD-02
+    type: modifier
+    scope: {requires: dossier.consensus.dispersion}
+    trigger: >
+      Analyst forecast dispersion is high relative to the cross-section
+      (ex-ante uncertainty about the quarter was elevated).
+    action: {widen: true, magnitude: 0.10}
+    rationale: >
+      High dispersion means the market had no firm prior, so realized
+      reactions are more extreme in both directions. Push away from 0.50
+      rather than toward it — this AIDS ranking, which is what scores.
+    confidence: medium
+    source: literature
+    evidence: {n: 0, hit_rate: null}
+
+  - id: GLB-MOD-03
+    type: modifier
+    scope: {requires: dossier.consensus.coverage}
+    trigger: >
+      Analyst coverage is thin (below roughly the 25th percentile of the
+      cross-section).
+    action: {widen: true, magnitude: 0.05}
+    rationale: >
+      Less-covered names have noisier priors and less pre-positioning, so
+      information releases move them further.
+    confidence: low
+    source: team_prior
+    evidence: {n: 0, hit_rate: null}
+
+  - id: GLB-MOD-04
+    type: modifier
+    scope: {requires: dossier.guidance_trajectory}
+    trigger: >
+      Management has missed or cut guidance in at least two of the last four
+      quarters and is again guiding optimistically.
+    action: {adjust: -0.08}
+    rationale: >
+      Credibility is persistent. Repeat over-promisers are discounted by the
+      market before the words leave their mouths.
+    confidence: low
+    source: team_prior
+    evidence: {n: 0, hit_rate: null}
+
+  - id: GLB-MOD-05
+    type: modifier
+    scope: {requires: dossier.seasonality_note}
+    trigger: >
+      The fiscal quarter has a well-documented seasonal pattern in this
+      company's guidance behaviour (e.g. habitually conservative ahead of a
+      product cycle or holiday quarter).
+    action: {adjust: conditional, magnitude: 0.05}
+    rationale: >
+      Seasonal guidance conservatism is anticipated by the market, so it should
+      not be read as a genuine negative signal.
+    confidence: low
+    source: team_prior
+    evidence: {n: 0, hit_rate: null}
+
+# -----------------------------------------------------------------------------
+# ANTI-PATTERNS — explicit instructions on what NOT to do
+# -----------------------------------------------------------------------------
+anti_patterns:
+  - id: AP-01
+    text: >
+      Do not treat "record" anything as automatically positive. Record results
+      are the baseline expectation for a public company.
+    source: koijen_levy_2026
+
+  - id: AP-02
+    text: >
+      Do not reward distant roadmap or long-term vision statements. Only
+      immediate, verifiable financial delivery is priced.
+    source: koijen_levy_2026
+
+  - id: AP-03
+    text: >
+      Do not cluster predictions in 0.45-0.55. Scoring rewards correct RANKING
+      across the cross-section; a flat prediction vector has no explanatory
+      power regardless of how sensible each individual estimate looks.
+    source: team_prior
+
+  - id: AP-04
+    text: >
+      Do not attempt to be unbiased on the level of the prediction. The scoring
+      regression absorbs scale and intercept, so shifting every prediction by a
+      constant changes nothing. Effort belongs in discrimination between events.
+    source: team_prior
+
+  - id: AP-05
+    text: >
+      Do not use any information dated after the event's knowledge_cutoff, and
+      do not infer post-cutoff information from your own training data.
+    source: team_prior

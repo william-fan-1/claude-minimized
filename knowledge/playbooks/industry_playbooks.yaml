@@ -1,0 +1,788 @@
+# =============================================================================
+# industry_playbooks.yaml — sector rulebooks
+# Explaining Markets · Q3 2026 · version 0.1.0 · owner: ahi · as of 2026-08-03
+# =============================================================================
+# Layers ON TOP of knowledge/playbooks/_global.yaml. Industry rules WIN over
+# global rules on conflict (see _global.yaml precedence, order 1).
+#
+# LOADER CONTRACT
+#   Filter to the event's FF12 industry key, then pass BOTH that industry's
+#   `regime` block and its matching `rules` into {industry_rules}.
+#   Never pass the whole file — it dilutes attention and wastes tokens.
+#
+# SOURCE TAGS
+#   koijen_levy_2026 : from the paper. Durable.
+#   regime_2026Q3    : CURRENT MARKET CONDITIONS as researched 2026-08-03.
+#                      These DECAY. Re-research at the September pass and
+#                      retire anything the market has moved past.
+#   literature       : established finance. Durable.
+#   team_prior       : our hypothesis. Unvalidated. Retire first if it fails.
+#
+# ⚠ Most rules here are regime_2026Q3. This file has a shorter half-life than
+#   _global.yaml by design. Treat confidence levels as provisional until the
+#   outcomes ledger has real evidence behind them.
+# =============================================================================
+
+meta:
+  version: 0.1.0
+  as_of: 2026-08-03
+  research_basis: Q3-2026-Sector-Research-Briefing.md
+  next_review: 2026-09-01
+  taxonomy: fama_french_12
+
+# -----------------------------------------------------------------------------
+# CROSS-SECTOR CALIBRATION — applies to every industry this quarter
+# -----------------------------------------------------------------------------
+quarter_calibration:
+  - id: Q3-CAL-01
+    type: modifier
+    trigger: applies to all events this quarter
+    action: {widen: true, magnitude: 0.10}
+    rationale: >
+      Single-stock dispersion (DSPX) is at a six-year high of ~47%, above the
+      April "Liberation Day" peak, while VIX sits near its median at ~18.
+      Index-level calm is masking violent single-stock divergence. Tails are
+      genuinely fatter this quarter — use more of the 0-1 range than instinct
+      suggests.
+    confidence: high
+    source: regime_2026Q3
+
+  - id: Q3-CAL-02
+    type: modifier
+    trigger: >
+      Event is a miss, a guidance cut, or contains a clear negative surprise
+    action: {adjust: -0.05}
+    rationale: >
+      Explicit negative asymmetry this season: beats are rewarded, but even
+      minor misses are triggering severe selloffs against elevated
+      expectations. Reach for the bottom decile faster than the top.
+    confidence: medium
+    source: regime_2026Q3
+
+  - id: Q3-CAL-03
+    type: modifier
+    trigger: >
+      Management gives material commentary on input costs, fuel, freight,
+      raw materials, or interest-rate sensitivity
+    action: {widen: true, magnitude: 0.05}
+    rationale: >
+      An oil shock (WTI +77% YTD, sustained above $90/bbl) and a contested
+      Fed path are the shared macro shock. Cost and rate commentary is being
+      listened to far more closely than in a normal quarter.
+    confidence: medium
+    source: regime_2026Q3
+
+# =============================================================================
+# BusEq — Business Equipment (tech, semiconductors, software)
+# Largest bucket: ~20% of events
+# =============================================================================
+BusEq:
+  label: Business Equipment
+  regime: >
+    THIS INDUSTRY HAS THREE SUB-REGIMES THAT POINT IN OPPOSITE DIRECTIONS.
+    Identify which one the company belongs to before applying any rule.
+    (a) Hyperscalers/AI infrastructure: capex is now scrutinised as a
+        liability, not celebrated as growth. The market wants revenue proof
+        and funding clarity.
+    (b) Semiconductors/memory: the strongest tape in the market ("memflation"),
+        but the bar is extremely high — in-line guidance reads as a miss.
+    (c) Seat-based software: structural de-rating underway as AI reduces seat
+        counts. Retention and seat trends outrank headline results.
+
+  rules:
+    - id: BUSEQ-CAPEX-01
+      type: setter
+      scope: {profile: hyperscaler_or_ai_infra}
+      trigger: >
+        Capex guidance raised materially without corresponding revenue
+        visibility or a clear monetization path in the same period.
+      action: {percentile_range: [0.12, 0.28]}
+      rationale: >
+        The defining dynamic of the quarter. Alphabet reported accelerating
+        cloud growth on 2026-07-28 and was panned for hiking 2026 capex,
+        dragging Amazon, Meta and Microsoft down with it. Consensus 2026
+        hyperscaler capex rose $467bn to $533bn across the season and was
+        received badly. This REVERSES the 2023-25 pattern where announced AI
+        investment was rewarded.
+      confidence: high
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+    - id: BUSEQ-CAPEX-02
+      type: modifier
+      scope: {profile: hyperscaler_or_ai_infra}
+      trigger: >
+        Capex increase is explicitly paired with disclosed contracted revenue,
+        backlog, or utilization metrics that demonstrate the spend converts.
+      action: {adjust: 0.12}
+      rationale: >
+        Return dispersion within the group now keys off whether investors
+        believe the AI investment produces revenue. Proof is rewarded;
+        assertion is not.
+      confidence: medium
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+    - id: BUSEQ-CAPEX-03
+      type: modifier
+      scope: {profile: hyperscaler_or_ai_infra}
+      trigger: >
+        Capex is being funded with materially increased leverage or debt
+        issuance.
+      action: {adjust: -0.08}
+      rationale: >
+        Funding structure is an explicit component of the widening return
+        dispersion across hyperscalers this season.
+      confidence: medium
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+    - id: BUSEQ-SEMI-01
+      type: setter
+      scope: {profile: semiconductor}
+      trigger: >
+        Guidance is merely in line with consensus, or the beat is modest,
+        in a name priced for acceleration.
+      action: {percentile_range: [0.15, 0.32]}
+      rationale: >
+        Broadcom guided Q3 AI chip revenue to $16bn against $17.2bn consensus
+        and fell 14% in a single session on 2026-06-04. In this sector an
+        in-line guide functions as a miss.
+      confidence: high
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+    - id: BUSEQ-SEMI-02
+      type: modifier
+      scope: {profile: semiconductor}
+      trigger: >
+        Company is a memory/storage producer (DRAM, NAND, HBM) confirming
+        continued pricing strength or supply tightness.
+      action: {adjust: 0.10}
+      rationale: >
+        Memflation: DRAM prices +125% and NAND +234% in 2026, with supply
+        constraints persisting and no meaningful relief expected until late
+        2027. Memory revenue is expected to roughly triple.
+      confidence: medium
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+    - id: BUSEQ-SEMI-03
+      type: modifier
+      scope: {profile: hardware_device_assembler}
+      trigger: >
+        Company CONSUMES memory/storage as an input and flags rising component
+        costs or margin pressure from them.
+      action: {adjust: -0.10}
+      rationale: >
+        The other side of memflation. Component cost inflation compresses
+        margins for device makers and assemblers, and consumer hardware
+        cannot fully pass it through.
+      confidence: medium
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+    - id: BUSEQ-SW-01
+      type: setter
+      scope: {profile: seat_based_software}
+      trigger: >
+        Any sign of seat compression, softening net revenue retention,
+        lengthening sales cycles, or customers consolidating licenses —
+        even alongside a headline revenue beat.
+      action: {percentile_range: [0.10, 0.25]}
+      rationale: >
+        The SaaSpocalypse. Software has lost over $1tn of value in 2026
+        because AI-equipped customers accomplish more with fewer licenses and
+        are cutting seats rather than adding them. Seat trends now outrank
+        headline results.
+      confidence: high
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+    - id: BUSEQ-SW-02
+      type: modifier
+      scope: {profile: seat_based_software}
+      trigger: >
+        Credible, quantified migration toward usage-based or hybrid pricing,
+        or demonstrated AI-attributable revenue.
+      action: {adjust: 0.10}
+      rationale: >
+        Per-seat pricing fell from 21% to 15% of SaaS companies in twelve
+        months while hybrid rose 27% to 41%. The market is actively looking
+        for evidence a company is on the right side of that transition.
+      confidence: medium
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+    - id: BUSEQ-ROADMAP-01
+      type: modifier
+      scope: {applies_to: all}
+      trigger: >
+        Positive narrative rests on distant product roadmap, future launches,
+        or multi-year vision rather than delivered financials.
+      action: {adjust: -0.08}
+      rationale: >
+        High-growth technology names carry large premiums; roadmap items years
+        away are discounted as vaporware. Only immediate financial delivery is
+        priced.
+      confidence: high
+      source: koijen_levy_2026
+      evidence: {n: 0, hit_rate: null}
+
+# =============================================================================
+# Hlth — Health (pharma, biotech, devices, providers)
+# ~17% of events
+# =============================================================================
+Hlth:
+  label: Health
+  regime: >
+    Pricing overhang has PARTLY cleared — most large drugmakers signed pricing
+    agreements with the administration and the sector recovered over the past
+    two to three months. But the cost is now quantified, so calls are being
+    read for whether volume growth outruns price concession. Large pharma and
+    pre-profit biotech behave like different asset classes: split them first.
+
+  rules:
+    - id: HLTH-GLP1-01
+      type: modifier
+      scope: {profile: glp1_exposed}
+      trigger: >
+        Volume/script growth is clearly outrunning the disclosed price
+        concession on GLP-1 products.
+      action: {adjust: 0.10}
+      rationale: >
+        GLP-1 remains the sector engine — global obesity drug sales projected
+        at $39.4bn in 2026 and potentially above $100bn by decade's end. But
+        US price reductions are expected to cut obesity revenues $2-3bn this
+        year, so the volume/price race is the thing being judged.
+      confidence: medium
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+    - id: HLTH-GLP1-02
+      type: setter
+      scope: {profile: glp1_exposed}
+      trigger: >
+        Price concessions are biting faster than volume can offset, or
+        management guides down on obesity-franchise revenue.
+      action: {percentile_range: [0.15, 0.30]}
+      rationale: >
+        Mirror of HLTH-GLP1-01. The pricing agreements removed uncertainty but
+        installed a quantified revenue headwind.
+      confidence: medium
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+    - id: HLTH-BIO-01
+      type: modifier
+      scope: {profile: pre_profit_biotech}
+      trigger: >
+        A clinical readout, regulatory decision, or partnership catalyst is
+        disclosed on the call.
+      action: {widen: true, magnitude: 0.20}
+      rationale: >
+        For pre-profit biotech a single catalyst swamps the financials
+        entirely. These are the highest-variance names in the sample and
+        belong in the tails, not near 0.50 — in either direction.
+      confidence: high
+      source: literature
+      evidence: {n: 0, hit_rate: null}
+
+    - id: HLTH-BIO-02
+      type: modifier
+      scope: {profile: pre_profit_biotech}
+      trigger: >
+        Cash runway is disclosed as under roughly 12 months without a
+        financing plan, or a raise is signalled.
+      action: {adjust: -0.12}
+      rationale: >
+        Runway risk dominates pipeline optimism for unprofitable biotech.
+        Dilution is the immediate, mechanical concern.
+      confidence: medium
+      source: literature
+      evidence: {n: 0, hit_rate: null}
+
+    - id: HLTH-PIPE-01
+      type: modifier
+      scope: {profile: large_pharma}
+      trigger: >
+        Pipeline depth is reaffirmed with specific near-term catalysts in
+        obesity, cell and gene therapy, inflammation, rare disease,
+        neuroscience, or next-generation oncology.
+      action: {adjust: 0.08}
+      rationale: >
+        Investors are explicitly prioritising durable pipelines with clear
+        catalysts, and these are the areas attracting attention.
+      confidence: medium
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+    - id: HLTH-LOE-01
+      type: setter
+      scope: {profile: large_pharma}
+      trigger: >
+        Loss of exclusivity, patent cliff, or a key-product erosion is
+        discussed without a credible, quantified replacement.
+      action: {percentile_range: [0.12, 0.28]}
+      rationale: >
+        The classic pharma de-rating trigger. The market prices the forward
+        revenue base, and an unreplaced cliff resets it.
+      confidence: medium
+      source: literature
+      evidence: {n: 0, hit_rate: null}
+
+# =============================================================================
+# Fin — Finance (banks, insurers, asset managers, specialty finance)
+# ~16% of events
+# =============================================================================
+Fin:
+  label: Finance
+  regime: >
+    Margins are compressing — NIM fell 3.30% to 3.22% between Q4 2025 and
+    Q1 2026, the first net interest income decline since mid-2024, with loan
+    yields down 6.75% to 6.51%. Credit is broadly benign (CRE and private
+    credit concerns easing, consumer delinquencies falling) EXCEPT in
+    lower-income and lower-FICO segments. The hawkish rate repricing has been
+    a tailwind for bank stocks. Priority of attention: deposit pricing and NII
+    trajectory > credit quality and provisions > capital markets pipeline.
+
+  rules:
+    - id: FIN-NIM-01
+      type: setter
+      scope: {profile: bank}
+      trigger: >
+        Deposit costs rising faster than asset yields, NIM guided lower, or
+        net interest income trajectory softening — regardless of headline EPS.
+      action: {percentile_range: [0.15, 0.32]}
+      rationale: >
+        NIM compression is the sector's live problem and deposit pricing
+        dynamics are the first thing investors are told to watch. This
+        outranks the reported quarter.
+      confidence: high
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+    - id: FIN-NIM-02
+      type: modifier
+      scope: {profile: bank}
+      trigger: >
+        NIM stabilising or expanding, with deposit costs demonstrably
+        contained.
+      action: {adjust: 0.10}
+      rationale: >
+        Against a sector-wide compression backdrop, holding margin is a
+        genuine differentiator rather than a baseline expectation.
+      confidence: medium
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+    - id: FIN-CREDIT-01
+      type: setter
+      scope: {profile: bank_or_specialty_finance}
+      trigger: >
+        Loan-loss provisions built materially above expectations, or credit
+        guidance deteriorates — even with a clean current quarter.
+      action: {percentile_range: [0.10, 0.25]}
+      rationale: >
+        Provision builds are read as management's forward-looking warning.
+        Against a benign credit backdrop, an unexpected build is a strong
+        idiosyncratic negative signal.
+      confidence: high
+      source: literature
+      evidence: {n: 0, hit_rate: null}
+
+    - id: FIN-CREDIT-02
+      type: modifier
+      scope: {profile: consumer_lender}
+      trigger: >
+        Material exposure to lower-income or lower-FICO borrower segments,
+        with any deterioration flagged.
+      action: {adjust: -0.10}
+      rationale: >
+        The explicitly identified pocket of stress in an otherwise improving
+        credit picture. Generic "credit is fine" commentary does not cover it.
+      confidence: medium
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+    - id: FIN-IB-01
+      type: modifier
+      scope: {profile: capital_markets_exposed}
+      trigger: >
+        Investment banking pipeline, deal activity, or trading revenue
+        commentary materially exceeds or misses expectations.
+      action: {adjust: conditional, magnitude: 0.08}
+      rationale: >
+        Capital markets activity and the IB pipeline are the third explicit
+        focus area, and the most volatile revenue line in the sector.
+      confidence: medium
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+    - id: FIN-BUYBACK-01
+      type: modifier
+      scope: {applies_to: all}
+      trigger: Buyback or capital return announced.
+      action: {adjust: 0.0}
+      rationale: >
+        In financials, buybacks are routine capital maintenance rather than
+        new positive signals. Explicit no-op to suppress the model's reflex to
+        read any buyback headline as bullish. Underwriting discipline
+        (shrinking volume to hold price) is similarly often read as a growth
+        headwind, not a virtue.
+      confidence: high
+      source: koijen_levy_2026
+      evidence: {n: 0, hit_rate: null}
+
+# =============================================================================
+# Shops — Retail, wholesale, consumer services
+# ~7% of events, but the weakest fundamental picture in the market
+# =============================================================================
+Shops:
+  label: Shops
+  regime: >
+    The consumer is visibly cracking. US consumer spending fell by its widest
+    margin in four years on tariff shocks, a softening labour market, and a
+    flight to value. Walmart guided below expectations and flagged that
+    ~$50k-income households are making smaller, paycheck-timed purchases.
+    Durable goods prices are expected to rise 4.5% in 2026 and increases
+    already taken are sticky. WARNING: Q1 2026 retail strength was likely
+    flattered by tax refunds and buy-now-pay-later usage, so comparisons
+    against it are artificially hard.
+
+  rules:
+    - id: SHOPS-GUID-01
+      type: setter
+      scope: {applies_to: all}
+      trigger: >
+        Guidance lowered, or management describes consumer weakness, trade-down
+        behaviour, smaller baskets, or reduced trip frequency.
+      action: {percentile_range: [0.10, 0.25]}
+      rationale: >
+        This is the sector's live thesis and the market is primed for it.
+        Walmart, Ross and TJX guidance collectively pointed to a tougher road,
+        and specific distress signals (paycheck-timed purchasing) are being
+        taken seriously.
+      confidence: high
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+    - id: SHOPS-PRICE-01
+      type: setter
+      scope: {applies_to: all}
+      trigger: >
+        Revenue growth driven predominantly by price increases while unit
+        volumes or traffic decline.
+      action: {percentile_range: [0.18, 0.32]}
+      rationale: >
+        Price-led growth masking volume decline is the most likely failure
+        mode in this sector right now, given sticky tariff-driven price
+        increases against a weakening consumer. Read it as a warning, not
+        strength.
+      confidence: high
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+    - id: SHOPS-VALUE-01
+      type: modifier
+      scope: {profile: off_price_or_discount}
+      trigger: >
+        Company is positioned as a value/discount retailer and reports share
+        gains or traffic growth.
+      action: {adjust: 0.08}
+      rationale: >
+        The flight to value is a genuine and identified reallocation, so
+        share gains at the value end are real rather than cyclical noise.
+      confidence: medium
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+    - id: SHOPS-COMP-01
+      type: modifier
+      scope: {applies_to: all}
+      trigger: >
+        Results are being compared against a Q1 2026 base that benefited from
+        tax refunds or elevated buy-now-pay-later usage.
+      action: {adjust: 0.05}
+      rationale: >
+        The comparison base is artificially inflated, so an optically weak
+        comp may overstate genuine deterioration. Modest upward adjustment.
+      confidence: low
+      source: team_prior
+      evidence: {n: 0, hit_rate: null}
+
+# =============================================================================
+# Manuf — Manufacturing and industrials
+# ~9% of events
+# =============================================================================
+Manuf:
+  label: Manufacturing
+  regime: >
+    Activity is genuinely healthy — ISM PMI 55.6 in July, six straight months
+    of expansion. The problem is MARGIN, not demand: tariff transmission lag
+    plus a raw-material cost spike concentrated in metals and energy. ISM
+    Prices hit 78.3 in March (highest since June 2022) before easing to 73.0
+    in June — still elevated. Demand commentary is NOT the swing factor here.
+
+  rules:
+    - id: MANUF-MARGIN-01
+      type: setter
+      scope: {applies_to: all}
+      trigger: >
+        Volume or order growth beats, BUT margins compress or management
+        flags input-cost pressure it cannot fully pass through.
+      action: {percentile_range: [0.15, 0.30]}
+      rationale: >
+        Margin squeeze is explicitly at the forefront of investor concern in
+        this sector. A volume beat with margin compression reads negative.
+      confidence: high
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+    - id: MANUF-PASS-01
+      type: modifier
+      scope: {applies_to: all}
+      trigger: >
+        Management demonstrates successful price pass-through with margins
+        held or expanded.
+      action: {adjust: 0.10}
+      rationale: >
+        Pricing power is the scarce quality in this environment, and
+        demonstrating it separates winners from the sector average.
+      confidence: medium
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+    - id: MANUF-PROTECT-01
+      type: modifier
+      scope: {profile: domestic_steel_or_protected}
+      trigger: >
+        Domestic producer benefiting from the protectionist environment and
+        able to push through its own price increases.
+      action: {adjust: 0.08}
+      rationale: >
+        Domestic steel producers are positioned as relative winners, able to
+        leverage protection and high prices.
+      confidence: medium
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+# =============================================================================
+# Enrgy — Energy (E&P, integrated, midstream, services)
+# ~4% of events, but the cleanest and most inverted capex rule in the file
+# =============================================================================
+Enrgy:
+  label: Energy
+  regime: >
+    The exact INVERSE of the tech capex dynamic. Q1 E&P profits doubled on the
+    oil spike (WTI +77% YTD, sustained above $90/bbl), yet the sector held
+    spending discipline — 36 tracked companies set 2026 capex at $59.1bn, DOWN
+    5% from $62.5bn. Commentary is explicit that chasing the windfall with a
+    capex surge "would have been a losing bet." Discipline is rewarded here;
+    spending is punished.
+
+  rules:
+    - id: ENRGY-DISC-01
+      type: modifier
+      scope: {profile: e_and_p}
+      trigger: >
+        Capital discipline maintained or reaffirmed despite elevated cash
+        flows, with the windfall directed to distributions or buybacks.
+      action: {adjust: 0.10}
+      rationale: >
+        The sector-defining behaviour this cycle. Investors are explicitly
+        rewarding restraint over growth-chasing.
+      confidence: high
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+    - id: ENRGY-DISC-02
+      type: setter
+      scope: {profile: e_and_p}
+      trigger: >
+        Capex budget raised materially to chase current strip prices.
+      action: {percentile_range: [0.15, 0.32]}
+      rationale: >
+        Direct inverse of BUSEQ-CAPEX-01 and the reason a single global capex
+        rule would be actively wrong. Breaking discipline is punished even
+        when cash flows appear to justify it.
+      confidence: high
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+    - id: ENRGY-MID-01
+      type: modifier
+      scope: {profile: midstream}
+      trigger: >
+        Fee-based, inflation-protected contract structure reaffirmed with
+        stable volumes.
+      action: {adjust: 0.05}
+      rationale: >
+        Midstream cash flows have grown consistently through tariff threats,
+        geopolitical flare-ups and OPEC+ uncertainty. Stability is the
+        product being bought.
+      confidence: medium
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+# =============================================================================
+# Utils — Utilities
+# ~3% of events
+# =============================================================================
+Utils:
+  label: Utilities
+  regime: >
+    The data-centre load story is real — US data-centre electricity demand is
+    projected to triple 2024-2030 (3% to 10% of total US demand, ~125 GW
+    added, 4.1% CAGR). BUT forecasts are being TRIMMED: the EIA cut its 2026
+    power generation forecast by more than a percentage point and slashed
+    expected ERCOT growth from 15.7% to 9.6%. Affordability is emerging as a
+    political constraint and utilities are visibly divided on data centres.
+    Per the paper: churn and free cash flow outweigh volume/subscriber growth
+    in this sector.
+
+  rules:
+    - id: UTILS-DC-01
+      type: modifier
+      scope: {applies_to: all}
+      trigger: >
+        Data-centre load agreement or large-load contract announced WITHOUT
+        clarity on cost allocation, rate recovery, or regulatory approval.
+      action: {adjust: -0.05}
+      rationale: >
+        A data-centre contract is no longer an automatic positive. The market
+        now asks who bears the cost and whether regulators will permit
+        recovery, with affordability looming large politically.
+      confidence: medium
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+    - id: UTILS-DC-02
+      type: modifier
+      scope: {applies_to: all}
+      trigger: >
+        Large-load growth paired with a constructive rate-case outcome or
+        explicit cost-recovery mechanism.
+      action: {adjust: 0.10}
+      rationale: >
+        Resolved regulatory risk is what converts the load-growth story into
+        earnings the market will pay for.
+      confidence: medium
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+    - id: UTILS-FCF-01
+      type: setter
+      scope: {applies_to: all}
+      trigger: >
+        Volume or load growth reported strong BUT free cash flow guidance is
+        not raised, or capex needs escalate.
+      action: {percentile_range: [0.25, 0.42]}
+      rationale: >
+        Defensive yield names. The market weighs free cash flow and cost
+        recovery above headline growth, and unfunded growth reads as a
+        balance-sheet demand rather than an earnings story.
+      confidence: high
+      source: koijen_levy_2026
+      evidence: {n: 0, hit_rate: null}
+
+# =============================================================================
+# Telcm — Telecommunications
+# ~2% of events
+# =============================================================================
+Telcm:
+  label: Telecommunications
+  regime: >
+    Sector "finally looks healthier" and Q2 2026 showed exactly what gets
+    rewarded. Verizon: 184k postpaid phone nets vs 106k consensus, churn down
+    6bps to 0.84%, 1H free cash flow $10.2bn vs $8.8bn. AT&T rose >3% on
+    convergence — 42% of home internet customers now also take wireless,
+    lowering churn. T-Mobile is the counter-example: EPS beat >15% and FCF
+    guidance raised, but postpaid net accounts fell 13% YoY.
+    Churn direction, FCF and convergence outrank gross subscriber adds.
+
+  rules:
+    - id: TELCM-CHURN-01
+      type: setter
+      scope: {applies_to: all}
+      trigger: >
+        Churn rises, even slightly, or free cash flow guidance is not raised —
+        regardless of strong subscriber net additions.
+      action: {percentile_range: [0.25, 0.45]}
+      rationale: >
+        Defensive yield stocks where the market fears competitive intensity
+        more than it rewards growth. High net adds are routinely ignored if
+        churn ticks up.
+      confidence: high
+      source: koijen_levy_2026
+      evidence: {n: 0, hit_rate: null}
+
+    - id: TELCM-CONV-01
+      type: modifier
+      scope: {applies_to: all}
+      trigger: >
+        Convergence metrics improve — rising share of customers taking both
+        wireless and home internet — with churn benefit explicitly attributed.
+      action: {adjust: 0.10}
+      rationale: >
+        The validated thesis of the quarter. AT&T rose over 3% on exactly this
+        combination of convergence, growth and falling churn.
+      confidence: medium
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+    - id: TELCM-DECEL-01
+      type: modifier
+      scope: {applies_to: all}
+      trigger: >
+        EPS or FCF beats but subscriber net additions decelerate materially
+        year over year.
+      action: {adjust: -0.08}
+      rationale: >
+        The T-Mobile pattern: a large EPS beat and raised FCF guidance
+        alongside a 13% YoY decline in postpaid net accounts is a materially
+        weaker setup than the headline implies.
+      confidence: medium
+      source: regime_2026Q3
+      evidence: {n: 0, hit_rate: null}
+
+# =============================================================================
+# NoDur / Durbl / Chems / Other — thinner coverage
+# Together ~23% of events. No dedicated regime research yet; global rules plus
+# quarter calibration apply. Priority for the September pass if the outcomes
+# ledger shows us underperforming in these buckets.
+# =============================================================================
+NoDur:
+  label: Consumer Non-Durables
+  regime: >
+    No dedicated rules yet. Apply global rules and quarter calibration.
+    Note the consumer weakness and sticky tariff-driven pricing described in
+    the Shops regime block — staples names face the same trade-down dynamic
+    and SHOPS-PRICE-01 logic (price-led growth with volume decline) is likely
+    to transfer.
+  rules: []
+
+Durbl:
+  label: Consumer Durables
+  regime: >
+    No dedicated rules yet. Apply global rules and quarter calibration.
+    Note that durable goods prices are expected to rise 4.5% in 2026 with
+    increases sticky, against a consumer making smaller purchases — this is
+    the most exposed corner of the consumer complex.
+  rules: []
+
+Chems:
+  label: Chemicals
+  regime: >
+    No dedicated rules yet. Apply global rules and quarter calibration.
+    Highly exposed to the energy/feedstock cost shock — MANUF-MARGIN-01 logic
+    (volume beat with margin compression reads negative) is likely to transfer.
+  rules: []
+
+Other:
+  label: Other
+  regime: >
+    Heterogeneous bucket (transport, hotels, services, misc). No dedicated
+    rules. Apply global rules and quarter calibration, and reason from the
+    company's actual economics rather than the industry label.
+  rules: []
