@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 
 import httpx
 from litellm import completion
@@ -177,11 +178,20 @@ def _ask_llm(*, summary: dict, ticker: str, event_type: str) -> float:
     # TODO: once company/industry map is finished, implement this
     industry = None
 
+    # Read in prompt template and clean its
     prompt_template = PROMPT_PATH.read_text(encoding="utf-8")
+    prompt_template = re.sub(
+        r"\A\s*<!--.*?-->\s*",
+        "",
+        prompt_template,
+        count=1,
+        flags=re.DOTALL,
+    )
+
     core_directive, industry_rules = load_prompt_rules(industry)
 
     # TODO: Implement dossier in next pass
-    dossier = None
+    dossier = "No cached dossier is available."
 
     user_prompt = (
         prompt_template
@@ -198,8 +208,7 @@ def _ask_llm(*, summary: dict, ticker: str, event_type: str) -> float:
         resp = completion(
             model=MODEL,
             messages=[
-                {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": user_prompt},
+                {"role": "system", "content": user_prompt},
             ],
             # JSON mode is supported across the three target providers. Pydantic
             # below remains the source of truth for shape and numeric bounds.
