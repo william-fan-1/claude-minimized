@@ -19,6 +19,8 @@ import os
 import httpx
 from litellm import completion
 from pydantic import BaseModel, Field
+from pathlib import Path
+import yaml
 
 # This is the only value to change when switching models. The provider prefix
 # selects both the LiteLLM backend and the corresponding environment variable.
@@ -32,6 +34,12 @@ PROVIDER_API_KEYS = {
 }
 
 _missing_key_warnings: set[str] = set()
+
+# Paths to prompt file and rulebooks for prompt to fill in
+ROOT = Path(__file__).resolve().parent
+PROMPT_PATH = ROOT / "prompts" / "predict_v0.md"
+GLOBAL_PATH = ROOT / "knowledge" / "playbooks" / "_global.yaml"
+INDUSTRY_PATH = ROOT / "knowledge" / "playbooks" / "industry_playbooks.yaml"
 
 # Timeouts, sized against the 5-minute prediction window that opens when your
 # handler ACKs the webhook. Worst case is 15 + (120 x 2) + 15 = 270s, which
@@ -118,6 +126,47 @@ Calibration discipline:
   ~0.03 absent quantitative confirmation.
 """
 
+#####################################
+# Util functions to help build prompt
+#####################################
+def load_yaml(path: Path) -> dict:
+    with path.open("r", encoding="utf-8") as file:
+        return yaml.safe_load(file)
+
+def load_prompt_rules(industry: str) -> tuple[str, str]:
+    global_playbook = load_yaml(GLOBAL_PATH)
+    industry_playbooks = load_yaml(INDUSTRY_PATH)
+
+    # The `principles` block becomes {core_directive}.
+    core_directive = yaml.safe_dump(
+        global_playbook["principles"],
+        sort_keys=False,
+    )
+
+    # These global rules apply to every event.
+    applicable_rules = {
+        "global_rules": global_playbook.get("rules", []),
+
+        # This must be included for every industry.
+        "quarter_calibration": industry_playbooks.get(
+            "quarter_calibration",
+            [],
+        ),
+    }
+
+    # Add only the matching industry block.
+    industry_block = industry_playbooks.get(industry)
+
+    if industry_block:
+        applicable_rules["industry"] = industry
+        applicable_rules["industry_playbook"] = industry_block
+
+    industry_rules = yaml.safe_dump(
+        applicable_rules,
+        sort_keys=False,
+    )
+
+    return core_directive, industry_rules
 
 def _ask_llm(*, summary: dict, ticker: str, event_type: str) -> float:
     """Ask MODEL for a calibrated percentile, falling back safely to 0.5."""
@@ -136,17 +185,24 @@ def _ask_llm(*, summary: dict, ticker: str, event_type: str) -> float:
         summary_text = json.dumps(summary)
     summary_text = summary_text[:8000]
 
+    # TODO: once company/industry map is finished, implement this
+    industry = None
+
+    prompt_template = PROMPT_PATH.read_text(encoding="utf-8")
+    core_directive, industry_rules = load_prompt_rules(industry)
+
+    # TODO: Implement dossier in next pass
+    dossier = None
+
     user_prompt = (
-        f"Event type: {event_type}\n"
-        f"Ticker: {ticker}\n\n"
-        f"Event summary:\n{summary_text}\n\n"
-        "Weigh, in roughly this order:\n"
-        "  1. Quantitative surprise vs expectations — revenue, EPS, segment metrics.\n"
-        "  2. Guidance / outlook — raises, holds, cuts vs the prior trajectory.\n"
-        "  3. Strategic shifts — product launches, M&A, capital allocation, leadership.\n"
-        "  4. Tone and confidence in management commentary (small weight).\n"
-        "  5. Risks called out — regulatory, supply chain, demand, competition.\n\n"
-        f"Predict the next-day unexpected-return percentile for {ticker}."
+        prompt_template
+        # Summary of transcript
+        .replace("{event_bullets}", summary_text)
+        #
+        .replace("{core_directive}", core_directive)
+        # Industry specific trends to consider
+        .replace("{industry_rules}", industry_rules)
+        .replace("{dossier}", dossier)
     )
 
     try:
