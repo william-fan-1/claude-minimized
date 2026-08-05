@@ -19,7 +19,7 @@ import re
 
 import httpx
 from litellm import completion
-from pydantic import BaseModel, Field
+from pydantic import AliasChoices, BaseModel, Field
 from pathlib import Path
 import yaml
 
@@ -27,6 +27,7 @@ import yaml
 # selects both the LiteLLM backend and the corresponding environment variable.
 # Examples: "openai/gpt-5.4", "anthropic/claude-sonnet-4-5"
 MODEL = "gemini/gemini-2.5-flash"
+PROMPT_VERSION = "0.1.0"
 
 PROVIDER_API_KEYS = {
     "gemini": "GEMINI_API_KEY",
@@ -80,15 +81,39 @@ def predict(event: dict) -> list[dict]:
     # raising the timeout.
     return [
         {
-            "identifier_value": asset["identifier_value"],
-            "predicted_percentile": _ask_llm(
-                summary=summary_json,
-                ticker=asset["identifier_value"],
-                event_type=event["event_type"],
-            ),
+            "identifier_value": row["identifier_value"],
+            "predicted_percentile": row["predicted_percentile"],
         }
-        for asset in event["focal_assets"]
+        for row in _predict_rows(
+            event=event,
+            summary=summary_json,
+        )
     ]
+
+
+def predict_with_metadata(event: dict) -> list[dict]:
+    """Return predictions plus audit fields for the persistent ledger."""
+    summary = httpx.get(event["information_url"], timeout=SUMMARY_TIMEOUT_SECONDS)
+    summary.raise_for_status()
+    return _predict_rows(event=event, summary=summary.json())
+
+
+def _predict_rows(*, event: dict, summary: dict) -> list[dict]:
+    rows = []
+    for asset in event["focal_assets"]:
+        result = _ask_llm_details(
+            summary=summary,
+            ticker=asset["identifier_value"],
+            event_type=event["event_type"],
+        )
+        rows.append({
+            "identifier_value": asset["identifier_value"],
+            "predicted_percentile": result.predicted_percentile,
+            "confidence": result.confidence,
+            "rules_applied": result.rules_applied,
+            "prompt_version": PROMPT_VERSION,
+        })
+    return rows
 
 
 # ----------------------------------------------------------------------
@@ -104,7 +129,11 @@ class Prediction(BaseModel):
     contract identical even when providers differ in their structured-output support.
     """
 
-    predicted_percentile: float #= Field(ge=0.0, le=1.0)
+    predicted_percentile: float = Field(
+        validation_alias=AliasChoices("predicted_percentile", "percentile")
+    )
+    confidence: str = "low"
+    rules_applied: list[str] = Field(default_factory=list)
 
 #####################################
 # Util functions to help build prompt
@@ -159,7 +188,14 @@ def _normalize_percentile(value: float) -> float:
     return max(0.0, min(1.0, value))
 
 def _ask_llm(*, summary: dict, ticker: str, event_type: str) -> float:
-    """Ask MODEL for a calibrated percentile, falling back safely to 0.5."""
+    """Compatibility wrapper returning only the competition percentile."""
+    return _ask_llm_details(
+        summary=summary, ticker=ticker, event_type=event_type
+    ).predicted_percentile
+
+
+def _ask_llm_details(*, summary: dict, ticker: str, event_type: str) -> Prediction:
+    """Ask MODEL for a percentile and the metadata needed by the ledger."""
     api_key_name = _required_api_key(MODEL)
     if not os.environ.get(api_key_name):
         if api_key_name not in _missing_key_warnings:
@@ -168,7 +204,7 @@ def _ask_llm(*, summary: dict, ticker: str, event_type: str) -> float:
                 "placeholder. Set the key in .env and re-deploy for real predictions."
             )
             _missing_key_warnings.add(api_key_name)
-        return 0.5
+        return Prediction(predicted_percentile=0.5)
 
     summary_text = summary.get("summary") if isinstance(summary, dict) else None
     if not summary_text:
@@ -212,19 +248,22 @@ def _ask_llm(*, summary: dict, ticker: str, event_type: str) -> float:
             ],
             # JSON mode is supported across the three target providers. Pydantic
             # below remains the source of truth for shape and numeric bounds.
-            response_format=Prediction,
+            response_format={"type": "json_object"},
             temperature=0,
             timeout=LLM_TIMEOUT_SECONDS,
             num_retries=LLM_MAX_RETRIES,
         )
         content = resp.choices[0].message.content
-        result = Prediction.model_validate_json(content).predicted_percentile
-        return _normalize_percentile(result)
+        result = Prediction.model_validate_json(content)
+        result.predicted_percentile = _normalize_percentile(
+            result.predicted_percentile
+        )
+        return result
     except Exception as exc:
         # A prediction must always be submitted, even on a provider outage,
         # refusal, malformed response, timeout, or schema violation.
         print(f"[ERROR] {MODEL} prediction failed: {type(exc).__name__}: {exc}")
-        return 0.5
+        return Prediction(predicted_percentile=0.5)
 
 
 def _required_api_key(model: str) -> str:
