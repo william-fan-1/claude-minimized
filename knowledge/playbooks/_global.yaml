@@ -445,9 +445,11 @@ anti_patterns:
 
   - id: AP-03
     text: >
-      Do not cluster predictions in 0.45-0.55. Scoring rewards correct RANKING
-      across the cross-section; a flat prediction vector has no explanatory
-      power regardless of how sensible each individual estimate looks.
+      Use the full range where the evidence supports it. Roughly 10% of events 
+      deserve above 0.85 and 10% below 0.15 — but a genuinely ambiguous event 
+      belongs near 0.50. Forcing conviction you do not have is worse than 
+      admitting uncertainty: it adds noise without adding signal. Reserve the 
+      tails for events where the read is clear.
     source: team_prior
 
   - id: AP-04

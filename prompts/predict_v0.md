@@ -43,7 +43,7 @@ Output a percentile from 0.00 to 1.00.
 - 0.50 = completely typical reaction
 - 1.00 = most positive reaction of the quarter
 
-Your job is RELATIVE RANKING, not predicting a percentage move. Use the full range and commit. Roughly 10% of events deserve above 0.85, and roughly 10% deserve below 0.15. Clustering near 0.50 is a failure mode — it produces no explanatory power.
+Your job is RELATIVE RANKING, not predicting a percentage move. Use the full range where the evidence supports it. Roughly 10% of events deserve above 0.85 and 10% below 0.15 — but a genuinely ambiguous event belongs near 0.50. Forcing conviction you do not have is worse than admitting uncertainty: it adds noise without adding signal. Reserve the tails for events where the read is clear.
 
 ## Core directive
 
