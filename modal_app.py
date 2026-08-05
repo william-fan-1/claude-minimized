@@ -111,14 +111,13 @@ def predict_and_submit(event: dict, webhook_id: str | None = None):
     """
     from explaining_markets.client import submit_predictions
     from explaining_markets.config import Config
-    # from explaining_markets.event_utils import is_test, neutral_predictions
+    from explaining_markets.event_utils import is_test, neutral_predictions
     from predict import predict_with_metadata
 
     submitted = False
     try:
-        # Removed test event check so that we can test our Gemini baseline
-        detailed = predict_with_metadata(event)
-        predictions = [
+        detailed = None if is_test(event) else predict_with_metadata(event)
+        predictions = neutral_predictions(event) if detailed is None else [
             {
                 "identifier_value": row["identifier_value"],
                 "predicted_percentile": row["predicted_percentile"],
