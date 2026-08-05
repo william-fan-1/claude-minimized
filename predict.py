@@ -130,7 +130,11 @@ class Prediction(BaseModel):
     """
 
     predicted_percentile: float = Field(
-        validation_alias=AliasChoices("predicted_percentile", "percentile")
+        validation_alias=AliasChoices(
+            "predicted_percentile",
+            "percentile",
+            "prediction",
+        )
     )
     confidence: str = "low"
     rules_applied: list[str] = Field(default_factory=list)
@@ -186,6 +190,33 @@ def _normalize_percentile(value: float) -> float:
         value /= 100.0
 
     return max(0.0, min(1.0, value))
+
+#####################################
+### Prediction format standardization
+#####################################
+
+def _parse_prediction(content: str) -> Prediction:
+    payload = json.loads(content)
+
+    # Gemini occasionally returns a bare number.
+    if isinstance(payload, (int, float)):
+        payload = {"predicted_percentile": payload}
+
+    if not isinstance(payload, dict):
+        raise ValueError(
+            f"Expected a JSON object or number, got {type(payload).__name__}"
+        )
+
+    # Normalize common model-generated field names.
+    if "predicted_percentile" not in payload:
+        for alias in ("percentile", "prediction"):
+            if alias in payload:
+                payload["predicted_percentile"] = payload[alias]
+                break
+
+    result = _parse_prediction(content)
+
+    return result
 
 def _ask_llm(*, summary: dict, ticker: str, event_type: str) -> float:
     """Compatibility wrapper returning only the competition percentile."""

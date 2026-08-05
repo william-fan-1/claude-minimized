@@ -89,7 +89,7 @@ Return JSON only. No preamble, no commentary outside the object.
 
 ```json
 {
-  "percentile": 0.00,
+  "predicted_percentile": 0.00,
   "direction": "up | neutral | down",
   "confidence": "high | medium | low",
   "top_drivers": ["driver one", "driver two", "driver three"],
