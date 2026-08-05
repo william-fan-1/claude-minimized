@@ -82,7 +82,7 @@ def test_model_selects_provider_key(monkeypatch, model: str, key_name: str) -> N
 
 @pytest.mark.parametrize(
     "content",
-    ["not json", '{}', '{"predicted_percentile": 1.1}'],
+    ["not json", '{}'],
 )
 def test_invalid_provider_response_falls_back(monkeypatch, content: str) -> None:
     monkeypatch.setenv("GEMINI_API_KEY", "test-key")
@@ -115,6 +115,30 @@ def test_provider_error_falls_back(monkeypatch) -> None:
         event_type="EARNINGS_RELEASE",
     )
     assert result == 0.5
+
+
+def test_model_metadata_and_scale_are_preserved(monkeypatch) -> None:
+    monkeypatch.setenv("GEMINI_API_KEY", "test-key")
+
+    def fake_completion(**kwargs):
+        message = SimpleNamespace(
+            content=(
+                '{"percentile": 73, "confidence": "high", '
+                '"rules_applied": ["Q3-CAL-01", "GLB-GUID-01"]}'
+            )
+        )
+        return SimpleNamespace(choices=[SimpleNamespace(message=message)])
+
+    monkeypatch.setattr(predict_module, "completion", fake_completion)
+    result = predict_module._ask_llm_details(
+        summary={"summary": "Raised guidance."},
+        ticker="TEST",
+        event_type="EARNINGS_RELEASE",
+    )
+
+    assert result.predicted_percentile == 0.73
+    assert result.confidence == "high"
+    assert result.rules_applied == ["Q3-CAL-01", "GLB-GUID-01"]
 
 
 @pytest.mark.parametrize("model", ["gpt-5.4", "unknown/model", "gemini/"])
