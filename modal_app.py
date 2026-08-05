@@ -42,9 +42,8 @@ app = modal.App("explaining-markets-starter")
 
 image = (
     modal.Image.debian_slim()
-    .pip_install("fastapi[standard]", "httpx", "litellm", "pydantic")
+    .pip_install("fastapi[standard]", "httpx", "litellm", "pydantic", "pyyaml")
     .add_local_python_source("explaining_markets", "predict")
-    .add_local_dir("prompts", remote_path="/root/prompts")
     .add_local_dir("prompts", remote_path="/root/prompts")
     .add_local_dir("knowledge", remote_path="/root/knowledge")
 )
@@ -60,6 +59,7 @@ image = (
 # Marking an event done up front would be the bug: a failed prediction would
 # look handled. This Dict persists across redeploys, so "done" is durable.
 seen_webhooks = modal.Dict.from_name("em-webhook-dedupe", create_if_missing=True)
+prediction_ledger = modal.Dict.from_name("em-prediction-ledger", create_if_missing=True)
 
 # Credentials are read from your local .env at deploy time (see .env.example).
 # Prefer Modal's secret store instead? See docs/advanced.md.
@@ -112,17 +112,37 @@ def predict_and_submit(event: dict, webhook_id: str | None = None):
     from explaining_markets.client import submit_predictions
     from explaining_markets.config import Config
     from explaining_markets.event_utils import is_test, neutral_predictions
-    from predict import predict
+    from predict import predict_with_metadata
 
     submitted = False
     try:
-        predictions = neutral_predictions(event) if is_test(event) else predict(event)
+        detailed = None if is_test(event) else predict_with_metadata(event)
+        predictions = neutral_predictions(event) if detailed is None else [
+            {
+                "identifier_value": row["identifier_value"],
+                "predicted_percentile": row["predicted_percentile"],
+            }
+            for row in detailed
+        ]
         submit_predictions(
             event_id=event["event_id"],
             predictions=predictions,
             config=Config.from_env(),
         )
         submitted = True
+        if detailed is not None:
+            for row in detailed:
+                ticker = row["identifier_value"]
+                prediction_ledger[f'{event["event_id"]}:{ticker}'] = {
+                    "event_id": event["event_id"],
+                    "ticker": ticker,
+                    "prompt_version": row["prompt_version"],
+                    "predicted_percentile": row["predicted_percentile"],
+                    "confidence": row["confidence"],
+                    "rules_applied": row["rules_applied"],
+                    "realized_abnormal": None,
+                    "realized_percentile": None,
+                }
     except Exception as exc:
         # Log loudly — `modal app logs explaining-markets-starter` finds it.
         print(f"[ERROR] prediction failed for event {event.get('event_id')}: {exc}")
