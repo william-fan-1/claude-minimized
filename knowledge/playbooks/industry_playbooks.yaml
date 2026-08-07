@@ -1,22 +1,13 @@
 # =============================================================================
 # industry_playbooks.yaml — sector rulebooks
-# Explaining Markets · Q3 2026 · version 0.1.0 · owner: ahi · as of 2026-08-03
+# Explaining Markets · Q3 2026 · version 0.1.1 · owner: Will · as of 2026-08-07
 # =============================================================================
 # Layers ON TOP of knowledge/playbooks/_global.yaml. Industry rules WIN over
 # global rules on conflict (see _global.yaml precedence, order 1).
 #
 # LOADER CONTRACT
-#   Filter to the event's FF12 industry key, then pass BOTH that industry's
-#   `regime` block and its matching `rules` into {industry_rules}.
-#   Never pass the whole file — it dilutes attention and wastes tokens.
-#
-# SOURCE TAGS
-#   koijen_levy_2026 : from the paper. Durable.
-#   regime_2026Q3    : CURRENT MARKET CONDITIONS as researched 2026-08-03.
-#                      These DECAY. Re-research at the September pass and
-#                      retire anything the market has moved past.
-#   literature       : established finance. Durable.
-#   team_prior       : our hypothesis. Unvalidated. Retire first if it fails.
+#   Filter to the event's desired industry and inject industry rules into the
+#   prompt
 #
 # ⚠ Most rules here are regime_2026Q3. This file has a shorter half-life than
 #   _global.yaml by design. Treat confidence levels as provisional until the
@@ -24,20 +15,26 @@
 # =============================================================================
 
 meta:
-  version: 0.1.0
-  as_of: 2026-08-03
-  research_basis: Q3-2026-Sector-Research-Briefing.md
-  next_review: 2026-09-01
-  taxonomy: fama_french_12
+  title: Q2 2026 Earnings-Season Industry Playbooks
+  as_of: 2026-08-07
+  fiscal_quarter: Q2 2026
+  purpose: Three industry-specific trends for predicting cross-sectional stock reactions to earnings.
+  calibration: >
+    Guidance and forward KPIs outrank headline EPS. Expected moves are percentile ranges,
+    not absolute returns. High single-stock dispersion and negative asymmetry justify more
+    extreme downside ranges for misses than upside ranges for beats.
+  persistence_scale:
+    persists: Trigger remains visible at roughly the current rate.
+    accelerates: Trigger strengthens and/or management raises forward guidance.
+    fades: Trigger weakens, proves temporary, or reverses.
+  evidence_base:
+    - Q3-2026-Sector-Research-Briefing.MD
+    - Public company earnings releases and market-reaction reporting available through 2026-08-07
 
-# -----------------------------------------------------------------------------
-# CROSS-SECTOR CALIBRATION — applies to every industry this quarter
-# -----------------------------------------------------------------------------
 quarter_calibration:
   - id: Q3-CAL-01
-    type: modifier
     trigger: applies to all events this quarter
-    action: {widen: true, magnitude: 0.10}
+    expected_move: {widen: true, magnitude: 0.10}
     rationale: >
       Single-stock dispersion (DSPX) is at a six-year high of ~47%, above the
       April "Liberation Day" peak, while VIX sits near its median at ~18.
@@ -45,744 +42,858 @@ quarter_calibration:
       genuinely fatter this quarter — use more of the 0-1 range than instinct
       suggests.
     confidence: high
-    source: regime_2026Q3
 
   - id: Q3-CAL-02
-    type: modifier
     trigger: >
       Event is a miss, a guidance cut, or contains a clear negative surprise
-    action: {adjust: -0.05}
+    expected_move: {adjust: -0.05}
     rationale: >
       Explicit negative asymmetry this season: beats are rewarded, but even
       minor misses are triggering severe selloffs against elevated
       expectations. Reach for the bottom decile faster than the top.
     confidence: medium
-    source: regime_2026Q3
 
   - id: Q3-CAL-03
-    type: modifier
     trigger: >
       Management gives material commentary on input costs, fuel, freight,
       raw materials, or interest-rate sensitivity
-    action: {widen: true, magnitude: 0.05}
+    expected_move: {widen: true, magnitude: 0.05}
     rationale: >
       An oil shock (WTI +77% YTD, sustained above $90/bbl) and a contested
       Fed path are the shared macro shock. Cost and rate commentary is being
       listened to far more closely than in a normal quarter.
     confidence: medium
-    source: regime_2026Q3
 
-# =============================================================================
-# BusEq — Business Equipment (tech, semiconductors, software)
-# Largest bucket: ~20% of events
-# =============================================================================
-BusEq:
-  label: Business Equipment
-  regime: >
-    THIS INDUSTRY HAS THREE SUB-REGIMES THAT POINT IN OPPOSITE DIRECTIONS.
-    Identify which one the company belongs to before applying any rule.
-    (a) Hyperscalers/AI infrastructure: capex is now scrutinised as a
-        liability, not celebrated as growth. The market wants revenue proof
-        and funding clarity.
-    (b) Semiconductors/memory: the strongest tape in the market ("memflation"),
-        but the bar is extremely high — in-line guidance reads as a miss.
-    (c) Seat-based software: structural de-rating underway as AI reduces seat
-        counts. Retention and seat trends outrank headline results.
-
+commercial_products:
+  label: Commercial Products
+  regime: Healthy industrial demand makes price-cost execution and margin conversion the differentiators.
   rules:
-    - id: BUSEQ-CAPEX-01
-      type: setter
-      scope: {profile: hyperscaler_or_ai_infra}
-      trigger: >
-        Capex guidance raised materially without corresponding revenue
-        visibility or a clear monetization path in the same period.
-      action: {percentile_range: [0.12, 0.28]}
-      rationale: >
-        The defining dynamic of the quarter. Alphabet reported accelerating
-        cloud growth on 2026-07-28 and was panned for hiking 2026 capex,
-        dragging Amazon, Meta and Microsoft down with it. Consensus 2026
-        hyperscaler capex rose $467bn to $533bn across the season and was
-        received badly. This REVERSES the 2023-25 pattern where announced AI
-        investment was rewarded.
+    - id: COMMERCIAL_PRODUCTS_1
+      trigger: Volume growth with maintained or expanded margin despite tariffs and metals/energy inflation.
+      expected_move: {persists: [0.78, 0.92], accelerates: [0.86, 0.96], fades: [0.45, 0.60]}
+      rationale: Caterpillar paired 24% revenue growth with a 21.9% adjusted operating margin; pass-through is scarcer than demand.
       confidence: high
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
-
-    - id: BUSEQ-CAPEX-02
-      type: modifier
-      scope: {profile: hyperscaler_or_ai_infra}
-      trigger: >
-        Capex increase is explicitly paired with disclosed contracted revenue,
-        backlog, or utilization metrics that demonstrate the spend converts.
-      action: {adjust: 0.12}
-      rationale: >
-        Return dispersion within the group now keys off whether investors
-        believe the AI investment produces revenue. Proof is rewarded;
-        assertion is not.
-      confidence: medium
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
-
-    - id: BUSEQ-CAPEX-03
-      type: modifier
-      scope: {profile: hyperscaler_or_ai_infra}
-      trigger: >
-        Capex is being funded with materially increased leverage or debt
-        issuance.
-      action: {adjust: -0.08}
-      rationale: >
-        Funding structure is an explicit component of the widening return
-        dispersion across hyperscalers this season.
-      confidence: medium
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
-
-    - id: BUSEQ-SEMI-01
-      type: setter
-      scope: {profile: semiconductor}
-      trigger: >
-        Guidance is merely in line with consensus, or the beat is modest,
-        in a name priced for acceleration.
-      action: {percentile_range: [0.15, 0.32]}
-      rationale: >
-        Broadcom guided Q3 AI chip revenue to $16bn against $17.2bn consensus
-        and fell 14% in a single session on 2026-06-04. In this sector an
-        in-line guide functions as a miss.
+    - id: COMMERCIAL_PRODUCTS_2
+      trigger: Revenue or volume beats but margin guidance falls because price realization lags input costs.
+      expected_move: {persists: [0.08, 0.24], accelerates: [0.03, 0.14], fades: [0.38, 0.53]}
+      rationale: With manufacturing expanding, negative price-cost increasingly reads as a company-specific execution failure.
       confidence: high
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
+    - id: COMMERCIAL_PRODUCTS_3
+      trigger: Backlog and orders rise with higher production or EPS guidance and controlled working capital.
+      expected_move: {persists: [0.72, 0.88], accelerates: [0.82, 0.94], fades: [0.35, 0.52]}
+      rationale: Backlog conversion validates durable demand; advance ordering or cash absorption lowers its quality.
+      confidence: medium_high
 
-    - id: BUSEQ-SEMI-02
-      type: modifier
-      scope: {profile: semiconductor}
-      trigger: >
-        Company is a memory/storage producer (DRAM, NAND, HBM) confirming
-        continued pricing strength or supply tightness.
-      action: {adjust: 0.10}
-      rationale: >
-        Memflation: DRAM prices +125% and NAND +234% in 2026, with supply
-        constraints persisting and no meaningful relief expected until late
-        2027. Memory revenue is expected to roughly triple.
-      confidence: medium
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
-
-    - id: BUSEQ-SEMI-03
-      type: modifier
-      scope: {profile: hardware_device_assembler}
-      trigger: >
-        Company CONSUMES memory/storage as an input and flags rising component
-        costs or margin pressure from them.
-      action: {adjust: -0.10}
-      rationale: >
-        The other side of memflation. Component cost inflation compresses
-        margins for device makers and assemblers, and consumer hardware
-        cannot fully pass it through.
-      confidence: medium
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
-
-    - id: BUSEQ-SW-01
-      type: setter
-      scope: {profile: seat_based_software}
-      trigger: >
-        Any sign of seat compression, softening net revenue retention,
-        lengthening sales cycles, or customers consolidating licenses —
-        even alongside a headline revenue beat.
-      action: {percentile_range: [0.10, 0.25]}
-      rationale: >
-        The SaaSpocalypse. Software has lost over $1tn of value in 2026
-        because AI-equipped customers accomplish more with fewer licenses and
-        are cutting seats rather than adding them. Seat trends now outrank
-        headline results.
-      confidence: high
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
-
-    - id: BUSEQ-SW-02
-      type: modifier
-      scope: {profile: seat_based_software}
-      trigger: >
-        Credible, quantified migration toward usage-based or hybrid pricing,
-        or demonstrated AI-attributable revenue.
-      action: {adjust: 0.10}
-      rationale: >
-        Per-seat pricing fell from 21% to 15% of SaaS companies in twelve
-        months while hybrid rose 27% to 41%. The market is actively looking
-        for evidence a company is on the right side of that transition.
-      confidence: medium
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
-
-    - id: BUSEQ-ROADMAP-01
-      type: modifier
-      scope: {applies_to: all}
-      trigger: >
-        Positive narrative rests on distant product roadmap, future launches,
-        or multi-year vision rather than delivered financials.
-      action: {adjust: -0.08}
-      rationale: >
-        High-growth technology names carry large premiums; roadmap items years
-        away are discounted as vaporware. Only immediate financial delivery is
-        priced.
-      confidence: high
-      source: koijen_levy_2026
-      evidence: {n: 0, hit_rate: null}
-
-# =============================================================================
-# Hlth — Health (pharma, biotech, devices, providers)
-# ~17% of events
-# =============================================================================
-Hlth:
-  label: Health
-  regime: >
-    Pricing overhang has PARTLY cleared — most large drugmakers signed pricing
-    agreements with the administration and the sector recovered over the past
-    two to three months. But the cost is now quantified, so calls are being
-    read for whether volume growth outruns price concession. Large pharma and
-    pre-profit biotech behave like different asset classes: split them first.
-
+commercial_services:
+  label: Commercial Services
+  regime: Organic demand remains resilient, but labor productivity and measurable automation determine earnings quality.
   rules:
-    - id: HLTH-GLP1-01
-      type: modifier
-      scope: {profile: glp1_exposed}
-      trigger: >
-        Volume/script growth is clearly outrunning the disclosed price
-        concession on GLP-1 products.
-      action: {adjust: 0.10}
-      rationale: >
-        GLP-1 remains the sector engine — global obesity drug sales projected
-        at $39.4bn in 2026 and potentially above $100bn by decade's end. But
-        US price reductions are expected to cut obesity revenues $2-3bn this
-        year, so the volume/price race is the thing being judged.
+    - id: COMMERCIAL_SERVICES_1
+      trigger: Organic growth accompanies stable retention, utilization, and labor-adjusted margin.
+      expected_move: {persists: [0.70, 0.86], accelerates: [0.80, 0.92], fades: [0.40, 0.55]}
+      rationale: A productivity-backed beat is more repeatable than one produced by pricing or temporary labor underspend.
       confidence: medium
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
-
-    - id: HLTH-GLP1-02
-      type: setter
-      scope: {profile: glp1_exposed}
-      trigger: >
-        Price concessions are biting faster than volume can offset, or
-        management guides down on obesity-franchise revenue.
-      action: {percentile_range: [0.15, 0.30]}
-      rationale: >
-        Mirror of HLTH-GLP1-01. The pricing agreements removed uncertainty but
-        installed a quantified revenue headwind.
+    - id: COMMERCIAL_SERVICES_2
+      trigger: Revenue beats mainly through price while transactions, billable volume, or utilization decline.
+      expected_move: {persists: [0.14, 0.32], accelerates: [0.06, 0.20], fades: [0.40, 0.55]}
+      rationale: Price-only growth is vulnerable when contracts reset and is poor evidence of healthy end demand.
       confidence: medium
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
-
-    - id: HLTH-BIO-01
-      type: modifier
-      scope: {profile: pre_profit_biotech}
-      trigger: >
-        A clinical readout, regulatory decision, or partnership catalyst is
-        disclosed on the call.
-      action: {widen: true, magnitude: 0.20}
-      rationale: >
-        For pre-profit biotech a single catalyst swamps the financials
-        entirely. These are the highest-variance names in the sample and
-        belong in the tails, not near 0.50 — in either direction.
-      confidence: high
-      source: literature
-      evidence: {n: 0, hit_rate: null}
-
-    - id: HLTH-BIO-02
-      type: modifier
-      scope: {profile: pre_profit_biotech}
-      trigger: >
-        Cash runway is disclosed as under roughly 12 months without a
-        financing plan, or a raise is signalled.
-      action: {adjust: -0.12}
-      rationale: >
-        Runway risk dominates pipeline optimism for unprofitable biotech.
-        Dilution is the immediate, mechanical concern.
+    - id: COMMERCIAL_SERVICES_3
+      trigger: AI or automation savings are quantified and flow into margin or guidance.
+      expected_move: {persists: [0.68, 0.84], accelerates: [0.78, 0.91], fades: [0.25, 0.42]}
+      rationale: Investors reward visible cost-to-serve improvement, not unquantified AI narratives or recurring restructuring.
       confidence: medium
-      source: literature
-      evidence: {n: 0, hit_rate: null}
 
-    - id: HLTH-PIPE-01
-      type: modifier
-      scope: {profile: large_pharma}
-      trigger: >
-        Pipeline depth is reaffirmed with specific near-term catalysts in
-        obesity, cell and gene therapy, inflammation, rare disease,
-        neuroscience, or next-generation oncology.
-      action: {adjust: 0.08}
-      rationale: >
-        Investors are explicitly prioritising durable pipelines with clear
-        catalysts, and these are the areas attracting attention.
-      confidence: medium
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
-
-    - id: HLTH-LOE-01
-      type: setter
-      scope: {profile: large_pharma}
-      trigger: >
-        Loss of exclusivity, patent cliff, or a key-product erosion is
-        discussed without a credible, quantified replacement.
-      action: {percentile_range: [0.12, 0.28]}
-      rationale: >
-        The classic pharma de-rating trigger. The market prices the forward
-        revenue base, and an unreplaced cliff resets it.
-      confidence: medium
-      source: literature
-      evidence: {n: 0, hit_rate: null}
-
-# =============================================================================
-# Fin — Finance (banks, insurers, asset managers, specialty finance)
-# ~16% of events
-# =============================================================================
-Fin:
-  label: Finance
-  regime: >
-    Margins are compressing — NIM fell 3.30% to 3.22% between Q4 2025 and
-    Q1 2026, the first net interest income decline since mid-2024, with loan
-    yields down 6.75% to 6.51%. Credit is broadly benign (CRE and private
-    credit concerns easing, consumer delinquencies falling) EXCEPT in
-    lower-income and lower-FICO segments. The hawkish rate repricing has been
-    a tailwind for bank stocks. Priority of attention: deposit pricing and NII
-    trajectory > credit quality and provisions > capital markets pipeline.
-
+commercial_transportation:
+  label: Commercial Transportation
+  regime: Oil is the dominant shock; core volume and operating efficiency must be separated from fuel-surcharge revenue.
   rules:
-    - id: FIN-NIM-01
-      type: setter
-      scope: {profile: bank}
-      trigger: >
-        Deposit costs rising faster than asset yields, NIM guided lower, or
-        net interest income trajectory softening — regardless of headline EPS.
-      action: {percentile_range: [0.15, 0.32]}
-      rationale: >
-        NIM compression is the sector's live problem and deposit pricing
-        dynamics are the first thing investors are told to watch. This
-        outranks the reported quarter.
+    - id: COMMERCIAL_TRANSPORTATION_1
+      trigger: Contractual pricing and fuel surcharges offset higher fuel costs while core volumes remain stable.
+      expected_move: {persists: [0.68, 0.84], accelerates: [0.77, 0.90], fades: [0.34, 0.50]}
+      rationale: Formulaic cost recovery protects earnings without requiring a favorable oil forecast.
       confidence: high
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
-
-    - id: FIN-NIM-02
-      type: modifier
-      scope: {profile: bank}
-      trigger: >
-        NIM stabilising or expanding, with deposit costs demonstrably
-        contained.
-      action: {adjust: 0.10}
-      rationale: >
-        Against a sector-wide compression backdrop, holding margin is a
-        genuine differentiator rather than a baseline expectation.
-      confidence: medium
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
-
-    - id: FIN-CREDIT-01
-      type: setter
-      scope: {profile: bank_or_specialty_finance}
-      trigger: >
-        Loan-loss provisions built materially above expectations, or credit
-        guidance deteriorates — even with a clean current quarter.
-      action: {percentile_range: [0.10, 0.25]}
-      rationale: >
-        Provision builds are read as management's forward-looking warning.
-        Against a benign credit backdrop, an unexpected build is a strong
-        idiosyncratic negative signal.
+    - id: COMMERCIAL_TRANSPORTATION_2
+      trigger: Headline revenue rises on fuel surcharges while core shipments and operating ratio deteriorate.
+      expected_move: {persists: [0.10, 0.26], accelerates: [0.04, 0.16], fades: [0.38, 0.53]}
+      rationale: Surcharge revenue is not demand and can conceal network or shipment weakness.
       confidence: high
-      source: literature
-      evidence: {n: 0, hit_rate: null}
-
-    - id: FIN-CREDIT-02
-      type: modifier
-      scope: {profile: consumer_lender}
-      trigger: >
-        Material exposure to lower-income or lower-FICO borrower segments,
-        with any deterioration flagged.
-      action: {adjust: -0.10}
-      rationale: >
-        The explicitly identified pocket of stress in an otherwise improving
-        credit picture. Generic "credit is fine" commentary does not cover it.
-      confidence: medium
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
-
-    - id: FIN-IB-01
-      type: modifier
-      scope: {profile: capital_markets_exposed}
-      trigger: >
-        Investment banking pipeline, deal activity, or trading revenue
-        commentary materially exceeds or misses expectations.
-      action: {adjust: conditional, magnitude: 0.08}
-      rationale: >
-        Capital markets activity and the IB pipeline are the third explicit
-        focus area, and the most volatile revenue line in the sector.
-      confidence: medium
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
-
-    - id: FIN-BUYBACK-01
-      type: modifier
-      scope: {applies_to: all}
-      trigger: Buyback or capital return announced.
-      action: {adjust: 0.0}
-      rationale: >
-        In financials, buybacks are routine capital maintenance rather than
-        new positive signals. Explicit no-op to suppress the model's reflex to
-        read any buyback headline as bullish. Underwriting discipline
-        (shrinking volume to hold price) is similarly often read as a growth
-        headwind, not a virtue.
+    - id: COMMERCIAL_TRANSPORTATION_3
+      trigger: Productivity and service gains improve the operating ratio and support raised guidance despite fuel inflation.
+      expected_move: {persists: [0.76, 0.90], accelerates: [0.84, 0.95], fades: [0.42, 0.58]}
+      rationale: Durable network efficiency is more valuable than nominal revenue in an oil shock.
       confidence: high
-      source: koijen_levy_2026
-      evidence: {n: 0, hit_rate: null}
 
-# =============================================================================
-# Shops — Retail, wholesale, consumer services
-# ~7% of events, but the weakest fundamental picture in the market
-# =============================================================================
-Shops:
-  label: Shops
-  regime: >
-    The consumer is visibly cracking. US consumer spending fell by its widest
-    margin in four years on tariff shocks, a softening labour market, and a
-    flight to value. Walmart guided below expectations and flagged that
-    ~$50k-income households are making smaller, paycheck-timed purchases.
-    Durable goods prices are expected to rise 4.5% in 2026 and increases
-    already taken are sticky. WARNING: Q1 2026 retail strength was likely
-    flattered by tax refunds and buy-now-pay-later usage, so comparisons
-    against it are artificially hard.
-
+other_business_products_and_services:
+  label: Other Business Products and Services
+  regime: Visibility and profit conversion matter more than acquisition-led or nominal growth.
   rules:
-    - id: SHOPS-GUID-01
-      type: setter
-      scope: {applies_to: all}
-      trigger: >
-        Guidance lowered, or management describes consumer weakness, trade-down
-        behaviour, smaller baskets, or reduced trip frequency.
-      action: {percentile_range: [0.10, 0.25]}
-      rationale: >
-        This is the sector's live thesis and the market is primed for it.
-        Walmart, Ross and TJX guidance collectively pointed to a tougher road,
-        and specific distress signals (paycheck-timed purchasing) are being
-        taken seriously.
-      confidence: high
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
-
-    - id: SHOPS-PRICE-01
-      type: setter
-      scope: {applies_to: all}
-      trigger: >
-        Revenue growth driven predominantly by price increases while unit
-        volumes or traffic decline.
-      action: {percentile_range: [0.18, 0.32]}
-      rationale: >
-        Price-led growth masking volume decline is the most likely failure
-        mode in this sector right now, given sticky tariff-driven price
-        increases against a weakening consumer. Read it as a warning, not
-        strength.
-      confidence: high
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
-
-    - id: SHOPS-VALUE-01
-      type: modifier
-      scope: {profile: off_price_or_discount}
-      trigger: >
-        Company is positioned as a value/discount retailer and reports share
-        gains or traffic growth.
-      action: {adjust: 0.08}
-      rationale: >
-        The flight to value is a genuine and identified reallocation, so
-        share gains at the value end are real rather than cyclical noise.
+    - id: OTHER_BUSINESS_PRODUCTS_AND_SERVICES_1
+      trigger: Recurring revenue, renewals, and backlog rise while gross margin holds.
+      expected_move: {persists: [0.68, 0.84], accelerates: [0.78, 0.91], fades: [0.36, 0.52]}
+      rationale: Multi-quarter renewal strength gives more visibility than a one-quarter revenue beat.
       confidence: medium
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
+    - id: OTHER_BUSINESS_PRODUCTS_AND_SERVICES_2
+      trigger: Growth is acquisition-led while organic sales stagnate and leverage rises.
+      expected_move: {persists: [0.16, 0.34], accelerates: [0.07, 0.22], fades: [0.39, 0.54]}
+      rationale: Two-sided rates reduce the value of debt-funded inorganic growth and increase execution risk.
+      confidence: medium
+    - id: OTHER_BUSINESS_PRODUCTS_AND_SERVICES_3
+      trigger: Revenue guidance rises but profit guidance does not because tariffs, freight, or labor consume incremental sales.
+      expected_move: {persists: [0.10, 0.28], accelerates: [0.04, 0.18], fades: [0.40, 0.56]}
+      rationale: Industrial investors are prioritizing margin pass-through over demand commentary.
+      confidence: high
 
-    - id: SHOPS-COMP-01
-      type: modifier
-      scope: {applies_to: all}
-      trigger: >
-        Results are being compared against a Q1 2026 base that benefited from
-        tax refunds or elevated buy-now-pay-later usage.
-      action: {adjust: 0.05}
-      rationale: >
-        The comparison base is artificially inflated, so an optically weak
-        comp may overstate genuine deterioration. Modest upward adjustment.
-      confidence: low
-      source: team_prior
-      evidence: {n: 0, hit_rate: null}
-
-# =============================================================================
-# Manuf — Manufacturing and industrials
-# ~9% of events
-# =============================================================================
-Manuf:
-  label: Manufacturing
-  regime: >
-    Activity is genuinely healthy — ISM PMI 55.6 in July, six straight months
-    of expansion. The problem is MARGIN, not demand: tariff transmission lag
-    plus a raw-material cost spike concentrated in metals and energy. ISM
-    Prices hit 78.3 in March (highest since June 2022) before easing to 73.0
-    in June — still elevated. Demand commentary is NOT the swing factor here.
-
+apparel_and_accessories:
+  label: Apparel and Accessories
+  regime: Brand heat, full-price DTC demand, and inventory cleanliness separate winners from promotion-dependent brands.
   rules:
-    - id: MANUF-MARGIN-01
-      type: setter
-      scope: {applies_to: all}
-      trigger: >
-        Volume or order growth beats, BUT margins compress or management
-        flags input-cost pressure it cannot fully pass through.
-      action: {percentile_range: [0.15, 0.30]}
-      rationale: >
-        Margin squeeze is explicitly at the forefront of investor concern in
-        this sector. A volume beat with margin compression reads negative.
+    - id: APPAREL_AND_ACCESSORIES_1
+      trigger: North American traffic and comps weaken and sales guidance is cut despite an expense-driven EPS beat.
+      expected_move: {persists: [0.06, 0.22], accelerates: [0.02, 0.12], fades: [0.38, 0.52]}
+      rationale: Under Armour's revenue miss, 9% North America decline, and guide cut outweighed its EPS beat.
       confidence: high
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
-
-    - id: MANUF-PASS-01
-      type: modifier
-      scope: {applies_to: all}
-      trigger: >
-        Management demonstrates successful price pass-through with margins
-        held or expanded.
-      action: {adjust: 0.10}
-      rationale: >
-        Pricing power is the scarce quality in this environment, and
-        demonstrating it separates winners from the sector average.
-      confidence: medium
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
-
-    - id: MANUF-PROTECT-01
-      type: modifier
-      scope: {profile: domestic_steel_or_protected}
-      trigger: >
-        Domestic producer benefiting from the protectionist environment and
-        able to push through its own price increases.
-      action: {adjust: 0.08}
-      rationale: >
-        Domestic steel producers are positioned as relative winners, able to
-        leverage protection and high prices.
-      confidence: medium
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
-
-# =============================================================================
-# Enrgy — Energy (E&P, integrated, midstream, services)
-# ~4% of events, but the cleanest and most inverted capex rule in the file
-# =============================================================================
-Enrgy:
-  label: Energy
-  regime: >
-    The exact INVERSE of the tech capex dynamic. Q1 E&P profits doubled on the
-    oil spike (WTI +77% YTD, sustained above $90/bbl), yet the sector held
-    spending discipline — 36 tracked companies set 2026 capex at $59.1bn, DOWN
-    5% from $62.5bn. Commentary is explicit that chasing the windfall with a
-    capex surge "would have been a losing bet." Discipline is rewarded here;
-    spending is punished.
-
-  rules:
-    - id: ENRGY-DISC-01
-      type: modifier
-      scope: {profile: e_and_p}
-      trigger: >
-        Capital discipline maintained or reaffirmed despite elevated cash
-        flows, with the windfall directed to distributions or buybacks.
-      action: {adjust: 0.10}
-      rationale: >
-        The sector-defining behaviour this cycle. Investors are explicitly
-        rewarding restraint over growth-chasing.
+    - id: APPAREL_AND_ACCESSORIES_2
+      trigger: Broad-based DTC and e-commerce growth accompanies lower inventory, gross-margin expansion, and raised guidance.
+      expected_move: {persists: [0.76, 0.91], accelerates: [0.85, 0.96], fades: [0.44, 0.59]}
+      rationale: Levi's 11% DTC growth, 19% e-commerce growth, and 7% inventory decline demonstrated profitable brand demand.
       confidence: high
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
+    - id: APPAREL_AND_ACCESSORIES_3
+      trigger: Growth depends on promotions or price reductions while assortment rationalization remains unfinished.
+      expected_move: {persists: [0.12, 0.32], accelerates: [0.05, 0.20], fades: [0.38, 0.54]}
+      rationale: Persistent discounting signals weak brand equity and threatens the durability of margin recovery.
+      confidence: medium_high
 
-    - id: ENRGY-DISC-02
-      type: setter
-      scope: {profile: e_and_p}
-      trigger: >
-        Capex budget raised materially to chase current strip prices.
-      action: {percentile_range: [0.15, 0.32]}
-      rationale: >
-        Direct inverse of BUSEQ-CAPEX-01 and the reason a single global capex
-        rule would be actively wrong. Breaking discipline is punished even
-        when cash flows appear to justify it.
-      confidence: high
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
-
-    - id: ENRGY-MID-01
-      type: modifier
-      scope: {profile: midstream}
-      trigger: >
-        Fee-based, inflation-protected contract structure reaffirmed with
-        stable volumes.
-      action: {adjust: 0.05}
-      rationale: >
-        Midstream cash flows have grown consistently through tariff threats,
-        geopolitical flare-ups and OPEC+ uncertainty. Stability is the
-        product being bought.
-      confidence: medium
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
-
-# =============================================================================
-# Utils — Utilities
-# ~3% of events
-# =============================================================================
-Utils:
-  label: Utilities
-  regime: >
-    The data-centre load story is real — US data-centre electricity demand is
-    projected to triple 2024-2030 (3% to 10% of total US demand, ~125 GW
-    added, 4.1% CAGR). BUT forecasts are being TRIMMED: the EIA cut its 2026
-    power generation forecast by more than a percentage point and slashed
-    expected ERCOT growth from 15.7% to 9.6%. Affordability is emerging as a
-    political constraint and utilities are visibly divided on data centres.
-    Per the paper: churn and free cash flow outweigh volume/subscriber growth
-    in this sector.
-
-  rules:
-    - id: UTILS-DC-01
-      type: modifier
-      scope: {applies_to: all}
-      trigger: >
-        Data-centre load agreement or large-load contract announced WITHOUT
-        clarity on cost allocation, rate recovery, or regulatory approval.
-      action: {adjust: -0.05}
-      rationale: >
-        A data-centre contract is no longer an automatic positive. The market
-        now asks who bears the cost and whether regulators will permit
-        recovery, with affordability looming large politically.
-      confidence: medium
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
-
-    - id: UTILS-DC-02
-      type: modifier
-      scope: {applies_to: all}
-      trigger: >
-        Large-load growth paired with a constructive rate-case outcome or
-        explicit cost-recovery mechanism.
-      action: {adjust: 0.10}
-      rationale: >
-        Resolved regulatory risk is what converts the load-growth story into
-        earnings the market will pay for.
-      confidence: medium
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
-
-    - id: UTILS-FCF-01
-      type: setter
-      scope: {applies_to: all}
-      trigger: >
-        Volume or load growth reported strong BUT free cash flow guidance is
-        not raised, or capex needs escalate.
-      action: {percentile_range: [0.25, 0.42]}
-      rationale: >
-        Defensive yield names. The market weighs free cash flow and cost
-        recovery above headline growth, and unfunded growth reads as a
-        balance-sheet demand rather than an earnings story.
-      confidence: high
-      source: koijen_levy_2026
-      evidence: {n: 0, hit_rate: null}
-
-# =============================================================================
-# Telcm — Telecommunications
-# ~2% of events
-# =============================================================================
-Telcm:
-  label: Telecommunications
-  regime: >
-    Sector "finally looks healthier" and Q2 2026 showed exactly what gets
-    rewarded. Verizon: 184k postpaid phone nets vs 106k consensus, churn down
-    6bps to 0.84%, 1H free cash flow $10.2bn vs $8.8bn. AT&T rose >3% on
-    convergence — 42% of home internet customers now also take wireless,
-    lowering churn. T-Mobile is the counter-example: EPS beat >15% and FCF
-    guidance raised, but postpaid net accounts fell 13% YoY.
-    Churn direction, FCF and convergence outrank gross subscriber adds.
-
-  rules:
-    - id: TELCM-CHURN-01
-      type: setter
-      scope: {applies_to: all}
-      trigger: >
-        Churn rises, even slightly, or free cash flow guidance is not raised —
-        regardless of strong subscriber net additions.
-      action: {percentile_range: [0.25, 0.45]}
-      rationale: >
-        Defensive yield stocks where the market fears competitive intensity
-        more than it rewards growth. High net adds are routinely ignored if
-        churn ticks up.
-      confidence: high
-      source: koijen_levy_2026
-      evidence: {n: 0, hit_rate: null}
-
-    - id: TELCM-CONV-01
-      type: modifier
-      scope: {applies_to: all}
-      trigger: >
-        Convergence metrics improve — rising share of customers taking both
-        wireless and home internet — with churn benefit explicitly attributed.
-      action: {adjust: 0.10}
-      rationale: >
-        The validated thesis of the quarter. AT&T rose over 3% on exactly this
-        combination of convergence, growth and falling churn.
-      confidence: medium
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
-
-    - id: TELCM-DECEL-01
-      type: modifier
-      scope: {applies_to: all}
-      trigger: >
-        EPS or FCF beats but subscriber net additions decelerate materially
-        year over year.
-      action: {adjust: -0.08}
-      rationale: >
-        The T-Mobile pattern: a large EPS beat and raised FCF guidance
-        alongside a 13% YoY decline in postpaid net accounts is a materially
-        weaker setup than the headline implies.
-      confidence: medium
-      source: regime_2026Q3
-      evidence: {n: 0, hit_rate: null}
-
-# =============================================================================
-# NoDur / Durbl / Chems / Other — thinner coverage
-# Together ~23% of events. No dedicated regime research yet; global rules plus
-# quarter calibration apply. Priority for the September pass if the outcomes
-# ledger shows us underperforming in these buckets.
-# =============================================================================
-NoDur:
-  label: Consumer Non-Durables
-  regime: >
-    No dedicated rules yet. Apply global rules and quarter calibration.
-    Note the consumer weakness and sticky tariff-driven pricing described in
-    the Shops regime block — staples names face the same trade-down dynamic
-    and SHOPS-PRICE-01 logic (price-led growth with volume decline) is likely
-    to transfer.
-  rules: []
-
-Durbl:
+consumer_durables:
   label: Consumer Durables
-  regime: >
-    No dedicated rules yet. Apply global rules and quarter calibration.
-    Note that durable goods prices are expected to rise 4.5% in 2026 with
-    increases sticky, against a consumer making smaller purchases — this is
-    the most exposed corner of the consumer complex.
-  rules: []
+  regime: Innovation can overcome weak discretionary demand, but housing, rates, tariffs, and unit elasticity remain major risks.
+  rules:
+    - id: CONSUMER_DURABLES_1
+      trigger: New-product innovation drives multi-category growth and an upward sales and EPS revision.
+      expected_move: {persists: [0.80, 0.94], accelerates: [0.88, 0.97], fades: [0.47, 0.62]}
+      rationale: SharkNinja's 22% sales growth and raised outlook showed that real innovation can create a replacement cycle.
+      confidence: high
+    - id: CONSUMER_DURABLES_2
+      trigger: Big-ticket orders soften because of housing turnover, financing costs, or consumer caution.
+      expected_move: {persists: [0.08, 0.25], accelerates: [0.03, 0.14], fades: [0.39, 0.54]}
+      rationale: Durable demand is unusually rate-sensitive while expected price increases compound affordability pressure.
+      confidence: high
+    - id: CONSUMER_DURABLES_3
+      trigger: Tariff refunds or temporary price increases lift EPS while underlying units and recurring margin fail to improve.
+      expected_move: {persists: [0.28, 0.45], accelerates: [0.17, 0.34], fades: [0.44, 0.58]}
+      rationale: One-time tariff benefits and accounting timing should be removed before extrapolating earnings quality.
+      confidence: medium_high
 
-Chems:
-  label: Chemicals
-  regime: >
-    No dedicated rules yet. Apply global rules and quarter calibration.
-    Highly exposed to the energy/feedstock cost shock — MANUF-MARGIN-01 logic
-    (volume beat with margin compression reads negative) is likely to transfer.
-  rules: []
+consumer_non_durables:
+  label: Consumer Non-Durables
+  regime: Volume-supported organic growth is rewarded; price-only sales and input-cost leakage are not.
+  rules:
+    - id: CONSUMER_NON_DURABLES_1
+      trigger: Organic growth is volume or concentrate-led, margins expand, and guidance rises.
+      expected_move: {persists: [0.72, 0.88], accelerates: [0.82, 0.94], fades: [0.43, 0.58]}
+      rationale: Coca-Cola's volume-supported organic growth and margin expansion showed resilient underlying demand.
+      confidence: high
+    - id: CONSUMER_NON_DURABLES_2
+      trigger: Sales rise primarily through pricing while unit volumes contract or trade-down accelerates.
+      expected_move: {persists: [0.16, 0.34], accelerates: [0.07, 0.22], fades: [0.39, 0.55]}
+      rationale: Price-only growth signals elasticity, private-label substitution, and future promotional reinvestment.
+      confidence: high
+    - id: CONSUMER_NON_DURABLES_3
+      trigger: Input inflation or distribution spending causes margin to decline despite positive volume.
+      expected_move: {persists: [0.25, 0.43], accelerates: [0.13, 0.30], fades: [0.43, 0.58]}
+      rationale: Positive volume is insufficient if oil, packaging, and tariff costs prevent earnings conversion.
+      confidence: medium_high
 
-Other:
-  label: Other
-  regime: >
-    Heterogeneous bucket (transport, hotels, services, misc). No dedicated
-    rules. Apply global rules and quarter calibration, and reason from the
-    company's actual economics rather than the industry label.
-  rules: []
+media:
+  label: Media
+  regime: Streaming monetization and franchise flywheels are rewarded; linear-ad erosion and cost-only EPS beats are punished.
+  rules:
+    - id: MEDIA_1
+      trigger: Streaming engagement, advertising, and subscription monetization accelerate together.
+      expected_move: {persists: [0.74, 0.90], accelerates: [0.84, 0.95], fades: [0.43, 0.58]}
+      rationale: Roku's beat across advertising and subscriptions showed scalable platform monetization.
+      confidence: high
+    - id: MEDIA_2
+      trigger: Linear advertising or studio revenue falls sharply even if cost cuts produce an EPS beat.
+      expected_move: {persists: [0.10, 0.29], accelerates: [0.04, 0.17], fades: [0.38, 0.53]}
+      rationale: Warner Bros. Discovery's surprise profit did not offset a 39% studio decline and 22% ad decline.
+      confidence: high
+    - id: MEDIA_3
+      trigger: A hit franchise drives measurable lift across box office, streaming, merchandise, and experiences.
+      expected_move: {persists: [0.70, 0.87], accelerates: [0.80, 0.93], fades: [0.42, 0.57]}
+      rationale: Cross-platform monetization improves content ROI and reduces dependence on a single release window.
+      confidence: high
+
+restaurants_hotels_and_leisure:
+  label: Restaurants, Hotels and Leisure
+  regime: Experiences and premium demand remain resilient, while mass-market restaurant traffic is increasingly value-sensitive.
+  rules:
+    - id: RESTAURANTS_HOTELS_AND_LEISURE_1
+      trigger: Comparable sales or RevPAR and traffic beat while full-year growth or margin guidance rises.
+      expected_move: {persists: [0.76, 0.92], accelerates: [0.85, 0.96], fades: [0.45, 0.60]}
+      rationale: Airbnb and Hyatt paired demand strength with forward confirmation rather than relying on a backward-looking beat.
+      confidence: high
+    - id: RESTAURANTS_HOTELS_AND_LEISURE_2
+      trigger: Restaurant comps are price-led with weak traffic or management pivots toward value offers.
+      expected_move: {persists: [0.12, 0.31], accelerates: [0.05, 0.19], fades: [0.39, 0.54]}
+      rationale: Promotion-dependent visits threaten restaurant-level margins and expose lower-income weakness.
+      confidence: high
+    - id: RESTAURANTS_HOTELS_AND_LEISURE_3
+      trigger: Premium, international, or event demand offsets lower-income domestic weakness with stable margins.
+      expected_move: {persists: [0.65, 0.83], accelerates: [0.75, 0.89], fades: [0.38, 0.54]}
+      rationale: Consumer demand is bifurcated rather than uniformly weak, favoring affluent and international exposure.
+      confidence: medium_high
+
+retail:
+  label: Retail
+  regime: Traffic, units, basket quality, value positioning, and inventory discipline outrank nominal sales growth.
+  rules:
+    - id: RETAIL_1
+      trigger: Traffic, transactions, or units weaken and guidance falls even where price or mix preserves sales.
+      expected_move: {persists: [0.05, 0.20], accelerates: [0.01, 0.10], fades: [0.36, 0.51]}
+      rationale: Paycheck-timed trips and smaller baskets make unit weakness a leading indicator of further pressure.
+      confidence: high
+    - id: RETAIL_2
+      trigger: Share gains from value positioning accompany disciplined inventory and stable gross margin.
+      expected_move: {persists: [0.70, 0.87], accelerates: [0.80, 0.93], fades: [0.41, 0.56]}
+      rationale: Inventory discipline distinguishes genuine share gains from promotions or channel stuffing.
+      confidence: high
+    - id: RETAIL_3
+      trigger: Growth relies on tax-refund timing, BNPL usage, or promotion rather than repeatable traffic and units.
+      expected_move: {persists: [0.24, 0.43], accelerates: [0.13, 0.29], fades: [0.42, 0.57]}
+      rationale: Borrowing- or timing-supported demand is less persistent and creates difficult comparisons.
+      confidence: medium_high
+
+services_non_financial:
+  label: Services (Non-Financial)
+  regime: Measurable AI productivity and recurring demand are rewarded; price-led revenue and weak utilization are discounted.
+  rules:
+    - id: SERVICES_NON_FINANCIAL_1
+      trigger: AI or self-service automation improves conversion or resolution and flows into margin or guidance.
+      expected_move: {persists: [0.72, 0.89], accelerates: [0.82, 0.94], fades: [0.40, 0.55]}
+      rationale: Airbnb's 45% automated issue resolution illustrates monetized operating leverage rather than AI narrative.
+      confidence: medium_high
+    - id: SERVICES_NON_FINANCIAL_2
+      trigger: Bookings or utilization weakens among lower-income customers and forward demand is reduced.
+      expected_move: {persists: [0.10, 0.28], accelerates: [0.04, 0.17], fades: [0.38, 0.53]}
+      rationale: Discretionary services have little inventory cushion, so weakening bookings rapidly create labor deleverage.
+      confidence: medium_high
+    - id: SERVICES_NON_FINANCIAL_3
+      trigger: Revenue beats through price or pass-through fees while productivity, retention, or recurring bookings deteriorate.
+      expected_move: {persists: [0.25, 0.44], accelerates: [0.14, 0.30], fades: [0.43, 0.58]}
+      rationale: Nominal service revenue is low quality when utilization and retention weaken.
+      confidence: medium
+
+transportation:
+  label: Transportation
+  regime: Fuel, unit revenue, premium mix, and capacity discipline determine whether record revenue converts into earnings.
+  rules:
+    - id: TRANSPORTATION_1
+      trigger: Fuel pressure rises materially and EPS guidance is cut despite healthy revenue.
+      expected_move: {persists: [0.07, 0.24], accelerates: [0.02, 0.13], fades: [0.38, 0.53]}
+      rationale: American Airlines' record revenue did not offset a fuel-driven earnings outlook cut.
+      confidence: high
+    - id: TRANSPORTATION_2
+      trigger: Yield, RASM, and premium revenue outgrow capacity, enabling higher EPS guidance despite fuel inflation.
+      expected_move: {persists: [0.76, 0.91], accelerates: [0.85, 0.96], fades: [0.45, 0.60]}
+      rationale: United's unit-revenue strength supported a guide raise despite nearly $6 billion of additional fuel cost.
+      confidence: high
+    - id: TRANSPORTATION_3
+      trigger: Capacity expands without unit-revenue improvement or management discounts to fill seats.
+      expected_move: {persists: [0.14, 0.34], accelerates: [0.06, 0.21], fades: [0.40, 0.55]}
+      rationale: Capacity is constructive only when yield and margins hold.
+      confidence: high
+
+other_consumer_products_and_services:
+  label: Other Consumer Products and Services
+  regime: Innovation-led organic demand matters more than price reversals, acquisitions, refunds, or event-driven growth.
+  rules:
+    - id: OTHER_CONSUMER_PRODUCTS_AND_SERVICES_1
+      trigger: Innovation drives demand across several categories and management raises revenue and EPS guidance.
+      expected_move: {persists: [0.76, 0.92], accelerates: [0.85, 0.96], fades: [0.44, 0.59]}
+      rationale: Broad new-product adoption is strong evidence that growth is company-specific rather than macro-driven.
+      confidence: high
+    - id: OTHER_CONSUMER_PRODUCTS_AND_SERVICES_2
+      trigger: Management reverses price increases or adds promotions because consumers resist tariff-driven pricing.
+      expected_move: {persists: [0.10, 0.29], accelerates: [0.04, 0.17], fades: [0.38, 0.53]}
+      rationale: Price reversals combine lower realization with inventory and markdown risk.
+      confidence: high
+    - id: OTHER_CONSUMER_PRODUCTS_AND_SERVICES_3
+      trigger: Reported growth is acquisition-, refund-, or event-driven while the legacy business contracts.
+      expected_move: {persists: [0.25, 0.45], accelerates: [0.14, 0.31], fades: [0.43, 0.58]}
+      rationale: Temporary and inorganic effects should be stripped out before extrapolating earnings.
+      confidence: medium_high
+
+energy_equipment:
+  label: Energy Equipment
+  regime: Contracted backlog and aftermarket mix are favored over speculative capacity built for the oil spike.
+  rules:
+    - id: ENERGY_EQUIPMENT_1
+      trigger: Orders and backlog improve without speculative supplier capacity expansion.
+      expected_move: {persists: [0.70, 0.86], accelerates: [0.79, 0.92], fades: [0.39, 0.54]}
+      rationale: E&P customers are preserving capital discipline, favoring suppliers with firm commitments.
+      confidence: medium_high
+    - id: ENERGY_EQUIPMENT_2
+      trigger: Capex or inventory is raised ahead of firm customer commitments.
+      expected_move: {persists: [0.10, 0.26], accelerates: [0.04, 0.15], fades: [0.38, 0.53]}
+      rationale: Suppliers betting on an E&P spending boom risk overcapacity because tracked upstream capex remains lower year over year.
+      confidence: high
+    - id: ENERGY_EQUIPMENT_3
+      trigger: Pricing and recurring aftermarket mix offset steel, freight, and labor inflation.
+      expected_move: {persists: [0.72, 0.88], accelerates: [0.81, 0.93], fades: [0.41, 0.56]}
+      rationale: Service mix and price-cost execution make margin improvement more durable than one-time shipments.
+      confidence: medium_high
+
+exploration_production_and_refining:
+  label: Exploration, Production and Refining
+  regime: Windfall cash return and operating gains are rewarded; peak-cycle capex expansion is punished.
+  rules:
+    - id: EXPLORATION_PRODUCTION_AND_REFINING_1
+      trigger: Oil or refining windfall is returned through buybacks or dividends while capex stays flat or falls.
+      expected_move: {persists: [0.78, 0.92], accelerates: [0.86, 0.96], fades: [0.46, 0.60]}
+      rationale: Capital discipline is the sector's clearest preference; Exxon paired $17.2 billion of FCF with $9.4 billion of distributions.
+      confidence: high
+    - id: EXPLORATION_PRODUCTION_AND_REFINING_2
+      trigger: Capex rises to chase current prices without commensurate low-cost production or contracted returns.
+      expected_move: {persists: [0.06, 0.22], accelerates: [0.02, 0.11], fades: [0.38, 0.53]}
+      rationale: Large multi-year commitments raise peak-cycle risk and reverse the industry's successful restraint.
+      confidence: high
+    - id: EXPLORATION_PRODUCTION_AND_REFINING_3
+      trigger: Production or throughput guidance rises while unit costs and capex remain controlled.
+      expected_move: {persists: [0.74, 0.90], accelerates: [0.83, 0.95], fades: [0.43, 0.58]}
+      rationale: Operational gains at ConocoPhillips and Chevron are more persistent than commodity-price beats alone.
+      confidence: high
+
+energy_services:
+  label: Energy Services
+  regime: International and offshore backlog plus service intensity matter more than assumptions of a U.S. shale rebound.
+  rules:
+    - id: ENERGY_SERVICES_1
+      trigger: International or offshore backlog and pricing improve while North American activity remains disciplined.
+      expected_move: {persists: [0.70, 0.86], accelerates: [0.79, 0.92], fades: [0.39, 0.54]}
+      rationale: Contracted activity is more durable than a spot-driven U.S. capex forecast.
+      confidence: medium_high
+    - id: ENERGY_SERVICES_2
+      trigger: Guidance assumes sharply higher U.S. rigs or completions or adds capacity without customer commitments.
+      expected_move: {persists: [0.08, 0.24], accelerates: [0.03, 0.13], fades: [0.37, 0.52]}
+      rationale: Tracked E&P capital investment is down 5% in 2026 despite higher oil.
+      confidence: high
+    - id: ENERGY_SERVICES_3
+      trigger: Service intensity, utilization, and pricing lift margins even on flat rig counts.
+      expected_move: {persists: [0.68, 0.84], accelerates: [0.77, 0.90], fades: [0.38, 0.53]}
+      rationale: Earnings growth without a volume boom validates technology mix and pricing power.
+      confidence: medium
+
+utilities:
+  label: Utilities
+  regime: Data-center load is real, but regulatory cost recovery and affordability outrank raw demand.
+  rules:
+    - id: UTILITIES_1
+      trigger: A data-center load contract includes customer funding, minimum payments, and explicit regulatory recovery.
+      expected_move: {persists: [0.74, 0.88], accelerates: [0.82, 0.93], fades: [0.44, 0.58]}
+      rationale: Long-duration take-or-pay terms convert load growth into financeable earnings and limit stranded-asset risk.
+      confidence: high
+    - id: UTILITIES_2
+      trigger: Data-center capex or load forecasts rise without cost-allocation clarity or with concentration risk.
+      expected_move: {persists: [0.10, 0.28], accelerates: [0.04, 0.17], fades: [0.39, 0.54]}
+      rationale: EIA forecast cuts and political affordability concerns make unprotected capex a liability.
+      confidence: high
+    - id: UTILITIES_3
+      trigger: A favorable rate case supports reaffirmed EPS and FCF growth despite fuel inflation and higher rates.
+      expected_move: {persists: [0.68, 0.84], accelerates: [0.77, 0.90], fades: [0.36, 0.52]}
+      rationale: Multi-year regulatory recovery determines whether demand and capex create shareholder value.
+      confidence: high
+
+other_energy:
+  label: Other Energy
+  regime: Fee-based cash flow, contracted projects, and balance-sheet-safe distributions are favored.
+  rules:
+    - id: OTHER_ENERGY_1
+      trigger: Fee-based or inflation-linked EBITDA guidance rises without material commodity sensitivity.
+      expected_move: {persists: [0.72, 0.88], accelerates: [0.81, 0.93], fades: [0.42, 0.57]}
+      rationale: Take-or-pay midstream cash flows continue to compound through oil and geopolitical volatility.
+      confidence: high
+    - id: OTHER_ENERGY_2
+      trigger: An acquisition or project is supported by long-term contracts and remains leverage-neutral or quickly accretive.
+      expected_move: {persists: [0.64, 0.82], accelerates: [0.74, 0.88], fades: [0.34, 0.50]}
+      rationale: Williams' contracted LNG-linked growth illustrates why financing discipline matters under unstable rates.
+      confidence: medium_high
+    - id: OTHER_ENERGY_3
+      trigger: FCF converts into distribution growth or buybacks without sacrificing balance-sheet targets.
+      expected_move: {persists: [0.70, 0.86], accelerates: [0.79, 0.92], fades: [0.40, 0.55]}
+      rationale: Formulaic cash returns are preferred to speculative reinvestment in the current energy regime.
+      confidence: high
+
+capital_markets_institutions:
+  label: Capital Markets/Institutions
+  regime: Forward pipelines and cash realization outrank episodic trading revenue and accounting marks.
+  rules:
+    - id: CAPITAL_MARKETS_INSTITUTIONS_1
+      trigger: Investment-banking fees and announced pipelines accelerate without a material compensation-ratio increase.
+      expected_move: {persists: [0.72, 0.90], accelerates: [0.82, 0.95], fades: [0.42, 0.57]}
+      rationale: M&A and underwriting backlogs reveal durable operating leverage beyond reported fees.
+      confidence: high
+    - id: CAPITAL_MARKETS_INSTITUTIONS_2
+      trigger: Trading beats on volatility while client activity, financing balances, or wallet share weaken.
+      expected_move: {persists: [0.30, 0.46], accelerates: [0.19, 0.35], fades: [0.44, 0.57]}
+      rationale: High dispersion supports trading temporarily but does not prove franchise gains.
+      confidence: medium
+    - id: CAPITAL_MARKETS_INSTITUTIONS_3
+      trigger: Private-markets fundraising, realizations, fee-related earnings, or distributable earnings miss while marks remain optimistic.
+      expected_move: {persists: [0.08, 0.24], accelerates: [0.03, 0.13], fades: [0.38, 0.52]}
+      rationale: Weak cash realization exposes a gap between marks and fee-bearing or distributable value.
+      confidence: high
+
+commercial_banks:
+  label: Commercial Banks
+  regime: Deposit pricing, NII trajectory, and forward credit costs dominate EPS and routine capital return.
+  rules:
+    - id: COMMERCIAL_BANKS_1
+      trigger: NII or NIM guidance rises because deposit betas and funding costs stabilize rather than solely on a rate assumption.
+      expected_move: {persists: [0.70, 0.88], accelerates: [0.80, 0.93], fades: [0.40, 0.55]}
+      rationale: Industry NIM fell from 3.30% to 3.22%, making funding normalization the key proof point.
+      confidence: high
+    - id: COMMERCIAL_BANKS_2
+      trigger: Provisions, criticized loans, or lower-FICO stress rise despite a current-quarter EPS beat.
+      expected_move: {persists: [0.06, 0.22], accelerates: [0.02, 0.11], fades: [0.37, 0.52]}
+      rationale: Provision builds are forward warnings and matter more than current charge-offs in a benign broad-credit backdrop.
+      confidence: high
+    - id: COMMERCIAL_BANKS_3
+      trigger: Loan growth slows and deposit costs stay sticky while management relies on buybacks to support EPS.
+      expected_move: {persists: [0.20, 0.38], accelerates: [0.10, 0.26], fades: [0.42, 0.56]}
+      rationale: Bank buybacks are routine capital maintenance, not a substitute for weakening spread income.
+      confidence: high
+
+insurance:
+  label: Insurance
+  regime: Underlying underwriting profitability and reserve discipline outrank catastrophe noise and volume growth.
+  rules:
+    - id: INSURANCE_1
+      trigger: The underlying or accident-year combined ratio beats while premium growth remains adequate.
+      expected_move: {persists: [0.76, 0.92], accelerates: [0.85, 0.96], fades: [0.45, 0.60]}
+      rationale: Chubb and AIG showed that durable underwriting profitability is valued above catastrophe-distorted results.
+      confidence: high
+    - id: INSURANCE_2
+      trigger: Catastrophe losses rise but pricing, reserves, and underlying loss trends remain intact.
+      expected_move: {persists: [0.46, 0.62], accelerates: [0.35, 0.51], fades: [0.55, 0.68]}
+      rationale: Investors look through truly one-off catastrophe variance when core underwriting persists.
+      confidence: high
+    - id: INSURANCE_3
+      trigger: Premium growth is obtained by relaxing discipline in softening commercial lines.
+      expected_move: {persists: [0.10, 0.28], accelerates: [0.04, 0.17], fades: [0.39, 0.54]}
+      rationale: Growth below adequate pricing implies adverse future loss development.
+      confidence: high
+
+other_financial_services:
+  label: Other Financial Services
+  regime: Transaction quality and user durability matter more than nominal volume or cost-led fintech beats.
+  rules:
+    - id: OTHER_FINANCIAL_SERVICES_1
+      trigger: Payment and cross-border volumes remain resilient with stable take rates and credit losses.
+      expected_move: {persists: [0.68, 0.84], accelerates: [0.77, 0.90], fades: [0.39, 0.54]}
+      rationale: Real transaction growth is stronger evidence of consumer health than inflation-lifted nominal spending.
+      confidence: medium_high
+    - id: OTHER_FINANCIAL_SERVICES_2
+      trigger: Fintech revenue beats through transaction-margin expansion while active accounts or branded share deteriorate.
+      expected_move: {persists: [0.16, 0.34], accelerates: [0.07, 0.22], fades: [0.40, 0.55]}
+      rationale: Cost-led earnings without user or share growth have low persistence.
+      confidence: high
+    - id: OTHER_FINANCIAL_SERVICES_3
+      trigger: Consumer lenders raise reserves or funding-cost assumptions for lower-FICO borrowers.
+      expected_move: {persists: [0.05, 0.20], accelerates: [0.01, 0.10], fades: [0.36, 0.51]}
+      rationale: Digital and specialty lenders remain most exposed to the consumer-credit pocket still deteriorating.
+      confidence: high
+
+healthcare_devices_and_supplies:
+  label: Healthcare Devices and Supplies
+  regime: Procedure demand and installed-base recurring revenue are strong, but tariffs and components can erase volume upside.
+  rules:
+    - id: HEALTHCARE_DEVICES_AND_SUPPLIES_1
+      trigger: Procedure volumes stay strong and organic-sales guidance rises without gross-margin sacrifice.
+      expected_move: {persists: [0.70, 0.88], accelerates: [0.80, 0.93], fades: [0.41, 0.56]}
+      rationale: Procedure growth plus price-cost control supports multi-quarter medtech earnings persistence.
+      confidence: high
+    - id: HEALTHCARE_DEVICES_AND_SUPPLIES_2
+      trigger: Sales beat through volume but tariff, freight, component, or memory costs reduce margin guidance.
+      expected_move: {persists: [0.14, 0.32], accelerates: [0.06, 0.20], fades: [0.40, 0.55]}
+      rationale: High dispersion makes margin misses more important than device volume beats.
+      confidence: medium_high
+    - id: HEALTHCARE_DEVICES_AND_SUPPLIES_3
+      trigger: Product adoption, installed-base placements, and recurring consumables accelerate together.
+      expected_move: {persists: [0.78, 0.94], accelerates: [0.87, 0.97], fades: [0.46, 0.61]}
+      rationale: A larger installed base validates the product cycle and creates persistent recurring revenue.
+      confidence: high
+
+healthcare_services:
+  label: Healthcare Services
+  regime: Forward medical costs, labor productivity, and membership quality swamp backward-looking EPS.
+  rules:
+    - id: HEALTHCARE_SERVICES_1
+      trigger: Medical-loss ratio or second-half utilization and risk-adjustment guidance deteriorates despite an EPS beat.
+      expected_move: {persists: [0.04, 0.20], accelerates: [0.01, 0.09], fades: [0.35, 0.50]}
+      rationale: Oscar Health showed that forward claims risk can overwhelm a large reported beat.
+      confidence: high
+    - id: HEALTHCARE_SERVICES_2
+      trigger: Admissions and procedures rise while labor expense per admission and agency staffing fall.
+      expected_move: {persists: [0.72, 0.88], accelerates: [0.81, 0.93], fades: [0.41, 0.56]}
+      rationale: Volume plus labor productivity creates durable hospital EBITDA leverage.
+      confidence: high
+    - id: HEALTHCARE_SERVICES_3
+      trigger: Membership growth depends on aggressive pricing or favorable risk selection while utilization assumptions worsen.
+      expected_move: {persists: [0.10, 0.28], accelerates: [0.04, 0.17], fades: [0.39, 0.54]}
+      rationale: Low-quality membership can reverse through risk adjustment and later claims.
+      confidence: high
+
+healthcare_technology_systems:
+  label: Healthcare Technology Systems
+  regime: Contracted recurring growth and measurable AI workflow savings outrank services-heavy reported revenue.
+  rules:
+    - id: HEALTHCARE_TECHNOLOGY_SYSTEMS_1
+      trigger: Bookings, backlog, and recurring subscriptions accelerate while implementation cycles shorten.
+      expected_move: {persists: [0.72, 0.88], accelerates: [0.81, 0.93], fades: [0.41, 0.56]}
+      rationale: Faster conversion of provider demand into recurring revenue improves both visibility and cash efficiency.
+      confidence: medium_high
+    - id: HEALTHCARE_TECHNOLOGY_SYSTEMS_2
+      trigger: AI produces paid module expansion, measurable adoption, or documented provider workflow savings.
+      expected_move: {persists: [0.75, 0.92], accelerates: [0.85, 0.96], fades: [0.43, 0.58]}
+      rationale: The market now demands monetization proof rather than generic AI positioning.
+      confidence: high
+    - id: HEALTHCARE_TECHNOLOGY_SYSTEMS_3
+      trigger: Revenue beats on services or implementation work while ARR, retention, or bookings slow.
+      expected_move: {persists: [0.12, 0.30], accelerates: [0.05, 0.18], fades: [0.39, 0.54]}
+      rationale: Low-margin services cannot offset deterioration in the recurring software engine.
+      confidence: high
+
+pharmaceuticals_and_biotechnology:
+  label: Pharmaceuticals and Biotechnology
+  regime: GLP-1 volume versus price concessions, pipeline replacement, and binary biotech catalysts dominate.
+  rules:
+    - id: PHARMACEUTICALS_AND_BIOTECHNOLOGY_1
+      trigger: GLP-1 volume and access gains exceed government or DTC price concessions and guidance rises.
+      expected_move: {persists: [0.76, 0.92], accelerates: [0.85, 0.96], fades: [0.44, 0.59]}
+      rationale: Lilly and Novo reactions show that the market is explicitly adjudicating volume against a $2-3 billion pricing drag.
+      confidence: high
+    - id: PHARMACEUTICALS_AND_BIOTECHNOLOGY_2
+      trigger: A pivotal readout, regulatory decision, or launch materially changes probability-adjusted pipeline value.
+      expected_move: {persists: [0.82, 0.98], accelerates: [0.91, 0.99], fades: [0.40, 0.58]}
+      rationale: For pre-profit biotech, a single catalyst can overwhelm the financial statements and belongs in the tails.
+      confidence: high
+    - id: PHARMACEUTICALS_AND_BIOTECHNOLOGY_3
+      trigger: A current-product beat is offset by patent erosion without replacement-pipeline progress.
+      expected_move: {persists: [0.08, 0.26], accelerates: [0.03, 0.15], fades: [0.38, 0.53]}
+      rationale: Investors capitalize replacement cash flows, not the final strong quarters before generic competition.
+      confidence: high
+
+other_healthcare:
+  label: Other Healthcare
+  regime: Orders, funded backlog conversion, reimbursement, and mix determine whether activity becomes durable cash flow.
+  rules:
+    - id: OTHER_HEALTHCARE_1
+      trigger: Life-science tools orders recover with book-to-bill above one and raised guidance.
+      expected_move: {persists: [0.70, 0.88], accelerates: [0.80, 0.93], fades: [0.40, 0.55]}
+      rationale: Order recovery confirms that the prolonged inventory and funding correction is ending.
+      confidence: high
+    - id: OTHER_HEALTHCARE_2
+      trigger: CRO or CDMO backlog rises while cancellations or delayed starts reduce conversion guidance.
+      expected_move: {persists: [0.12, 0.30], accelerates: [0.05, 0.18], fades: [0.39, 0.54]}
+      rationale: Backlog has low value when projects are unfunded, deferred, or cancelled.
+      confidence: medium_high
+    - id: OTHER_HEALTHCARE_3
+      trigger: Diagnostics volume rises with stable reimbursement and better mix rather than low-margin pass-through testing.
+      expected_move: {persists: [0.66, 0.84], accelerates: [0.76, 0.90], fades: [0.38, 0.53]}
+      rationale: Reimbursement and mix determine whether testing volume converts into persistent earnings.
+      confidence: medium
+
+communications_and_networking:
+  label: Communications and Networking
+  regime: AI networking is a bottleneck, but quantified orders, diversified customers, and margin preservation are required.
+  rules:
+    - id: COMMUNICATIONS_AND_NETWORKING_1
+      trigger: AI and data-center networking revenue, orders, and guidance beat while margins hold.
+      expected_move: {persists: [0.80, 0.95], accelerates: [0.89, 0.98], fades: [0.48, 0.63]}
+      rationale: Arista's 38% growth and above-consensus guide demonstrated direct, monetized infrastructure demand.
+      confidence: high
+    - id: COMMUNICATIONS_AND_NETWORKING_2
+      trigger: Revenue beats while hyperscaler concentration rises or orders signal customer digestion.
+      expected_move: {persists: [0.18, 0.38], accelerates: [0.08, 0.24], fades: [0.42, 0.57]}
+      rationale: Customer concentration and lumpiness reduce the persistence of otherwise strong AI revenue.
+      confidence: medium_high
+    - id: COMMUNICATIONS_AND_NETWORKING_3
+      trigger: Backlog normalizes and product growth slows without offsetting security or subscription growth.
+      expected_move: {persists: [0.12, 0.30], accelerates: [0.05, 0.18], fades: [0.39, 0.54]}
+      rationale: Post-shortage backlog conversion is not recurring demand.
+      confidence: high
+
+computer_hardware:
+  label: Computer Hardware
+  regime: AI-server growth must convert to cash and margin while memory inflation pressures assemblers.
+  rules:
+    - id: COMPUTER_HARDWARE_1
+      trigger: AI-server revenue and backlog accelerate with improving cash conversion and margin guidance.
+      expected_move: {persists: [0.72, 0.90], accelerates: [0.82, 0.95], fades: [0.42, 0.57]}
+      rationale: Investors reward AI revenue only when it produces earnings and cash rather than working-capital consumption.
+      confidence: high
+    - id: COMPUTER_HARDWARE_2
+      trigger: DRAM or NAND inflation and shortages reduce device gross margin and cannot be passed through.
+      expected_move: {persists: [0.05, 0.22], accelerates: [0.01, 0.11], fades: [0.37, 0.52]}
+      rationale: Hardware assemblers sit on the losing side of memory inflation.
+      confidence: high
+    - id: COMPUTER_HARDWARE_3
+      trigger: Revenue is price-led while unit shipments, channel inventory, or end demand weaken.
+      expected_move: {persists: [0.14, 0.32], accelerates: [0.06, 0.20], fades: [0.40, 0.55]}
+      rationale: Price increases mask elasticity and create difficult comparisons.
+      confidence: high
+
+semiconductors:
+  label: Semiconductors
+  regime: The strongest tape carries the highest bar; guidance magnitude, memory scarcity, and cyclical inflections dominate.
+  rules:
+    - id: SEMICONDUCTORS_1
+      trigger: AI, HBM, or custom-accelerator guidance exceeds elevated consensus and implies sequential acceleration.
+      expected_move: {persists: [0.84, 0.97], accelerates: [0.92, 0.99], fades: [0.48, 0.64]}
+      rationale: Broadcom showed that even rapid AI growth can sell off when forward guidance misses a very high bar.
+      confidence: high
+    - id: SEMICONDUCTORS_2
+      trigger: Memory pricing, long-term contracts, and HBM mix rise without an offsetting supply response.
+      expected_move: {persists: [0.82, 0.96], accelerates: [0.90, 0.99], fades: [0.47, 0.62]}
+      rationale: Persistent DRAM, NAND, and HBM scarcity makes producer price-mix gains unusually durable.
+      confidence: high
+    - id: SEMICONDUCTORS_3
+      trigger: Analog or cyclical inventory correction ends with simultaneous bookings, utilization, and guide improvement.
+      expected_move: {persists: [0.74, 0.92], accelerates: [0.84, 0.96], fades: [0.42, 0.57]}
+      rationale: A synchronized inflection is stronger evidence than a single quarter's channel refill.
+      confidence: high
+
+it_services:
+  label: IT Services
+  regime: Forward bookings and value-capturing AI contracts outrank backlog revenue and cost-only margin beats.
+  rules:
+    - id: IT_SERVICES_1
+      trigger: Bookings and book-to-bill improve with stable pricing and utilization.
+      expected_move: {persists: [0.68, 0.86], accelerates: [0.78, 0.92], fades: [0.39, 0.54]}
+      rationale: Forward bookings confirm that discretionary transformation spending is returning.
+      confidence: medium_high
+    - id: IT_SERVICES_2
+      trigger: Generative AI demand cannibalizes billable headcount faster than outcome-based revenue scales.
+      expected_move: {persists: [0.12, 0.30], accelerates: [0.05, 0.18], fades: [0.39, 0.54]}
+      rationale: Productivity accrues to customers unless contract structure lets the provider capture value.
+      confidence: high
+    - id: IT_SERVICES_3
+      trigger: Margins beat only through layoffs or subcontractor cuts while bookings and headcount decline.
+      expected_move: {persists: [0.20, 0.40], accelerates: [0.10, 0.27], fades: [0.42, 0.57]}
+      rationale: Cost takeout has low persistence if the demand engine remains weak.
+      confidence: high
+
+software:
+  label: Software
+  regime: Seat-based models are structurally de-rating; retention, usage pricing, cRPO, and monetized AI matter most.
+  rules:
+    - id: SOFTWARE_1
+      trigger: Seat counts or net retention deteriorate even if EPS and revenue beat.
+      expected_move: {persists: [0.04, 0.20], accelerates: [0.01, 0.09], fades: [0.35, 0.50]}
+      rationale: AI-enabled customers are accomplishing more with fewer licenses, making seat compression structural.
+      confidence: high
+    - id: SOFTWARE_2
+      trigger: Usage or outcome pricing produces accelerating cRPO, NRR, large deals, or AI ACV.
+      expected_move: {persists: [0.78, 0.94], accelerates: [0.87, 0.98], fades: [0.46, 0.61]}
+      rationale: ServiceNow's cRPO and AI ACV showed how monetized AI can offset seat pressure.
+      confidence: high
+    - id: SOFTWARE_3
+      trigger: Reported results beat but billings, cRPO, or guidance merely meet an elevated bar.
+      expected_move: {persists: [0.10, 0.30], accelerates: [0.04, 0.18], fades: [0.39, 0.54]}
+      rationale: Datadog's reaction showed that in-line forward metrics can read as a miss in this tape.
+      confidence: high
+
+other_information_technology:
+  label: Other Information Technology
+  regime: Quantified AI monetization and efficient recurring growth are rewarded; unproven capex is penalized.
+  rules:
+    - id: OTHER_INFORMATION_TECHNOLOGY_1
+      trigger: AI infrastructure, security, or platform demand accelerates revenue and guidance with larger customer cohorts.
+      expected_move: {persists: [0.78, 0.94], accelerates: [0.87, 0.98], fades: [0.46, 0.61]}
+      rationale: Cloudflare showed that quantified monetization differentiates durable beneficiaries from generic AI claims.
+      confidence: high
+    - id: OTHER_INFORMATION_TECHNOLOGY_2
+      trigger: AI capex rises materially without revenue visibility, funding clarity, or FCF support.
+      expected_move: {persists: [0.08, 0.26], accelerates: [0.03, 0.15], fades: [0.38, 0.53]}
+      rationale: This quarter reverses the old response in which AI spending was automatically bullish.
+      confidence: high
+    - id: OTHER_INFORMATION_TECHNOLOGY_3
+      trigger: ARR and remaining obligations accelerate while sales efficiency improves.
+      expected_move: {persists: [0.72, 0.90], accelerates: [0.82, 0.95], fades: [0.42, 0.57]}
+      rationale: Mission-critical recurring demand plus improving acquisition economics supports durable growth.
+      confidence: medium_high
+
+agriculture:
+  label: Agriculture
+  regime: Channel inventory and farmer economics matter more than price-led revenue in a high-energy, high-rate environment.
+  rules:
+    - id: AGRICULTURE_1
+      trigger: Equipment or input volumes stabilize and dealer inventories fall without discount-driven margin damage.
+      expected_move: {persists: [0.66, 0.82], accelerates: [0.76, 0.89], fades: [0.38, 0.53]}
+      rationale: Inventory clearing and retail orders above shipments are the clearest evidence of a cyclical trough.
+      confidence: medium
+    - id: AGRICULTURE_2
+      trigger: Sales beat is price-led while farmer demand, acreage economics, and volumes weaken.
+      expected_move: {persists: [0.12, 0.30], accelerates: [0.05, 0.18], fades: [0.39, 0.54]}
+      rationale: Energy, fertilizer, and financing costs pressure farm budgets, making price-only growth low quality.
+      confidence: medium_high
+    - id: AGRICULTURE_3
+      trigger: Production or dealer shipments are cut faster than end demand, protecting working capital and margins.
+      expected_move: {persists: [0.58, 0.76], accelerates: [0.68, 0.84], fades: [0.31, 0.47]}
+      rationale: Disciplined destocking is more valuable than defending near-term revenue.
+      confidence: medium
+
+chemicals_and_gases:
+  label: Chemicals and Gases
+  regime: Price-cost, physical volume, and contracted project backlog separate durable earnings from commodity inflation.
+  rules:
+    - id: CHEMICALS_AND_GASES_1
+      trigger: Pricing and productivity exceed energy and feedstock inflation while volumes remain stable or positive.
+      expected_move: {persists: [0.74, 0.88], accelerates: [0.82, 0.93], fades: [0.43, 0.58]}
+      rationale: Linde paired price and volume growth with a 29.5% adjusted operating margin.
+      confidence: high
+    - id: CHEMICALS_AND_GASES_2
+      trigger: Sales growth is overwhelmingly price-led while volume declines and maintenance costs rise.
+      expected_move: {persists: [0.16, 0.34], accelerates: [0.07, 0.22], fades: [0.40, 0.55]}
+      rationale: Dow's 20% local-price increase against lower volume illustrates why nominal sales can mislead.
+      confidence: high
+    - id: CHEMICALS_AND_GASES_3
+      trigger: Electronics, AI, manufacturing, or energy backlog supports a guide raise without disproportionate capex.
+      expected_move: {persists: [0.70, 0.86], accelerates: [0.79, 0.92], fades: [0.40, 0.55]}
+      rationale: Contracted, take-or-pay projects create more valuable growth than uncommitted capacity.
+      confidence: high
+
+construction_non_wood:
+  label: Construction (Non-Wood)
+  regime: Infrastructure and data-center demand are healthy, but price-cost and funded-backlog quality determine value.
+  rules:
+    - id: CONSTRUCTION_NON_WOOD_1
+      trigger: North American volumes and backlog rise while price-cost remains favorable.
+      expected_move: {persists: [0.78, 0.92], accelerates: [0.86, 0.96], fades: [0.46, 0.60]}
+      rationale: Caterpillar's construction growth and margin expansion validate real demand plus operating leverage.
+      confidence: high
+    - id: CONSTRUCTION_NON_WOOD_2
+      trigger: Revenue grows but margins compress from steel, cement, energy, freight, or tariffs.
+      expected_move: {persists: [0.08, 0.24], accelerates: [0.03, 0.13], fades: [0.37, 0.52]}
+      rationale: Healthy demand makes failure to pass through costs appear company-specific.
+      confidence: high
+    - id: CONSTRUCTION_NON_WOOD_3
+      trigger: Backlog rises while cancellations, financing delays, or working-capital use worsen.
+      expected_move: {persists: [0.20, 0.40], accelerates: [0.10, 0.27], fades: [0.42, 0.57]}
+      rationale: Funded public and infrastructure work deserves more credit than speculative commercial backlog.
+      confidence: medium_high
+
+containers_and_packaging:
+  label: Containers and Packaging
+  regime: Box-price realization and synergy conversion must offset soft volume, maintenance, and recovered-fiber costs.
+  rules:
+    - id: CONTAINERS_AND_PACKAGING_1
+      trigger: Containerboard or paper price increases flow into box pricing before fiber and energy costs rise.
+      expected_move: {persists: [0.70, 0.86], accelerates: [0.79, 0.92], fades: [0.40, 0.55]}
+      rationale: Closing International Paper's lag between paper and box pricing is the central earnings lever.
+      confidence: high
+    - id: CONTAINERS_AND_PACKAGING_2
+      trigger: Price-led sales are offset by soft volumes, maintenance, or conversion costs and lower segment profit.
+      expected_move: {persists: [0.08, 0.24], accelerates: [0.03, 0.13], fades: [0.37, 0.52]}
+      rationale: Higher nominal pricing has little value if box demand and operating profit deteriorate.
+      confidence: high
+    - id: CONTAINERS_AND_PACKAGING_3
+      trigger: Acquisition or restructuring synergies are realized in cash and margin while service levels hold.
+      expected_move: {persists: [0.64, 0.82], accelerates: [0.74, 0.88], fades: [0.35, 0.51]}
+      rationale: A consolidating sector is being judged on realized savings rather than announced targets.
+      confidence: medium_high
+
+forestry:
+  label: Forestry
+  regime: Price plus shipment recovery is required; disciplined curtailments are preferred to capex into soft demand.
+  rules:
+    - id: FORESTRY_1
+      trigger: Lumber or pulp realizations improve with stable shipments and lower conversion costs.
+      expected_move: {persists: [0.68, 0.84], accelerates: [0.77, 0.90], fades: [0.39, 0.54]}
+      rationale: Price and volume together confirm tightening; price alone may reflect tariffs or curtailment.
+      confidence: medium
+    - id: FORESTRY_2
+      trigger: Higher prices accompany falling volume, mill downtime, and fixed-cost under-absorption.
+      expected_move: {persists: [0.10, 0.28], accelerates: [0.04, 0.17], fades: [0.39, 0.54]}
+      rationale: Price-led growth is low quality when utilization and cash conversion deteriorate.
+      confidence: medium_high
+    - id: FORESTRY_3
+      trigger: Capacity curtailment materially reduces cash burn and inventory while capex stays restrained.
+      expected_move: {persists: [0.55, 0.74], accelerates: [0.65, 0.81], fades: [0.30, 0.46]}
+      rationale: A disciplined supply response is preferable in a cyclical and energy-intensive business.
+      confidence: medium
+
+metals_minerals_and_mining:
+  label: Metals, Minerals and Mining
+  regime: Commodity price support is strong, but production, unit costs, and guide magnitude determine stock reactions.
+  rules:
+    - id: METALS_MINERALS_AND_MINING_1
+      trigger: Higher commodity prices combine with production growth, raised sales guidance, and controlled unit costs.
+      expected_move: {persists: [0.76, 0.90], accelerates: [0.84, 0.95], fades: [0.44, 0.59]}
+      rationale: Operating gains prove leverage beyond a pure commodity mark-to-market benefit.
+      confidence: high
+    - id: METALS_MINERALS_AND_MINING_2
+      trigger: Profit beats on price alone while production misses, costs rise, or guidance only reaches the old range.
+      expected_move: {persists: [0.16, 0.34], accelerates: [0.07, 0.22], fades: [0.40, 0.55]}
+      rationale: Freeport and Aurubis reactions demonstrate that an elevated tape requires operational upside.
+      confidence: high
+    - id: METALS_MINERALS_AND_MINING_3
+      trigger: Domestic protected producers realize price increases with strong shipments and margin expansion.
+      expected_move: {persists: [0.74, 0.90], accelerates: [0.83, 0.95], fades: [0.43, 0.58]}
+      rationale: Protectionism favors domestic steel producers that convert price into volume and margin.
+      confidence: high
+
+textiles:
+  label: Textiles
+  regime: Sourcing agility and clean channel inventory are central as tariffs collide with consumer price resistance.
+  rules:
+    - id: TEXTILES_1
+      trigger: Sourcing and tariff actions preserve gross margin without order cancellations or inventory buildup.
+      expected_move: {persists: [0.68, 0.84], accelerates: [0.77, 0.90], fades: [0.39, 0.54]}
+      rationale: Diversified sourcing and contracted pricing make pass-through more durable.
+      confidence: medium_high
+    - id: TEXTILES_2
+      trigger: Sales growth comes from price while unit volume, retailer reorders, or utilization decline.
+      expected_move: {persists: [0.10, 0.28], accelerates: [0.04, 0.17], fades: [0.39, 0.54]}
+      rationale: Consumer value migration makes price-led growth fragile and raises downstream markdown risk.
+      confidence: medium_high
+    - id: TEXTILES_3
+      trigger: Inventory days and promotional allowances fall while margin and cash conversion improve.
+      expected_move: {persists: [0.66, 0.82], accelerates: [0.76, 0.89], fades: [0.38, 0.53]}
+      rationale: Clean channel inventory is the best confirmation that production matches end demand.
+      confidence: medium
+
+other_materials:
+  label: Other Materials
+  regime: Physical volume, price-cost spread, cash conversion, and contracted capex separate real growth from inflation.
+  rules:
+    - id: OTHER_MATERIALS_1
+      trigger: Price-cost spread improves while volumes remain positive across end markets.
+      expected_move: {persists: [0.70, 0.86], accelerates: [0.79, 0.92], fades: [0.40, 0.55]}
+      rationale: Balanced volume and margin improvement is the cleanest signal under manufacturing expansion and elevated inputs.
+      confidence: medium_high
+    - id: OTHER_MATERIALS_2
+      trigger: Sales rise through commodity inflation while physical volume and FCF decline.
+      expected_move: {persists: [0.10, 0.28], accelerates: [0.04, 0.17], fades: [0.39, 0.54]}
+      rationale: Nominal growth does not establish demand or value creation without cash conversion.
+      confidence: high
+    - id: OTHER_MATERIALS_3
+      trigger: Maintenance or capacity capex rises without contracted demand or quantified payback.
+      expected_move: {persists: [0.08, 0.24], accelerates: [0.03, 0.13], fades: [0.37, 0.52]}
+      rationale: Funding and monetization scrutiny extends beyond tech to long-dated materials projects.
+      confidence: medium_high
+
+sources:
+  - title: Q3 2026 Sector Research Briefing
+    path: Q3-2026-Sector-Research-Briefing.MD
+  - {title: FactSet Earnings Insight, url: "https://www.factset.com/earningsinsight"}
+  - {title: Caterpillar Q2 2026 results, url: "https://www.caterpillar.com/en/news/corporate-press-releases/h/2q26-results-caterpillar-inc.html"}
+  - {title: Union Pacific Q2 2026 results, url: "https://www.up.com/press-releases/financial/2q26-earnings-results-260723"}
+  - {title: ExxonMobil Q2 2026 results, url: "https://investor.exxonmobil.com/company-information/press-releases/detail/1208/exxonmobil-announces-second-quarter-2026-results"}
+  - {title: Chubb Q2 2026 results, url: "https://investors.chubb.com/News--Events/news/news-details/2026/Chubb-Reports-Second-Quarter-Per-Share-Net-Income-of-7-30-and-Per-Share-Core-Operating-Income-of-7-26-Up-18-2-Consolidated-Net-Premiums-Written-of-14-7-Billion-Up-3-6-with-PC-and-Life-Insurance-Up-3-0-and-7-5-PC-Combined-Ratio-of-83-8/default.aspx"}
+  - {title: ServiceNow Q2 2026 results, url: "https://investor.servicenow.com/news/news-details/2026/ServiceNow-Reports-Second-Quarter-2026-Financial-Results/default.aspx"}
+  - {title: Broadcom Q2 2026 results, url: "https://www.broadcom.com/company/news/financial-releases/64371"}
+  - {title: Coca-Cola Q2 2026 results, url: "https://investors.coca-colacompany.com/news-events/press-releases/detail/1168/coca-cola-reports-second-quarter-2026-results-and-raises-full-year-guidance"}
+  - {title: Constellation Energy Q2 2026 results, url: "https://www.constellationenergy.com/news/2026/08/constellation-reports-second-quarter-2026-results.html"}
+  - {title: Reuters earnings coverage through 2026-08-07, url: "https://www.reuters.com/markets/"}
