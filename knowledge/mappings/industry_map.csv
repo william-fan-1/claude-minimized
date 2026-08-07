@@ -3,7 +3,7 @@ INTT,Semiconductors
 AIRS,Healthcare Services
 VERU,Pharmaceuticals and Biotechnology
 FERG,Other Business Products and Services
-TH,Restaurants, Hotels and Leisure
+TH,"Restaurants, Hotels and Leisure"
 SGRY,Healthcare Services
 CECO,Commercial Products
 AXSM,Pharmaceuticals and Biotechnology
@@ -27,7 +27,7 @@ JRSH,Apparel and Accessories
 LINC,Services (Non-Financial)
 SBET,Software
 POWW,Commercial Products
-CRC,Exploration, Production and Refining
+CRC,"Exploration, Production and Refining"
 BW,Commercial Products
 HROW,Pharmaceuticals and Biotechnology
 IHRT,Media
@@ -46,7 +46,7 @@ MG,Commercial Services
 PLUG,Commercial Products
 BBIO,Pharmaceuticals and Biotechnology
 ALTI,Capital Markets/Institutions
-HPK,Exploration, Production and Refining
+HPK,"Exploration, Production and Refining"
 UPWK,IT Services
 DSP,IT Services
 AREN,IT Services
@@ -58,10 +58,10 @@ GPRO,Consumer Durables
 IMDX,Other Healthcare
 SHIM,Commercial Services
 HFFG,Other Business Products and Services
-GAME,Restaurants, Hotels and Leisure
+GAME,"Restaurants, Hotels and Leisure"
 RUM,IT Services
 QMCO,Other Information Technology
-GENK,Restaurants, Hotels and Leisure
+GENK,"Restaurants, Hotels and Leisure"
 RPAY,Commercial Services
 ALCO,Agriculture
 RKLB,Commercial Services
@@ -92,19 +92,19 @@ DH,Software
 NUS,Pharmaceuticals and Biotechnology
 GETY,Commercial Services
 FF,Chemicals and Gases
-CNNE,Restaurants, Hotels and Leisure
+CNNE,"Restaurants, Hotels and Leisure"
 HLIO,Commercial Products
 BKD,Healthcare Services
 BZH,Consumer Durables
 SMC,Utilities
 FLNT,Media
-ARKR,Restaurants, Hotels and Leisure
+ARKR,"Restaurants, Hotels and Leisure"
 BKKT,Other Financial Services
 ASTS,Communications and Networking
 AMTM,Commercial Services
 AP,Commercial Products
 TXNM,Utilities
-ARMK,Restaurants, Hotels and Leisure
+ARMK,"Restaurants, Hotels and Leisure"
 DRIO,Healthcare Devices and Supplies
 CAH,Pharmaceuticals and Biotechnology
 JBI,Commercial Products
@@ -136,7 +136,7 @@ OPXS,Other Information Technology
 NVNO,Healthcare Devices and Supplies
 RXT,IT Services
 LWLG,Containers and Packaging
-RRBI,Restaurants, Hotels and Leisure
+RRBI,"Restaurants, Hotels and Leisure"
 ACCS,Media
 GLBZ,Commercial Banks
 HTLD,Commercial Transportation
@@ -197,13 +197,13 @@ WRAP,Commercial Products
 TACT,Computer Hardware
 SEER,Healthcare Devices and Supplies
 NRGV,Commercial Products
-ROLR,Restaurants, Hotels and Leisure
-CAVA,Restaurants, Hotels and Leisure
+ROLR,"Restaurants, Hotels and Leisure"
+CAVA,"Restaurants, Hotels and Leisure"
 SES,Commercial Products
 EML,Commercial Products
 ATRO,Commercial Services
 IPM,Commercial Services
-USLM,Metals, Minerals and Mining
+USLM,"Metals, Minerals and Mining"
 MRBK,Commercial Banks
 DYN,Pharmaceuticals and Biotechnology
 SMHI,Commercial Transportation
@@ -211,7 +211,7 @@ TFSL,Commercial Banks
 TSBK,Commercial Banks
 SLNG,Energy Services
 EYE,Healthcare Devices and Supplies
-EAT,Restaurants, Hotels and Leisure
+EAT,"Restaurants, Hotels and Leisure"
 PLX,Pharmaceuticals and Biotechnology
 KTB,Apparel and Accessories
 TRMB,Commercial Products
@@ -219,11 +219,11 @@ PFGC,Other Business Products and Services
 ABOS,Pharmaceuticals and Biotechnology
 LOCL,Agriculture
 ALT,Pharmaceuticals and Biotechnology
-LVO,Restaurants, Hotels and Leisure
+LVO,"Restaurants, Hotels and Leisure"
 PODC,IT Services
 XTIA,IT Services
 LQDA,Pharmaceuticals and Biotechnology
-USGO,Metals, Minerals and Mining
+USGO,"Metals, Minerals and Mining"
 NKSH,Commercial Banks
 SCOR,Commercial Services
 DFDV,Capital Markets/Institutions
@@ -236,9 +236,9 @@ CRWS,Textiles
 AVIR,Pharmaceuticals and Biotechnology
 KURA,Pharmaceuticals and Biotechnology
 NSYS,Commercial Products
-GO,Restaurants, Hotels and Leisure
+GO,"Restaurants, Hotels and Leisure"
 OPRX,Commercial Services
-JACK,Restaurants, Hotels and Leisure
+JACK,"Restaurants, Hotels and Leisure"
 DAIO,Commercial Products
 DERM,Pharmaceuticals and Biotechnology
 STAA,Healthcare Devices and Supplies
@@ -260,7 +260,7 @@ LVLU,Retail
 STEM,Commercial Products
 COHR,Other Information Technology
 REZI,Other Business Products and Services
-RRGB,Restaurants, Hotels and Leisure
+RRGB,"Restaurants, Hotels and Leisure"
 SPIR,Communications and Networking
 CYN,IT Services
 SKYH,Other Financial Services
@@ -313,7 +313,7 @@ AFCG,Other Financial Services
 LUCD,Healthcare Devices and Supplies
 SGRP,Commercial Services
 NXPL,Communications and Networking
-VENU,Restaurants, Hotels and Leisure
+VENU,"Restaurants, Hotels and Leisure"
 VYNE,Pharmaceuticals and Biotechnology
 TGEN,Energy Equipment
 NUWE,Healthcare Devices and Supplies
@@ -364,7 +364,7 @@ HGBL,Commercial Services
 ICCC,Healthcare Devices and Supplies
 SRTS,Healthcare Devices and Supplies
 GWH,Commercial Products
-PED,Exploration, Production and Refining
+PED,"Exploration, Production and Refining"
 NPWR,Commercial Products
 MSAI,Other Information Technology
 CWD,Other Financial Services
@@ -390,9 +390,9 @@ OCUL,Pharmaceuticals and Biotechnology
 OGN,Pharmaceuticals and Biotechnology
 GBTG,Transportation
 IBRX,Pharmaceuticals and Biotechnology
-SLE,Restaurants, Hotels and Leisure
+SLE,"Restaurants, Hotels and Leisure"
 NVCT,Pharmaceuticals and Biotechnology
-WMK,Restaurants, Hotels and Leisure
+WMK,"Restaurants, Hotels and Leisure"
 OTLK,Pharmaceuticals and Biotechnology
 PAVM,Healthcare Devices and Supplies
 DSGN,Pharmaceuticals and Biotechnology
@@ -407,7 +407,7 @@ SYRE,Pharmaceuticals and Biotechnology
 SEB,Agriculture
 DNTH,Pharmaceuticals and Biotechnology
 BRFH,Consumer Non-Durables
-SCCO,Metals, Minerals and Mining
+SCCO,"Metals, Minerals and Mining"
 PAMT,Commercial Transportation
 STEX,Capital Markets/Institutions
 IMA,Pharmaceuticals and Biotechnology
@@ -424,7 +424,7 @@ SHPH,Pharmaceuticals and Biotechnology
 QXO,IT Services
 STTK,Pharmaceuticals and Biotechnology
 TIL,Pharmaceuticals and Biotechnology
-BRN,Exploration, Production and Refining
+BRN,"Exploration, Production and Refining"
 DDS,Retail
 SGMT,Pharmaceuticals and Biotechnology
 UNCY,Pharmaceuticals and Biotechnology
@@ -437,7 +437,7 @@ EDBL,Agriculture
 TRAW,Pharmaceuticals and Biotechnology
 ISPC,Pharmaceuticals and Biotechnology
 NMTC,Healthcare Devices and Supplies
-MSGE,Restaurants, Hotels and Leisure
+MSGE,"Restaurants, Hotels and Leisure"
 XLO,Pharmaceuticals and Biotechnology
 GRI,Pharmaceuticals and Biotechnology
 LXEO,Pharmaceuticals and Biotechnology
@@ -456,7 +456,7 @@ COCP,Pharmaceuticals and Biotechnology
 KLRS,Pharmaceuticals and Biotechnology
 ANNX,Pharmaceuticals and Biotechnology
 HTCR,IT Services
-FBYD,Restaurants, Hotels and Leisure
+FBYD,"Restaurants, Hotels and Leisure"
 NRXP,Pharmaceuticals and Biotechnology
 VRME,IT Services
 VS,IT Services
@@ -479,7 +479,7 @@ ELAB,Pharmaceuticals and Biotechnology
 SOWG,Consumer Non-Durables
 ENVB,Pharmaceuticals and Biotechnology
 AMZE,Consumer Non-Durables
-MSS,Restaurants, Hotels and Leisure
+MSS,"Restaurants, Hotels and Leisure"
 BKYI,Software
 MYSZ,Software
 TOON,Media
@@ -493,7 +493,7 @@ ILLR,Capital Markets/Institutions
 ATPC,Healthcare Services
 IBO,Pharmaceuticals and Biotechnology
 COSM,Pharmaceuticals and Biotechnology
-WORX,Restaurants, Hotels and Leisure
+WORX,"Restaurants, Hotels and Leisure"
 CARV,Commercial Banks
 ACON,Healthcare Devices and Supplies
 BINI,Consumer Durables
@@ -519,7 +519,7 @@ AMPG,Communications and Networking
 HURA,Pharmaceuticals and Biotechnology
 MYSE,Software
 HCTI,IT Services
-DC,Metals, Minerals and Mining
+DC,"Metals, Minerals and Mining"
 JSPR,Pharmaceuticals and Biotechnology
 TYRA,Pharmaceuticals and Biotechnology
 PNBK,Commercial Banks
@@ -539,7 +539,7 @@ YHGJ,Chemicals and Gases
 BGLC,Healthcare Devices and Supplies
 MIRA,Pharmaceuticals and Biotechnology
 ASPI,Chemicals and Gases
-ANNA,Exploration, Production and Refining
+ANNA,"Exploration, Production and Refining"
 ITP,Containers and Packaging
 NVVE,Commercial Products
 TOMZ,Chemicals and Gases
@@ -575,13 +575,13 @@ ELDN,Pharmaceuticals and Biotechnology
 AEI,Other Financial Services
 POLA,Commercial Products
 IKT,Pharmaceuticals and Biotechnology
-SDOT,Restaurants, Hotels and Leisure
+SDOT,"Restaurants, Hotels and Leisure"
 RVP,Healthcare Devices and Supplies
 GCTK,Healthcare Devices and Supplies
 GXAI,Software
 BLIN,Software
 CNET,IT Services
-REBN,Restaurants, Hotels and Leisure
+REBN,"Restaurants, Hotels and Leisure"
 SCYX,Pharmaceuticals and Biotechnology
 CETX,Commercial Products
 ABVC,Pharmaceuticals and Biotechnology
@@ -617,7 +617,7 @@ BNZI,Software
 AIMD,Pharmaceuticals and Biotechnology
 PHIO,Pharmaceuticals and Biotechnology
 PLAG,Consumer Non-Durables
-EONR,Exploration, Production and Refining
+EONR,"Exploration, Production and Refining"
 LRHC,Other Financial Services
 JBIO,Pharmaceuticals and Biotechnology
 KOD,Pharmaceuticals and Biotechnology
@@ -649,7 +649,7 @@ AMIX,Healthcare Devices and Supplies
 MRKR,Pharmaceuticals and Biotechnology
 CLRO,Communications and Networking
 BFRG,Pharmaceuticals and Biotechnology
-HCWC,Restaurants, Hotels and Leisure
+HCWC,"Restaurants, Hotels and Leisure"
 GNLN,Consumer Durables
 MLP,Other Financial Services
 SMXT,Construction (Non-Wood)
@@ -668,9 +668,9 @@ VRDN,Healthcare Devices and Supplies
 NUVL,Pharmaceuticals and Biotechnology
 AREC,Other Energy
 CBAT,Commercial Products
-NATH,Restaurants, Hotels and Leisure
+NATH,"Restaurants, Hotels and Leisure"
 RMCO,Other Business Products and Services
-WWR,Metals, Minerals and Mining
+WWR,"Metals, Minerals and Mining"
 MBX,Pharmaceuticals and Biotechnology
 CYCN,Pharmaceuticals and Biotechnology
 GTLS,Commercial Products
@@ -696,8 +696,8 @@ IMUX,Pharmaceuticals and Biotechnology
 CCO,Media
 QTTB,Pharmaceuticals and Biotechnology
 ESLA,Pharmaceuticals and Biotechnology
-IDR,Metals, Minerals and Mining
-EP,Exploration, Production and Refining
+IDR,"Metals, Minerals and Mining"
+EP,"Exploration, Production and Refining"
 NSPR,Healthcare Devices and Supplies
 SLAB,Semiconductors
 KRRO,Pharmaceuticals and Biotechnology
@@ -709,14 +709,14 @@ ACHV,Healthcare Devices and Supplies
 GLUE,Pharmaceuticals and Biotechnology
 ZENA,Software
 CALC,Pharmaceuticals and Biotechnology
-SEGG,Restaurants, Hotels and Leisure
-SOC,Exploration, Production and Refining
+SEGG,"Restaurants, Hotels and Leisure"
+SOC,"Exploration, Production and Refining"
 ZBIO,Pharmaceuticals and Biotechnology
 AMR,Other Energy
 EYPT,Healthcare Devices and Supplies
-SEGG,Restaurants, Hotels and Leisure
+SEGG,"Restaurants, Hotels and Leisure"
 SEE,Chemicals and Gases
-MSGS,Restaurants, Hotels and Leisure
+MSGS,"Restaurants, Hotels and Leisure"
 CLYM,Pharmaceuticals and Biotechnology
 MAIA,Pharmaceuticals and Biotechnology
 GENC,Commercial Products
@@ -737,7 +737,7 @@ CGEM,Pharmaceuticals and Biotechnology
 ACET,Pharmaceuticals and Biotechnology
 ACRS,Pharmaceuticals and Biotechnology
 TRDA,Pharmaceuticals and Biotechnology
-IMKTA,Restaurants, Hotels and Leisure
+IMKTA,"Restaurants, Hotels and Leisure"
 AVNS,Commercial Products
 SYBX,Pharmaceuticals and Biotechnology
 CCCC,Pharmaceuticals and Biotechnology
@@ -751,7 +751,7 @@ APGE,Pharmaceuticals and Biotechnology
 CGTX,Pharmaceuticals and Biotechnology
 AVTX,Pharmaceuticals and Biotechnology
 BURU,Commercial Products
-CTGO,Metals, Minerals and Mining
+CTGO,"Metals, Minerals and Mining"
 COGT,Pharmaceuticals and Biotechnology
 CGON,Pharmaceuticals and Biotechnology
 FEMY,Healthcare Devices and Supplies
@@ -763,7 +763,7 @@ APVO,Pharmaceuticals and Biotechnology
 PMVP,Pharmaceuticals and Biotechnology
 ATOS,Pharmaceuticals and Biotechnology
 TALK,Healthcare Services
-ATLX,Metals, Minerals and Mining
+ATLX,"Metals, Minerals and Mining"
 CVKD,Pharmaceuticals and Biotechnology
 APRE,Pharmaceuticals and Biotechnology
 COCH,Commercial Products
@@ -774,7 +774,7 @@ HOUR,Retail
 AQB,Consumer Non-Durables
 OMEX,Commercial Transportation
 TARA,Pharmaceuticals and Biotechnology
-XPL,Metals, Minerals and Mining
+XPL,"Metals, Minerals and Mining"
 MNPR,Pharmaceuticals and Biotechnology
 TRON,Consumer Durables
 FSEA,Commercial Banks
@@ -793,7 +793,7 @@ EMPD,Capital Markets/Institutions
 SNTI,Pharmaceuticals and Biotechnology
 KALA,Pharmaceuticals and Biotechnology
 CING,Pharmaceuticals and Biotechnology
-EONR,Exploration, Production and Refining
+EONR,"Exploration, Production and Refining"
 PRME,Pharmaceuticals and Biotechnology
 TAYD,Commercial Products
 REPL,Pharmaceuticals and Biotechnology
@@ -817,7 +817,7 @@ YHC,Consumer Non-Durables
 CERO,Pharmaceuticals and Biotechnology
 MGEE,Utilities
 EFOI,Commercial Products
-CKX,Exploration, Production and Refining
+CKX,"Exploration, Production and Refining"
 AAME,Insurance
 AAME,Insurance
 NXL,Healthcare Devices and Supplies
@@ -849,14 +849,14 @@ NGNE,Pharmaceuticals and Biotechnology
 CLDX,Healthcare Devices and Supplies
 MCHP,Semiconductors
 KLXE,Energy Services
-IE,Metals, Minerals and Mining
+IE,"Metals, Minerals and Mining"
 TISI,Services (Non-Financial)
 ASRT,Pharmaceuticals and Biotechnology
 MYPS,Software
 SENEA,Consumer Non-Durables
 ONTF,Software
 EDIT,Pharmaceuticals and Biotechnology
-BDL,Restaurants, Hotels and Leisure
+BDL,"Restaurants, Hotels and Leisure"
 FATE,Pharmaceuticals and Biotechnology
 SSTI,Software
 FTHM,Other Financial Services
@@ -865,11 +865,11 @@ AISP,Software
 GOSS,Pharmaceuticals and Biotechnology
 CNTX,Pharmaceuticals and Biotechnology
 GDOT,Other Financial Services
-SND,Metals, Minerals and Mining
+SND,"Metals, Minerals and Mining"
 BHF,Insurance
-DWSN,Exploration, Production and Refining
+DWSN,"Exploration, Production and Refining"
 ELTX,Pharmaceuticals and Biotechnology
-HUBG,Exploration, Production and Refining
+HUBG,"Exploration, Production and Refining"
 GURE,Chemicals and Gases
 BRTX,Healthcare Services
 ALDX,Pharmaceuticals and Biotechnology
@@ -891,9 +891,9 @@ OGEN,Pharmaceuticals and Biotechnology
 FTFT,Commercial Services
 INAB,Pharmaceuticals and Biotechnology
 CHCI,Other Financial Services
-BH,Restaurants, Hotels and Leisure
-AMPY,Exploration, Production and Refining
-FRD,Metals, Minerals and Mining
+BH,"Restaurants, Hotels and Leisure"
+AMPY,"Exploration, Production and Refining"
+FRD,"Metals, Minerals and Mining"
 PALI,Pharmaceuticals and Biotechnology
 ARTNA,Utilities
 CATX,Healthcare Devices and Supplies
@@ -922,7 +922,7 @@ ELSE,Commercial Products
 STRO,Pharmaceuticals and Biotechnology
 ALLR,Pharmaceuticals and Biotechnology
 NXTC,Pharmaceuticals and Biotechnology
-CPHC,Restaurants, Hotels and Leisure
+CPHC,"Restaurants, Hotels and Leisure"
 VIVK,Commercial Services
 ATYR,Pharmaceuticals and Biotechnology
 LSTA,Other Healthcare
@@ -947,14 +947,14 @@ SSKN,Healthcare Devices and Supplies
 SAFT,Insurance
 OS,Software
 ISPO,Other Financial Services
-INHD,Metals, Minerals and Mining
+INHD,"Metals, Minerals and Mining"
 NOTE,Commercial Services
 NCL,Other Materials
 LYEL,Pharmaceuticals and Biotechnology
 SEPN,Pharmaceuticals and Biotechnology
 SCWO,Commercial Products
 SNCY,Transportation
-MXC,Exploration, Production and Refining
+MXC,"Exploration, Production and Refining"
 ORBS,Containers and Packaging
 GYRE,Pharmaceuticals and Biotechnology
 CAPR,Pharmaceuticals and Biotechnology
@@ -966,7 +966,7 @@ AREC,Other Energy
 AEON,Pharmaceuticals and Biotechnology
 CTXR,Pharmaceuticals and Biotechnology
 ANAB,Pharmaceuticals and Biotechnology
-RICK,Restaurants, Hotels and Leisure
+RICK,"Restaurants, Hotels and Leisure"
 GNLX,Pharmaceuticals and Biotechnology
 VTVT,Pharmaceuticals and Biotechnology
 IMNM,Pharmaceuticals and Biotechnology
@@ -981,42 +981,42 @@ QNCX,Pharmaceuticals and Biotechnology
 BIRD,Apparel and Accessories
 TARS,Pharmaceuticals and Biotechnology
 RR,Commercial Products
-USAU,Metals, Minerals and Mining
+USAU,"Metals, Minerals and Mining"
 CARM,Pharmaceuticals and Biotechnology
 TNYA,Pharmaceuticals and Biotechnology
 BCAB,Pharmaceuticals and Biotechnology
-BATL,Exploration, Production and Refining
+BATL,"Exploration, Production and Refining"
 AFBI,Commercial Banks
 PLRX,Pharmaceuticals and Biotechnology
 MNTS,Commercial Services
 ENTA,Pharmaceuticals and Biotechnology
 AAME,Insurance
-HUBG,Exploration, Production and Refining
+HUBG,"Exploration, Production and Refining"
 XNCR,Pharmaceuticals and Biotechnology
 CRDF,Pharmaceuticals and Biotechnology
 TECX,Pharmaceuticals and Biotechnology
 CENN,Consumer Durables
 SER,Pharmaceuticals and Biotechnology
 MBRX,Pharmaceuticals and Biotechnology
-GDC,Metals, Minerals and Mining
+GDC,"Metals, Minerals and Mining"
 CUE,Pharmaceuticals and Biotechnology
 TCBS,Commercial Banks
 IMXI,Commercial Services
-BTBD,Restaurants, Hotels and Leisure
+BTBD,"Restaurants, Hotels and Leisure"
 FDSB,Commercial Banks
 ZNTL,Pharmaceuticals and Biotechnology
 VTGN,Pharmaceuticals and Biotechnology
 MRCY,Commercial Products
 KEYS,Commercial Products
 IRIX,Healthcare Devices and Supplies
-HUBG,Exploration, Production and Refining
+HUBG,"Exploration, Production and Refining"
 MGLD,Other Financial Services
 AIM,Pharmaceuticals and Biotechnology
 KULR,Commercial Products
 JKHY,IT Services
 LZB,Consumer Durables
 TOL,Consumer Durables
-EPM,Exploration, Production and Refining
+EPM,"Exploration, Production and Refining"
 FRHC,Capital Markets/Institutions
 ITP,Containers and Packaging
 MSPR,IT Services
@@ -1024,18 +1024,18 @@ AES,Utilities
 IOR,Other Financial Services
 ATNM,Pharmaceuticals and Biotechnology
 BIVI,Pharmaceuticals and Biotechnology
-REBN,Restaurants, Hotels and Leisure
-MUX,Metals, Minerals and Mining
+REBN,"Restaurants, Hotels and Leisure"
+MUX,"Metals, Minerals and Mining"
 MTEX,Pharmaceuticals and Biotechnology
 AZTR,Pharmaceuticals and Biotechnology
 WVVI,Consumer Non-Durables
-GBR,Exploration, Production and Refining
+GBR,"Exploration, Production and Refining"
 QCLS,Computer Hardware
 AWX,Commercial Services
 ASTI,Semiconductors
 IMMX,Pharmaceuticals and Biotechnology
 FNWD,Commercial Banks
-SEGG,Restaurants, Hotels and Leisure
+SEGG,"Restaurants, Hotels and Leisure"
 SONM,Communications and Networking
 ARL,Services (Non-Financial)
 MVST,Commercial Products
@@ -1056,7 +1056,7 @@ SIEB,Capital Markets/Institutions
 NFBK,Commercial Banks
 BJDX,Healthcare Devices and Supplies
 HLX,Energy Services
-GORO,Metals, Minerals and Mining
+GORO,"Metals, Minerals and Mining"
 GURE,Chemicals and Gases
 FLYE,Commercial Products
 TE,Commercial Products
@@ -1068,7 +1068,7 @@ ADI,Semiconductors
 TJX,Retail
 DVLT,Semiconductors
 RIOT,Other Financial Services
-PNRG,Exploration, Production and Refining
+PNRG,"Exploration, Production and Refining"
 CLIR,Commercial Products
 TRUG,Consumer Durables
 COTY,Consumer Non-Durables
@@ -1078,7 +1078,7 @@ WOLF,Semiconductors
 BILL,IT Services
 ARAY,Healthcare Devices and Supplies
 NDSN,Commercial Products
-VSTD,Restaurants, Hotels and Leisure
+VSTD,"Restaurants, Hotels and Leisure"
 DE,Commercial Products
 AAP,Retail
 MZTI,Consumer Non-Durables
