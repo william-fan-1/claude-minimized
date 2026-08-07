@@ -203,8 +203,8 @@ def read_prediction_ledger(limit: int | None = None):
         "em-prediction-ledger",
         create_if_missing=True,
     )
-    if limit is not None and limit < 1:
-        raise ValueError("limit must be positive or None")
+    if limit is None:
+        limit = len(prediction_ledger)
 
     rows = list(prediction_ledger.values())
 
