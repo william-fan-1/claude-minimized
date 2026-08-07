@@ -199,16 +199,8 @@ def read_prediction_ledger(limit: int | None = None):
     """
     Access rules used by agent in early predictions.
     """
-    prediction_ledger = modal.Dict.from_name(
-        "em-prediction-ledger",
-        create_if_missing=True,
-    )
-    if limit is None:
-        limit = len(prediction_ledger)
-
     rows = list(prediction_ledger.values())
+    if limit is None:
+        limit = len(rows)
 
-    if limit is not None:
-        rows = rows[:limit]
-
-    return rows
+    return rows[:limit]
