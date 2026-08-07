@@ -193,3 +193,22 @@ def web():
         return Response(status_code=200)
 
     return api
+
+@app.function()
+def read_prediction_ledger(limit: int | None = None):
+    """
+    Access rules used by agent in early predictions.
+    """
+    prediction_ledger = modal.Dict.from_name(
+        "em-prediction-ledger",
+        create_if_missing=True,
+    )
+    if limit is not None and limit < 1:
+        raise ValueError("limit must be positive or None")
+
+    rows = list(prediction_ledger.values())
+
+    if limit is not None:
+        rows = rows[:limit]
+
+    return rows
