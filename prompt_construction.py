@@ -1,6 +1,7 @@
 from pathlib import Path
 import re
 import yaml
+import pandas as pd
 
 # Adjust the prompt version 
 PROMPT_VERSION = "1.1.0"
@@ -50,27 +51,38 @@ def load_prompt_rules(industry: str) -> tuple[str, str]:
     }
 
     # Add only the matching industry block.
-    industry_block = industry_playbooks.get(industry)
+    if industry is not None:
+        industry_block = industry_playbooks.get(industry)
 
-    if industry_block:
-        applicable_rules["industry"] = industry
-        applicable_rules["industry_playbook"] = industry_block
+        if industry_block:
+            applicable_rules["industry"] = industry
+            applicable_rules["industry_playbook"] = industry_block
 
-    industry_rules = yaml.safe_dump(
-        applicable_rules,
-        sort_keys=False,
-    )
+        industry_rules = yaml.safe_dump(
+            applicable_rules,
+            sort_keys=False,
+        )
+    else:
+        industry_rules = ""
 
     return core_directive, industry_rules
 
 def _load_map():
-    pass
+    return pd.read_csv(MAPPINGS_PATH).set_index('ticker')
 
 def get_industry(ticker):
-    pass
+    try:    
+        mappings = _load_map()
+        return mappings.loc[ticker]['industry']
+    except Exception as e:
+        print(f"{ticker} not found in mappings.")
+        return None
 
 def format_industry_tag(industry):
-    pass
+    if industry is not None: 
+        return industry.lower().replace(" ", "_").replace(",", "")
+    else: 
+        return None
 
 ####################################
 ######### Build the prompt #########
