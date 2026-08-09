@@ -1,3 +1,9 @@
+"""Prompt construction utilities for the explaining markets project.
+
+This module loads prompt templates, YAML playbooks, and ticker-to-industry
+mappings, then assembles the final prompt text used for event analysis.
+"""
+
 from pathlib import Path
 import re
 import yaml
@@ -17,19 +23,42 @@ MAPPINGS_PATH = ROOT / "knowledge" / "mappings" / "industry_map.csv"
 # Util functions to help build prompt
 #####################################
 def load_yaml(path: Path) -> dict:
+    """Load a YAML file from disk and return its contents as a dictionary."""
     with path.open("r", encoding="utf-8") as file:
         return yaml.safe_load(file)
 
-def _rule_applies(rule: dict, profiles: list[str]) -> bool:
-    """Keep a rule if its scope matches the company's profile tags."""
-    required = (rule.get("scope") or {}).get("profile")
-    if not required:
-        return True            # unscoped / applies\_to: all
-    if not profiles:
-        return True            # no classification -> keep everything, fail safe
-    return any(p == required or p in required or required in p for p in profiles)
+def _load_map() -> pd.DataFrame:
+    """Read the industry mapping CSV and return it indexed by ticker."""
+    return pd.read_csv(MAPPINGS_PATH).set_index('ticker')
 
-def load_prompt_rules(industry: str) -> tuple[str, str]:
+def get_industry(ticker: str) -> str | None:
+    """Return the mapped industry for a ticker or None if it cannot be resolved."""
+    try:    
+        mappings = _load_map()
+        return mappings.loc[ticker]['industry']
+    except Exception as e:
+        print(f"{ticker} not found in mappings.")
+        return None
+
+def format_industry_tag(industry: str) -> str:
+    """Normalize an industry name into an underscore-delimited lowercase tag."""
+    if industry is not None: 
+        return industry.lower().replace(" ", "_").replace(",", "")
+    else: 
+        return None
+
+def load_prompt_rules(
+    industry: str
+) -> tuple[str, str] | tuple[str, None]:
+    """
+    Load global and industry-specific prompt rules.
+
+    Args:
+    industry: Normalized industry tag used to select the industry playbook.
+
+    Returns:
+    A tuple containing the core directive YAML and the industry rules YAML.
+    """
     global_playbook = load_yaml(GLOBAL_PATH)
     industry_playbooks = load_yaml(INDUSTRY_PATH)
 
@@ -67,28 +96,27 @@ def load_prompt_rules(industry: str) -> tuple[str, str]:
 
     return core_directive, industry_rules
 
-def _load_map():
-    return pd.read_csv(MAPPINGS_PATH).set_index('ticker')
-
-def get_industry(ticker):
-    try:    
-        mappings = _load_map()
-        return mappings.loc[ticker]['industry']
-    except Exception as e:
-        print(f"{ticker} not found in mappings.")
-        return None
-
-def format_industry_tag(industry):
-    if industry is not None: 
-        return industry.lower().replace(" ", "_").replace(",", "")
-    else: 
-        return None
-
 ####################################
 ######### Build the prompt #########
 ####################################
 
-def construct_prompt(summary_text, ticker):
+def construct_prompt(
+    summary_text: str, 
+    ticker: str
+) -> str:
+    """
+    Construct the final prompt text for a given ticker and event summary.
+
+    Reads the prompt template, resolves the ticker's industry, loads relevant
+    playbook rules, and substitutes all placeholders with generated content.
+
+    Args:
+    summary_text: The summarized event transcript content.
+    ticker: The ticker symbol to resolve industry-specific rules.
+
+    Returns:
+    The rendered prompt text ready for model consumption.
+    """
 
     # Read in prompt template and clean its
     prompt_template = PROMPT_PATH.read_text(encoding="utf-8")
