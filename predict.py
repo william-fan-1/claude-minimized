@@ -15,21 +15,17 @@ from __future__ import annotations
 
 import json
 import os
-import re
 
 import httpx
 from litellm import completion
 from pydantic import AliasChoices, BaseModel, Field
-from pathlib import Path
-import yaml
+
+from prompt_construction import construct_prompt, PROMPT_VERSION
 
 # This is the only value to change when switching models. The provider prefix
 # selects both the LiteLLM backend and the corresponding environment variable.
 # Examples: "openai/gpt-5.4", "anthropic/claude-sonnet-4-5"
 MODEL = "gemini/gemini-2.5-flash"
-
-# Adjust the prompt version 
-PROMPT_VERSION = "1.1.0"
 
 PROVIDER_API_KEYS = {
     "gemini": "GEMINI_API_KEY",
@@ -38,12 +34,6 @@ PROVIDER_API_KEYS = {
 }
 
 _missing_key_warnings: set[str] = set()
-
-# Paths to prompt file and rulebooks for prompt to fill in
-ROOT = Path(__file__).resolve().parent
-PROMPT_PATH = ROOT / "prompts" / "predict_v1.md"
-GLOBAL_PATH = ROOT / "knowledge" / "playbooks" / "_global.yaml"
-INDUSTRY_PATH = ROOT / "knowledge" / "playbooks" / "industry_playbooks.yaml"
 
 # Timeouts, sized against the 5-minute prediction window that opens when your
 # handler ACKs the webhook. Worst case is 15 + (120 x 2) + 15 = 270s, which
@@ -141,48 +131,6 @@ class Prediction(BaseModel):
     confidence: str = "low"
     rules_applied: list[str] = Field(default_factory=list)
 
-#####################################
-# Util functions to help build prompt
-#####################################
-def load_yaml(path: Path) -> dict:
-    with path.open("r", encoding="utf-8") as file:
-        return yaml.safe_load(file)
-
-def load_prompt_rules(industry: str) -> tuple[str, str]:
-    global_playbook = load_yaml(GLOBAL_PATH)
-    industry_playbooks = load_yaml(INDUSTRY_PATH)
-
-    # The `principles` block becomes {core_directive}.
-    core_directive = yaml.safe_dump(
-        global_playbook["principles"],
-        sort_keys=False,
-    )
-
-    # These global rules apply to every event.
-    applicable_rules = {
-        "global_rules": global_playbook.get("rules", []),
-
-        # This must be included for every industry.
-        "quarter_calibration": industry_playbooks.get(
-            "quarter_calibration",
-            [],
-        ),
-    }
-
-    # Add only the matching industry block.
-    industry_block = industry_playbooks.get(industry)
-
-    if industry_block:
-        applicable_rules["industry"] = industry
-        applicable_rules["industry_playbook"] = industry_block
-
-    industry_rules = yaml.safe_dump(
-        applicable_rules,
-        sort_keys=False,
-    )
-
-    return core_directive, industry_rules
-    
 # Normalization function as a safeguard 
 def _normalize_percentile(value: float) -> float:
     """Check if 0 <= prediction <= 1. Normalize if not."""
@@ -193,39 +141,11 @@ def _normalize_percentile(value: float) -> float:
 
     return max(0.0, min(1.0, value))
 
-#####################################
-### Prediction format standardization
-#####################################
-
-def _parse_prediction(content: str) -> Prediction:
-    payload = json.loads(content)
-
-    # Gemini occasionally returns a bare number.
-    if isinstance(payload, (int, float)):
-        payload = {"predicted_percentile": payload}
-
-    if not isinstance(payload, dict):
-        raise ValueError(
-            f"Expected a JSON object or number, got {type(payload).__name__}"
-        )
-
-    # Normalize common model-generated field names.
-    if "predicted_percentile" not in payload:
-        for alias in ("percentile", "prediction"):
-            if alias in payload:
-                payload["predicted_percentile"] = payload[alias]
-                break
-
-    result = _parse_prediction(content)
-
-    return result
-
 def _ask_llm(*, summary: dict, ticker: str, event_type: str) -> float:
     """Compatibility wrapper returning only the competition percentile."""
     return _ask_llm_details(
         summary=summary, ticker=ticker, event_type=event_type
     ).predicted_percentile
-
 
 def _ask_llm_details(*, summary: dict, ticker: str, event_type: str) -> Prediction:
     """Ask MODEL for a percentile and the metadata needed by the ledger."""
@@ -244,34 +164,7 @@ def _ask_llm_details(*, summary: dict, ticker: str, event_type: str) -> Predicti
         summary_text = json.dumps(summary)
     summary_text = summary_text[:8000]
 
-    # TODO: once company/industry map is finished, implement this
-    industry = None
-
-    # Read in prompt template and clean its
-    prompt_template = PROMPT_PATH.read_text(encoding="utf-8")
-    prompt_template = re.sub(
-        r"\A\s*<!--.*?-->\s*",
-        "",
-        prompt_template,
-        count=1,
-        flags=re.DOTALL,
-    )
-
-    core_directive, industry_rules = load_prompt_rules(industry)
-
-    # TODO: Implement dossier in next pass
-    dossier = "No cached dossier is available."
-
-    user_prompt = (
-        prompt_template
-        # Summary of transcript
-        .replace("{event_bullets}", summary_text)
-        # Objective to complete
-        .replace("{core_directive}", core_directive)
-        # Industry specific trends to consider
-        .replace("{industry_rules}", industry_rules)
-        .replace("{dossier}", dossier)
-    )
+    user_prompt = construct_prompt(summary_text, ticker)
 
     try:
         resp = completion(
@@ -297,7 +190,6 @@ def _ask_llm_details(*, summary: dict, ticker: str, event_type: str) -> Predicti
         # refusal, malformed response, timeout, or schema violation.
         print(f"[ERROR] {MODEL} prediction failed: {type(exc).__name__}: {exc}")
         return Prediction(predicted_percentile=0.5)
-
 
 def _required_api_key(model: str) -> str:
     """Return the environment variable used by a provider-qualified model name."""
