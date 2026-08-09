@@ -136,6 +136,6 @@ Three instructions on applying these, and they matter:
 
 {dossier}
 
-## Event bullets
+## Summary of earnings call
 
 {event_bullets}
