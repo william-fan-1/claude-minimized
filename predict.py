@@ -27,7 +27,9 @@ import yaml
 # selects both the LiteLLM backend and the corresponding environment variable.
 # Examples: "openai/gpt-5.4", "anthropic/claude-sonnet-4-5"
 MODEL = "gemini/gemini-2.5-flash"
-PROMPT_VERSION = "0.1.0"
+
+# Adjust the prompt version 
+PROMPT_VERSION = "predict_v1"
 
 PROVIDER_API_KEYS = {
     "gemini": "GEMINI_API_KEY",
@@ -39,7 +41,7 @@ _missing_key_warnings: set[str] = set()
 
 # Paths to prompt file and rulebooks for prompt to fill in
 ROOT = Path(__file__).resolve().parent
-PROMPT_PATH = ROOT / "prompts" / "predict_v0.md"
+PROMPT_PATH = ROOT / "prompts" / f"{PROMPT_VERSION}.md"
 GLOBAL_PATH = ROOT / "knowledge" / "playbooks" / "_global.yaml"
 INDUSTRY_PATH = ROOT / "knowledge" / "playbooks" / "industry_playbooks.yaml"
 
