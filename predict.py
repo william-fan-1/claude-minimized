@@ -29,7 +29,7 @@ import yaml
 MODEL = "gemini/gemini-2.5-flash"
 
 # Adjust the prompt version 
-PROMPT_VERSION = "predict_v1"
+PROMPT_VERSION = "1.1.0"
 
 PROVIDER_API_KEYS = {
     "gemini": "GEMINI_API_KEY",
@@ -41,7 +41,7 @@ _missing_key_warnings: set[str] = set()
 
 # Paths to prompt file and rulebooks for prompt to fill in
 ROOT = Path(__file__).resolve().parent
-PROMPT_PATH = ROOT / "prompts" / f"{PROMPT_VERSION}.md"
+PROMPT_PATH = ROOT / "prompts" / "predict_v1.md"
 GLOBAL_PATH = ROOT / "knowledge" / "playbooks" / "_global.yaml"
 INDUSTRY_PATH = ROOT / "knowledge" / "playbooks" / "industry_playbooks.yaml"
 
