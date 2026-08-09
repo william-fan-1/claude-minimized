@@ -1,35 +1,51 @@
 # =============================================================================
 # _global.yaml — cross-market rulebook
-# Explaining Markets · Q3 2026
+# Explaining Markets · Q3 2026 · version 0.2.0 · owner: ahi · 2026-08-08
 # =============================================================================
-# Applies to EVERY event regardless of industry. Industry playbooks
-# (busequ.yaml, health.yaml, fin.yaml, ...) layer on top and win on conflict.
+# CHANGELOG v0.1.0 -> v0.2.0
+# Driven by the Aug 6 scored results (docs/EM-Diagnostics-Aug6.md).
 #
-# HOW THE PIPELINE CONSUMES THIS FILE
-#   1. Inject `principles` verbatim as the prompt's core directive.
-#   2. Filter `rules` by scope against the event's dossier.
-#   3. Apply SETTER rules (action.percentile_range) to establish a base.
-#   4. Apply MODIFIER rules (action.adjust / action.widen) afterwards.
-#   5. Resolve conflicts via `precedence`.
-#   6. Pass matched rule IDs to the model; it returns `rules_applied`
-#      so the nightly job can score each rule against realized outcomes.
+#   1. EVERY ACTION NOW CARRIES BOTH a target abnormal return AND a percentile
+#      range. predict_v1 reasons in return space; predict_v0 reasons in
+#      percentile space. Both work off this file, so the A/B test stays valid.
 #
-# PROVENANCE — treat these differently when rules underperform:
-#   koijen_levy_2026 : from the paper's GEPA prompt / ACE rulebook. Trust most.
-#   literature       : established accounting & asset-pricing findings.
-#   team_prior       : our hypothesis, UNVALIDATED. Retire these first.
+#   2. FIRING DISCIPLINE ADDED (see block below). v0.1 rules fired on ordinary
+#      quarters because their triggers had no materiality threshold. Almost
+#      every call contains some hedging, some one-time item, some soft
+#      segment. Result: 60% of our predictions landed below 0.30 when the
+#      truth was ~30%, and ordinary companies drifting up 2-3% (correct
+#      answer 0.60-0.70) were forecast at 0.15.
+#
+#   3. POSITIVE SETTERS ADDED. v0.1 had eight negative setters and two
+#      positive. We built a disaster detector, not a return predictor. It was
+#      excellent at catastrophes (UWMC, CDLX, TEAD, PZZA all beat the field)
+#      and blind to upside (HTZ +29.6%, FWRD +15.7%, OPRT +33% all called
+#      below 0.20). Now roughly balanced.
+#
+#   4. NEW PRINCIPLE P8 — "bad is priced in" is the symmetric twin of "good is
+#      priced in", and was our single largest blind spot.
+#
+# DO NOT WEAKEN the negative quality/guidance rules. They are the only proven
+# edge we have. The fix was never to make them softer — it was to make them
+# fire less often and to give the upside equal representation.
+#
+# SOURCE TAGS
+#   koijen_levy_2026 : from the paper. Durable.
+#   observed_2026Q3  : learned from OUR OWN scored results. Highest priority
+#                      for review as evidence accumulates.
+#   regime_2026Q3    : current market conditions. These decay.
+#   literature       : established finance. Durable.
+#   team_prior       : unvalidated hypothesis. Retire first if it fails.
 # =============================================================================
 
 meta:
-  version: 0.1.0
+  version: 0.2.0
   scope: global
   owner: ahi
   added: 2026-08-03
-  next_review: 2026-09-01          # mid-quarter refinement pass
-  notes: >
-    v0 ships before Aug 10 with zero live evidence. Every `evidence` block
-    is empty by design. Do not promote, demote, or retire any rule on the
-    basis of a single event.
+  revised: 2026-08-08
+  next_review: 2026-09-01
+  evidence_basis: docs/EM-Diagnostics-Aug6.md
 
 # -----------------------------------------------------------------------------
 # CORE PRINCIPLES — injected verbatim into the prompt as the core directive
@@ -50,6 +66,17 @@ principles:
       that merely meets elevated expectations is a NEUTRAL outcome, not a
       positive one.
     source: koijen_levy_2026
+
+  - id: P8
+    text: >
+      BAD IS ALSO PRICED IN. This is the exact mirror of P2 and is equally
+      important. A stock the market has already written off does not need good
+      news to rally — it only needs the absence of further bad news. A
+      beaten-down company reporting a mediocre but non-disastrous quarter,
+      stabilising a declining metric, or simply surviving, frequently produces
+      one of the largest positive reactions of the quarter. Do not confuse a
+      weak company with a negative surprise.
+    source: observed_2026Q3
 
   - id: P3
     text: >
@@ -73,19 +100,60 @@ principles:
 
   - id: P6
     text: >
-      The bar for an extreme positive is very high. To justify a percentile
-      above 0.85 the news must be genuinely SURPRISING, not merely good.
-      Extreme negatives are easier to reach: the market punishes broken
-      expectations faster than it rewards exceeded ones.
+      The bar for an extreme reading is high in BOTH directions. An extreme
+      positive requires news that is genuinely surprising, not merely good. An
+      extreme negative requires a broken thesis, not merely a cautious tone.
     source: koijen_levy_2026
+
+  - id: P9
+    text: >
+      MOST QUARTERS ARE ORDINARY. The single most common outcome is a company
+      reporting an adequate quarter with no real surprise, whose stock drifts
+      between -1% and +3%. This is not a dramatic event and must not be
+      forecast as one. Roughly half of all earnings events produce a POSITIVE
+      abnormal return.
+    source: observed_2026Q3
 
   - id: P7
     text: >
-      Your task is RELATIVE RANKING across the full quarter's cross-section,
-      not estimating a percentage move. Use the entire 0-1 range and commit.
-      Clustering predictions near 0.50 produces no explanatory power and is
-      the primary failure mode.
+      Your task is RELATIVE RANKING across the full quarter's cross-section.
+      Use the full range where the evidence supports it, but a genuinely
+      ambiguous event belongs near the middle. Forcing conviction you do not
+      have adds noise without adding signal.
     source: team_prior
+
+# -----------------------------------------------------------------------------
+# FIRING DISCIPLINE — read before applying any rule
+# -----------------------------------------------------------------------------
+# This block exists because it is the fix for our largest observed error.
+# -----------------------------------------------------------------------------
+firing_discipline:
+  - id: FD-01
+    text: >
+      A rule fires only when its condition is MATERIAL AND REPRESENTS A CHANGE
+      from what the market already expected. The mere presence of the words in
+      a transcript is not sufficient.
+  - id: FD-02
+    text: >
+      Nearly every earnings call contains some cautious phrasing, some
+      non-recurring item, and some underperforming segment. These are the
+      normal texture of corporate disclosure and are already priced. They are
+      not signals.
+  - id: FD-03
+    text: >
+      If you find yourself firing three or more negative rules on a company
+      that simply had an unremarkable quarter, you are over-applying the
+      rulebook. Step back and ask what a neutral observer would conclude.
+  - id: FD-04
+    text: >
+      When no rule fires cleanly, that is a valid and common outcome. Apply
+      GLB-NEUTRAL-01 and move on. Do not hunt for a rule to justify a dramatic
+      forecast.
+  - id: FD-05
+    text: >
+      Rules inform your estimate of the SIZE of the move. They never replace
+      it. Do not output a rule's range as your answer — place within it based
+      on how severe or dramatic the specific situation actually is.
 
 # -----------------------------------------------------------------------------
 # PRECEDENCE — how to resolve conflicting rules
@@ -101,31 +169,62 @@ precedence:
       both fire, the NEGATIVE rule wins (principle P5).
   - order: 3
     rule: >
-      Guidance-based rules outrank headline-result rules (principle P3).
+      EXCEPT where P8 applies: if the company was already deeply out of favour
+      and the negative information is not NEW, the negative rule is already
+      priced and should be discounted heavily.
   - order: 4
     rule: >
-      SETTER rules establish the base range first; MODIFIER rules then adjust.
-      Modifiers never fully override a setter — cap total modifier adjustment
-      at +/- 0.20.
+      Guidance-based rules outrank headline-result rules (principle P3).
   - order: 5
+    rule: >
+      SETTER rules establish the base estimate first; MODIFIER rules then
+      adjust. Cap total modifier adjustment at +/- 4 percentage points of
+      abnormal return.
+  - order: 6
     rule: >
       If two setters of equal specificity conflict, take the midpoint of their
       ranges and downgrade confidence to "low".
 
-# -----------------------------------------------------------------------------
-# SETTER RULES — establish a base percentile range
-# -----------------------------------------------------------------------------
+# =============================================================================
+# RULES
+# Each action carries:
+#   abnormal_return_pct : target range for predict_v1 (return-space reasoning)
+#   percentile_range    : equivalent for predict_v0 (percentile-space)
+# The two are equivalent under the conversion table in the prompt.
+# =============================================================================
 rules:
 
-  # --- Expectations framing -------------------------------------------------
+  # ---------------------------------------------------------------------------
+  # NEUTRAL — the modal outcome. Reach for this more often than feels natural.
+  # ---------------------------------------------------------------------------
+  - id: GLB-NEUTRAL-01
+    type: setter
+    scope: {applies_to: all}
+    trigger: >
+      An adequate quarter with no material surprise in either direction.
+      Results broadly in line, guidance broadly maintained, no significant new
+      information. NO RULE FIRES CLEANLY.
+    action:
+      abnormal_return_pct: [-1.0, 2.5]
+      percentile_range: [0.44, 0.66]
+    rationale: >
+      The single most common outcome in the sample and the one we were getting
+      most badly wrong. An ordinary company having an ordinary quarter drifts
+      slightly. It does not collapse. Our Aug 6 results forecast these at 0.15
+      when the truth was 0.60-0.70.
+    confidence: high
+    source: observed_2026Q3
+    evidence: {n: 0, hit_rate: null}
+
   - id: GLB-EXPECT-01
     type: setter
     scope: {applies_to: all}
     trigger: >
-      Strong operational results (record profit, margin expansion, solid
-      double-digit growth) that are broadly in line with what the market
-      already expected. No change to the forward path.
-    action: {percentile_range: [0.40, 0.60]}
+      Apparently strong results—including record performance or a modest
+      beat-and-raise—that largely confirm the market's expected forward path
+      rather than changing it.
+    action:
+      percentile_range: [0.40, 0.60]
     rationale: >
       Meeting elevated expectations is not new information. This is the single
       most common error in unoptimized models: reading "good results" as a
@@ -134,43 +233,21 @@ rules:
     source: koijen_levy_2026
     evidence: {n: 0, hit_rate: null}
 
-  - id: GLB-EXPECT-02
-    type: setter
-    scope: {applies_to: all}
-    trigger: >
-      An incremental "beat and raise" where the raise is modest and roughly
-      what was already anticipated.
-    action: {percentile_range: [0.45, 0.60]}
-    rationale: >
-      The graveyard of good news. Traders sell the news when the raise merely
-      confirms the consensus path.
-    confidence: high
-    source: koijen_levy_2026
-    evidence: {n: 0, hit_rate: null}
-
-  - id: GLB-EXPECT-03
-    type: setter
-    scope: {applies_to: all}
-    trigger: >
-      Genuinely shocking positive news: guidance raised dramatically, a
-      transformative strategic announcement, a buyback very large relative to
-      market cap, or the reversal of a widely-held negative thesis.
-    action: {percentile_range: [0.85, 0.97]}
-    rationale: >
-      Reserved for real surprise. If this rule fires more than ~10% of the
-      time, our threshold has drifted and needs re-tightening.
-    confidence: high
-    source: koijen_levy_2026
-    evidence: {n: 0, hit_rate: null}
-
-  # --- Guidance -------------------------------------------------------------
+  # ---------------------------------------------------------------------------
+  # NEGATIVE SETTERS — proven. Tightened triggers, unchanged severity.
+  # ---------------------------------------------------------------------------
   - id: GLB-GUID-01
     type: setter
     scope: {applies_to: all}
     trigger: >
-      Headline results beat expectations BUT forward guidance is below
-      consensus, lowered, or guided to the low end of the prior range.
-    action: {percentile_range: [0.12, 0.28]}
+      Headline results beat expectations BUT forward guidance is MATERIALLY
+      below consensus or has been explicitly lowered.
+      MATERIALITY GATE: guidance must be meaningfully below the prior path —
+      not merely at the low end of an unchanged range, and not merely
+      conservative framing of an unchanged number.
+    action:
+      abnormal_return_pct: [-10.0, -4.0]
+      percentile_range: [0.12, 0.28]
     rationale: >
       The classic beat-and-lower. Markets price the forward path; a lowered
       path outweighs a backward-looking beat.
@@ -184,7 +261,9 @@ rules:
     trigger: >
       Forward-quarter guidance implies a deceleration greater than ~50% from
       recent organic growth rates.
-    action: {percentile_range: [0.10, 0.25]}
+    action:
+      abnormal_return_pct: [-12.0, -5.0]
+      percentile_range: [0.10, 0.25]
     rationale: >
       Sharp deceleration resets the growth thesis, not just one quarter.
     confidence: high
@@ -195,58 +274,37 @@ rules:
     type: setter
     scope: {applies_to: all}
     trigger: >
-      Guidance is withdrawn, suspended, or the company declines to guide where
-      it has previously guided.
-    action: {percentile_range: [0.05, 0.18]}
+      Guidance is withdrawn or suspended, or the company declines to guide
+      where it has consistently guided before.
+      MATERIALITY GATE: an actual withdrawal, not a narrowing of a range and
+      not a refusal to guide on a minor secondary metric.
+    action:
+      abnormal_return_pct: [-18.0, -7.0]
+      percentile_range: [0.05, 0.18]
     rationale: >
-      Removing guidance is read as management losing visibility. Uncertainty
-      is priced as risk, and the absence of a number is worse than a bad one.
+      Removing guidance is read as management losing visibility. The absence
+      of a number is worse than a bad one.
     confidence: medium
     source: literature
     evidence: {n: 0, hit_rate: null}
 
-  - id: GLB-GUID-04
-    type: setter
-    scope: {applies_to: all}
-    trigger: >
-      Miss on the headline quarter BUT guidance raised or the forward path
-      credibly improved (e.g. a one-off drag explicitly behind them).
-    action: {percentile_range: [0.55, 0.75]}
-    rationale: >
-      Mirror image of GLB-GUID-01. The forward path is what gets priced, so a
-      credible improvement can absorb a backward-looking miss.
-    confidence: medium
-    source: literature
-    evidence: {n: 0, hit_rate: null}
-
-  # --- Earnings quality -----------------------------------------------------
   - id: GLB-QUAL-01
     type: setter
     scope: {applies_to: all}
     trigger: >
-      Headline EPS or margins inflated by one-time or non-recurring items
-      (asset revaluations, inventory gains, tax benefits, favourable mix)
-      with no corresponding forward acceleration.
-    action: {percentile_range: [0.10, 0.22]}
+      Headline EPS or margins inflated by one-time or non-recurring items with
+      no corresponding forward acceleration.
+      MATERIALITY GATE: the one-time contribution must be large enough to
+      change the earnings picture — roughly 10% or more of EPS. Every company
+      discloses some non-recurring items; that alone does not fire this rule.
+    action:
+      abnormal_return_pct: [-12.0, -6.0]
+      percentile_range: [0.10, 0.22]
     rationale: >
       Transitory components do not change the forward path, and their presence
       signals the underlying run-rate is weaker than the headline implies.
-    confidence: high
-    source: koijen_levy_2026
-    evidence: {n: 0, hit_rate: null}
-
-  - id: GLB-QUAL-02
-    type: setter
-    scope: {applies_to: all}
-    trigger: >
-      Record or near-record margins attributed to non-recurring benefits AND a
-      concrete operational execution failure in the same quarter (downtime,
-      supply disruption, facility issue) AND a major segment declining
-      materially.
-    action: {percentile_range: [0.08, 0.20]}
-    rationale: >
-      The paper's canonical interaction rule. Compounding negatives override
-      positive demand narratives elsewhere in the call.
+      This rule caught CDLX (+13.2% surprise, stock -13.8%) when most of the
+      field was fooled. Do not weaken it.
     confidence: high
     source: koijen_levy_2026
     evidence: {n: 0, hit_rate: null}
@@ -257,7 +315,9 @@ rules:
     trigger: >
       Pre-profit company reports strong revenue growth (>30% YoY) BUT operating
       losses remain flat or worsen — losses not narrowing proportionally.
-    action: {percentile_range: [0.10, 0.20]}
+    action:
+      abnormal_return_pct: [-12.0, -7.0]
+      percentile_range: [0.10, 0.20]
     rationale: >
       Markets demand that high growth translate into financial improvement.
       Growth without operating leverage reads as unprofitable scaling.
@@ -271,7 +331,9 @@ rules:
     trigger: >
       Revenue growth driven predominantly by price increases while volumes
       decline, with no acknowledgement of volume recovery.
-    action: {percentile_range: [0.25, 0.40]}
+    action:
+      abnormal_return_pct: [-5.0, -2.0]
+      percentile_range: [0.24, 0.38]
     rationale: >
       Price-led growth without volume is read as a ceiling on the runway and
       raises demand-destruction concerns.
@@ -279,48 +341,204 @@ rules:
     source: team_prior
     evidence: {n: 0, hit_rate: null}
 
-  # --- Tone and language ----------------------------------------------------
   - id: GLB-TONE-01
     type: setter
     scope: {applies_to: all}
     trigger: >
-      Management uses cautionary forward-looking language — "aggressive
-      consensus", "gradual recovery", "measured", "prudent", guiding to the
-      low end, or hedging on the outlook.
-    action: {percentile_range: [0.35, 0.50]}
+      Management uses cautionary forward-looking language that represents a
+      CLEAR SHIFT from how they framed the outlook in prior quarters.
+      MATERIALITY GATE: this is the most over-fired rule in v0.1. Routine
+      hedging, standard risk-factor language and ordinary conservatism appear
+      in essentially every call and DO NOT fire this rule. Fire it only when
+      the tone has demonstrably changed or management is visibly walking back
+      a previously confident position.
+    action:
+      abnormal_return_pct: [-3.0, 0.0]
+      percentile_range: [0.34, 0.50]
     rationale: >
       Cautionary framing lowers the expected path of cash flows even when the
-      quantitative guide is unchanged. Managements hedge deliberately.
+      quantitative guide is unchanged. But only a CHANGE in framing carries
+      information; the baseline level of corporate caution is already priced.
     confidence: high
     source: koijen_levy_2026
     evidence: {n: 0, hit_rate: null}
 
-  - id: GLB-TONE-02
-    type: modifier
+  # ---------------------------------------------------------------------------
+  # POSITIVE SETTERS — new in v0.2.0. This is the half that was missing.
+  # ---------------------------------------------------------------------------
+  - id: GLB-POS-01
+    type: setter
+    scope: {profile: out_of_favour}
+    trigger: >
+      A company the market has already written off — depressed valuation,
+      persistent recent underperformance, widely known problems, heavily
+      shorted, or a broken narrative — reports a quarter that is merely
+      ADEQUATE rather than disastrous. Declining metrics stabilise, liquidity
+      concerns ease, or the feared outcome simply fails to materialise.
+    action:
+      abnormal_return_pct: [8.0, 25.0]
+      percentile_range: [0.85, 0.97]
+    rationale: >
+      Principle P8, and our single largest blind spot. When expectations are
+      near zero, the absence of bad news is powerfully good news. This pattern
+      produced several of the largest moves in the Aug 6 sample — HTZ +29.6%,
+      OPRT +33.0%, TRUP +15.6%, ZVRA +13.0% — every one of which we forecast
+      below 0.20. Do not confuse a WEAK COMPANY with a NEGATIVE SURPRISE.
+    confidence: high
+    source: observed_2026Q3
+    evidence: {n: 0, hit_rate: null}
+
+  - id: GLB-POS-02
+    type: setter
     scope: {applies_to: all}
     trigger: >
-      Analysts press repeatedly on a single issue in Q&A and management
-      answers evasively, deflects, or declines to quantify.
-    action: {adjust: -0.10}
+      Forward guidance raised MATERIALLY above the prior path, or the full-year
+      outlook lifted meaningfully — not a routine narrowing or a token raise
+      that merely reflects the quarter just delivered.
+    action:
+      abnormal_return_pct: [6.0, 15.0]
+      percentile_range: [0.80, 0.92]
     rationale: >
-      Sustained analyst focus identifies the issue the market cares about;
-      evasion on that issue signals the answer is unfavourable.
+      The direct mirror of GLB-GUID-01, which v0.1 lacked. If a lowered
+      forward path is the strongest negative signal, a materially raised one
+      is the strongest positive signal. Symmetry matters.
+    confidence: high
+    source: literature
+    evidence: {n: 0, hit_rate: null}
+
+  - id: GLB-POS-03
+    type: setter
+    scope: {profile: pre_profit_or_marginal}
+    trigger: >
+      Inflection to profitability: first positive EBITDA or net income, losses
+      narrowing far faster than expected, or a credible near-term path to
+      break-even newly quantified.
+    action:
+      abnormal_return_pct: [10.0, 25.0]
+      percentile_range: [0.88, 0.97]
+    rationale: >
+      The mirror of GLB-QUAL-03. If growth without operating leverage is
+      heavily punished, demonstrated operating leverage is heavily rewarded —
+      it validates the entire investment thesis at once.
     confidence: medium
     source: literature
     evidence: {n: 0, hit_rate: null}
 
-  # --- Capital allocation and structure -------------------------------------
+  - id: GLB-POS-04
+    type: setter
+    scope: {applies_to: all}
+    trigger: >
+      Margin expansion that is clearly STRUCTURAL rather than transitory —
+      driven by mix, pricing power, or cost actions that management quantifies
+      and carries into guidance.
+    action:
+      abnormal_return_pct: [4.0, 10.0]
+      percentile_range: [0.72, 0.88]
+    rationale: >
+      The mirror of GLB-QUAL-01. Transitory margin gains earn no credit;
+      durable ones re-rate the forward earnings base.
+    confidence: medium
+    source: literature
+    evidence: {n: 0, hit_rate: null}
+
+  - id: GLB-POS-05
+    type: setter
+    scope: {applies_to: all}
+    trigger: >
+      A material and QUANTIFIED new catalyst: a large contract or customer win,
+      a partnership with disclosed economics, a regulatory approval, or an
+      asset sale at a clearly favourable price.
+      GATE: the economics must be quantified. An unquantified announcement is
+      a roadmap item and earns little (see AP-02).
+    action:
+      abnormal_return_pct: [6.0, 20.0]
+      percentile_range: [0.80, 0.95]
+    rationale: >
+      Discrete, quantifiable news changes the forward model immediately, which
+      is exactly what the market prices.
+    confidence: medium
+    source: literature
+    evidence: {n: 0, hit_rate: null}
+
+  - id: GLB-POS-06
+    type: setter
+    scope: {applies_to: all}
+    trigger: >
+      A previously identified problem — a declining segment, a margin drag, a
+      troubled geography, an execution failure — demonstrably turning, with
+      management quantifying the improvement.
+    action:
+      abnormal_return_pct: [4.0, 12.0]
+      percentile_range: [0.72, 0.90]
+    rationale: >
+      The market prices known problems. Evidence that a known problem is
+      resolving removes a discount that was already applied.
+    confidence: medium
+    source: literature
+    evidence: {n: 0, hit_rate: null}
+
+  - id: GLB-GUID-04
+    type: setter
+    scope: {applies_to: all}
+    trigger: >
+      Miss on the headline quarter BUT guidance raised or the forward path
+      credibly improved — for example a one-off drag explicitly behind them.
+    action:
+      abnormal_return_pct: [1.0, 5.0]
+      percentile_range: [0.55, 0.76]
+    rationale: >
+      Mirror image of GLB-GUID-01. The forward path is what gets priced, so a
+      credible improvement can absorb a backward-looking miss.
+    confidence: medium
+    source: literature
+    evidence: {n: 0, hit_rate: null}
+
+  - id: GLB-EXPECT-03
+    type: setter
+    scope: {applies_to: all}
+    trigger: >
+      Genuinely shocking positive news: guidance raised dramatically, a
+      transformative strategic announcement, a buyback very large relative to
+      market cap, or the reversal of a widely-held negative thesis.
+    action:
+      abnormal_return_pct: [8.0, 25.0]
+      percentile_range: [0.85, 0.97]
+    rationale: >
+      Reserved for real surprise. If this rule fires on more than ~10% of
+      events, our threshold has drifted and needs re-tightening.
+    confidence: high
+    source: koijen_levy_2026
+    evidence: {n: 0, hit_rate: null}
+
+  # ---------------------------------------------------------------------------
+  # MODIFIERS — adjustments in percentage points of abnormal return
+  # ---------------------------------------------------------------------------
+
+  - id: GLB-TONE-03
+    type: modifier
+    scope: {applies_to: all}
+    trigger: >
+      Management proactively quantifies a previously vague concern, or provides
+      new disclosure that resolves a known analyst worry.
+    action: {adjust_return_pp: 2.0}
+    rationale: >
+      Mirror of GLB-TONE-02. Removing uncertainty on a contested issue is
+      itself value-relevant.
+    confidence: low
+    source: team_prior
+    evidence: {n: 0, hit_rate: null}
+
   - id: GLB-CAP-01
     type: modifier
     scope: {applies_to: all}
     trigger: >
-      A buyback or dividend is announced that is routine in size relative to
-      the company's history and market cap.
-    action: {adjust: 0.0}
+      A buyback or dividend routine in size relative to the company's history
+      and market cap.
+    action: {adjust_return_pp: 0.0}
     rationale: >
       Routine capital return is standard operating procedure, not a catalyst.
-      Explicitly a no-op rule: it exists to stop the model treating any
-      buyback headline as positive.
+      Explicit no-op to suppress the reflex to read any buyback headline as
+      bullish.
     confidence: high
     source: koijen_levy_2026
     evidence: {n: 0, hit_rate: null}
@@ -331,7 +549,7 @@ rules:
     trigger: >
       CFO or CEO departure, restatement, auditor issue, or material control
       weakness disclosed alongside results.
-    action: {adjust: -0.15}
+    action: {adjust_return_pp: -3.0}
     rationale: >
       Governance and credibility shocks are priced independently of the
       quarter's numbers and often dominate them.
@@ -345,27 +563,58 @@ rules:
     trigger: >
       Equity raise, convertible issuance, or dilutive financing announced with
       results.
-    action: {adjust: -0.10}
+      EXCEPTION: if the company had a known liquidity or going-concern problem,
+      a financing that RESOLVES it is a positive — see GLB-POS-01.
+    action: {adjust_return_pp: -2.0}
     rationale: >
-      Dilution is an immediate, mechanical negative and often signals the
-      balance sheet was tighter than assumed.
+      Dilution is an immediate mechanical negative — unless it removes an
+      existential overhang, in which case it is the opposite.
     confidence: low
     source: team_prior
     evidence: {n: 0, hit_rate: null}
 
-  # --- Uncertainty and stock-specific modifiers -----------------------------
+  - id: GLB-CAP-04
+    type: modifier
+    scope: {applies_to: all}
+    trigger: >
+      A first-ever dividend or buyback initiation, or a capital-return program
+      materially larger than anything the company has done before.
+    action: {adjust_return_pp: 3.0}
+    rationale: >
+      Distinct from GLB-CAP-01. Initiation signals a change in management's
+      confidence about the durability of cash flows.
+    confidence: medium
+    source: literature
+    evidence: {n: 0, hit_rate: null}
+
   - id: GLB-MOD-01
     type: modifier
     scope: {requires: dossier.reaction_profile}
     trigger: >
       The dossier's reaction_profile shows this stock reacts asymmetrically —
       e.g. beats poorly rewarded but misses heavily punished.
-    action: {adjust: conditional, direction: follow_profile, magnitude: 0.10}
+    action: {adjust_return_pp: conditional, direction: follow_profile, magnitude: 2.0}
     rationale: >
       How a stock has historically traded its own news is among the cheapest
-      and most reliable signals available to us, and is entirely absent from
-      the event bullets. Shift toward the documented asymmetry.
+      and most reliable signals available, and is entirely absent from the
+      event bullets.
     confidence: medium
+    source: team_prior
+    evidence: {n: 0, hit_rate: null}
+
+  - id: GLB-MOD-06
+    type: modifier
+    scope: {requires: dossier.prior_reactions}
+    trigger: >
+      The dossier shows this stock's typical earnings-day move is small
+      (consistently under ~3%) or large (consistently over ~10%).
+    action: {scale_to_profile: true}
+    rationale: >
+      Scale the magnitude of the estimate to the stock's own history. A name
+      that has never moved more than 3% on earnings is unlikely to move 15%
+      now, and vice versa. This is the highest-value use of the dossier and
+      directly improves cross-sectional ranking.
+    confidence: high
     source: team_prior
     evidence: {n: 0, hit_rate: null}
 
@@ -373,13 +622,12 @@ rules:
     type: modifier
     scope: {requires: dossier.consensus.dispersion}
     trigger: >
-      Analyst forecast dispersion is high relative to the cross-section
-      (ex-ante uncertainty about the quarter was elevated).
-    action: {widen: true, magnitude: 0.10}
+      Analyst forecast dispersion is high relative to the cross-section.
+    action: {widen: true, magnitude_pp: 2.0}
     rationale: >
-      High dispersion means the market had no firm prior, so realized
-      reactions are more extreme in both directions. Push away from 0.50
-      rather than toward it — this AIDS ranking, which is what scores.
+      High dispersion means the market had no firm prior, so realized reactions
+      are more extreme in both directions. Push away from zero rather than
+      toward it — this aids ranking, which is what scores.
     confidence: medium
     source: literature
     evidence: {n: 0, hit_rate: null}
@@ -388,9 +636,8 @@ rules:
     type: modifier
     scope: {requires: dossier.consensus.coverage}
     trigger: >
-      Analyst coverage is thin (below roughly the 25th percentile of the
-      cross-section).
-    action: {widen: true, magnitude: 0.05}
+      Analyst coverage is thin (below roughly the 25th percentile).
+    action: {widen: true, magnitude_pp: 1.0}
     rationale: >
       Less-covered names have noisier priors and less pre-positioning, so
       information releases move them further.
@@ -404,7 +651,7 @@ rules:
     trigger: >
       Management has missed or cut guidance in at least two of the last four
       quarters and is again guiding optimistically.
-    action: {adjust: -0.08}
+    action: {adjust_return_pp: -1.5}
     rationale: >
       Credibility is persistent. Repeat over-promisers are discounted by the
       market before the words leave their mouths.
@@ -416,13 +663,13 @@ rules:
     type: modifier
     scope: {requires: dossier.seasonality_note}
     trigger: >
-      The fiscal quarter has a well-documented seasonal pattern in this
-      company's guidance behaviour (e.g. habitually conservative ahead of a
-      product cycle or holiday quarter).
-    action: {adjust: conditional, magnitude: 0.05}
+      The fiscal quarter has a documented seasonal pattern in this company's
+      guidance behaviour (e.g. habitually conservative ahead of a product
+      cycle).
+    action: {adjust_return_pp: conditional, magnitude: 1.0}
     rationale: >
-      Seasonal guidance conservatism is anticipated by the market, so it should
-      not be read as a genuine negative signal.
+      Seasonal guidance conservatism is anticipated and should not be read as
+      a genuine negative signal.
     confidence: low
     source: team_prior
     evidence: {n: 0, hit_rate: null}
@@ -445,19 +692,36 @@ anti_patterns:
 
   - id: AP-03
     text: >
-      Use the full range where the evidence supports it. Roughly 10% of events 
-      deserve above 0.85 and 10% below 0.15 — but a genuinely ambiguous event 
-      belongs near 0.50. Forcing conviction you do not have is worse than 
-      admitting uncertainty: it adds noise without adding signal. Reserve the 
+      Use the full range where the evidence supports it. Roughly 10% of events
+      deserve above 0.85 and 10% below 0.15 — but a genuinely ambiguous event
+      belongs near 0.50. Forcing conviction you do not have is worse than
+      admitting uncertainty: it adds noise without adding signal. Reserve the
       tails for events where the read is clear.
     source: team_prior
 
   - id: AP-04
     text: >
-      Do not attempt to be unbiased on the level of the prediction. The scoring
+      Do not attempt to be unbiased on the LEVEL of the prediction. The scoring
       regression absorbs scale and intercept, so shifting every prediction by a
       constant changes nothing. Effort belongs in discrimination between events.
     source: team_prior
+
+  - id: AP-06
+    text: >
+      DO NOT LET MILD CAUTION DRAG AN ORDINARY QUARTER INTO THE BOTTOM DECILE.
+      The bottom decile means the stock fell more than 12%. Before going there,
+      ask whether you actually believe this company is about to lose an eighth
+      of its value. In our Aug 6 results this single error accounted for more
+      damage than every other mistake combined.
+    source: observed_2026Q3
+
+  - id: AP-07
+    text: >
+      Do not confuse a WEAK COMPANY with a NEGATIVE SURPRISE. A struggling
+      business whose problems are already well known and already in the price
+      can rally hard on a merely adequate quarter. Ask what the market
+      expected, not whether the business is good.
+    source: observed_2026Q3
 
   - id: AP-05
     text: >
