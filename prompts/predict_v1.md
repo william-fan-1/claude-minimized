@@ -135,3 +135,7 @@ Three instructions on applying these, and they matter:
 ## Company dossier
 
 {dossier}
+
+## Event bullets
+
+{event_bullets}
