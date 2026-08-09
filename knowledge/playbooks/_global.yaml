@@ -587,92 +587,92 @@ rules:
     source: literature
     evidence: {n: 0, hit_rate: null}
 
-  - id: GLB-MOD-01
-    type: modifier
-    scope: {requires: dossier.reaction_profile}
-    trigger: >
-      The dossier's reaction_profile shows this stock reacts asymmetrically —
-      e.g. beats poorly rewarded but misses heavily punished.
-    action: {adjust_return_pp: conditional, direction: follow_profile, magnitude: 2.0}
-    rationale: >
-      How a stock has historically traded its own news is among the cheapest
-      and most reliable signals available, and is entirely absent from the
-      event bullets.
-    confidence: medium
-    source: team_prior
-    evidence: {n: 0, hit_rate: null}
+  # - id: GLB-MOD-01
+  #   type: modifier
+  #   scope: {requires: dossier.reaction_profile}
+  #   trigger: >
+  #     The dossier's reaction_profile shows this stock reacts asymmetrically —
+  #     e.g. beats poorly rewarded but misses heavily punished.
+  #   action: {adjust_return_pp: conditional, direction: follow_profile, magnitude: 2.0}
+  #   rationale: >
+  #     How a stock has historically traded its own news is among the cheapest
+  #     and most reliable signals available, and is entirely absent from the
+  #     event bullets.
+  #   confidence: medium
+  #   source: team_prior
+  #   evidence: {n: 0, hit_rate: null}
 
-  - id: GLB-MOD-06
-    type: modifier
-    scope: {requires: dossier.prior_reactions}
-    trigger: >
-      The dossier shows this stock's typical earnings-day move is small
-      (consistently under ~3%) or large (consistently over ~10%).
-    action: {scale_to_profile: true}
-    rationale: >
-      Scale the magnitude of the estimate to the stock's own history. A name
-      that has never moved more than 3% on earnings is unlikely to move 15%
-      now, and vice versa. This is the highest-value use of the dossier and
-      directly improves cross-sectional ranking.
-    confidence: high
-    source: team_prior
-    evidence: {n: 0, hit_rate: null}
+  # - id: GLB-MOD-06
+  #   type: modifier
+  #   scope: {requires: dossier.prior_reactions}
+  #   trigger: >
+  #     The dossier shows this stock's typical earnings-day move is small
+  #     (consistently under ~3%) or large (consistently over ~10%).
+  #   action: {scale_to_profile: true}
+  #   rationale: >
+  #     Scale the magnitude of the estimate to the stock's own history. A name
+  #     that has never moved more than 3% on earnings is unlikely to move 15%
+  #     now, and vice versa. This is the highest-value use of the dossier and
+  #     directly improves cross-sectional ranking.
+  #   confidence: high
+  #   source: team_prior
+  #   evidence: {n: 0, hit_rate: null}
 
-  - id: GLB-MOD-02
-    type: modifier
-    scope: {requires: dossier.consensus.dispersion}
-    trigger: >
-      Analyst forecast dispersion is high relative to the cross-section.
-    action: {widen: true, magnitude_pp: 2.0}
-    rationale: >
-      High dispersion means the market had no firm prior, so realized reactions
-      are more extreme in both directions. Push away from zero rather than
-      toward it — this aids ranking, which is what scores.
-    confidence: medium
-    source: literature
-    evidence: {n: 0, hit_rate: null}
+  # - id: GLB-MOD-02
+  #   type: modifier
+  #   scope: {requires: dossier.consensus.dispersion}
+  #   trigger: >
+  #     Analyst forecast dispersion is high relative to the cross-section.
+  #   action: {widen: true, magnitude_pp: 2.0}
+  #   rationale: >
+  #     High dispersion means the market had no firm prior, so realized reactions
+  #     are more extreme in both directions. Push away from zero rather than
+  #     toward it — this aids ranking, which is what scores.
+  #   confidence: medium
+  #   source: literature
+  #   evidence: {n: 0, hit_rate: null}
 
-  - id: GLB-MOD-03
-    type: modifier
-    scope: {requires: dossier.consensus.coverage}
-    trigger: >
-      Analyst coverage is thin (below roughly the 25th percentile).
-    action: {widen: true, magnitude_pp: 1.0}
-    rationale: >
-      Less-covered names have noisier priors and less pre-positioning, so
-      information releases move them further.
-    confidence: low
-    source: team_prior
-    evidence: {n: 0, hit_rate: null}
+  # - id: GLB-MOD-03
+  #   type: modifier
+  #   scope: {requires: dossier.consensus.coverage}
+  #   trigger: >
+  #     Analyst coverage is thin (below roughly the 25th percentile).
+  #   action: {widen: true, magnitude_pp: 1.0}
+  #   rationale: >
+  #     Less-covered names have noisier priors and less pre-positioning, so
+  #     information releases move them further.
+  #   confidence: low
+  #   source: team_prior
+  #   evidence: {n: 0, hit_rate: null}
 
-  - id: GLB-MOD-04
-    type: modifier
-    scope: {requires: dossier.guidance_trajectory}
-    trigger: >
-      Management has missed or cut guidance in at least two of the last four
-      quarters and is again guiding optimistically.
-    action: {adjust_return_pp: -1.5}
-    rationale: >
-      Credibility is persistent. Repeat over-promisers are discounted by the
-      market before the words leave their mouths.
-    confidence: low
-    source: team_prior
-    evidence: {n: 0, hit_rate: null}
+  # - id: GLB-MOD-04
+  #   type: modifier
+  #   scope: {requires: dossier.guidance_trajectory}
+  #   trigger: >
+  #     Management has missed or cut guidance in at least two of the last four
+  #     quarters and is again guiding optimistically.
+  #   action: {adjust_return_pp: -1.5}
+  #   rationale: >
+  #     Credibility is persistent. Repeat over-promisers are discounted by the
+  #     market before the words leave their mouths.
+  #   confidence: low
+  #   source: team_prior
+  #   evidence: {n: 0, hit_rate: null}
 
-  - id: GLB-MOD-05
-    type: modifier
-    scope: {requires: dossier.seasonality_note}
-    trigger: >
-      The fiscal quarter has a documented seasonal pattern in this company's
-      guidance behaviour (e.g. habitually conservative ahead of a product
-      cycle).
-    action: {adjust_return_pp: conditional, magnitude: 1.0}
-    rationale: >
-      Seasonal guidance conservatism is anticipated and should not be read as
-      a genuine negative signal.
-    confidence: low
-    source: team_prior
-    evidence: {n: 0, hit_rate: null}
+  # - id: GLB-MOD-05
+  #   type: modifier
+  #   scope: {requires: dossier.seasonality_note}
+  #   trigger: >
+  #     The fiscal quarter has a documented seasonal pattern in this company's
+  #     guidance behaviour (e.g. habitually conservative ahead of a product
+  #     cycle).
+  #   action: {adjust_return_pp: conditional, magnitude: 1.0}
+  #   rationale: >
+  #     Seasonal guidance conservatism is anticipated and should not be read as
+  #     a genuine negative signal.
+  #   confidence: low
+  #   source: team_prior
+  #   evidence: {n: 0, hit_rate: null}
 
 # -----------------------------------------------------------------------------
 # ANTI-PATTERNS — explicit instructions on what NOT to do
