@@ -50,111 +50,44 @@ meta:
 # -----------------------------------------------------------------------------
 # CORE PRINCIPLES — injected verbatim into the prompt as the core directive
 # -----------------------------------------------------------------------------
+
+# Edited by Will for brevity
 principles:
   - id: P1
     text: >
-      Announcement returns are driven by BELIEF REVISION relative to prior
-      expectations, not by absolute performance. The question is never "were
-      these good results?" but "are these results different from what the
-      market already assumed?"
-    source: koijen_levy_2026
+      Predict BELIEF REVISION relative to prior expectations, not absolute
+      company performance. Strong results can be neutral when already priced
+      in, while weak results can be positive when the market expected worse.
+      Ask what assumption changed, not whether the quarter was objectively
+      good or bad.
+    sources:
+      - koijen_levy_2026
+      - observed_2026Q3
 
   - id: P2
     text: >
-      Good is already priced in. Public companies are EXPECTED to grow, beat,
-      and expand margins. A company reporting record profits and strong growth
-      that merely meets elevated expectations is a NEUTRAL outcome, not a
-      positive one.
-    source: koijen_levy_2026
-
-  - id: P8
-    text: >
-      BAD IS ALSO PRICED IN. This is the exact mirror of P2 and is equally
-      important. A stock the market has already written off does not need good
-      news to rally — it only needs the absence of further bad news. A
-      beaten-down company reporting a mediocre but non-disastrous quarter,
-      stabilising a declining metric, or simply surviving, frequently produces
-      one of the largest positive reactions of the quarter. Do not confuse a
-      weak company with a negative surprise.
-    source: observed_2026Q3
+      Prioritize material, forward-looking, and persistent information.
+      Guidance and concrete operational developments generally outweigh
+      headline results and broad management narratives. Discount transitory,
+      non-recurring, and accounting-driven items. Specific evidence should
+      outweigh vague commentary regardless of whether that evidence is
+      positive or negative.
+    sources:
+      - koijen_levy_2026
+      - literature
 
   - id: P3
     text: >
-      Forward guidance generally dominates the headline beat. The market prices
-      the path of future cash flows; the quarter just reported is largely a
-      historical artifact by the time it is announced.
-    source: koijen_levy_2026
-
-  - id: P4
-    text: >
-      Distinguish transitory from permanent. Earnings inflated by one-time,
-      non-recurring, or accounting items receive little credit because they do
-      not change the forward path.
-    source: literature
-
-  - id: P5
-    text: >
-      A concrete negative operational specific can override an otherwise
-      positive narrative. Specific bad news beats general good news.
-    source: koijen_levy_2026
-
-  - id: P6
-    text: >
-      The bar for an extreme reading is high in BOTH directions. An extreme
-      positive requires news that is genuinely surprising, not merely good. An
-      extreme negative requires a broken thesis, not merely a cautious tone.
-    source: koijen_levy_2026
-
-  - id: P9
-    text: >
-      MOST QUARTERS ARE ORDINARY. The single most common outcome is a company
-      reporting an adequate quarter with no real surprise, whose stock drifts
-      between -1% and +3%. This is not a dramatic event and must not be
-      forecast as one. Roughly half of all earnings events produce a POSITIVE
-      abnormal return.
-    source: observed_2026Q3
-
-  - id: P7
-    text: >
-      Your task is RELATIVE RANKING across the full quarter's cross-section.
-      Use the full range where the evidence supports it, but a genuinely
-      ambiguous event belongs near the middle. Forcing conviction you do not
-      have adds noise without adding signal.
-    source: team_prior
-
-# -----------------------------------------------------------------------------
-# FIRING DISCIPLINE — read before applying any rule
-# -----------------------------------------------------------------------------
-# This block exists because it is the fix for our largest observed error.
-# -----------------------------------------------------------------------------
-firing_discipline:
-  - id: FD-01
-    text: >
-      A rule fires only when its condition is MATERIAL AND REPRESENTS A CHANGE
-      from what the market already expected. The mere presence of the words in
-      a transcript is not sufficient.
-  - id: FD-02
-    text: >
-      Nearly every earnings call contains some cautious phrasing, some
-      non-recurring item, and some underperforming segment. These are the
-      normal texture of corporate disclosure and are already priced. They are
-      not signals.
-  - id: FD-03
-    text: >
-      If you find yourself firing three or more negative rules on a company
-      that simply had an unremarkable quarter, you are over-applying the
-      rulebook. Step back and ask what a neutral observer would conclude.
-  - id: FD-04
-    text: >
-      When no rule fires cleanly, that is a valid and common outcome. Apply
-      GLB-NEUTRAL-01 and move on. Do not hunt for a rule to justify a dramatic
-      forecast.
-  - id: FD-05
-    text: >
-      Rules inform your estimate of the SIZE of the move. They never replace
-      it. Do not output a rule's range as your answer — place within it based
-      on how severe or dramatic the specific situation actually is.
-
+      Calibrate the forecast to the strength of the belief revision and rank
+      it across the full earnings cross-section. Most quarters do not change
+      the thesis and therefore belong near the middle. Reserve extreme
+      predictions for genuinely surprising, persistent developments that
+      validate or break the forward thesis. When evidence is ambiguous or
+      offsetting, remain near neutral rather than forcing conviction.
+    sources:
+      - koijen_levy_2026
+      - observed_2026Q3
+      - team_prior
 # -----------------------------------------------------------------------------
 # PRECEDENCE — how to resolve conflicting rules
 # -----------------------------------------------------------------------------
@@ -163,6 +96,8 @@ precedence:
     rule: >
       More specific scope wins. An industry playbook rule overrides a global
       rule; a rule scoped to a company profile overrides an unscoped rule.
+
+    # Flag for review if negative bias shows in results after day 1
   - order: 2
     rule: >
       When a positive-narrative rule and a negative-operational-specific rule
@@ -180,6 +115,8 @@ precedence:
       SETTER rules establish the base estimate first; MODIFIER rules then
       adjust. Cap total modifier adjustment at +/- 4 percentage points of
       abnormal return.
+
+    # Flag for review after day 1 - midpoint may contribute to rule-snapping
   - order: 6
     rule: >
       If two setters of equal specificity conflict, take the midpoint of their
@@ -587,92 +524,22 @@ rules:
     source: literature
     evidence: {n: 0, hit_rate: null}
 
-  # - id: GLB-MOD-01
-  #   type: modifier
-  #   scope: {requires: dossier.reaction_profile}
-  #   trigger: >
-  #     The dossier's reaction_profile shows this stock reacts asymmetrically —
-  #     e.g. beats poorly rewarded but misses heavily punished.
-  #   action: {adjust_return_pp: conditional, direction: follow_profile, magnitude: 2.0}
-  #   rationale: >
-  #     How a stock has historically traded its own news is among the cheapest
-  #     and most reliable signals available, and is entirely absent from the
-  #     event bullets.
-  #   confidence: medium
-  #   source: team_prior
-  #   evidence: {n: 0, hit_rate: null}
+  # Condensed dossier rule due to information we are actually using
 
-  # - id: GLB-MOD-06
-  #   type: modifier
-  #   scope: {requires: dossier.prior_reactions}
-  #   trigger: >
-  #     The dossier shows this stock's typical earnings-day move is small
-  #     (consistently under ~3%) or large (consistently over ~10%).
-  #   action: {scale_to_profile: true}
-  #   rationale: >
-  #     Scale the magnitude of the estimate to the stock's own history. A name
-  #     that has never moved more than 3% on earnings is unlikely to move 15%
-  #     now, and vice versa. This is the highest-value use of the dossier and
-  #     directly improves cross-sectional ranking.
-  #   confidence: high
-  #   source: team_prior
-  #   evidence: {n: 0, hit_rate: null}
-
-  # - id: GLB-MOD-02
-  #   type: modifier
-  #   scope: {requires: dossier.consensus.dispersion}
-  #   trigger: >
-  #     Analyst forecast dispersion is high relative to the cross-section.
-  #   action: {widen: true, magnitude_pp: 2.0}
-  #   rationale: >
-  #     High dispersion means the market had no firm prior, so realized reactions
-  #     are more extreme in both directions. Push away from zero rather than
-  #     toward it — this aids ranking, which is what scores.
-  #   confidence: medium
-  #   source: literature
-  #   evidence: {n: 0, hit_rate: null}
-
-  # - id: GLB-MOD-03
-  #   type: modifier
-  #   scope: {requires: dossier.consensus.coverage}
-  #   trigger: >
-  #     Analyst coverage is thin (below roughly the 25th percentile).
-  #   action: {widen: true, magnitude_pp: 1.0}
-  #   rationale: >
-  #     Less-covered names have noisier priors and less pre-positioning, so
-  #     information releases move them further.
-  #   confidence: low
-  #   source: team_prior
-  #   evidence: {n: 0, hit_rate: null}
-
-  # - id: GLB-MOD-04
-  #   type: modifier
-  #   scope: {requires: dossier.guidance_trajectory}
-  #   trigger: >
-  #     Management has missed or cut guidance in at least two of the last four
-  #     quarters and is again guiding optimistically.
-  #   action: {adjust_return_pp: -1.5}
-  #   rationale: >
-  #     Credibility is persistent. Repeat over-promisers are discounted by the
-  #     market before the words leave their mouths.
-  #   confidence: low
-  #   source: team_prior
-  #   evidence: {n: 0, hit_rate: null}
-
-  # - id: GLB-MOD-05
-  #   type: modifier
-  #   scope: {requires: dossier.seasonality_note}
-  #   trigger: >
-  #     The fiscal quarter has a documented seasonal pattern in this company's
-  #     guidance behaviour (e.g. habitually conservative ahead of a product
-  #     cycle).
-  #   action: {adjust_return_pp: conditional, magnitude: 1.0}
-  #   rationale: >
-  #     Seasonal guidance conservatism is anticipated and should not be read as
-  #     a genuine negative signal.
-  #   confidence: low
-  #   source: team_prior
-  #   evidence: {n: 0, hit_rate: null}
+  - id: GLB-MOD-01
+    type: modifier
+    scope: {requires: dossier.prior_reactions}
+    trigger: >
+      At least four comparable prior earnings reactions are available.
+    action:
+      use_historical_reactions_as_weak_prior: true
+      max_adjust_return_pp: 2.0
+    rationale: >
+      Use the median absolute abnormal reaction to calibrate magnitude. Consider
+      beat-versus-miss asymmetry only when supported by multiple observations
+      on each side. Current-quarter evidence overrides history, particularly
+      when the event contains a new thesis-changing development.
+    confidence: medium
 
 # -----------------------------------------------------------------------------
 # ANTI-PATTERNS — explicit instructions on what NOT to do
