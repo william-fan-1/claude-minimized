@@ -108,20 +108,32 @@ def load_prompt_rules(
 
     return core_directive, industry_rules
 
-def get_dossier(ticker: str) -> dict | None:
-    """Load a canonical ticker dossier, returning None when it is unavailable."""
+def get_dossier(ticker: str) -> str | None:
+    """Return the complete canonical ticker dossier file as text."""
     path = DOSSIER_PATH / f"{ticker.strip().upper()}.yaml"
     try:
-        dossier = load_yaml(path)
-    except (FileNotFoundError, OSError, yaml.YAMLError):
+        return path.read_text(encoding="utf-8")
+    except (FileNotFoundError, OSError):
         return None
-    return dossier if isinstance(dossier, dict) else None
 
-def is_valid_dossier(dossier: dict | None) -> bool:
+def parse_dossier(dossier: str | dict | None) -> dict | None:
+    """Parse dossier text for internal checks without changing prompt contents."""
+    if isinstance(dossier, dict):
+        return dossier
+    if not isinstance(dossier, str):
+        return None
+    try:
+        parsed = yaml.safe_load(dossier)
+    except yaml.YAMLError:
+        return None
+    return parsed if isinstance(parsed, dict) else None
+
+def is_valid_dossier(dossier: str | dict | None) -> bool:
     """A dossier is usable only when it contains at least one reaction."""
-    if not isinstance(dossier, dict):
+    dossier_data = parse_dossier(dossier)
+    if dossier_data is None:
         return False
-    observations = dossier.get("reaction_statistics", {}).get("observations")
+    observations = dossier_data.get("reaction_statistics", {}).get("observations")
     if isinstance(observations, bool):
         return False
     try:
@@ -162,17 +174,13 @@ def construct_prompt(
     )
 
     industry = format_industry_tag(get_industry(ticker))
-    dossier_data = get_dossier(ticker)
-    has_valid_dossier = is_valid_dossier(dossier_data)
+    dossier_text = get_dossier(ticker)
+    has_valid_dossier = is_valid_dossier(dossier_text)
     core_directive, industry_rules = load_prompt_rules(
         industry,
         include_dossier_rule=has_valid_dossier,
     )
-    dossier = (
-        yaml.safe_dump(dossier_data, sort_keys=False)
-        if has_valid_dossier
-        else NO_CACHED_DOSSIER
-    )
+    dossier = dossier_text if has_valid_dossier else NO_CACHED_DOSSIER
 
     user_prompt = (
         prompt_template
