@@ -1,0 +1,76 @@
+ticker: EDBL
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-04-01'
+  stock_return_pct: 9.0625
+  vti_return_pct: -0.0769
+  abnormal_return_pct: 9.1394
+  earnings_surprise_pct: -62.79
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-05-15'
+  stock_return_pct: 15.6909
+  vti_return_pct: 1.2295
+  abnormal_return_pct: 14.4613
+  earnings_surprise_pct: -79.61
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-08-14'
+  stock_return_pct: 10.6383
+  vti_return_pct: 0.2845
+  abnormal_return_pct: 10.3538
+  earnings_surprise_pct: 76.14
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-11-13'
+  stock_return_pct: -11.5607
+  vti_return_pct: -0.0473
+  abnormal_return_pct: -11.5134
+  earnings_surprise_pct: -39.74
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-03-31'
+  stock_return_pct: -29.9712
+  vti_return_pct: 0.5157
+  abnormal_return_pct: -30.4869
+  earnings_surprise_pct: -13.81
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-05-15'
+  stock_return_pct: -13.913
+  vti_return_pct: 0.4077
+  abnormal_return_pct: -14.3208
+  earnings_surprise_pct: 18.31
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-15'
+  stock_return_pct: -5.4795
+  vti_return_pct: -0.227
+  abnormal_return_pct: -5.2524
+  earnings_surprise_pct: -781.69
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-11-14'
+  stock_return_pct: -2.2388
+  vti_return_pct: -0.0152
+  abnormal_return_pct: -2.2236
+  earnings_surprise_pct: -163.01
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: -3.738
+  mean_abnormal_return_pct: -3.7303
+  positive_reaction_rate: 0.375
+  median_absolute_reaction_pct: 10.9336
+  beat_observations: 2
+  median_reaction_after_beat_pct: -1.9835
+  miss_observations: 6
+  median_reaction_after_miss_pct: -3.738

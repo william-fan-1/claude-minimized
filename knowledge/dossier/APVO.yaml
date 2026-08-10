@@ -1,0 +1,76 @@
+ticker: APVO
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-05-08'
+  stock_return_pct: -11.6379
+  vti_return_pct: -0.0702
+  abnormal_return_pct: -11.5678
+  earnings_surprise_pct: 22.54
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-08-08'
+  stock_return_pct: 0.4808
+  vti_return_pct: 2.3417
+  abnormal_return_pct: -1.8609
+  earnings_surprise_pct: 13.47
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-11-07'
+  stock_return_pct: 19.7674
+  vti_return_pct: 0.699
+  abnormal_return_pct: 19.0685
+  earnings_surprise_pct: 15.79
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-02-14'
+  stock_return_pct: -8.2418
+  vti_return_pct: -0.0132
+  abnormal_return_pct: -8.2285
+  earnings_surprise_pct: -15.35
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-16'
+  stock_return_pct: -3.0303
+  vti_return_pct: 0.6848
+  abnormal_return_pct: -3.7151
+  earnings_surprise_pct: -4.28
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-08-11'
+  stock_return_pct: -4.8673
+  vti_return_pct: -0.23
+  abnormal_return_pct: -4.6373
+  earnings_surprise_pct: 89.9
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-07'
+  stock_return_pct: 0.0
+  vti_return_pct: 0.2186
+  abnormal_return_pct: -0.2186
+  earnings_surprise_pct: -6.7
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-14'
+  stock_return_pct: 0.7353
+  vti_return_pct: 0.7376
+  abnormal_return_pct: -0.0023
+  earnings_surprise_pct: -14.46
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: -2.788
+  mean_abnormal_return_pct: -1.3952
+  positive_reaction_rate: 0.125
+  median_absolute_reaction_pct: 4.1762
+  beat_observations: 4
+  median_reaction_after_beat_pct: -3.2491
+  miss_observations: 4
+  median_reaction_after_miss_pct: -1.9668

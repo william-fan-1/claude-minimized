@@ -1,0 +1,76 @@
+ticker: CATO
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2016-11-17'
+  stock_return_pct: -13.234
+  vti_return_pct: 0.507
+  abnormal_return_pct: -13.7411
+  earnings_surprise_pct: 15.38
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2017-03-16'
+  stock_return_pct: -2.698
+  vti_return_pct: -0.1222
+  abnormal_return_pct: -2.5758
+  earnings_surprise_pct: 7.69
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2017-05-18'
+  stock_return_pct: 1.6046
+  vti_return_pct: 0.2972
+  abnormal_return_pct: 1.3074
+  earnings_surprise_pct: 6.25
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2017-08-17'
+  stock_return_pct: -11.6892
+  vti_return_pct: -1.5898
+  abnormal_return_pct: -10.0994
+  earnings_surprise_pct: -127.27
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2017-11-16'
+  stock_return_pct: 18.6134
+  vti_return_pct: 0.9112
+  abnormal_return_pct: 17.7022
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2018-03-22'
+  stock_return_pct: 2.7967
+  vti_return_pct: -2.4497
+  abnormal_return_pct: 5.2463
+  earnings_surprise_pct: 76.67
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2018-05-24'
+  stock_return_pct: 19.5652
+  vti_return_pct: -0.163
+  abnormal_return_pct: 19.7282
+  earnings_surprise_pct: 8.05
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2018-08-23'
+  stock_return_pct: -15.4752
+  vti_return_pct: -0.1959
+  abnormal_return_pct: -15.2793
+  earnings_surprise_pct: -13.33
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: -0.6342
+  mean_abnormal_return_pct: 0.2861
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 11.9202
+  beat_observations: 5
+  median_reaction_after_beat_pct: 1.3074
+  miss_observations: 2
+  median_reaction_after_miss_pct: -12.6893

@@ -1,0 +1,76 @@
+ticker: BWEN
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-08-13'
+  stock_return_pct: -6.1225
+  vti_return_pct: 1.6632
+  abnormal_return_pct: -7.7856
+  earnings_surprise_pct: 300.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-11-13'
+  stock_return_pct: -3.5503
+  vti_return_pct: -0.0473
+  abnormal_return_pct: -3.503
+  earnings_surprise_pct: 100.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-03-05'
+  stock_return_pct: 4.0
+  vti_return_pct: 1.1368
+  abnormal_return_pct: 2.8631
+  earnings_surprise_pct: 45.45
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-05-13'
+  stock_return_pct: 2.4845
+  vti_return_pct: 0.6788
+  abnormal_return_pct: 1.8057
+  earnings_surprise_pct: 45.46
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-08-12'
+  stock_return_pct: -14.4578
+  vti_return_pct: 1.2232
+  abnormal_return_pct: -15.681
+  earnings_surprise_pct: -500.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: unknown
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: -387.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-03-11'
+  stock_return_pct: -7.8838
+  vti_return_pct: -0.081
+  abnormal_return_pct: -7.8028
+  earnings_surprise_pct: 7.69
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-05-12'
+  stock_return_pct: 117.2414
+  vti_return_pct: -0.231
+  abnormal_return_pct: 117.4724
+  earnings_surprise_pct: 72.73
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 7
+  median_abnormal_return_pct: -3.503
+  mean_abnormal_return_pct: 12.4813
+  positive_reaction_rate: 0.4286
+  median_absolute_reaction_pct: 7.7856
+  beat_observations: 6
+  median_reaction_after_beat_pct: -0.8487
+  miss_observations: 1
+  median_reaction_after_miss_pct: -15.681

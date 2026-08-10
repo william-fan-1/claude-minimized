@@ -1,0 +1,76 @@
+ticker: SINT
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-05-14'
+  stock_return_pct: 41.0256
+  vti_return_pct: 0.488
+  abnormal_return_pct: 40.5376
+  earnings_surprise_pct: 44.44
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-08-14'
+  stock_return_pct: -2.093
+  vti_return_pct: 0.2845
+  abnormal_return_pct: -2.3775
+  earnings_surprise_pct: 34.27
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: unknown
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: 62.42
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-03-19'
+  stock_return_pct: 3.8194
+  vti_return_pct: 1.1366
+  abnormal_return_pct: 2.6829
+  earnings_surprise_pct: -140.11
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-05-15'
+  stock_return_pct: -3.1884
+  vti_return_pct: 0.4077
+  abnormal_return_pct: -3.5961
+  earnings_surprise_pct: -80.11
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-15'
+  stock_return_pct: -0.3279
+  vti_return_pct: -0.227
+  abnormal_return_pct: -0.1009
+  earnings_surprise_pct: -33.32
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-13'
+  stock_return_pct: -10.7872
+  vti_return_pct: -1.7716
+  abnormal_return_pct: -9.0156
+  earnings_surprise_pct: -529.09
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-18'
+  stock_return_pct: -1.5453
+  vti_return_pct: -0.1048
+  abnormal_return_pct: -1.4405
+  earnings_surprise_pct: -6.06
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 7
+  median_abnormal_return_pct: -1.4405
+  mean_abnormal_return_pct: 3.8128
+  positive_reaction_rate: 0.2857
+  median_absolute_reaction_pct: 2.6829
+  beat_observations: 2
+  median_reaction_after_beat_pct: 19.08
+  miss_observations: 5
+  median_reaction_after_miss_pct: -1.4405

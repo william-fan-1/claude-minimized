@@ -1,0 +1,76 @@
+ticker: GNPX
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2022-11-14'
+  stock_return_pct: 2.1583
+  vti_return_pct: -0.9043
+  abnormal_return_pct: 3.0626
+  earnings_surprise_pct: -8.33
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2023-04-03'
+  stock_return_pct: -3.2967
+  vti_return_pct: 0.2646
+  abnormal_return_pct: -3.5613
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-04-02'
+  stock_return_pct: -4.3771
+  vti_return_pct: -0.9242
+  abnormal_return_pct: -3.4529
+  earnings_surprise_pct: -302.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-05-16'
+  stock_return_pct: -3.3932
+  vti_return_pct: -0.2703
+  abnormal_return_pct: -3.1229
+  earnings_surprise_pct: -45.28
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-08-12'
+  stock_return_pct: -11.2676
+  vti_return_pct: -0.0647
+  abnormal_return_pct: -11.2029
+  earnings_surprise_pct: -30.43
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-11-13'
+  stock_return_pct: -23.445
+  vti_return_pct: -0.0473
+  abnormal_return_pct: -23.3977
+  earnings_surprise_pct: 54.95
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-04-01'
+  stock_return_pct: -6.1224
+  vti_return_pct: 0.3384
+  abnormal_return_pct: -6.4608
+  earnings_surprise_pct: 761.54
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-13'
+  stock_return_pct: 2.1739
+  vti_return_pct: 0.6788
+  abnormal_return_pct: 1.4951
+  earnings_surprise_pct: 36.59
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: -3.5071
+  mean_abnormal_return_pct: -5.8301
+  positive_reaction_rate: 0.25
+  median_absolute_reaction_pct: 3.5071
+  beat_observations: 3
+  median_reaction_after_beat_pct: -6.4608
+  miss_observations: 4
+  median_reaction_after_miss_pct: -3.2879

@@ -1,0 +1,76 @@
+ticker: ULH
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-10-25'
+  stock_return_pct: -10.9166
+  vti_return_pct: -0.0945
+  abnormal_return_pct: -10.8221
+  earnings_surprise_pct: 5.93
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-02-07'
+  stock_return_pct: -19.6042
+  vti_return_pct: -0.8946
+  abnormal_return_pct: -18.7096
+  earnings_surprise_pct: -17.2
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-04-25'
+  stock_return_pct: -4.8489
+  vti_return_pct: 0.6134
+  abnormal_return_pct: -5.4623
+  earnings_surprise_pct: -52.08
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-07-25'
+  stock_return_pct: 9.9306
+  vti_return_pct: 0.4451
+  abnormal_return_pct: 9.4856
+  earnings_surprise_pct: -5.88
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-07'
+  stock_return_pct: -1.3708
+  vti_return_pct: 0.2186
+  abnormal_return_pct: -1.5893
+  earnings_surprise_pct: -140.68
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-16'
+  stock_return_pct: 9.8066
+  vti_return_pct: 1.0211
+  abnormal_return_pct: 8.7856
+  earnings_surprise_pct: 380.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-04'
+  stock_return_pct: -27.9911
+  vti_return_pct: -0.3687
+  abnormal_return_pct: -27.6224
+  earnings_surprise_pct: -244.44
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-03'
+  stock_return_pct: 36.0986
+  vti_return_pct: 1.529
+  abnormal_return_pct: 34.5696
+  earnings_surprise_pct: 23.08
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: -3.5258
+  mean_abnormal_return_pct: -1.4206
+  positive_reaction_rate: 0.375
+  median_absolute_reaction_pct: 10.1539
+  beat_observations: 3
+  median_reaction_after_beat_pct: 8.7856
+  miss_observations: 5
+  median_reaction_after_miss_pct: -5.4623

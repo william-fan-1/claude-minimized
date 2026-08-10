@@ -1,0 +1,68 @@
+ticker: KLC
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-11-21'
+  stock_return_pct: -15.0439
+  vti_return_pct: 0.6996
+  abnormal_return_pct: -15.7435
+  earnings_surprise_pct: 348.02
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-03-21'
+  stock_return_pct: -22.1719
+  vti_return_pct: 0.0395
+  abnormal_return_pct: -22.2114
+  earnings_surprise_pct: 74.93
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-14'
+  stock_return_pct: -8.5438
+  vti_return_pct: 0.0657
+  abnormal_return_pct: -8.6095
+  earnings_surprise_pct: 38.48
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-13'
+  stock_return_pct: -22.3242
+  vti_return_pct: 0.484
+  abnormal_return_pct: -22.8081
+  earnings_surprise_pct: -13.92
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-13'
+  stock_return_pct: -19.2
+  vti_return_pct: -1.7716
+  abnormal_return_pct: -17.4284
+  earnings_surprise_pct: 5.27
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-13'
+  stock_return_pct: -42.6471
+  vti_return_pct: -0.5459
+  abnormal_return_pct: -42.1012
+  earnings_surprise_pct: 32.98
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-15'
+  stock_return_pct: -8.0092
+  vti_return_pct: -1.2684
+  abnormal_return_pct: -6.7408
+  earnings_surprise_pct: 632.62
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 7
+  median_abnormal_return_pct: -17.4284
+  mean_abnormal_return_pct: -19.3776
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 17.4284
+  beat_observations: 6
+  median_reaction_after_beat_pct: -16.586
+  miss_observations: 1
+  median_reaction_after_miss_pct: -22.8081

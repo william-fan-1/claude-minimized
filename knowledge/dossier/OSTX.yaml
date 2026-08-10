@@ -1,0 +1,68 @@
+ticker: OSTX
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-11-15'
+  stock_return_pct: 0.0
+  vti_return_pct: -1.2686
+  abnormal_return_pct: 1.2686
+  earnings_surprise_pct: -125.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-04-01'
+  stock_return_pct: -13.6364
+  vti_return_pct: 0.3384
+  abnormal_return_pct: -13.9747
+  earnings_surprise_pct: -71.43
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-16'
+  stock_return_pct: -1.2048
+  vti_return_pct: 0.6848
+  abnormal_return_pct: -1.8896
+  earnings_surprise_pct: -107.68
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-19'
+  stock_return_pct: -1.3761
+  vti_return_pct: -0.6065
+  abnormal_return_pct: -0.7697
+  earnings_surprise_pct: -62.85
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-17'
+  stock_return_pct: -5.0
+  vti_return_pct: -1.0398
+  abnormal_return_pct: -3.9602
+  earnings_surprise_pct: -71.43
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-03-31'
+  stock_return_pct: 6.015
+  vti_return_pct: 2.9293
+  abnormal_return_pct: 3.0857
+  earnings_surprise_pct: -192.86
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-05-18'
+  stock_return_pct: -7.9787
+  vti_return_pct: -0.1048
+  abnormal_return_pct: -7.874
+  earnings_surprise_pct: -42.11
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 7
+  median_abnormal_return_pct: -1.8896
+  mean_abnormal_return_pct: -3.4448
+  positive_reaction_rate: 0.2857
+  median_absolute_reaction_pct: 3.0857
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 7
+  median_reaction_after_miss_pct: -1.8896

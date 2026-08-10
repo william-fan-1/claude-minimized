@@ -1,0 +1,44 @@
+ticker: TRNR
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-15'
+  stock_return_pct: -1.8868
+  vti_return_pct: -0.227
+  abnormal_return_pct: -1.6598
+  earnings_surprise_pct: 88.74
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-17'
+  stock_return_pct: -9.4262
+  vti_return_pct: -1.0398
+  abnormal_return_pct: -8.3864
+  earnings_surprise_pct: 36.53
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-04-01'
+  stock_return_pct: 9.489
+  vti_return_pct: 0.7574
+  abnormal_return_pct: 8.7316
+  earnings_surprise_pct: -265.64
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-21'
+  stock_return_pct: -4.7619
+  vti_return_pct: 0.2471
+  abnormal_return_pct: -5.009
+  earnings_surprise_pct: -227.68
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 4
+  median_abnormal_return_pct: -3.3344
+  mean_abnormal_return_pct: -1.5809
+  positive_reaction_rate: 0.25
+  median_absolute_reaction_pct: 6.6977
+  beat_observations: 2
+  median_reaction_after_beat_pct: -5.0231
+  miss_observations: 2
+  median_reaction_after_miss_pct: 1.8613

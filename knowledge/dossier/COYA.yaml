@@ -1,0 +1,76 @@
+ticker: COYA
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-08-12'
+  stock_return_pct: -12.8713
+  vti_return_pct: -0.0647
+  abnormal_return_pct: -12.8066
+  earnings_surprise_pct: -35.71
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-11-06'
+  stock_return_pct: 7.7151
+  vti_return_pct: 2.7971
+  abnormal_return_pct: 4.9181
+  earnings_surprise_pct: 37.35
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-03-18'
+  stock_return_pct: -5.8394
+  vti_return_pct: -1.0778
+  abnormal_return_pct: -4.7616
+  earnings_surprise_pct: -28.57
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-05-13'
+  stock_return_pct: -6.1889
+  vti_return_pct: 0.6788
+  abnormal_return_pct: -6.8677
+  earnings_surprise_pct: -252.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-08-12'
+  stock_return_pct: -0.3252
+  vti_return_pct: 1.2232
+  abnormal_return_pct: -1.5484
+  earnings_surprise_pct: 16.92
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-11-12'
+  stock_return_pct: 1.3311
+  vti_return_pct: 0.0357
+  abnormal_return_pct: 1.2954
+  earnings_surprise_pct: 57.02
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-03-16'
+  stock_return_pct: -0.6623
+  vti_return_pct: 1.0211
+  abnormal_return_pct: -1.6833
+  earnings_surprise_pct: -14.29
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-05-12'
+  stock_return_pct: 2.6316
+  vti_return_pct: -0.231
+  abnormal_return_pct: 2.8626
+  earnings_surprise_pct: 17.95
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: -1.6159
+  mean_abnormal_return_pct: -2.3239
+  positive_reaction_rate: 0.375
+  median_absolute_reaction_pct: 3.8121
+  beat_observations: 4
+  median_reaction_after_beat_pct: 2.079
+  miss_observations: 4
+  median_reaction_after_miss_pct: -5.8147

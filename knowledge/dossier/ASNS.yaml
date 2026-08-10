@@ -1,0 +1,52 @@
+ticker: ASNS
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-03-24'
+  stock_return_pct: -4.6296
+  vti_return_pct: 1.8505
+  abnormal_return_pct: -6.4801
+  earnings_surprise_pct: -1200.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-14'
+  stock_return_pct: -4.875
+  vti_return_pct: 0.0657
+  abnormal_return_pct: -4.9407
+  earnings_surprise_pct: 12.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-15'
+  stock_return_pct: -18.0195
+  vti_return_pct: -0.227
+  abnormal_return_pct: -17.7925
+  earnings_surprise_pct: -31.25
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-11-14'
+  stock_return_pct: -8.6247
+  vti_return_pct: -0.0152
+  abnormal_return_pct: -8.6095
+  earnings_surprise_pct: -30.77
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-15'
+  stock_return_pct: 2.2989
+  vti_return_pct: -1.2684
+  abnormal_return_pct: 3.5672
+  earnings_surprise_pct: 79.75
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 5
+  median_abnormal_return_pct: -6.4801
+  mean_abnormal_return_pct: -6.8511
+  positive_reaction_rate: 0.2
+  median_absolute_reaction_pct: 6.4801
+  beat_observations: 2
+  median_reaction_after_beat_pct: -0.6867
+  miss_observations: 3
+  median_reaction_after_miss_pct: -8.6095

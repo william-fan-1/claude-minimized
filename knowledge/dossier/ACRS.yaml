@@ -1,0 +1,76 @@
+ticker: ACRS
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-11-06'
+  stock_return_pct: 1.8018
+  vti_return_pct: 2.7971
+  abnormal_return_pct: -0.9953
+  earnings_surprise_pct: -1275.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-02-27'
+  stock_return_pct: -7.1429
+  vti_return_pct: -1.5492
+  abnormal_return_pct: -5.5936
+  earnings_surprise_pct: -169.33
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-05-08'
+  stock_return_pct: 4.8
+  vti_return_pct: 0.7859
+  abnormal_return_pct: 4.0141
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-08-07'
+  stock_return_pct: 1.2903
+  vti_return_pct: -0.0578
+  abnormal_return_pct: 1.3482
+  earnings_surprise_pct: -1.3
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-11-06'
+  stock_return_pct: 0.4425
+  vti_return_pct: -1.1376
+  abnormal_return_pct: 1.5801
+  earnings_surprise_pct: 14.29
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-02-26'
+  stock_return_pct: -5.4381
+  vti_return_pct: -0.392
+  abnormal_return_pct: -5.046
+  earnings_surprise_pct: -17.07
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-05-07'
+  stock_return_pct: 1.6736
+  vti_return_pct: -0.4587
+  abnormal_return_pct: 2.1324
+  earnings_surprise_pct: 3.67
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-06'
+  stock_return_pct: -4.2453
+  vti_return_pct: -0.1528
+  abnormal_return_pct: -4.0925
+  earnings_surprise_pct: 2.78
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: 0.1765
+  mean_abnormal_return_pct: -0.8316
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 3.0732
+  beat_observations: 3
+  median_reaction_after_beat_pct: 1.5801
+  miss_observations: 4
+  median_reaction_after_miss_pct: -3.0207

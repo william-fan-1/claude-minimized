@@ -1,0 +1,76 @@
+ticker: BRFH
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-08-15'
+  stock_return_pct: -11.6095
+  vti_return_pct: 1.7321
+  abnormal_return_pct: -13.3416
+  earnings_surprise_pct: -40.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-10-25'
+  stock_return_pct: -15.9836
+  vti_return_pct: -0.0945
+  abnormal_return_pct: -15.8891
+  earnings_surprise_pct: -200.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-03-28'
+  stock_return_pct: -10.2639
+  vti_return_pct: -1.9929
+  abnormal_return_pct: -8.271
+  earnings_surprise_pct: -500.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-02'
+  stock_return_pct: -11.4094
+  vti_return_pct: 1.5591
+  abnormal_return_pct: -12.9685
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-14'
+  stock_return_pct: -4.5902
+  vti_return_pct: -0.1479
+  abnormal_return_pct: -4.4422
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-07'
+  stock_return_pct: 4.6053
+  vti_return_pct: 0.2186
+  abnormal_return_pct: 4.3867
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-04-16'
+  stock_return_pct: -6.4846
+  vti_return_pct: 0.2288
+  abnormal_return_pct: -6.7135
+  earnings_surprise_pct: -331.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-15'
+  stock_return_pct: 1.6597
+  vti_return_pct: -1.2684
+  abnormal_return_pct: 2.9281
+  earnings_surprise_pct: 52.94
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: -7.4923
+  mean_abnormal_return_pct: -6.7889
+  positive_reaction_rate: 0.25
+  median_absolute_reaction_pct: 7.4923
+  beat_observations: 1
+  median_reaction_after_beat_pct: 2.9281
+  miss_observations: 4
+  median_reaction_after_miss_pct: -10.8063

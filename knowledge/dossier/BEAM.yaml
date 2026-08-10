@@ -1,0 +1,76 @@
+ticker: BEAM
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-11-05'
+  stock_return_pct: -1.7652
+  vti_return_pct: 1.2708
+  abnormal_return_pct: -3.036
+  earnings_surprise_pct: 0.93
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-02-25'
+  stock_return_pct: -3.0854
+  vti_return_pct: -0.4959
+  abnormal_return_pct: -2.5895
+  earnings_surprise_pct: 10.34
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-05-06'
+  stock_return_pct: -19.3239
+  vti_return_pct: -0.8116
+  abnormal_return_pct: -18.5123
+  earnings_surprise_pct: -5.86
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-08-05'
+  stock_return_pct: -2.1967
+  vti_return_pct: -0.4412
+  abnormal_return_pct: -1.7555
+  earnings_surprise_pct: 8.36
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-11-04'
+  stock_return_pct: -6.2268
+  vti_return_pct: -1.2091
+  abnormal_return_pct: -5.0178
+  earnings_surprise_pct: -8.95
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-02-24'
+  stock_return_pct: 13.9781
+  vti_return_pct: 0.8173
+  abnormal_return_pct: 13.1608
+  earnings_surprise_pct: 308.96
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-05-07'
+  stock_return_pct: -2.6902
+  vti_return_pct: -0.4587
+  abnormal_return_pct: -2.2314
+  earnings_surprise_pct: 10.06
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-04'
+  stock_return_pct: 9.4172
+  vti_return_pct: 1.8671
+  abnormal_return_pct: 7.5501
+  earnings_surprise_pct: -4.8
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: -2.4104
+  mean_abnormal_return_pct: -1.554
+  positive_reaction_rate: 0.25
+  median_absolute_reaction_pct: 4.0269
+  beat_observations: 5
+  median_reaction_after_beat_pct: -2.2314
+  miss_observations: 3
+  median_reaction_after_miss_pct: -5.0178

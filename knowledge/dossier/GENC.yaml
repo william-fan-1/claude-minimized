@@ -1,0 +1,36 @@
+ticker: GENC
+prior_reactions:
+- fiscal_quarter: null
+  timing: unknown
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: 21.43
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: unknown
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: -200.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-05-08'
+  stock_return_pct: 2.4585
+  vti_return_pct: 0.7412
+  abnormal_return_pct: 1.7172
+  earnings_surprise_pct: null
+  surprise_source: null
+reaction_statistics:
+  observations: 1
+  median_abnormal_return_pct: 1.7172
+  mean_abnormal_return_pct: 1.7172
+  positive_reaction_rate: 1.0
+  median_absolute_reaction_pct: 1.7172
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 0
+  median_reaction_after_miss_pct: null

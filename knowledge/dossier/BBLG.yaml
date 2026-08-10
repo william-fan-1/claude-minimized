@@ -1,0 +1,76 @@
+ticker: BBLG
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-05-15'
+  stock_return_pct: -1.3044
+  vti_return_pct: 1.2295
+  abnormal_return_pct: -2.5339
+  earnings_surprise_pct: 82.76
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-08-12'
+  stock_return_pct: -4.142
+  vti_return_pct: -0.0647
+  abnormal_return_pct: -4.0773
+  earnings_surprise_pct: 51.8
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-11-15'
+  stock_return_pct: -7.7519
+  vti_return_pct: -1.2686
+  abnormal_return_pct: -6.4834
+  earnings_surprise_pct: -295.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-02-27'
+  stock_return_pct: -5.4198
+  vti_return_pct: -1.5492
+  abnormal_return_pct: -3.8705
+  earnings_surprise_pct: 26.15
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-15'
+  stock_return_pct: -6.383
+  vti_return_pct: -0.227
+  abnormal_return_pct: -6.156
+  earnings_surprise_pct: -129.31
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-17'
+  stock_return_pct: 1.6875
+  vti_return_pct: -1.0398
+  abnormal_return_pct: 2.7273
+  earnings_surprise_pct: 69.92
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-03'
+  stock_return_pct: 5.7143
+  vti_return_pct: -0.9996
+  abnormal_return_pct: 6.7139
+  earnings_surprise_pct: -85.29
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-15'
+  stock_return_pct: 0.0
+  vti_return_pct: -1.2684
+  abnormal_return_pct: 1.2684
+  earnings_surprise_pct: 20.37
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: -3.2022
+  mean_abnormal_return_pct: -1.5514
+  positive_reaction_rate: 0.375
+  median_absolute_reaction_pct: 3.9739
+  beat_observations: 5
+  median_reaction_after_beat_pct: -2.5339
+  miss_observations: 3
+  median_reaction_after_miss_pct: -6.156

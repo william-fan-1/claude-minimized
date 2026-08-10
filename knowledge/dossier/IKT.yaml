@@ -1,0 +1,76 @@
+ticker: IKT
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-03-28'
+  stock_return_pct: -6.087
+  vti_return_pct: 0.0654
+  abnormal_return_pct: -6.1524
+  earnings_surprise_pct: 24.71
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-05-16'
+  stock_return_pct: -11.5578
+  vti_return_pct: -0.2703
+  abnormal_return_pct: -11.2875
+  earnings_surprise_pct: 7.59
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-08-15'
+  stock_return_pct: -5.3846
+  vti_return_pct: 1.7321
+  abnormal_return_pct: -7.1167
+  earnings_surprise_pct: 1.49
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-11-14'
+  stock_return_pct: -2.4793
+  vti_return_pct: -0.7393
+  abnormal_return_pct: -1.7401
+  earnings_surprise_pct: -35.42
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-15'
+  stock_return_pct: -4.2453
+  vti_return_pct: 0.4077
+  abnormal_return_pct: -4.653
+  earnings_surprise_pct: -57.89
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-15'
+  stock_return_pct: 2.3392
+  vti_return_pct: -0.227
+  abnormal_return_pct: 2.5662
+  earnings_surprise_pct: -37.5
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-17'
+  stock_return_pct: -0.6536
+  vti_return_pct: -1.0398
+  abnormal_return_pct: 0.3862
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-27'
+  stock_return_pct: 3.0675
+  vti_return_pct: -1.7146
+  abnormal_return_pct: 4.7821
+  earnings_surprise_pct: 23.94
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: -3.1965
+  mean_abnormal_return_pct: -2.9019
+  positive_reaction_rate: 0.375
+  median_absolute_reaction_pct: 4.7175
+  beat_observations: 4
+  median_reaction_after_beat_pct: -6.6345
+  miss_observations: 3
+  median_reaction_after_miss_pct: -1.7401

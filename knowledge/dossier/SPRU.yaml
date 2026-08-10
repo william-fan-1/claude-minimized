@@ -1,0 +1,76 @@
+ticker: SPRU
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2021-08-13'
+  stock_return_pct: -13.8028
+  vti_return_pct: 0.0565
+  abnormal_return_pct: -13.8593
+  earnings_surprise_pct: -53.45
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2021-11-16'
+  stock_return_pct: 0.3831
+  vti_return_pct: 0.4302
+  abnormal_return_pct: -0.047
+  earnings_surprise_pct: -5.6
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2022-03-02'
+  stock_return_pct: 17.3913
+  vti_return_pct: 1.8969
+  abnormal_return_pct: 15.4944
+  earnings_surprise_pct: 0.91
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2022-05-11'
+  stock_return_pct: -9.6774
+  vti_return_pct: -1.8086
+  abnormal_return_pct: -7.8688
+  earnings_surprise_pct: 52.94
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2022-08-10'
+  stock_return_pct: -2.1429
+  vti_return_pct: 2.2802
+  abnormal_return_pct: -4.4231
+  earnings_surprise_pct: 51.52
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2022-11-10'
+  stock_return_pct: 7.5309
+  vti_return_pct: 5.6578
+  abnormal_return_pct: 1.8731
+  earnings_surprise_pct: 43.94
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-08-15'
+  stock_return_pct: -8.0838
+  vti_return_pct: 1.7321
+  abnormal_return_pct: -9.8159
+  earnings_surprise_pct: -109.43
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-11-14'
+  stock_return_pct: -8.0321
+  vti_return_pct: -0.7393
+  abnormal_return_pct: -7.2929
+  earnings_surprise_pct: -142.65
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: -5.858
+  mean_abnormal_return_pct: -3.2424
+  positive_reaction_rate: 0.25
+  median_absolute_reaction_pct: 7.5808
+  beat_observations: 4
+  median_reaction_after_beat_pct: -1.275
+  miss_observations: 4
+  median_reaction_after_miss_pct: -8.5544

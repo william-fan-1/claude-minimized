@@ -1,0 +1,28 @@
+ticker: ADGM
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-03-27'
+  stock_return_pct: -1.6129
+  vti_return_pct: -1.7146
+  abnormal_return_pct: 0.1017
+  earnings_surprise_pct: 48.39
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-05-12'
+  stock_return_pct: -1.8085
+  vti_return_pct: -0.231
+  abnormal_return_pct: -1.5775
+  earnings_surprise_pct: -6.9
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 2
+  median_abnormal_return_pct: -0.7379
+  mean_abnormal_return_pct: -0.7379
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 0.8396
+  beat_observations: 1
+  median_reaction_after_beat_pct: 0.1017
+  miss_observations: 1
+  median_reaction_after_miss_pct: -1.5775

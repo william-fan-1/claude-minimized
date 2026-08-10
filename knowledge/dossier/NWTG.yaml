@@ -1,0 +1,60 @@
+ticker: NWTG
+prior_reactions:
+- fiscal_quarter: null
+  timing: unknown
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: -31.67
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-11-14'
+  stock_return_pct: -6.4067
+  vti_return_pct: -0.7393
+  abnormal_return_pct: -5.6674
+  earnings_surprise_pct: -10.61
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-04-07'
+  stock_return_pct: 51.6129
+  vti_return_pct: -0.326
+  abnormal_return_pct: 51.9389
+  earnings_surprise_pct: -1104.78
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-08-14'
+  stock_return_pct: -8.6294
+  vti_return_pct: -0.1479
+  abnormal_return_pct: -8.4815
+  earnings_surprise_pct: -183.33
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-14'
+  stock_return_pct: -5.3628
+  vti_return_pct: -0.0152
+  abnormal_return_pct: -5.3476
+  earnings_surprise_pct: -78.95
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-04-01'
+  stock_return_pct: -10.6918
+  vti_return_pct: 0.7574
+  abnormal_return_pct: -11.4493
+  earnings_surprise_pct: -64.71
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 5
+  median_abnormal_return_pct: -5.6674
+  mean_abnormal_return_pct: 4.1986
+  positive_reaction_rate: 0.2
+  median_absolute_reaction_pct: 8.4815
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 5
+  median_reaction_after_miss_pct: -5.6674

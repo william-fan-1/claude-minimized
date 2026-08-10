@@ -1,0 +1,76 @@
+ticker: PROK
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-08-09'
+  stock_return_pct: 4.3062
+  vti_return_pct: 0.4317
+  abnormal_return_pct: 3.8746
+  earnings_surprise_pct: 10.25
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-11-12'
+  stock_return_pct: -4.6512
+  vti_return_pct: -0.3932
+  abnormal_return_pct: -4.2579
+  earnings_surprise_pct: 35.42
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-03-17'
+  stock_return_pct: 5.6911
+  vti_return_pct: 0.8267
+  abnormal_return_pct: 4.8643
+  earnings_surprise_pct: -14.84
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-13'
+  stock_return_pct: 15.7333
+  vti_return_pct: 0.6788
+  abnormal_return_pct: 15.0545
+  earnings_surprise_pct: 15.22
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-13'
+  stock_return_pct: 5.8036
+  vti_return_pct: 0.484
+  abnormal_return_pct: 5.3196
+  earnings_surprise_pct: 10.03
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-11'
+  stock_return_pct: 3.7037
+  vti_return_pct: 0.2448
+  abnormal_return_pct: 3.4589
+  earnings_surprise_pct: 11.88
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-19'
+  stock_return_pct: -6.25
+  vti_return_pct: -0.1779
+  abnormal_return_pct: -6.0721
+  earnings_surprise_pct: 7.33
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: unknown
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: -1.83
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 7
+  median_abnormal_return_pct: 3.8746
+  mean_abnormal_return_pct: 3.1774
+  positive_reaction_rate: 0.7143
+  median_absolute_reaction_pct: 4.8643
+  beat_observations: 6
+  median_reaction_after_beat_pct: 3.6667
+  miss_observations: 1
+  median_reaction_after_miss_pct: 4.8643

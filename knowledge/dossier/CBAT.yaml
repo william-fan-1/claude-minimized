@@ -1,0 +1,76 @@
+ticker: CBAT
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-08-09'
+  stock_return_pct: -3.8095
+  vti_return_pct: 0.4317
+  abnormal_return_pct: -4.2412
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-11-12'
+  stock_return_pct: -2.9703
+  vti_return_pct: -0.3932
+  abnormal_return_pct: -2.5771
+  earnings_surprise_pct: -100.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-03-17'
+  stock_return_pct: 0.0
+  vti_return_pct: 0.8267
+  abnormal_return_pct: -0.8267
+  earnings_surprise_pct: -600.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-05-19'
+  stock_return_pct: -6.8966
+  vti_return_pct: 0.0786
+  abnormal_return_pct: -6.9751
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-08-18'
+  stock_return_pct: 6.0606
+  vti_return_pct: 0.0379
+  abnormal_return_pct: 6.0227
+  earnings_surprise_pct: 25.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-11-10'
+  stock_return_pct: 4.5455
+  vti_return_pct: 1.4632
+  abnormal_return_pct: 3.0822
+  earnings_surprise_pct: 175.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-03-30'
+  stock_return_pct: -3.6585
+  vti_return_pct: -0.4503
+  abnormal_return_pct: -3.2082
+  earnings_surprise_pct: -166.67
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-05-18'
+  stock_return_pct: -5.1282
+  vti_return_pct: -0.1048
+  abnormal_return_pct: -5.0234
+  earnings_surprise_pct: -100.0
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: -2.8927
+  mean_abnormal_return_pct: -1.7184
+  positive_reaction_rate: 0.25
+  median_absolute_reaction_pct: 3.7247
+  beat_observations: 2
+  median_reaction_after_beat_pct: 4.5525
+  miss_observations: 4
+  median_reaction_after_miss_pct: -2.8927

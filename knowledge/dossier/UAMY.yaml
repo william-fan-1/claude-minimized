@@ -1,0 +1,60 @@
+ticker: UAMY
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-03-20'
+  stock_return_pct: -0.5556
+  vti_return_pct: -0.2398
+  abnormal_return_pct: -0.3158
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-05-08'
+  stock_return_pct: -7.124
+  vti_return_pct: 0.7859
+  abnormal_return_pct: -7.9099
+  earnings_surprise_pct: -100.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-13'
+  stock_return_pct: 4.9738
+  vti_return_pct: 0.484
+  abnormal_return_pct: 4.4899
+  earnings_surprise_pct: -100.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-13'
+  stock_return_pct: -5.643
+  vti_return_pct: -1.7716
+  abnormal_return_pct: -3.8715
+  earnings_surprise_pct: -366.67
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-20'
+  stock_return_pct: -10.4281
+  vti_return_pct: -1.5671
+  abnormal_return_pct: -8.861
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-15'
+  stock_return_pct: -10.0313
+  vti_return_pct: -1.2684
+  abnormal_return_pct: -8.763
+  earnings_surprise_pct: -300.0
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 6
+  median_abnormal_return_pct: -5.8907
+  mean_abnormal_return_pct: -4.2052
+  positive_reaction_rate: 0.1667
+  median_absolute_reaction_pct: 6.1999
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 4
+  median_reaction_after_miss_pct: -5.8907

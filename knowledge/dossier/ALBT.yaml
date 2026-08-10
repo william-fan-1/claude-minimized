@@ -1,0 +1,12 @@
+ticker: ALBT
+prior_reactions: []
+reaction_statistics:
+  observations: 0
+  median_abnormal_return_pct: null
+  mean_abnormal_return_pct: null
+  positive_reaction_rate: null
+  median_absolute_reaction_pct: null
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 0
+  median_reaction_after_miss_pct: null

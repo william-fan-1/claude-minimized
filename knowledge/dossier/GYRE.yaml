@@ -1,0 +1,68 @@
+ticker: GYRE
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-03-18'
+  stock_return_pct: -30.2117
+  vti_return_pct: -1.0778
+  abnormal_return_pct: -29.134
+  earnings_surprise_pct: -100.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-05-09'
+  stock_return_pct: 0.5274
+  vti_return_pct: -0.1114
+  abnormal_return_pct: 0.6388
+  earnings_surprise_pct: -100.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-12'
+  stock_return_pct: 6.9307
+  vti_return_pct: 1.2232
+  abnormal_return_pct: 5.7075
+  earnings_surprise_pct: -100.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-11-07'
+  stock_return_pct: -1.7711
+  vti_return_pct: 0.2186
+  abnormal_return_pct: -1.9897
+  earnings_surprise_pct: 250.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-03-12'
+  stock_return_pct: -6.2425
+  vti_return_pct: -1.5964
+  abnormal_return_pct: -4.6461
+  earnings_surprise_pct: 368.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-05-07'
+  stock_return_pct: -12.0647
+  vti_return_pct: -0.4587
+  abnormal_return_pct: -11.6059
+  earnings_surprise_pct: -36.37
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-07'
+  stock_return_pct: 4.2187
+  vti_return_pct: 0.7149
+  abnormal_return_pct: 3.5038
+  earnings_surprise_pct: -111.75
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 7
+  median_abnormal_return_pct: -1.9897
+  mean_abnormal_return_pct: -5.3608
+  positive_reaction_rate: 0.4286
+  median_absolute_reaction_pct: 4.6461
+  beat_observations: 2
+  median_reaction_after_beat_pct: -3.3179
+  miss_observations: 5
+  median_reaction_after_miss_pct: 0.6388

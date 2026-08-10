@@ -1,0 +1,76 @@
+ticker: INVE
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-08-09'
+  stock_return_pct: -14.4847
+  vti_return_pct: 0.4317
+  abnormal_return_pct: -14.9163
+  earnings_surprise_pct: -33.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-11-08'
+  stock_return_pct: 10.3352
+  vti_return_pct: 0.4673
+  abnormal_return_pct: 9.8679
+  earnings_surprise_pct: -4.67
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-03-06'
+  stock_return_pct: -6.6282
+  vti_return_pct: -1.8584
+  abnormal_return_pct: -4.7699
+  earnings_surprise_pct: 48.8
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-08'
+  stock_return_pct: 1.9108
+  vti_return_pct: 0.7859
+  abnormal_return_pct: 1.1249
+  earnings_surprise_pct: 45.14
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-08'
+  stock_return_pct: -0.5556
+  vti_return_pct: 0.6301
+  abnormal_return_pct: -1.1856
+  earnings_surprise_pct: 33.14
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-11'
+  stock_return_pct: -3.6553
+  vti_return_pct: 0.2448
+  abnormal_return_pct: -3.9002
+  earnings_surprise_pct: 66.88
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-13'
+  stock_return_pct: 6.6465
+  vti_return_pct: -0.5459
+  abnormal_return_pct: 7.1924
+  earnings_surprise_pct: 47.56
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-14'
+  stock_return_pct: -17.8423
+  vti_return_pct: 0.7376
+  abnormal_return_pct: -18.5799
+  earnings_surprise_pct: 34.09
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: -2.5429
+  mean_abnormal_return_pct: -3.1458
+  positive_reaction_rate: 0.375
+  median_absolute_reaction_pct: 5.9811
+  beat_observations: 6
+  median_reaction_after_beat_pct: -2.5429
+  miss_observations: 2
+  median_reaction_after_miss_pct: -2.5242

@@ -1,0 +1,44 @@
+ticker: SOBR
+prior_reactions:
+- fiscal_quarter: null
+  timing: unknown
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: 60.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2023-05-16'
+  stock_return_pct: -7.0755
+  vti_return_pct: -0.7753
+  abnormal_return_pct: -6.3002
+  earnings_surprise_pct: 22.78
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2023-08-10'
+  stock_return_pct: 2.649
+  vti_return_pct: 0.018
+  abnormal_return_pct: 2.631
+  earnings_surprise_pct: -10.79
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2023-11-09'
+  stock_return_pct: -32.5333
+  vti_return_pct: -0.8514
+  abnormal_return_pct: -31.6819
+  earnings_surprise_pct: -20.0
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 3
+  median_abnormal_return_pct: -6.3002
+  mean_abnormal_return_pct: -11.7837
+  positive_reaction_rate: 0.3333
+  median_absolute_reaction_pct: 6.3002
+  beat_observations: 1
+  median_reaction_after_beat_pct: -6.3002
+  miss_observations: 2
+  median_reaction_after_miss_pct: -14.5254

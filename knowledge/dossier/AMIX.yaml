@@ -1,0 +1,60 @@
+ticker: AMIX
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-11-11'
+  stock_return_pct: -4.7406
+  vti_return_pct: 0.2798
+  abnormal_return_pct: -5.0204
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-02-13'
+  stock_return_pct: 4.7794
+  vti_return_pct: 1.0443
+  abnormal_return_pct: 3.7351
+  earnings_surprise_pct: 39.17
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-30'
+  stock_return_pct: -2.6946
+  vti_return_pct: -0.0827
+  abnormal_return_pct: -2.6119
+  earnings_surprise_pct: 40.08
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-14'
+  stock_return_pct: 1.8018
+  vti_return_pct: -0.1479
+  abnormal_return_pct: 1.9497
+  earnings_surprise_pct: -9.18
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-13'
+  stock_return_pct: -13.8135
+  vti_return_pct: -1.7716
+  abnormal_return_pct: -12.0419
+  earnings_surprise_pct: 8.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-02-12'
+  stock_return_pct: -1.8088
+  vti_return_pct: -1.599
+  abnormal_return_pct: -0.2098
+  earnings_surprise_pct: 21.74
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 6
+  median_abnormal_return_pct: -1.4108
+  mean_abnormal_return_pct: -2.3665
+  positive_reaction_rate: 0.3333
+  median_absolute_reaction_pct: 3.1735
+  beat_observations: 4
+  median_reaction_after_beat_pct: -1.4108
+  miss_observations: 1
+  median_reaction_after_miss_pct: 1.9497

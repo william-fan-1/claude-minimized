@@ -1,0 +1,76 @@
+ticker: GWRS
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-08-08'
+  stock_return_pct: 2.092
+  vti_return_pct: 2.3417
+  abnormal_return_pct: -0.2496
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-11-07'
+  stock_return_pct: -0.1481
+  vti_return_pct: 0.699
+  abnormal_return_pct: -0.8471
+  earnings_surprise_pct: 33.33
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-03-06'
+  stock_return_pct: 1.9315
+  vti_return_pct: -1.8584
+  abnormal_return_pct: 3.7899
+  earnings_surprise_pct: -66.67
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-15'
+  stock_return_pct: 0.5952
+  vti_return_pct: 0.4077
+  abnormal_return_pct: 0.1875
+  earnings_surprise_pct: 33.33
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-14'
+  stock_return_pct: -3.3074
+  vti_return_pct: -0.1479
+  abnormal_return_pct: -3.1594
+  earnings_surprise_pct: 20.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-13'
+  stock_return_pct: -7.9798
+  vti_return_pct: -1.7716
+  abnormal_return_pct: -6.2082
+  earnings_surprise_pct: -4.29
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-05'
+  stock_return_pct: -13.8614
+  vti_return_pct: -0.6476
+  abnormal_return_pct: -13.2138
+  earnings_surprise_pct: -125.75
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-14'
+  stock_return_pct: 4.5045
+  vti_return_pct: 0.7376
+  abnormal_return_pct: 3.7669
+  earnings_surprise_pct: 50.0
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: -0.5484
+  mean_abnormal_return_pct: -1.9917
+  positive_reaction_rate: 0.375
+  median_absolute_reaction_pct: 3.4632
+  beat_observations: 4
+  median_reaction_after_beat_pct: -0.3298
+  miss_observations: 3
+  median_reaction_after_miss_pct: -6.2082

@@ -1,0 +1,76 @@
+ticker: FLNT
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-08-20'
+  stock_return_pct: -9.6667
+  vti_return_pct: -0.243
+  abnormal_return_pct: -9.4237
+  earnings_surprise_pct: -80.77
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-11-15'
+  stock_return_pct: -6.6225
+  vti_return_pct: -1.2686
+  abnormal_return_pct: -5.354
+  earnings_surprise_pct: -193.33
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-02-28'
+  stock_return_pct: 2.2641
+  vti_return_pct: 1.5424
+  abnormal_return_pct: 0.7218
+  earnings_surprise_pct: 21.74
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-16'
+  stock_return_pct: -0.8264
+  vti_return_pct: 0.6848
+  abnormal_return_pct: -1.5113
+  earnings_surprise_pct: -5.08
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-20'
+  stock_return_pct: -12.7193
+  vti_return_pct: -0.2638
+  abnormal_return_pct: -12.4555
+  earnings_surprise_pct: 9.43
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-14'
+  stock_return_pct: -4.9505
+  vti_return_pct: -0.0152
+  abnormal_return_pct: -4.9353
+  earnings_surprise_pct: -91.67
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-10'
+  stock_return_pct: -3.6723
+  vti_return_pct: -0.2303
+  abnormal_return_pct: -3.442
+  earnings_surprise_pct: -63.64
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-14'
+  stock_return_pct: 12.9771
+  vti_return_pct: 0.7376
+  abnormal_return_pct: 12.2395
+  earnings_surprise_pct: 10.94
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: -4.1886
+  mean_abnormal_return_pct: -3.0201
+  positive_reaction_rate: 0.25
+  median_absolute_reaction_pct: 5.1447
+  beat_observations: 3
+  median_reaction_after_beat_pct: 0.7218
+  miss_observations: 5
+  median_reaction_after_miss_pct: -4.9353

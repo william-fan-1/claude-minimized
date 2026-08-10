@@ -1,0 +1,76 @@
+ticker: RKLB
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-08-09'
+  stock_return_pct: 12.5786
+  vti_return_pct: 0.4317
+  abnormal_return_pct: 12.147
+  earnings_surprise_pct: 21.16
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-11-13'
+  stock_return_pct: 28.4447
+  vti_return_pct: -0.0473
+  abnormal_return_pct: 28.492
+  earnings_surprise_pct: 13.17
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-02-28'
+  stock_return_pct: 3.3283
+  vti_return_pct: 1.5424
+  abnormal_return_pct: 1.7859
+  earnings_surprise_pct: 18.24
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-09'
+  stock_return_pct: -11.2121
+  vti_return_pct: -0.1114
+  abnormal_return_pct: -11.1007
+  earnings_surprise_pct: 0.54
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-08'
+  stock_return_pct: 1.0857
+  vti_return_pct: 0.6301
+  abnormal_return_pct: 0.4557
+  earnings_surprise_pct: -2.19
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-11'
+  stock_return_pct: -1.2717
+  vti_return_pct: 0.2448
+  abnormal_return_pct: -1.5165
+  earnings_surprise_pct: 66.75
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-02-27'
+  stock_return_pct: -4.8864
+  vti_return_pct: -0.5051
+  abnormal_return_pct: -4.3813
+  earnings_surprise_pct: 10.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-08'
+  stock_return_pct: 34.2199
+  vti_return_pct: 0.7412
+  abnormal_return_pct: 33.4787
+  earnings_surprise_pct: 58.2
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: 1.1208
+  mean_abnormal_return_pct: 7.4201
+  positive_reaction_rate: 0.625
+  median_absolute_reaction_pct: 7.741
+  beat_observations: 7
+  median_reaction_after_beat_pct: 1.7859
+  miss_observations: 1
+  median_reaction_after_miss_pct: 0.4557

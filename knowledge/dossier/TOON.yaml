@@ -1,0 +1,76 @@
+ticker: TOON
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2016-08-08'
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: -150.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2016-08-16'
+  stock_return_pct: -0.5
+  vti_return_pct: -0.5691
+  abnormal_return_pct: 0.0691
+  earnings_surprise_pct: -1334.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2016-11-15'
+  stock_return_pct: 7.6923
+  vti_return_pct: 0.7789
+  abnormal_return_pct: 6.9134
+  earnings_surprise_pct: -5.56
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2017-04-03'
+  stock_return_pct: 9.893
+  vti_return_pct: -0.2473
+  abnormal_return_pct: 10.1403
+  earnings_surprise_pct: -6.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2017-05-16'
+  stock_return_pct: 1.5831
+  vti_return_pct: -0.0567
+  abnormal_return_pct: 1.6398
+  earnings_surprise_pct: 3.7
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2017-08-15'
+  stock_return_pct: -4.4776
+  vti_return_pct: -0.095
+  abnormal_return_pct: -4.3826
+  earnings_surprise_pct: 18.52
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2017-11-15'
+  stock_return_pct: 2.7972
+  vti_return_pct: -0.5137
+  abnormal_return_pct: 3.3109
+  earnings_surprise_pct: 23.08
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2018-04-03'
+  stock_return_pct: -0.7092
+  vti_return_pct: 1.2441
+  abnormal_return_pct: -1.9533
+  earnings_surprise_pct: -166.67
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 7
+  median_abnormal_return_pct: 1.6398
+  mean_abnormal_return_pct: 2.2482
+  positive_reaction_rate: 0.7143
+  median_absolute_reaction_pct: 3.3109
+  beat_observations: 3
+  median_reaction_after_beat_pct: 1.6398
+  miss_observations: 4
+  median_reaction_after_miss_pct: 3.4912

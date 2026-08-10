@@ -1,0 +1,76 @@
+ticker: SHIM
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-08-16'
+  stock_return_pct: -18.2927
+  vti_return_pct: 0.2385
+  abnormal_return_pct: -18.5312
+  earnings_surprise_pct: -461.4
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-11-12'
+  stock_return_pct: 2.7778
+  vti_return_pct: -0.3932
+  abnormal_return_pct: 3.171
+  earnings_surprise_pct: 676.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-03-14'
+  stock_return_pct: -1.7647
+  vti_return_pct: 2.1425
+  abnormal_return_pct: -3.9072
+  earnings_surprise_pct: -156.34
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-15'
+  stock_return_pct: 3.2448
+  vti_return_pct: 0.4077
+  abnormal_return_pct: 2.8371
+  earnings_surprise_pct: 12.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-15'
+  stock_return_pct: 13.2702
+  vti_return_pct: -0.227
+  abnormal_return_pct: 13.4972
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-14'
+  stock_return_pct: -1.9841
+  vti_return_pct: -0.0152
+  abnormal_return_pct: -1.969
+  earnings_surprise_pct: 75.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-13'
+  stock_return_pct: 14.6429
+  vti_return_pct: -0.5459
+  abnormal_return_pct: 15.1887
+  earnings_surprise_pct: -55.56
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-15'
+  stock_return_pct: -0.996
+  vti_return_pct: -1.2684
+  abnormal_return_pct: 0.2724
+  earnings_surprise_pct: 6.67
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: 1.5547
+  mean_abnormal_return_pct: 1.3199
+  positive_reaction_rate: 0.625
+  median_absolute_reaction_pct: 3.5391
+  beat_observations: 4
+  median_reaction_after_beat_pct: 1.5547
+  miss_observations: 3
+  median_reaction_after_miss_pct: -3.9072

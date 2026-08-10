@@ -1,0 +1,20 @@
+ticker: EEX
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: null
+  surprise_source: null
+reaction_statistics:
+  observations: 0
+  median_abnormal_return_pct: null
+  mean_abnormal_return_pct: null
+  positive_reaction_rate: null
+  median_absolute_reaction_pct: null
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 0
+  median_reaction_after_miss_pct: null

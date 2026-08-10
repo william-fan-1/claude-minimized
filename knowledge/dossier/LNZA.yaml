@@ -1,0 +1,76 @@
+ticker: LNZA
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-11-08'
+  stock_return_pct: -8.1081
+  vti_return_pct: 0.4673
+  abnormal_return_pct: -8.5754
+  earnings_surprise_pct: -26.49
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-04-16'
+  stock_return_pct: -23.9544
+  vti_return_pct: -2.0782
+  abnormal_return_pct: -21.8762
+  earnings_surprise_pct: -1.08
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-05-19'
+  stock_return_pct: -5.303
+  vti_return_pct: 0.0786
+  abnormal_return_pct: -5.3816
+  earnings_surprise_pct: -24.6
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-20'
+  stock_return_pct: 18.0527
+  vti_return_pct: -0.2638
+  abnormal_return_pct: 18.3165
+  earnings_surprise_pct: 0.41
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-20'
+  stock_return_pct: -3.0817
+  vti_return_pct: -1.5925
+  abnormal_return_pct: -1.4892
+  earnings_surprise_pct: 53.68
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-19'
+  stock_return_pct: 31.8736
+  vti_return_pct: -0.1779
+  abnormal_return_pct: 32.0515
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-04-01'
+  stock_return_pct: -8.5572
+  vti_return_pct: 0.7574
+  abnormal_return_pct: -9.3146
+  earnings_surprise_pct: 100.3
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-05-14'
+  stock_return_pct: -5.9759
+  vti_return_pct: 0.7376
+  abnormal_return_pct: -6.7134
+  earnings_surprise_pct: 57.9
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: -6.0475
+  mean_abnormal_return_pct: -0.3728
+  positive_reaction_rate: 0.25
+  median_absolute_reaction_pct: 8.945
+  beat_observations: 4
+  median_reaction_after_beat_pct: -4.1013
+  miss_observations: 3
+  median_reaction_after_miss_pct: -8.5754

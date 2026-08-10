@@ -1,0 +1,52 @@
+ticker: XTIA
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-20'
+  stock_return_pct: -7.9755
+  vti_return_pct: -0.3279
+  abnormal_return_pct: -7.6476
+  earnings_surprise_pct: -90.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-15'
+  stock_return_pct: -2.7473
+  vti_return_pct: -0.227
+  abnormal_return_pct: -2.5203
+  earnings_surprise_pct: -102.07
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-20'
+  stock_return_pct: -4.3165
+  vti_return_pct: -1.5925
+  abnormal_return_pct: -2.7241
+  earnings_surprise_pct: -90.62
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-04-15'
+  stock_return_pct: 14.0777
+  vti_return_pct: 0.7559
+  abnormal_return_pct: 13.3218
+  earnings_surprise_pct: -94.12
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-05-14'
+  stock_return_pct: -3.2609
+  vti_return_pct: 0.7376
+  abnormal_return_pct: -3.9984
+  earnings_surprise_pct: -270.37
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 5
+  median_abnormal_return_pct: -2.7241
+  mean_abnormal_return_pct: -0.7137
+  positive_reaction_rate: 0.2
+  median_absolute_reaction_pct: 3.9984
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 5
+  median_reaction_after_miss_pct: -2.7241

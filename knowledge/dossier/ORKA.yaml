@@ -1,0 +1,68 @@
+ticker: ORKA
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-11-14'
+  stock_return_pct: -6.4327
+  vti_return_pct: -0.7393
+  abnormal_return_pct: -5.6935
+  earnings_surprise_pct: -351.55
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-03-07'
+  stock_return_pct: 3.8729
+  vti_return_pct: 0.4716
+  abnormal_return_pct: 3.4013
+  earnings_surprise_pct: -18.55
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-15'
+  stock_return_pct: -2.5747
+  vti_return_pct: 0.4077
+  abnormal_return_pct: -2.9824
+  earnings_surprise_pct: 9.09
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-12'
+  stock_return_pct: 6.8965
+  vti_return_pct: 1.2232
+  abnormal_return_pct: 5.6734
+  earnings_surprise_pct: -6.36
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-13'
+  stock_return_pct: -6.7845
+  vti_return_pct: -1.7716
+  abnormal_return_pct: -5.0129
+  earnings_surprise_pct: -4.96
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-13'
+  stock_return_pct: 25.0391
+  vti_return_pct: -0.5459
+  abnormal_return_pct: 25.5849
+  earnings_surprise_pct: 26.89
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-14'
+  stock_return_pct: 1.1396
+  vti_return_pct: 0.7376
+  abnormal_return_pct: 0.402
+  earnings_surprise_pct: 11.58
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 7
+  median_abnormal_return_pct: 0.402
+  mean_abnormal_return_pct: 3.0533
+  positive_reaction_rate: 0.5714
+  median_absolute_reaction_pct: 5.0129
+  beat_observations: 3
+  median_reaction_after_beat_pct: 0.402
+  miss_observations: 4
+  median_reaction_after_miss_pct: -0.8058

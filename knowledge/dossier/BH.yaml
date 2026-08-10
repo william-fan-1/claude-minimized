@@ -1,0 +1,36 @@
+ticker: BH
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2018-08-06'
+  stock_return_pct: -1.3447
+  vti_return_pct: 0.4512
+  abnormal_return_pct: -1.7959
+  earnings_surprise_pct: 96.4
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2018-11-05'
+  stock_return_pct: -1.8242
+  vti_return_pct: 0.4873
+  abnormal_return_pct: -2.3114
+  earnings_surprise_pct: 13.09
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2019-02-25'
+  stock_return_pct: -0.2029
+  vti_return_pct: 0.1461
+  abnormal_return_pct: -0.349
+  earnings_surprise_pct: -25.48
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 3
+  median_abnormal_return_pct: -1.7959
+  mean_abnormal_return_pct: -1.4854
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 1.7959
+  beat_observations: 2
+  median_reaction_after_beat_pct: -2.0537
+  miss_observations: 1
+  median_reaction_after_miss_pct: -0.349

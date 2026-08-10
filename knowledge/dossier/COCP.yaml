@@ -1,0 +1,76 @@
+ticker: COCP
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-11-13'
+  stock_return_pct: 0.5682
+  vti_return_pct: -0.0473
+  abnormal_return_pct: 0.6154
+  earnings_surprise_pct: 14.04
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-03-31'
+  stock_return_pct: -4.0541
+  vti_return_pct: 0.5157
+  abnormal_return_pct: -4.5697
+  earnings_surprise_pct: 39.62
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-05-15'
+  stock_return_pct: -1.3699
+  vti_return_pct: 0.4077
+  abnormal_return_pct: -1.7776
+  earnings_surprise_pct: 54.46
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-08-13'
+  stock_return_pct: 1.8182
+  vti_return_pct: 0.484
+  abnormal_return_pct: 1.3342
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-08-14'
+  stock_return_pct: 0.0
+  vti_return_pct: -0.1479
+  abnormal_return_pct: 0.1479
+  earnings_surprise_pct: 33.33
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-11-14'
+  stock_return_pct: 0.0
+  vti_return_pct: -0.0152
+  abnormal_return_pct: 0.0152
+  earnings_surprise_pct: 11.63
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-03-31'
+  stock_return_pct: 1.0
+  vti_return_pct: 2.9293
+  abnormal_return_pct: -1.9293
+  earnings_surprise_pct: 2.86
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-05-15'
+  stock_return_pct: -4.7619
+  vti_return_pct: -1.2684
+  abnormal_return_pct: -3.4935
+  earnings_surprise_pct: -13.33
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: -0.8812
+  mean_abnormal_return_pct: -1.2072
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 1.5559
+  beat_observations: 6
+  median_reaction_after_beat_pct: -0.8812
+  miss_observations: 1
+  median_reaction_after_miss_pct: -3.4935

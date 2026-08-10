@@ -1,0 +1,60 @@
+ticker: INV
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-04-11'
+  stock_return_pct: 0.0
+  vti_return_pct: 1.6742
+  abnormal_return_pct: -1.6742
+  earnings_surprise_pct: -262.16
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-16'
+  stock_return_pct: 15.9905
+  vti_return_pct: 0.6848
+  abnormal_return_pct: 15.3056
+  earnings_surprise_pct: 1032.26
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-15'
+  stock_return_pct: -6.5957
+  vti_return_pct: -0.227
+  abnormal_return_pct: -6.3687
+  earnings_surprise_pct: 444.47
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-14'
+  stock_return_pct: -12.1951
+  vti_return_pct: -0.0152
+  abnormal_return_pct: -12.18
+  earnings_surprise_pct: -81.11
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-31'
+  stock_return_pct: 8.3103
+  vti_return_pct: 2.9293
+  abnormal_return_pct: 5.381
+  earnings_surprise_pct: 102.51
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-15'
+  stock_return_pct: -8.1967
+  vti_return_pct: -1.2684
+  abnormal_return_pct: -6.9284
+  earnings_surprise_pct: 11.43
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 6
+  median_abnormal_return_pct: -4.0214
+  mean_abnormal_return_pct: -1.0775
+  positive_reaction_rate: 0.3333
+  median_absolute_reaction_pct: 6.6486
+  beat_observations: 4
+  median_reaction_after_beat_pct: -0.4938
+  miss_observations: 2
+  median_reaction_after_miss_pct: -6.9271

@@ -1,0 +1,52 @@
+ticker: HURA
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-16'
+  stock_return_pct: 2.0833
+  vti_return_pct: 0.6848
+  abnormal_return_pct: 1.3985
+  earnings_surprise_pct: -36.36
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-15'
+  stock_return_pct: 10.8696
+  vti_return_pct: -0.227
+  abnormal_return_pct: 11.0966
+  earnings_surprise_pct: -55.56
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-17'
+  stock_return_pct: -8.2927
+  vti_return_pct: -1.0398
+  abnormal_return_pct: -7.2528
+  earnings_surprise_pct: 6.67
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-04-01'
+  stock_return_pct: -9.4972
+  vti_return_pct: 0.7574
+  abnormal_return_pct: -10.2547
+  earnings_surprise_pct: -32.25
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-18'
+  stock_return_pct: 10.3896
+  vti_return_pct: -0.1048
+  abnormal_return_pct: 10.4944
+  earnings_surprise_pct: -18.18
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 5
+  median_abnormal_return_pct: 1.3985
+  mean_abnormal_return_pct: 1.0964
+  positive_reaction_rate: 0.6
+  median_absolute_reaction_pct: 10.2547
+  beat_observations: 1
+  median_reaction_after_beat_pct: -7.2528
+  miss_observations: 4
+  median_reaction_after_miss_pct: 5.9465

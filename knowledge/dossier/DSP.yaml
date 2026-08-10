@@ -1,0 +1,76 @@
+ticker: DSP
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-08-13'
+  stock_return_pct: -0.3138
+  vti_return_pct: 1.6632
+  abnormal_return_pct: -1.977
+  earnings_surprise_pct: 3.23
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-11-13'
+  stock_return_pct: 21.7456
+  vti_return_pct: -0.0473
+  abnormal_return_pct: 21.7928
+  earnings_surprise_pct: 15.38
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-03-04'
+  stock_return_pct: -28.5063
+  vti_return_pct: -1.2478
+  abnormal_return_pct: -27.2585
+  earnings_surprise_pct: -28.57
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-07'
+  stock_return_pct: -12.0724
+  vti_return_pct: 0.4146
+  abnormal_return_pct: -12.487
+  earnings_surprise_pct: 1100.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-12'
+  stock_return_pct: -18.8333
+  vti_return_pct: 1.2232
+  abnormal_return_pct: -20.0565
+  earnings_surprise_pct: -2.17
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-11'
+  stock_return_pct: 19.9085
+  vti_return_pct: 0.2448
+  abnormal_return_pct: 19.6636
+  earnings_surprise_pct: -8.86
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-12'
+  stock_return_pct: 13.6159
+  vti_return_pct: -1.5964
+  abnormal_return_pct: 15.2123
+  earnings_surprise_pct: -6.38
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-12'
+  stock_return_pct: 1.983
+  vti_return_pct: -0.231
+  abnormal_return_pct: 2.214
+  earnings_surprise_pct: -2.33
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: 0.1185
+  mean_abnormal_return_pct: -0.362
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 17.438
+  beat_observations: 3
+  median_reaction_after_beat_pct: -1.977
+  miss_observations: 5
+  median_reaction_after_miss_pct: 2.214

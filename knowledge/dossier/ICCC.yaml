@@ -1,0 +1,36 @@
+ticker: ICCC
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2020-08-13'
+  stock_return_pct: -2.1053
+  vti_return_pct: -0.076
+  abnormal_return_pct: -2.0293
+  earnings_surprise_pct: -10.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2020-11-13'
+  stock_return_pct: 1.2324
+  vti_return_pct: 1.4163
+  abnormal_return_pct: -0.1839
+  earnings_surprise_pct: 50.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2021-02-23'
+  stock_return_pct: -12.0102
+  vti_return_pct: -0.0147
+  abnormal_return_pct: -11.9955
+  earnings_surprise_pct: 175.0
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 3
+  median_abnormal_return_pct: -2.0293
+  mean_abnormal_return_pct: -4.7362
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 2.0293
+  beat_observations: 2
+  median_reaction_after_beat_pct: -6.0897
+  miss_observations: 1
+  median_reaction_after_miss_pct: -2.0293

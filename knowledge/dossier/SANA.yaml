@@ -1,0 +1,76 @@
+ticker: SANA
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-08-09'
+  stock_return_pct: 5.3648
+  vti_return_pct: 0.4317
+  abnormal_return_pct: 4.9331
+  earnings_surprise_pct: -33.33
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-11-08'
+  stock_return_pct: -3.0645
+  vti_return_pct: 0.4673
+  abnormal_return_pct: -3.5318
+  earnings_surprise_pct: -0.45
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-03-18'
+  stock_return_pct: -17.6895
+  vti_return_pct: -1.0778
+  abnormal_return_pct: -16.6118
+  earnings_surprise_pct: 5.26
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-09'
+  stock_return_pct: 0.5525
+  vti_return_pct: -0.1114
+  abnormal_return_pct: 0.6639
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-12'
+  stock_return_pct: 6.5068
+  vti_return_pct: 1.2232
+  abnormal_return_pct: 5.2837
+  earnings_surprise_pct: 24.41
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-07'
+  stock_return_pct: 0.9877
+  vti_return_pct: 0.2186
+  abnormal_return_pct: 0.7691
+  earnings_surprise_pct: 21.19
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-04'
+  stock_return_pct: -2.799
+  vti_return_pct: 0.7327
+  abnormal_return_pct: -3.5317
+  earnings_surprise_pct: -21.58
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-12'
+  stock_return_pct: -8.427
+  vti_return_pct: -0.231
+  abnormal_return_pct: -8.196
+  earnings_surprise_pct: 4.55
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: -1.4339
+  mean_abnormal_return_pct: -2.5277
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 4.2325
+  beat_observations: 4
+  median_reaction_after_beat_pct: -3.7134
+  miss_observations: 3
+  median_reaction_after_miss_pct: -3.5317

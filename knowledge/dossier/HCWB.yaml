@@ -1,0 +1,76 @@
+ticker: HCWB
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-04-02'
+  stock_return_pct: 0.6061
+  vti_return_pct: -0.9242
+  abnormal_return_pct: 1.5302
+  earnings_surprise_pct: -100.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-08-15'
+  stock_return_pct: -13.6207
+  vti_return_pct: 1.7321
+  abnormal_return_pct: -15.3528
+  earnings_surprise_pct: -122.22
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-11-15'
+  stock_return_pct: -4.5307
+  vti_return_pct: -1.2686
+  abnormal_return_pct: -3.2622
+  earnings_surprise_pct: 23.08
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: unknown
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: -188.89
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: unknown
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: -477.22
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-17'
+  stock_return_pct: 2.0
+  vti_return_pct: -1.0398
+  abnormal_return_pct: 3.0398
+  earnings_surprise_pct: -227.85
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-04-01'
+  stock_return_pct: -16.6667
+  vti_return_pct: 0.7574
+  abnormal_return_pct: -17.4241
+  earnings_surprise_pct: -21.43
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-15'
+  stock_return_pct: 262.0178
+  vti_return_pct: -1.2684
+  abnormal_return_pct: 263.2862
+  earnings_surprise_pct: 184.09
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 6
+  median_abnormal_return_pct: -0.866
+  mean_abnormal_return_pct: 38.6362
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 9.3075
+  beat_observations: 2
+  median_reaction_after_beat_pct: 130.012
+  miss_observations: 4
+  median_reaction_after_miss_pct: -6.9113

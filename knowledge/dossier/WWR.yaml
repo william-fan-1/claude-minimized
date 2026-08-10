@@ -1,0 +1,76 @@
+ticker: WWR
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2016-08-08'
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: -39.64
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2016-08-08'
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: -406.15
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2016-08-08'
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: -32.31
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2016-08-11'
+  stock_return_pct: 33.0709
+  vti_return_pct: 0.5019
+  abnormal_return_pct: 32.569
+  earnings_surprise_pct: 8.54
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2016-11-10'
+  stock_return_pct: -8.4034
+  vti_return_pct: 0.3514
+  abnormal_return_pct: -8.7548
+  earnings_surprise_pct: -52.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2017-03-03'
+  stock_return_pct: -10.1523
+  vti_return_pct: 0.0815
+  abnormal_return_pct: -10.2338
+  earnings_surprise_pct: -247.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2017-05-12'
+  stock_return_pct: 8.3871
+  vti_return_pct: -0.1951
+  abnormal_return_pct: 8.5822
+  earnings_surprise_pct: 9.62
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2017-08-14'
+  stock_return_pct: 0.0
+  vti_return_pct: 1.0236
+  abnormal_return_pct: -1.0236
+  earnings_surprise_pct: 1.72
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 5
+  median_abnormal_return_pct: -1.0236
+  mean_abnormal_return_pct: 4.2278
+  positive_reaction_rate: 0.4
+  median_absolute_reaction_pct: 8.7548
+  beat_observations: 3
+  median_reaction_after_beat_pct: 8.5822
+  miss_observations: 2
+  median_reaction_after_miss_pct: -9.4943

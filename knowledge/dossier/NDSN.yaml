@@ -1,0 +1,76 @@
+ticker: NDSN
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-08-22'
+  stock_return_pct: 3.3296
+  vti_return_pct: -0.8464
+  abnormal_return_pct: 4.176
+  earnings_surprise_pct: 3.12
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-12-12'
+  stock_return_pct: -8.1907
+  vti_return_pct: -0.5699
+  abnormal_return_pct: -7.6208
+  earnings_surprise_pct: 7.34
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-02-20'
+  stock_return_pct: 0.3307
+  vti_return_pct: -0.5378
+  abnormal_return_pct: 0.8684
+  earnings_surprise_pct: -0.89
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-29'
+  stock_return_pct: 6.759
+  vti_return_pct: 0.3216
+  abnormal_return_pct: 6.4374
+  earnings_surprise_pct: 2.6
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-21'
+  stock_return_pct: 3.002
+  vti_return_pct: -0.3441
+  abnormal_return_pct: 3.3462
+  earnings_surprise_pct: 3.54
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-12-11'
+  stock_return_pct: -0.7998
+  vti_return_pct: 0.3366
+  abnormal_return_pct: -1.1363
+  earnings_surprise_pct: 3.42
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-02-19'
+  stock_return_pct: -1.7909
+  vti_return_pct: -0.1889
+  abnormal_return_pct: -1.602
+  earnings_surprise_pct: -0.09
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-21'
+  stock_return_pct: 3.8269
+  vti_return_pct: 0.2471
+  abnormal_return_pct: 3.5798
+  earnings_surprise_pct: 1.48
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: 2.1073
+  mean_abnormal_return_pct: 1.0061
+  positive_reaction_rate: 0.625
+  median_absolute_reaction_pct: 3.463
+  beat_observations: 6
+  median_reaction_after_beat_pct: 3.463
+  miss_observations: 2
+  median_reaction_after_miss_pct: -0.3668

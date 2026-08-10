@@ -1,0 +1,76 @@
+ticker: RVPH
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-08-14'
+  stock_return_pct: 4.1479
+  vti_return_pct: 0.2845
+  abnormal_return_pct: 3.8634
+  earnings_surprise_pct: 16.13
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-11-15'
+  stock_return_pct: -7.0248
+  vti_return_pct: -1.2686
+  abnormal_return_pct: -5.7562
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-04-01'
+  stock_return_pct: -34.913
+  vti_return_pct: 0.3384
+  abnormal_return_pct: -35.2513
+  earnings_surprise_pct: 31.82
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-16'
+  stock_return_pct: -2.2646
+  vti_return_pct: 0.6848
+  abnormal_return_pct: -2.9494
+  earnings_surprise_pct: 28.77
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-15'
+  stock_return_pct: 15.8301
+  vti_return_pct: -0.227
+  abnormal_return_pct: 16.0571
+  earnings_surprise_pct: -9.09
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-14'
+  stock_return_pct: -7.1891
+  vti_return_pct: -0.0152
+  abnormal_return_pct: -7.1739
+  earnings_surprise_pct: 38.24
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-03-30'
+  stock_return_pct: -11.0032
+  vti_return_pct: -0.4503
+  abnormal_return_pct: -10.5529
+  earnings_surprise_pct: -386.56
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-14'
+  stock_return_pct: 10.764
+  vti_return_pct: 0.7376
+  abnormal_return_pct: 10.0264
+  earnings_surprise_pct: -58.62
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: -4.3528
+  mean_abnormal_return_pct: -3.9671
+  positive_reaction_rate: 0.375
+  median_absolute_reaction_pct: 8.6001
+  beat_observations: 4
+  median_reaction_after_beat_pct: -5.0617
+  miss_observations: 3
+  median_reaction_after_miss_pct: 10.0264

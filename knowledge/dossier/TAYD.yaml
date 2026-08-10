@@ -1,0 +1,44 @@
+ticker: TAYD
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-08-15'
+  stock_return_pct: -0.8155
+  vti_return_pct: -0.227
+  abnormal_return_pct: -0.5885
+  earnings_surprise_pct: 131.11
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-10-01'
+  stock_return_pct: -5.1366
+  vti_return_pct: 0.3474
+  abnormal_return_pct: -5.4839
+  earnings_surprise_pct: 1.45
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-12-31'
+  stock_return_pct: -7.2064
+  vti_return_pct: -0.7637
+  abnormal_return_pct: -6.4427
+  earnings_surprise_pct: 20.75
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-03-31'
+  stock_return_pct: -20.9322
+  vti_return_pct: 2.9293
+  abnormal_return_pct: -23.8615
+  earnings_surprise_pct: 2.6
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 4
+  median_abnormal_return_pct: -5.9633
+  mean_abnormal_return_pct: -9.0941
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 5.9633
+  beat_observations: 4
+  median_reaction_after_beat_pct: -5.9633
+  miss_observations: 0
+  median_reaction_after_miss_pct: null

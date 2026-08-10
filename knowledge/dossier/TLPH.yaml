@@ -1,0 +1,76 @@
+ticker: TLPH
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-08-15'
+  stock_return_pct: 1.1628
+  vti_return_pct: 1.7321
+  abnormal_return_pct: -0.5693
+  earnings_surprise_pct: 26.23
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-11-14'
+  stock_return_pct: -25.8427
+  vti_return_pct: -0.7393
+  abnormal_return_pct: -25.1034
+  earnings_surprise_pct: 33.9
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-04-01'
+  stock_return_pct: 6.0
+  vti_return_pct: 0.3384
+  abnormal_return_pct: 5.6616
+  earnings_surprise_pct: 56.25
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-15'
+  stock_return_pct: -3.9216
+  vti_return_pct: 0.4077
+  abnormal_return_pct: -4.3293
+  earnings_surprise_pct: 26.32
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-15'
+  stock_return_pct: 0.0
+  vti_return_pct: -0.227
+  abnormal_return_pct: 0.227
+  earnings_surprise_pct: 9.13
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-13'
+  stock_return_pct: -18.6047
+  vti_return_pct: -1.7716
+  abnormal_return_pct: -16.8331
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-03-23'
+  stock_return_pct: -3.6145
+  vti_return_pct: 1.2019
+  abnormal_return_pct: -4.8163
+  earnings_surprise_pct: 20.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-14'
+  stock_return_pct: 0.0
+  vti_return_pct: 0.7376
+  abnormal_return_pct: -0.7376
+  earnings_surprise_pct: 36.13
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: -2.5335
+  mean_abnormal_return_pct: -5.8125
+  positive_reaction_rate: 0.25
+  median_absolute_reaction_pct: 4.5728
+  beat_observations: 7
+  median_reaction_after_beat_pct: -0.7376
+  miss_observations: 0
+  median_reaction_after_miss_pct: null
