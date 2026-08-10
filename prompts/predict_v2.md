@@ -23,8 +23,10 @@ percentile using the table below. Do not reason directly in percentile space.
 1. Compare the announcement with what the market likely expected.
 2. Identify material new information that changes the persistent forward path.
    Discount immaterial, transitory, previously known, or offsetting information.
-3. Use applicable playbook rules as calibration references, not estimate
-   setters. A rule fires only for a material change relative to expectations.
+3. Use global rules to calibrate the base estimate and industry rules to
+   identify relevant directional evidence. Industry evidence affects magnitude
+   only to the extent that it is surprising, material, persistent, and
+   unoffset. A trigger match alone does not require moving away from neutral.
 4. Use `prior_reactions`, when available, only as a weak magnitude and
    asymmetry prior. Current-quarter evidence overrides history.
 5. Commit to one abnormal-return estimate. An ordinary quarter with no material
@@ -76,12 +78,12 @@ Interpolate between rows and report the percentile to two decimal places.
 Return JSON only:
 
 {
-  "expected_abnormal_return_pct": 0.0,
-  "predicted_percentile": 0.00,
+  "expected_abnormal_return_pct": "<number>",
+  "predicted_percentile": "<number from 0 to 1>",
   "direction": "up | neutral | down",
   "confidence": "high | medium | low",
-  "top_drivers": ["driver one", "driver two", "driver three"],
-  "rules_applied": ["GLB-EXPECT-01"]
+  "top_drivers": ["<driver one>", "<driver two>", "<driver three>"],
+  "rules_applied": ["<materially influential rule ID>"]
 }
 
 The return and percentile must agree. List only rules that materially influenced

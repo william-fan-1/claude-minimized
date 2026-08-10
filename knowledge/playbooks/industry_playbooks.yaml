@@ -1,9 +1,10 @@
 # =============================================================================
 # industry_playbooks.yaml — sector rulebooks
-# Explaining Markets · Q3 2026 · version 0.2.0 · owner: Will · as of 2026-08-07
+# Explaining Markets · Q3 2026 · version 0.3.0 · owner: Will · revised 2026-08-10
 # =============================================================================
-# Layers ON TOP of knowledge/playbooks/_global.yaml. Industry rules WIN over
-# global rules on conflict (see _global.yaml precedence, order 1).
+# Layers ON TOP of knowledge/playbooks/_global.yaml. Global principles and
+# rules remain binding; industry rules supply directional KPI evidence and
+# inform magnitude through the strength of the trigger and rationale.
 #
 # LOADER CONTRACT
 #   Filter to the event's desired industry and inject industry rules into the
@@ -15,63 +16,41 @@
 # =============================================================================
 
 meta:
+  version: 0.3.0
   title: Q2 2026 Earnings-Season Industry Playbooks
   as_of: "2026-08-07"
+  revised: "2026-08-10"
   fiscal_quarter: Q2 2026
-  purpose: Three industry-specific trends for predicting cross-sectional stock reactions to earnings.
+  purpose: Directional industry-specific evidence for forecasting cross-sectional stock reactions to earnings.
   calibration: >
-    Estimate a continuous one-day abnormal return in percentage points first, then convert
-    that estimate to a percentile using the empirical map below. Each action range is a
-    calibration reference for a MATERIAL and substantially complete trigger match; it is
-    not a prediction setter and its midpoint must not be copied automatically.
+    Industry rules identify the KPIs that matter and the direction of their
+    evidence. They do not set an abnormal return or override global expectation,
+    materiality, persistence, offset, or neutral principles. Use each rationale
+    to judge why the signal matters and use the strength of the trigger relative
+    to expectations to inform magnitude under the global calibration framework.
   application_policy:
-    baseline: Start from 0.0% abnormal return, approximately the 0.50 percentile.
+    baseline: Start from the estimate implied by the applicable global rules.
     materiality_gate: >
-      Apply an action range only when all important trigger clauses are explicitly supported,
-      the development is material versus consensus, prior guidance, or the prior earnings path,
-      and there is no equally material offset. Routine caution, one soft segment, normal hedging,
-      or a small one-time item is directional evidence only and must not activate a tail range.
-    return_first: >
-      Choose a specific abnormal-return estimate from the magnitude of the disclosed surprise,
-      guidance change, KPI inflection, expectation bar, and credible offsets. Convert that point
-      estimate mechanically to a percentile only after the return estimate is complete.
+      A trigger match supplies directional evidence only. Give it meaningful
+      weight only when the important trigger clauses are explicitly supported
+      and the development is material versus consensus, prior guidance, or the
+      prior earnings path. Routine caution, one soft segment, normal hedging,
+      or a small one-time item should have little or no effect.
+    magnitude: >
+      Adjust the global estimate in the indicated direction according to the
+      size of the surprise, its persistence, its effect on the forward path,
+      the economic logic in the rationale, and credible offsets. Stronger and
+      more quantified evidence warrants a larger adjustment; expected, modest,
+      transitory, or offset evidence warrants a smaller adjustment or none.
     partial_match: >
-      If evidence is incomplete, mixed, or merely qualitative, shrink toward 0.0% abnormal
-      return. Ordinary mixed quarters generally belong between -2.0% and +3.0%, approximately
-      the 0.38-0.68 percentile region.
-    tail_gate: >
-      Forecast below -10% or above +12% only for explicit thesis-changing evidence such as a
-      material guidance reset, major KPI break or inflection, liquidity event, binary catalyst,
-      or a result far beyond an elevated expectation bar.
+      If the industry evidence is incomplete, mixed, merely qualitative,
+      expected, or substantially offset, preserve or shrink toward the global
+      neutral estimate rather than forcing a directional move.
     interaction: >
-      Collapse overlapping rules into one economic driver and do not add their ranges. Resolve
-      conflicts in return space using this hierarchy: thesis break or liquidity event; material
-      guidance change; industry KPI inflection; earnings quality and mix; tone and one-time items.
-      Several weak signals do not equal one severe signal.
-    strengthening: Move toward the relevant edge only when trigger severity is quantified.
-    fading: Shrink toward 0.0% rather than jumping to a separate canned band.
-  empirical_percentile_map:
-    - {abnormal_return_pct: -31.0, percentile: 0.01}
-    - {abnormal_return_pct: -17.5, percentile: 0.05}
-    - {abnormal_return_pct: -12.0, percentile: 0.10}
-    - {abnormal_return_pct: -8.8, percentile: 0.15}
-    - {abnormal_return_pct: -6.6, percentile: 0.20}
-    - {abnormal_return_pct: -4.7, percentile: 0.25}
-    - {abnormal_return_pct: -3.7, percentile: 0.30}
-    - {abnormal_return_pct: -2.6, percentile: 0.35}
-    - {abnormal_return_pct: -1.6, percentile: 0.40}
-    - {abnormal_return_pct: -0.7, percentile: 0.45}
-    - {abnormal_return_pct: 0.0, percentile: 0.50}
-    - {abnormal_return_pct: 1.0, percentile: 0.55}
-    - {abnormal_return_pct: 1.9, percentile: 0.60}
-    - {abnormal_return_pct: 2.7, percentile: 0.65}
-    - {abnormal_return_pct: 3.4, percentile: 0.70}
-    - {abnormal_return_pct: 4.7, percentile: 0.75}
-    - {abnormal_return_pct: 6.0, percentile: 0.80}
-    - {abnormal_return_pct: 8.0, percentile: 0.85}
-    - {abnormal_return_pct: 12.0, percentile: 0.90}
-    - {abnormal_return_pct: 19.0, percentile: 0.95}
-    - {abnormal_return_pct: 33.0, percentile: 0.99}
+      Collapse overlapping rules into one economic driver and do not add weak
+      signals mechanically. Resolve conflicts using the global evidence
+      hierarchy. If neither side clearly dominates, shrink toward the global
+      neutral estimate. Several weak signals do not equal one severe signal.
   evidence_base:
     - Q3-2026-Sector-Research-Briefing.MD
     - EM-Diagnostics-Aug6.md
@@ -117,23 +96,17 @@ commercial_products:
   rules:
     - id: COMMERCIAL_PRODUCTS_1
       trigger: Volume growth with maintained or expanded margin despite tariffs and metals/energy inflation.
-      action:
-        abnormal_return_pct: [5.5, 14.8]
-        percentile_range: [0.78, 0.92]
+      implication: positive
       rationale: Caterpillar paired 24% revenue growth with a 21.9% adjusted operating margin; pass-through is scarcer than demand.
       confidence: high
     - id: COMMERCIAL_PRODUCTS_2
       trigger: Revenue or volume beats but margin guidance falls because price realization lags input costs.
-      action:
-        abnormal_return_pct: [-14.2, -5.1]
-        percentile_range: [0.08, 0.24]
+      implication: negative
       rationale: With manufacturing expanding, negative price-cost increasingly reads as a company-specific execution failure.
       confidence: high
     - id: COMMERCIAL_PRODUCTS_3
       trigger: Backlog and orders rise with higher production or EPS guidance and controlled working capital.
-      action:
-        abnormal_return_pct: [3.9, 10.4]
-        percentile_range: [0.72, 0.88]
+      implication: positive
       rationale: Backlog conversion validates durable demand; advance ordering or cash absorption lowers its quality.
       confidence: medium_high
 
@@ -143,23 +116,17 @@ commercial_services:
   rules:
     - id: COMMERCIAL_SERVICES_1
       trigger: Organic growth accompanies stable retention, utilization, and labor-adjusted margin.
-      action:
-        abnormal_return_pct: [1.0, 3.4]
-        percentile_range: [0.55, 0.70]
+      implication: positive
       rationale: A productivity-backed beat is more repeatable than one produced by pricing or temporary labor underspend.
       confidence: medium
     - id: COMMERCIAL_SERVICES_2
       trigger: Revenue beats mainly through price while transactions, billable volume, or utilization decline.
-      action:
-        abnormal_return_pct: [-9.4, -3.3]
-        percentile_range: [0.14, 0.32]
+      implication: negative
       rationale: Price-only growth is vulnerable when contracts reset and is poor evidence of healthy end demand.
       confidence: medium
     - id: COMMERCIAL_SERVICES_3
       trigger: AI or automation savings are quantified and flow into margin or guidance.
-      action:
-        abnormal_return_pct: [3.1, 7.6]
-        percentile_range: [0.68, 0.84]
+      implication: positive
       rationale: Investors reward visible cost-to-serve improvement, not unquantified AI narratives or recurring restructuring.
       confidence: medium
 
@@ -169,23 +136,17 @@ commercial_transportation:
   rules:
     - id: COMMERCIAL_TRANSPORTATION_1
       trigger: Contractual pricing and fuel surcharges offset higher fuel costs while core volumes remain stable.
-      action:
-        abnormal_return_pct: [3.1, 7.6]
-        percentile_range: [0.68, 0.84]
+      implication: positive
       rationale: Formulaic cost recovery protects earnings without requiring a favorable oil forecast.
       confidence: high
     - id: COMMERCIAL_TRANSPORTATION_2
       trigger: Headline revenue rises on fuel surcharges while core shipments and operating ratio deteriorate.
-      action:
-        abnormal_return_pct: [-12.0, -4.5]
-        percentile_range: [0.10, 0.26]
+      implication: negative
       rationale: Surcharge revenue is not demand and can conceal network or shipment weakness.
       confidence: high
     - id: COMMERCIAL_TRANSPORTATION_3
       trigger: Productivity and service gains improve the operating ratio and support raised guidance despite fuel inflation.
-      action:
-        abnormal_return_pct: [5.0, 12.0]
-        percentile_range: [0.76, 0.90]
+      implication: positive
       rationale: Durable network efficiency is more valuable than nominal revenue in an oil shock.
       confidence: high
 
@@ -195,23 +156,17 @@ other_business_products_and_services:
   rules:
     - id: OTHER_BUSINESS_PRODUCTS_AND_SERVICES_1
       trigger: Recurring revenue, renewals, and backlog rise while gross margin holds.
-      action:
-        abnormal_return_pct: [1.0, 3.4]
-        percentile_range: [0.55, 0.70]
+      implication: positive
       rationale: Multi-quarter renewal strength gives more visibility than a one-quarter revenue beat.
       confidence: medium
     - id: OTHER_BUSINESS_PRODUCTS_AND_SERVICES_2
       trigger: Growth is acquisition-led while organic sales stagnate and leverage rises.
-      action:
-        abnormal_return_pct: [-8.4, -2.8]
-        percentile_range: [0.16, 0.34]
+      implication: negative
       rationale: Two-sided rates reduce the value of debt-funded inorganic growth and increase execution risk.
       confidence: medium
     - id: OTHER_BUSINESS_PRODUCTS_AND_SERVICES_3
       trigger: Revenue guidance rises but profit guidance does not because tariffs, freight, or labor consume incremental sales.
-      action:
-        abnormal_return_pct: [-12.0, -4.1]
-        percentile_range: [0.10, 0.28]
+      implication: negative
       rationale: Industrial investors are prioritizing margin pass-through over demand commentary.
       confidence: high
 
@@ -221,23 +176,17 @@ apparel_and_accessories:
   rules:
     - id: APPAREL_AND_ACCESSORIES_1
       trigger: North American traffic and comps weaken and sales guidance is cut despite an expense-driven EPS beat.
-      action:
-        abnormal_return_pct: [-16.4, -5.8]
-        percentile_range: [0.06, 0.22]
+      implication: negative
       rationale: Under Armour's revenue miss, 9% North America decline, and guide cut outweighed its EPS beat.
       confidence: high
     - id: APPAREL_AND_ACCESSORIES_2
       trigger: Broad-based DTC and e-commerce growth accompanies lower inventory, gross-margin expansion, and raised guidance.
-      action:
-        abnormal_return_pct: [5.0, 13.4]
-        percentile_range: [0.76, 0.91]
+      implication: positive
       rationale: Levi's 11% DTC growth, 19% e-commerce growth, and 7% inventory decline demonstrated profitable brand demand.
       confidence: high
     - id: APPAREL_AND_ACCESSORIES_3
       trigger: Growth depends on promotions or price reductions while assortment rationalization remains unfinished.
-      action:
-        abnormal_return_pct: [-10.7, -3.3]
-        percentile_range: [0.12, 0.32]
+      implication: negative
       rationale: Persistent discounting signals weak brand equity and threatens the durability of margin recovery.
       confidence: medium_high
 
@@ -247,23 +196,17 @@ consumer_durables:
   rules:
     - id: CONSUMER_DURABLES_1
       trigger: New-product innovation drives multi-category growth and an upward sales and EPS revision.
-      action:
-        abnormal_return_pct: [6.0, 17.6]
-        percentile_range: [0.80, 0.94]
+      implication: positive
       rationale: SharkNinja's 22% sales growth and raised outlook showed that real innovation can create a replacement cycle.
       confidence: high
     - id: CONSUMER_DURABLES_2
       trigger: Big-ticket orders soften because of housing turnover, financing costs, or consumer caution.
-      action:
-        abnormal_return_pct: [-14.2, -4.7]
-        percentile_range: [0.08, 0.25]
+      implication: negative
       rationale: Durable demand is unusually rate-sensitive while expected price increases compound affordability pressure.
       confidence: high
     - id: CONSUMER_DURABLES_3
       trigger: Tariff refunds or temporary price increases lift EPS while underlying units and recurring margin fail to improve.
-      action:
-        abnormal_return_pct: [-4.1, -0.7]
-        percentile_range: [0.28, 0.45]
+      implication: negative
       rationale: One-time tariff benefits and accounting timing should be removed before extrapolating earnings quality.
       confidence: medium_high
 
@@ -273,23 +216,17 @@ consumer_non_durables:
   rules:
     - id: CONSUMER_NON_DURABLES_1
       trigger: Organic growth is volume or concentrate-led, margins expand, and guidance rises.
-      action:
-        abnormal_return_pct: [3.9, 10.4]
-        percentile_range: [0.72, 0.88]
+      implication: positive
       rationale: Coca-Cola's volume-supported organic growth and margin expansion showed resilient underlying demand.
       confidence: high
     - id: CONSUMER_NON_DURABLES_2
       trigger: Sales rise primarily through pricing while unit volumes contract or trade-down accelerates.
-      action:
-        abnormal_return_pct: [-8.4, -2.8]
-        percentile_range: [0.16, 0.34]
+      implication: negative
       rationale: Price-only growth signals elasticity, private-label substitution, and future promotional reinvestment.
       confidence: high
     - id: CONSUMER_NON_DURABLES_3
       trigger: Input inflation or distribution spending causes margin to decline despite positive volume.
-      action:
-        abnormal_return_pct: [-4.7, -1.1]
-        percentile_range: [0.25, 0.43]
+      implication: negative
       rationale: Positive volume is insufficient if oil, packaging, and tariff costs prevent earnings conversion.
       confidence: medium_high
 
@@ -299,23 +236,17 @@ media:
   rules:
     - id: MEDIA_1
       trigger: Streaming engagement, advertising, and subscription monetization accelerate together.
-      action:
-        abnormal_return_pct: [4.4, 12.0]
-        percentile_range: [0.74, 0.90]
+      implication: positive
       rationale: Roku's beat across advertising and subscriptions showed scalable platform monetization.
       confidence: high
     - id: MEDIA_2
       trigger: Linear advertising or studio revenue falls sharply even if cost cuts produce an EPS beat.
-      action:
-        abnormal_return_pct: [-12.0, -3.9]
-        percentile_range: [0.10, 0.29]
+      implication: negative
       rationale: Warner Bros. Discovery's surprise profit did not offset a 39% studio decline and 22% ad decline.
       confidence: high
     - id: MEDIA_3
       trigger: A hit franchise drives measurable lift across box office, streaming, merchandise, and experiences.
-      action:
-        abnormal_return_pct: [3.4, 9.6]
-        percentile_range: [0.70, 0.87]
+      implication: positive
       rationale: Cross-platform monetization improves content ROI and reduces dependence on a single release window.
       confidence: high
 
@@ -325,23 +256,17 @@ restaurants_hotels_and_leisure:
   rules:
     - id: RESTAURANTS_HOTELS_AND_LEISURE_1
       trigger: Comparable sales or RevPAR and traffic beat while full-year growth or margin guidance rises.
-      action:
-        abnormal_return_pct: [5.0, 14.8]
-        percentile_range: [0.76, 0.92]
+      implication: positive
       rationale: Airbnb and Hyatt paired demand strength with forward confirmation rather than relying on a backward-looking beat.
       confidence: high
     - id: RESTAURANTS_HOTELS_AND_LEISURE_2
       trigger: Restaurant comps are price-led with weak traffic or management pivots toward value offers.
-      action:
-        abnormal_return_pct: [-10.7, -3.5]
-        percentile_range: [0.12, 0.31]
+      implication: negative
       rationale: Promotion-dependent visits threaten restaurant-level margins and expose lower-income weakness.
       confidence: high
     - id: RESTAURANTS_HOTELS_AND_LEISURE_3
       trigger: Premium, international, or event demand offsets lower-income domestic weakness with stable margins.
-      action:
-        abnormal_return_pct: [2.7, 7.2]
-        percentile_range: [0.65, 0.83]
+      implication: positive
       rationale: Consumer demand is bifurcated rather than uniformly weak, favoring affluent and international exposure.
       confidence: medium_high
 
@@ -351,23 +276,17 @@ retail:
   rules:
     - id: RETAIL_1
       trigger: Traffic, transactions, or units weaken and guidance falls even where price or mix preserves sales.
-      action:
-        abnormal_return_pct: [-17.5, -6.6]
-        percentile_range: [0.05, 0.20]
+      implication: negative
       rationale: Paycheck-timed trips and smaller baskets make unit weakness a leading indicator of further pressure.
       confidence: high
     - id: RETAIL_2
       trigger: Share gains from value positioning accompany disciplined inventory and stable gross margin.
-      action:
-        abnormal_return_pct: [3.4, 9.6]
-        percentile_range: [0.70, 0.87]
+      implication: positive
       rationale: Inventory discipline distinguishes genuine share gains from promotions or channel stuffing.
       confidence: high
     - id: RETAIL_3
       trigger: Growth relies on tax-refund timing, BNPL usage, or promotion rather than repeatable traffic and units.
-      action:
-        abnormal_return_pct: [-5.1, -1.1]
-        percentile_range: [0.24, 0.43]
+      implication: negative
       rationale: Borrowing- or timing-supported demand is less persistent and creates difficult comparisons.
       confidence: medium_high
 
@@ -377,23 +296,17 @@ services_non_financial:
   rules:
     - id: SERVICES_NON_FINANCIAL_1
       trigger: AI or self-service automation improves conversion or resolution and flows into margin or guidance.
-      action:
-        abnormal_return_pct: [3.9, 11.2]
-        percentile_range: [0.72, 0.89]
+      implication: positive
       rationale: Airbnb's 45% automated issue resolution illustrates monetized operating leverage rather than AI narrative.
       confidence: medium_high
     - id: SERVICES_NON_FINANCIAL_2
       trigger: Bookings or utilization weakens among lower-income customers and forward demand is reduced.
-      action:
-        abnormal_return_pct: [-12.0, -4.1]
-        percentile_range: [0.10, 0.28]
+      implication: negative
       rationale: Discretionary services have little inventory cushion, so weakening bookings rapidly create labor deleverage.
       confidence: medium_high
     - id: SERVICES_NON_FINANCIAL_3
       trigger: Revenue beats through price or pass-through fees while productivity, retention, or recurring bookings deteriorate.
-      action:
-        abnormal_return_pct: [-4.7, -0.9]
-        percentile_range: [0.25, 0.44]
+      implication: negative
       rationale: Nominal service revenue is low quality when utilization and retention weaken.
       confidence: medium
 
@@ -403,23 +316,17 @@ transportation:
   rules:
     - id: TRANSPORTATION_1
       trigger: Fuel pressure rises materially and EPS guidance is cut despite healthy revenue.
-      action:
-        abnormal_return_pct: [-15.3, -5.1]
-        percentile_range: [0.07, 0.24]
+      implication: negative
       rationale: American Airlines' record revenue did not offset a fuel-driven earnings outlook cut.
       confidence: high
     - id: TRANSPORTATION_2
       trigger: Yield, RASM, and premium revenue outgrow capacity, enabling higher EPS guidance despite fuel inflation.
-      action:
-        abnormal_return_pct: [5.0, 13.4]
-        percentile_range: [0.76, 0.91]
+      implication: positive
       rationale: United's unit-revenue strength supported a guide raise despite nearly $6 billion of additional fuel cost.
       confidence: high
     - id: TRANSPORTATION_3
       trigger: Capacity expands without unit-revenue improvement or management discounts to fill seats.
-      action:
-        abnormal_return_pct: [-9.4, -2.8]
-        percentile_range: [0.14, 0.34]
+      implication: negative
       rationale: Capacity is constructive only when yield and margins hold.
       confidence: high
 
@@ -429,23 +336,17 @@ other_consumer_products_and_services:
   rules:
     - id: OTHER_CONSUMER_PRODUCTS_AND_SERVICES_1
       trigger: Innovation drives demand across several categories and management raises revenue and EPS guidance.
-      action:
-        abnormal_return_pct: [5.0, 14.8]
-        percentile_range: [0.76, 0.92]
+      implication: positive
       rationale: Broad new-product adoption is strong evidence that growth is company-specific rather than macro-driven.
       confidence: high
     - id: OTHER_CONSUMER_PRODUCTS_AND_SERVICES_2
       trigger: Management reverses price increases or adds promotions because consumers resist tariff-driven pricing.
-      action:
-        abnormal_return_pct: [-12.0, -3.9]
-        percentile_range: [0.10, 0.29]
+      implication: negative
       rationale: Price reversals combine lower realization with inventory and markdown risk.
       confidence: high
     - id: OTHER_CONSUMER_PRODUCTS_AND_SERVICES_3
       trigger: Reported growth is acquisition-, refund-, or event-driven while the legacy business contracts.
-      action:
-        abnormal_return_pct: [-4.7, -0.7]
-        percentile_range: [0.25, 0.45]
+      implication: negative
       rationale: Temporary and inorganic effects should be stripped out before extrapolating earnings.
       confidence: medium_high
 
@@ -455,23 +356,17 @@ energy_equipment:
   rules:
     - id: ENERGY_EQUIPMENT_1
       trigger: Orders and backlog improve without speculative supplier capacity expansion.
-      action:
-        abnormal_return_pct: [3.4, 8.8]
-        percentile_range: [0.70, 0.86]
+      implication: positive
       rationale: E&P customers are preserving capital discipline, favoring suppliers with firm commitments.
       confidence: medium_high
     - id: ENERGY_EQUIPMENT_2
       trigger: Capex or inventory is raised ahead of firm customer commitments.
-      action:
-        abnormal_return_pct: [-12.0, -4.5]
-        percentile_range: [0.10, 0.26]
+      implication: negative
       rationale: Suppliers betting on an E&P spending boom risk overcapacity because tracked upstream capex remains lower year over year.
       confidence: high
     - id: ENERGY_EQUIPMENT_3
       trigger: Pricing and recurring aftermarket mix offset steel, freight, and labor inflation.
-      action:
-        abnormal_return_pct: [3.9, 10.4]
-        percentile_range: [0.72, 0.88]
+      implication: positive
       rationale: Service mix and price-cost execution make margin improvement more durable than one-time shipments.
       confidence: medium_high
 
@@ -481,23 +376,17 @@ exploration_production_and_refining:
   rules:
     - id: EXPLORATION_PRODUCTION_AND_REFINING_1
       trigger: Oil or refining windfall is returned through buybacks or dividends while capex stays flat or falls.
-      action:
-        abnormal_return_pct: [5.5, 14.8]
-        percentile_range: [0.78, 0.92]
+      implication: positive
       rationale: Capital discipline is the sector's clearest preference; Exxon paired $17.2 billion of FCF with $9.4 billion of distributions.
       confidence: high
     - id: EXPLORATION_PRODUCTION_AND_REFINING_2
       trigger: Capex rises to chase current prices without commensurate low-cost production or contracted returns.
-      action:
-        abnormal_return_pct: [-16.4, -5.8]
-        percentile_range: [0.06, 0.22]
+      implication: negative
       rationale: Large multi-year commitments raise peak-cycle risk and reverse the industry's successful restraint.
       confidence: high
     - id: EXPLORATION_PRODUCTION_AND_REFINING_3
       trigger: Production or throughput guidance rises while unit costs and capex remain controlled.
-      action:
-        abnormal_return_pct: [4.4, 12.0]
-        percentile_range: [0.74, 0.90]
+      implication: positive
       rationale: Operational gains at ConocoPhillips and Chevron are more persistent than commodity-price beats alone.
       confidence: high
 
@@ -507,23 +396,17 @@ energy_services:
   rules:
     - id: ENERGY_SERVICES_1
       trigger: International or offshore backlog and pricing improve while North American activity remains disciplined.
-      action:
-        abnormal_return_pct: [3.4, 8.8]
-        percentile_range: [0.70, 0.86]
+      implication: positive
       rationale: Contracted activity is more durable than a spot-driven U.S. capex forecast.
       confidence: medium_high
     - id: ENERGY_SERVICES_2
       trigger: Guidance assumes sharply higher U.S. rigs or completions or adds capacity without customer commitments.
-      action:
-        abnormal_return_pct: [-14.2, -5.1]
-        percentile_range: [0.08, 0.24]
+      implication: negative
       rationale: Tracked E&P capital investment is down 5% in 2026 despite higher oil.
       confidence: high
     - id: ENERGY_SERVICES_3
       trigger: Service intensity, utilization, and pricing lift margins even on flat rig counts.
-      action:
-        abnormal_return_pct: [3.1, 7.6]
-        percentile_range: [0.68, 0.84]
+      implication: positive
       rationale: Earnings growth without a volume boom validates technology mix and pricing power.
       confidence: medium
 
@@ -533,23 +416,17 @@ utilities:
   rules:
     - id: UTILITIES_1
       trigger: A data-center load contract includes customer funding, minimum payments, and explicit regulatory recovery.
-      action:
-        abnormal_return_pct: [4.4, 10.4]
-        percentile_range: [0.74, 0.88]
+      implication: positive
       rationale: Long-duration take-or-pay terms convert load growth into financeable earnings and limit stranded-asset risk.
       confidence: high
     - id: UTILITIES_2
       trigger: Data-center capex or load forecasts rise without cost-allocation clarity or with concentration risk.
-      action:
-        abnormal_return_pct: [-12.0, -4.1]
-        percentile_range: [0.10, 0.28]
+      implication: negative
       rationale: EIA forecast cuts and political affordability concerns make unprotected capex a liability.
       confidence: high
     - id: UTILITIES_3
       trigger: A favorable rate case supports reaffirmed EPS and FCF growth despite fuel inflation and higher rates.
-      action:
-        abnormal_return_pct: [3.1, 7.6]
-        percentile_range: [0.68, 0.84]
+      implication: positive
       rationale: Multi-year regulatory recovery determines whether demand and capex create shareholder value.
       confidence: high
 
@@ -559,23 +436,17 @@ other_energy:
   rules:
     - id: OTHER_ENERGY_1
       trigger: Fee-based or inflation-linked EBITDA guidance rises without material commodity sensitivity.
-      action:
-        abnormal_return_pct: [3.9, 10.4]
-        percentile_range: [0.72, 0.88]
+      implication: positive
       rationale: Take-or-pay midstream cash flows continue to compound through oil and geopolitical volatility.
       confidence: high
     - id: OTHER_ENERGY_2
       trigger: An acquisition or project is supported by long-term contracts and remains leverage-neutral or quickly accretive.
-      action:
-        abnormal_return_pct: [2.5, 6.8]
-        percentile_range: [0.64, 0.82]
+      implication: positive
       rationale: Williams' contracted LNG-linked growth illustrates why financing discipline matters under unstable rates.
       confidence: medium_high
     - id: OTHER_ENERGY_3
       trigger: FCF converts into distribution growth or buybacks without sacrificing balance-sheet targets.
-      action:
-        abnormal_return_pct: [2.2, 5.5]
-        percentile_range: [0.62, 0.78]
+      implication: positive
       rationale: Formulaic cash returns are preferred to speculative reinvestment in the current energy regime.
       confidence: high
 
@@ -585,23 +456,17 @@ capital_markets_institutions:
   rules:
     - id: CAPITAL_MARKETS_INSTITUTIONS_1
       trigger: Investment-banking fees and announced pipelines accelerate without a material compensation-ratio increase.
-      action:
-        abnormal_return_pct: [3.9, 12.0]
-        percentile_range: [0.72, 0.90]
+      implication: positive
       rationale: M&A and underwriting backlogs reveal durable operating leverage beyond reported fees.
       confidence: high
     - id: CAPITAL_MARKETS_INSTITUTIONS_2
       trigger: Trading beats on volatility while client activity, financing balances, or wallet share weaken.
-      action:
-        abnormal_return_pct: [-3.7, -0.6]
-        percentile_range: [0.30, 0.46]
+      implication: negative
       rationale: High dispersion supports trading temporarily but does not prove franchise gains.
       confidence: medium
     - id: CAPITAL_MARKETS_INSTITUTIONS_3
       trigger: Private-markets fundraising, realizations, fee-related earnings, or distributable earnings miss while marks remain optimistic.
-      action:
-        abnormal_return_pct: [-14.2, -5.1]
-        percentile_range: [0.08, 0.24]
+      implication: negative
       rationale: Weak cash realization exposes a gap between marks and fee-bearing or distributable value.
       confidence: high
 
@@ -611,25 +476,19 @@ commercial_banks:
   rules:
     - id: COMMERCIAL_BANKS_1
       trigger: NII or NIM guidance rises because deposit betas and funding costs stabilize rather than solely on a rate assumption.
-      action:
-        abnormal_return_pct: [3.4, 10.4]
-        percentile_range: [0.70, 0.88]
+      implication: positive
       rationale: Industry NIM fell from 3.30% to 3.22%, making funding normalization the key proof point.
       confidence: high
     - id: COMMERCIAL_BANKS_2
       trigger: >
         Provisions or criticized loans rise materially enough to worsen forward credit-cost
         guidance, or disclosed lower-FICO stress changes the expected loss path, despite an EPS beat.
-      action:
-        abnormal_return_pct: [-16.4, -5.8]
-        percentile_range: [0.06, 0.22]
+      implication: negative
       rationale: Provision builds are forward warnings and matter more than current charge-offs in a benign broad-credit backdrop.
       confidence: high
     - id: COMMERCIAL_BANKS_3
       trigger: Loan growth slows and deposit costs stay sticky while management relies on buybacks to support EPS.
-      action:
-        abnormal_return_pct: [-6.6, -2.0]
-        percentile_range: [0.20, 0.38]
+      implication: negative
       rationale: Bank buybacks are routine capital maintenance, not a substitute for weakening spread income.
       confidence: high
 
@@ -639,23 +498,17 @@ insurance:
   rules:
     - id: INSURANCE_1
       trigger: The underlying or accident-year combined ratio beats while premium growth remains adequate.
-      action:
-        abnormal_return_pct: [5.0, 14.8]
-        percentile_range: [0.76, 0.92]
+      implication: positive
       rationale: Chubb and AIG showed that durable underwriting profitability is valued above catastrophe-distorted results.
       confidence: high
     - id: INSURANCE_2
       trigger: Catastrophe losses rise but pricing, reserves, and underlying loss trends remain intact.
-      action:
-        abnormal_return_pct: [-0.6, 2.2]
-        percentile_range: [0.46, 0.62]
+      implication: positive
       rationale: Investors look through truly one-off catastrophe variance when core underwriting persists.
       confidence: high
     - id: INSURANCE_3
       trigger: Premium growth is obtained by relaxing discipline in softening commercial lines.
-      action:
-        abnormal_return_pct: [-12.0, -4.1]
-        percentile_range: [0.10, 0.28]
+      implication: negative
       rationale: Growth below adequate pricing implies adverse future loss development.
       confidence: high
 
@@ -665,23 +518,17 @@ other_financial_services:
   rules:
     - id: OTHER_FINANCIAL_SERVICES_1
       trigger: Payment and cross-border volumes remain resilient with stable take rates and credit losses.
-      action:
-        abnormal_return_pct: [3.1, 7.6]
-        percentile_range: [0.68, 0.84]
+      implication: positive
       rationale: Real transaction growth is stronger evidence of consumer health than inflation-lifted nominal spending.
       confidence: medium_high
     - id: OTHER_FINANCIAL_SERVICES_2
       trigger: Fintech revenue beats through transaction-margin expansion while active accounts or branded share deteriorate.
-      action:
-        abnormal_return_pct: [-8.4, -2.8]
-        percentile_range: [0.16, 0.34]
+      implication: negative
       rationale: Cost-led earnings without user or share growth have low persistence.
       confidence: high
     - id: OTHER_FINANCIAL_SERVICES_3
       trigger: Consumer lenders raise reserves or funding-cost assumptions for lower-FICO borrowers.
-      action:
-        abnormal_return_pct: [-17.5, -6.6]
-        percentile_range: [0.05, 0.20]
+      implication: negative
       rationale: Digital and specialty lenders remain most exposed to the consumer-credit pocket still deteriorating.
       confidence: high
 
@@ -691,23 +538,17 @@ healthcare_devices_and_supplies:
   rules:
     - id: HEALTHCARE_DEVICES_AND_SUPPLIES_1
       trigger: Procedure volumes stay strong and organic-sales guidance rises without gross-margin sacrifice.
-      action:
-        abnormal_return_pct: [3.4, 10.4]
-        percentile_range: [0.70, 0.88]
+      implication: positive
       rationale: Procedure growth plus price-cost control supports multi-quarter medtech earnings persistence.
       confidence: high
     - id: HEALTHCARE_DEVICES_AND_SUPPLIES_2
       trigger: Sales beat through volume but tariff, freight, component, or memory costs reduce margin guidance.
-      action:
-        abnormal_return_pct: [-9.4, -3.3]
-        percentile_range: [0.14, 0.32]
+      implication: negative
       rationale: High dispersion makes margin misses more important than device volume beats.
       confidence: medium_high
     - id: HEALTHCARE_DEVICES_AND_SUPPLIES_3
       trigger: Product adoption, installed-base placements, and recurring consumables accelerate together.
-      action:
-        abnormal_return_pct: [5.5, 17.6]
-        percentile_range: [0.78, 0.94]
+      implication: positive
       rationale: A larger installed base validates the product cycle and creates persistent recurring revenue.
       confidence: high
 
@@ -717,23 +558,17 @@ healthcare_services:
   rules:
     - id: HEALTHCARE_SERVICES_1
       trigger: Medical-loss ratio or second-half utilization and risk-adjustment guidance deteriorates despite an EPS beat.
-      action:
-        abnormal_return_pct: [-20.9, -6.6]
-        percentile_range: [0.04, 0.20]
+      implication: negative
       rationale: Oscar Health showed that forward claims risk can overwhelm a large reported beat.
       confidence: high
     - id: HEALTHCARE_SERVICES_2
       trigger: Admissions and procedures rise while labor expense per admission and agency staffing fall.
-      action:
-        abnormal_return_pct: [3.9, 10.4]
-        percentile_range: [0.72, 0.88]
+      implication: positive
       rationale: Volume plus labor productivity creates durable hospital EBITDA leverage.
       confidence: high
     - id: HEALTHCARE_SERVICES_3
       trigger: Membership growth depends on aggressive pricing or favorable risk selection while utilization assumptions worsen.
-      action:
-        abnormal_return_pct: [-12.0, -4.1]
-        percentile_range: [0.10, 0.28]
+      implication: negative
       rationale: Low-quality membership can reverse through risk adjustment and later claims.
       confidence: high
 
@@ -743,23 +578,17 @@ healthcare_technology_systems:
   rules:
     - id: HEALTHCARE_TECHNOLOGY_SYSTEMS_1
       trigger: Bookings, backlog, and recurring subscriptions accelerate while implementation cycles shorten.
-      action:
-        abnormal_return_pct: [3.9, 10.4]
-        percentile_range: [0.72, 0.88]
+      implication: positive
       rationale: Faster conversion of provider demand into recurring revenue improves both visibility and cash efficiency.
       confidence: medium_high
     - id: HEALTHCARE_TECHNOLOGY_SYSTEMS_2
       trigger: AI produces paid module expansion, measurable adoption, or documented provider workflow savings.
-      action:
-        abnormal_return_pct: [4.7, 14.8]
-        percentile_range: [0.75, 0.92]
+      implication: positive
       rationale: The market now demands monetization proof rather than generic AI positioning.
       confidence: high
     - id: HEALTHCARE_TECHNOLOGY_SYSTEMS_3
       trigger: Revenue beats on services or implementation work while ARR, retention, or bookings slow.
-      action:
-        abnormal_return_pct: [-10.7, -3.7]
-        percentile_range: [0.12, 0.30]
+      implication: negative
       rationale: Low-margin services cannot offset deterioration in the recurring software engine.
       confidence: high
 
@@ -769,23 +598,17 @@ pharmaceuticals_and_biotechnology:
   rules:
     - id: PHARMACEUTICALS_AND_BIOTECHNOLOGY_1
       trigger: GLP-1 volume and access gains exceed government or DTC price concessions and guidance rises.
-      action:
-        abnormal_return_pct: [5.0, 14.8]
-        percentile_range: [0.76, 0.92]
+      implication: positive
       rationale: Lilly and Novo reactions show that the market is explicitly adjudicating volume against a $2-3 billion pricing drag.
       confidence: high
     - id: PHARMACEUTICALS_AND_BIOTECHNOLOGY_2
       trigger: A favorable pivotal readout, regulatory decision, or launch materially increases probability-adjusted pipeline value.
-      action:
-        abnormal_return_pct: [6.8, 29.5]
-        percentile_range: [0.82, 0.98]
+      implication: positive
       rationale: For pre-profit biotech, a single catalyst can overwhelm the financial statements and belongs in the tails.
       confidence: high
     - id: PHARMACEUTICALS_AND_BIOTECHNOLOGY_3
       trigger: A current-product beat is offset by patent erosion without replacement-pipeline progress.
-      action:
-        abnormal_return_pct: [-14.2, -4.5]
-        percentile_range: [0.08, 0.26]
+      implication: negative
       rationale: Investors capitalize replacement cash flows, not the final strong quarters before generic competition.
       confidence: high
 
@@ -795,23 +618,17 @@ other_healthcare:
   rules:
     - id: OTHER_HEALTHCARE_1
       trigger: Life-science tools orders recover with book-to-bill above one and raised guidance.
-      action:
-        abnormal_return_pct: [3.4, 10.4]
-        percentile_range: [0.70, 0.88]
+      implication: positive
       rationale: Order recovery confirms that the prolonged inventory and funding correction is ending.
       confidence: high
     - id: OTHER_HEALTHCARE_2
       trigger: CRO or CDMO backlog rises while cancellations or delayed starts reduce conversion guidance.
-      action:
-        abnormal_return_pct: [-10.7, -3.7]
-        percentile_range: [0.12, 0.30]
+      implication: negative
       rationale: Backlog has low value when projects are unfunded, deferred, or cancelled.
       confidence: medium_high
     - id: OTHER_HEALTHCARE_3
       trigger: Diagnostics volume rises with stable reimbursement and better mix rather than low-margin pass-through testing.
-      action:
-        abnormal_return_pct: [2.8, 7.6]
-        percentile_range: [0.66, 0.84]
+      implication: positive
       rationale: Reimbursement and mix determine whether testing volume converts into persistent earnings.
       confidence: medium
 
@@ -821,23 +638,17 @@ communications_and_networking:
   rules:
     - id: COMMUNICATIONS_AND_NETWORKING_1
       trigger: AI and data-center networking revenue, orders, and guidance beat while margins hold.
-      action:
-        abnormal_return_pct: [6.0, 19.0]
-        percentile_range: [0.80, 0.95]
+      implication: positive
       rationale: Arista's 38% growth and above-consensus guide demonstrated direct, monetized infrastructure demand.
       confidence: high
     - id: COMMUNICATIONS_AND_NETWORKING_2
       trigger: Revenue beats while hyperscaler concentration rises or orders signal customer digestion.
-      action:
-        abnormal_return_pct: [-7.5, -2.0]
-        percentile_range: [0.18, 0.38]
+      implication: negative
       rationale: Customer concentration and lumpiness reduce the persistence of otherwise strong AI revenue.
       confidence: medium_high
     - id: COMMUNICATIONS_AND_NETWORKING_3
       trigger: Backlog normalizes and product growth slows without offsetting security or subscription growth.
-      action:
-        abnormal_return_pct: [-10.7, -3.7]
-        percentile_range: [0.12, 0.30]
+      implication: negative
       rationale: Post-shortage backlog conversion is not recurring demand.
       confidence: high
 
@@ -847,23 +658,17 @@ computer_hardware:
   rules:
     - id: COMPUTER_HARDWARE_1
       trigger: AI-server revenue and backlog accelerate with improving cash conversion and margin guidance.
-      action:
-        abnormal_return_pct: [3.9, 12.0]
-        percentile_range: [0.72, 0.90]
+      implication: positive
       rationale: Investors reward AI revenue only when it produces earnings and cash rather than working-capital consumption.
       confidence: high
     - id: COMPUTER_HARDWARE_2
       trigger: DRAM or NAND inflation and shortages reduce device gross margin and cannot be passed through.
-      action:
-        abnormal_return_pct: [-17.5, -5.8]
-        percentile_range: [0.05, 0.22]
+      implication: negative
       rationale: Hardware assemblers sit on the losing side of memory inflation.
       confidence: high
     - id: COMPUTER_HARDWARE_3
       trigger: Revenue is price-led while unit shipments, channel inventory, or end demand weaken.
-      action:
-        abnormal_return_pct: [-9.4, -3.3]
-        percentile_range: [0.14, 0.32]
+      implication: negative
       rationale: Price increases mask elasticity and create difficult comparisons.
       confidence: high
 
@@ -873,25 +678,19 @@ semiconductors:
   rules:
     - id: SEMICONDUCTORS_1
       trigger: AI, HBM, or custom-accelerator guidance exceeds elevated consensus and implies sequential acceleration.
-      action:
-        abnormal_return_pct: [7.6, 26.0]
-        percentile_range: [0.84, 0.97]
+      implication: positive
       rationale: Broadcom showed that even rapid AI growth can sell off when forward guidance misses a very high bar.
       confidence: high
     - id: SEMICONDUCTORS_2
       trigger: Memory pricing, long-term contracts, and HBM mix rise without an offsetting supply response.
-      action:
-        abnormal_return_pct: [6.8, 22.5]
-        percentile_range: [0.82, 0.96]
+      implication: positive
       rationale: Persistent DRAM, NAND, and HBM scarcity makes producer price-mix gains unusually durable.
       confidence: high
     - id: SEMICONDUCTORS_3
       trigger: >
         Forward guidance falls materially below an elevated consensus or implied buy-side bar,
         or customer digestion and margin pressure interrupt the expected sequential acceleration.
-      action:
-        abnormal_return_pct: [-14.2, -4.1]
-        percentile_range: [0.08, 0.28]
+      implication: negative
       rationale: In the strongest tape, a reported beat cannot offset a forward guide that breaks the expected acceleration path.
       confidence: high
 
@@ -901,23 +700,17 @@ it_services:
   rules:
     - id: IT_SERVICES_1
       trigger: Bookings and book-to-bill improve with stable pricing and utilization.
-      action:
-        abnormal_return_pct: [3.1, 8.8]
-        percentile_range: [0.68, 0.86]
+      implication: positive
       rationale: Forward bookings confirm that discretionary transformation spending is returning.
       confidence: medium_high
     - id: IT_SERVICES_2
       trigger: Generative AI demand cannibalizes billable headcount faster than outcome-based revenue scales.
-      action:
-        abnormal_return_pct: [-10.7, -3.7]
-        percentile_range: [0.12, 0.30]
+      implication: negative
       rationale: Productivity accrues to customers unless contract structure lets the provider capture value.
       confidence: high
     - id: IT_SERVICES_3
       trigger: Margins beat only through layoffs or subcontractor cuts while bookings and headcount decline.
-      action:
-        abnormal_return_pct: [-6.6, -1.6]
-        percentile_range: [0.20, 0.40]
+      implication: negative
       rationale: Cost takeout has low persistence if the demand engine remains weak.
       confidence: high
 
@@ -929,25 +722,19 @@ software:
       trigger: >
         Seat counts or net retention deteriorate materially and the change lowers forward
         revenue, cRPO, or guidance expectations, even if reported EPS and revenue beat.
-      action:
-        abnormal_return_pct: [-20.9, -6.6]
-        percentile_range: [0.04, 0.20]
+      implication: negative
       rationale: AI-enabled customers are accomplishing more with fewer licenses, making seat compression structural.
       confidence: high
     - id: SOFTWARE_2
       trigger: Usage or outcome pricing produces accelerating cRPO, NRR, large deals, or AI ACV.
-      action:
-        abnormal_return_pct: [5.5, 17.6]
-        percentile_range: [0.78, 0.94]
+      implication: positive
       rationale: ServiceNow's cRPO and AI ACV showed how monetized AI can offset seat pressure.
       confidence: high
     - id: SOFTWARE_3
       trigger: >
         Reported results beat but billings, cRPO, or guidance fall below an elevated expectation
         bar or imply material forward deceleration. A merely in-line print is not sufficient by itself.
-      action:
-        abnormal_return_pct: [-7.5, -2.6]
-        percentile_range: [0.18, 0.35]
+      implication: negative
       rationale: Datadog's reaction showed that in-line forward metrics can read as a miss in this tape.
       confidence: high
 
@@ -957,23 +744,17 @@ other_information_technology:
   rules:
     - id: OTHER_INFORMATION_TECHNOLOGY_1
       trigger: AI infrastructure, security, or platform demand accelerates revenue and guidance with larger customer cohorts.
-      action:
-        abnormal_return_pct: [5.5, 17.6]
-        percentile_range: [0.78, 0.94]
+      implication: positive
       rationale: Cloudflare showed that quantified monetization differentiates durable beneficiaries from generic AI claims.
       confidence: high
     - id: OTHER_INFORMATION_TECHNOLOGY_2
       trigger: AI capex rises materially without revenue visibility, funding clarity, or FCF support.
-      action:
-        abnormal_return_pct: [-14.2, -4.5]
-        percentile_range: [0.08, 0.26]
+      implication: negative
       rationale: This quarter reverses the old response in which AI spending was automatically bullish.
       confidence: high
     - id: OTHER_INFORMATION_TECHNOLOGY_3
       trigger: ARR and remaining obligations accelerate while sales efficiency improves.
-      action:
-        abnormal_return_pct: [3.9, 12.0]
-        percentile_range: [0.72, 0.90]
+      implication: positive
       rationale: Mission-critical recurring demand plus improving acquisition economics supports durable growth.
       confidence: medium_high
 
@@ -983,23 +764,17 @@ agriculture:
   rules:
     - id: AGRICULTURE_1
       trigger: Equipment or input volumes stabilize and dealer inventories fall without discount-driven margin damage.
-      action:
-        abnormal_return_pct: [2.8, 6.8]
-        percentile_range: [0.66, 0.82]
+      implication: positive
       rationale: Inventory clearing and retail orders above shipments are the clearest evidence of a cyclical trough.
       confidence: medium
     - id: AGRICULTURE_2
       trigger: Sales beat is price-led while farmer demand, acreage economics, and volumes weaken.
-      action:
-        abnormal_return_pct: [-10.7, -3.7]
-        percentile_range: [0.12, 0.30]
+      implication: negative
       rationale: Energy, fertilizer, and financing costs pressure farm budgets, making price-only growth low quality.
       confidence: medium_high
     - id: AGRICULTURE_3
       trigger: Production or dealer shipments are cut faster than end demand, protecting working capital and margins.
-      action:
-        abnormal_return_pct: [1.5, 5.0]
-        percentile_range: [0.58, 0.76]
+      implication: positive
       rationale: Disciplined destocking is more valuable than defending near-term revenue.
       confidence: medium
 
@@ -1009,23 +784,17 @@ chemicals_and_gases:
   rules:
     - id: CHEMICALS_AND_GASES_1
       trigger: Pricing and productivity exceed energy and feedstock inflation while volumes remain stable or positive.
-      action:
-        abnormal_return_pct: [4.4, 10.4]
-        percentile_range: [0.74, 0.88]
+      implication: positive
       rationale: Linde paired price and volume growth with a 29.5% adjusted operating margin.
       confidence: high
     - id: CHEMICALS_AND_GASES_2
       trigger: Sales growth is overwhelmingly price-led while volume declines and maintenance costs rise.
-      action:
-        abnormal_return_pct: [-8.4, -2.8]
-        percentile_range: [0.16, 0.34]
+      implication: negative
       rationale: Dow's 20% local-price increase against lower volume illustrates why nominal sales can mislead.
       confidence: high
     - id: CHEMICALS_AND_GASES_3
       trigger: Electronics, AI, manufacturing, or energy backlog supports a guide raise without disproportionate capex.
-      action:
-        abnormal_return_pct: [3.4, 8.8]
-        percentile_range: [0.70, 0.86]
+      implication: positive
       rationale: Contracted, take-or-pay projects create more valuable growth than uncommitted capacity.
       confidence: high
 
@@ -1035,23 +804,17 @@ construction_non_wood:
   rules:
     - id: CONSTRUCTION_NON_WOOD_1
       trigger: North American volumes and backlog rise while price-cost remains favorable.
-      action:
-        abnormal_return_pct: [5.5, 14.8]
-        percentile_range: [0.78, 0.92]
+      implication: positive
       rationale: Caterpillar's construction growth and margin expansion validate real demand plus operating leverage.
       confidence: high
     - id: CONSTRUCTION_NON_WOOD_2
       trigger: Revenue grows but margins compress from steel, cement, energy, freight, or tariffs.
-      action:
-        abnormal_return_pct: [-14.2, -5.1]
-        percentile_range: [0.08, 0.24]
+      implication: negative
       rationale: Healthy demand makes failure to pass through costs appear company-specific.
       confidence: high
     - id: CONSTRUCTION_NON_WOOD_3
       trigger: Backlog rises while cancellations, financing delays, or working-capital use worsen.
-      action:
-        abnormal_return_pct: [-6.6, -1.6]
-        percentile_range: [0.20, 0.40]
+      implication: negative
       rationale: Funded public and infrastructure work deserves more credit than speculative commercial backlog.
       confidence: medium_high
 
@@ -1061,23 +824,17 @@ containers_and_packaging:
   rules:
     - id: CONTAINERS_AND_PACKAGING_1
       trigger: Containerboard or paper price increases flow into box pricing before fiber and energy costs rise.
-      action:
-        abnormal_return_pct: [3.4, 8.8]
-        percentile_range: [0.70, 0.86]
+      implication: positive
       rationale: Closing International Paper's lag between paper and box pricing is the central earnings lever.
       confidence: high
     - id: CONTAINERS_AND_PACKAGING_2
       trigger: Price-led sales are offset by soft volumes, maintenance, or conversion costs and lower segment profit.
-      action:
-        abnormal_return_pct: [-14.2, -5.1]
-        percentile_range: [0.08, 0.24]
+      implication: negative
       rationale: Higher nominal pricing has little value if box demand and operating profit deteriorate.
       confidence: high
     - id: CONTAINERS_AND_PACKAGING_3
       trigger: Acquisition or restructuring synergies are realized in cash and margin while service levels hold.
-      action:
-        abnormal_return_pct: [2.5, 6.8]
-        percentile_range: [0.64, 0.82]
+      implication: positive
       rationale: A consolidating sector is being judged on realized savings rather than announced targets.
       confidence: medium_high
 
@@ -1087,23 +844,17 @@ forestry:
   rules:
     - id: FORESTRY_1
       trigger: Lumber or pulp realizations improve with stable shipments and lower conversion costs.
-      action:
-        abnormal_return_pct: [3.1, 7.6]
-        percentile_range: [0.68, 0.84]
+      implication: positive
       rationale: Price and volume together confirm tightening; price alone may reflect tariffs or curtailment.
       confidence: medium
     - id: FORESTRY_2
       trigger: Higher prices accompany falling volume, mill downtime, and fixed-cost under-absorption.
-      action:
-        abnormal_return_pct: [-12.0, -4.1]
-        percentile_range: [0.10, 0.28]
+      implication: negative
       rationale: Price-led growth is low quality when utilization and cash conversion deteriorate.
       confidence: medium_high
     - id: FORESTRY_3
       trigger: Capacity curtailment materially reduces cash burn and inventory while capex stays restrained.
-      action:
-        abnormal_return_pct: [1.0, 4.4]
-        percentile_range: [0.55, 0.74]
+      implication: positive
       rationale: A disciplined supply response is preferable in a cyclical and energy-intensive business.
       confidence: medium
 
@@ -1113,25 +864,19 @@ metals_minerals_and_mining:
   rules:
     - id: METALS_MINERALS_AND_MINING_1
       trigger: Higher commodity prices combine with production growth, raised sales guidance, and controlled unit costs.
-      action:
-        abnormal_return_pct: [5.0, 12.0]
-        percentile_range: [0.76, 0.90]
+      implication: positive
       rationale: Operating gains prove leverage beyond a pure commodity mark-to-market benefit.
       confidence: high
     - id: METALS_MINERALS_AND_MINING_2
       trigger: >
         Profit beats on commodity price alone while production misses and unit costs rise.
         An unchanged guide is only a mild negative unless investors clearly expected a raise.
-      action:
-        abnormal_return_pct: [-3.7, -0.7]
-        percentile_range: [0.30, 0.45]
+      implication: negative
       rationale: Freeport and Aurubis reactions demonstrate that an elevated tape requires operational upside.
       confidence: high
     - id: METALS_MINERALS_AND_MINING_3
       trigger: Domestic protected producers realize price increases with strong shipments and margin expansion.
-      action:
-        abnormal_return_pct: [4.4, 12.0]
-        percentile_range: [0.74, 0.90]
+      implication: positive
       rationale: Protectionism favors domestic steel producers that convert price into volume and margin.
       confidence: high
 
@@ -1141,23 +886,17 @@ textiles:
   rules:
     - id: TEXTILES_1
       trigger: Sourcing and tariff actions preserve gross margin without order cancellations or inventory buildup.
-      action:
-        abnormal_return_pct: [3.1, 7.6]
-        percentile_range: [0.68, 0.84]
+      implication: positive
       rationale: Diversified sourcing and contracted pricing make pass-through more durable.
       confidence: medium_high
     - id: TEXTILES_2
       trigger: Sales growth comes from price while unit volume, retailer reorders, or utilization decline.
-      action:
-        abnormal_return_pct: [-12.0, -4.1]
-        percentile_range: [0.10, 0.28]
+      implication: negative
       rationale: Consumer value migration makes price-led growth fragile and raises downstream markdown risk.
       confidence: medium_high
     - id: TEXTILES_3
       trigger: Inventory days and promotional allowances fall while margin and cash conversion improve.
-      action:
-        abnormal_return_pct: [2.8, 6.8]
-        percentile_range: [0.66, 0.82]
+      implication: positive
       rationale: Clean channel inventory is the best confirmation that production matches end demand.
       confidence: medium
 
@@ -1167,23 +906,17 @@ other_materials:
   rules:
     - id: OTHER_MATERIALS_1
       trigger: Price-cost spread improves while volumes remain positive across end markets.
-      action:
-        abnormal_return_pct: [3.4, 8.8]
-        percentile_range: [0.70, 0.86]
+      implication: positive
       rationale: Balanced volume and margin improvement is the cleanest signal under manufacturing expansion and elevated inputs.
       confidence: medium_high
     - id: OTHER_MATERIALS_2
       trigger: Sales rise through commodity inflation while physical volume and FCF decline.
-      action:
-        abnormal_return_pct: [-12.0, -4.1]
-        percentile_range: [0.10, 0.28]
+      implication: negative
       rationale: Nominal growth does not establish demand or value creation without cash conversion.
       confidence: high
     - id: OTHER_MATERIALS_3
       trigger: Maintenance or capacity capex rises without contracted demand or quantified payback.
-      action:
-        abnormal_return_pct: [-14.2, -5.1]
-        percentile_range: [0.08, 0.24]
+      implication: negative
       rationale: Funding and monetization scrutiny extends beyond tech to long-dated materials projects.
       confidence: medium_high
 

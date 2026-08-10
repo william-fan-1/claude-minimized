@@ -1,34 +1,61 @@
 # =============================================================================
 # _global.yaml — cross-market rulebook
-# Explaining Markets · Q3 2026 · version 0.2.0 · owner: ahi · 2026-08-08
+# Explaining Markets · Q3 2026 · version 0.3.0 · owner: ahi, Will · 2026-08-10
 # =============================================================================
-# CHANGELOG v0.1.0 -> v0.2.0
-# Driven by the Aug 6 scored results (docs/EM-Diagnostics-Aug6.md).
-#
-#   1. EVERY ACTION NOW CARRIES BOTH a target abnormal return AND a percentile
-#      range. predict_v1 reasons in return space; predict_v0 reasons in
-#      percentile space. Both work off this file, so the A/B test stays valid.
-#
-#   2. FIRING DISCIPLINE ADDED (see block below). v0.1 rules fired on ordinary
-#      quarters because their triggers had no materiality threshold. Almost
-#      every call contains some hedging, some one-time item, some soft
-#      segment. Result: 60% of our predictions landed below 0.30 when the
-#      truth was ~30%, and ordinary companies drifting up 2-3% (correct
-#      answer 0.60-0.70) were forecast at 0.15.
-#
-#   3. POSITIVE SETTERS ADDED. v0.1 had eight negative setters and two
-#      positive. We built a disaster detector, not a return predictor. It was
-#      excellent at catastrophes (UWMC, CDLX, TEAD, PZZA all beat the field)
-#      and blind to upside (HTZ +29.6%, FWRD +15.7%, OPRT +33% all called
-#      below 0.20). Now roughly balanced.
-#
-#   4. NEW PRINCIPLE P8 — "bad is priced in" is the symmetric twin of "good is
-#      priced in", and was our single largest blind spot.
-#
-# DO NOT WEAKEN the negative quality/guidance rules. They are the only proven
-# edge we have. The fix was never to make them softer — it was to make them
-# fire less often and to give the upside equal representation.
-#
+# CHANGELOG v0.2.0 -> v0.3.0
+# Driven by the Aug 10 scored results (docs/EM-Observations-Aug10.md).
+# 
+# 
+# Driven by the rule-snapping observed after the Aug 6 revisions. v0.2.0
+# corrected the model's negative bias, but predictions remained concentrated
+# in the tails and frequently avoided the middle of the distribution.
+# 
+# 
+# 1. INDUSTRY RULES NO LONGER SET RETURN OR PERCENTILE RANGES. Industry
+# rules now identify the relevant KPI and provide a directional implication.
+# Their triggers and rationales inform signal strength, while the global
+# framework determines the base estimate and magnitude.
+# 
+# 
+# 2. GLOBAL PRINCIPLES REMAIN BINDING. Industry specificity no longer
+# overrides global expectation, materiality, persistence, offset, or neutral
+# judgments. A matching industry trigger supplies directional evidence but
+# does not by itself justify moving the prediction out of the middle.
+# 
+# 
+# 3. CONFLICTING EVIDENCE IS RESOLVED BY EVIDENCE QUALITY, NOT SIGN.
+# Specific, material, forward-looking, persistent, and quantified evidence
+# outweighs broad narrative or tone regardless of whether it is positive or
+# negative. The prior rule mechanically favoring negative operational
+# evidence has been generalized to prevent renewed directional bias.
+# 
+# 
+# 4. MIDPOINT CONFLICT RESOLUTION REMOVED. When similarly material positive
+# and negative evidence conflict and neither side clearly dominates, estimate
+# their net effect on the forward path, shrink toward 0.0% abnormal return,
+# and downgrade confidence. Do not average rule ranges or copy their
+# midpoints.
+# 
+# 
+# 5. NEUTRAL IS NOW A COMPETING OUTCOME, NOT A RESIDUAL FALLBACK. A quarter
+# can remain near neutral even when one or more rules match if the evidence
+# was expected, immaterial, transitory, qualitative, or substantially offset.
+# 
+# 
+# 6. GLOBAL RANGES RETAINED AS BROAD CALIBRATION REFERENCES. Mild global
+# ranges continue to distinguish ordinary, moderate, and thesis-changing
+# belief revisions, but industry rules no longer introduce additional
+# numerical anchors. This separates global magnitude calibration from
+# industry-specific directional evidence and reduces rule-snapping.
+# 
+# 
+# 7. DUPLICATED INDUSTRY CALIBRATION REMOVED. The empirical percentile map
+# and industry-level abnormal-return ranges were removed from the industry
+# playbook. The model estimates one continuous abnormal return under the
+# global framework and converts it using the single table in the prediction
+# prompt.
+# 
+# 
 # SOURCE TAGS
 #   koijen_levy_2026 : from the paper. Durable.
 #   observed_2026Q3  : learned from OUR OWN scored results. Highest priority
@@ -94,14 +121,18 @@ principles:
 precedence:
   - order: 1
     rule: >
-      More specific scope wins. An industry playbook rule overrides a global
-      rule; a rule scoped to a company profile overrides an unscoped rule.
+      Global rules and principles determine the base estimate and remain binding.
+      Industry rules provide directional evidence based on the most relevant
+      industry KPIs but do not override global expectation, materiality,
+      persistence, offset, or neutral judgments. Use industry rule rationale to adjust
+      magnitude in the indicated direction only when the evidence is surprising,
+      material, persistent, and supported by the announcement.
 
-    # Flag for review if negative bias shows in results after day 1
+    # Experimenting with less absolute rule
   - order: 2
     rule: >
-      When a positive-narrative rule and a negative-operational-specific rule
-      both fire, the NEGATIVE rule wins (principle P5).
+      Specific, material, forward-looking, persistent, and quantified evidence
+      outweighs broad narrative or tone regardless of direction.
   - order: 3
     rule: >
       EXCEPT where P8 applies: if the company was already deeply out of favour
@@ -116,11 +147,13 @@ precedence:
       adjust. Cap total modifier adjustment at +/- 4 percentage points of
       abnormal return.
 
-    # Flag for review after day 1 - midpoint may contribute to rule-snapping
+    # Adjustment of old midpoint rule
   - order: 6
     rule: >
-      If two setters of equal specificity conflict, take the midpoint of their
-      ranges and downgrade confidence to "low".
+      When conflicting evidence is similarly material and neither side clearly
+      dominates, assess its net effect on the forward path, shrink the estimate
+      toward 0.0% abnormal return, and downgrade confidence to "low". Do not
+      mechanically average rule ranges or use their midpoints.
 
 # =============================================================================
 # RULES
@@ -134,13 +167,17 @@ rules:
   # ---------------------------------------------------------------------------
   # NEUTRAL — the modal outcome. Reach for this more often than feels natural.
   # ---------------------------------------------------------------------------
+
+    # Softened "NO RULE FIRES CLEANLY"
+    # Neutral quarters should not only exist in the absence of rules.
   - id: GLB-NEUTRAL-01
     type: setter
     scope: {applies_to: all}
     trigger: >
-      An adequate quarter with no material surprise in either direction.
-      Results broadly in line, guidance broadly maintained, no significant new
-      information. NO RULE FIRES CLEANLY.
+      The net belief revision is small. This includes an adequate quarter with no
+      material surprise and a quarter containing recognizable positive or negative
+      developments that were expected, immaterial, transitory, or substantially
+      offset.
     action:
       abnormal_return_pct: [-1.0, 2.5]
       percentile_range: [0.44, 0.66]
