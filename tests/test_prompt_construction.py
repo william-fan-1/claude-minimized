@@ -14,6 +14,22 @@ def test_is_valid_dossier_requires_positive_observations():
     assert prompts.is_valid_dossier(
         {"reaction_statistics": {"observations": 1}}
     )
+    assert prompts.is_valid_dossier(
+        "reaction_statistics:\n  observations: 1\n"
+    )
+
+
+def test_get_dossier_returns_the_complete_file_text(tmp_path: Path, monkeypatch):
+    dossier_dir = tmp_path / "dossier"
+    dossier_dir.mkdir()
+    expected = "ticker: TEST\nreaction_statistics:\n  observations: 2\n"
+    (dossier_dir / "TEST.yaml").write_text(expected, encoding="utf-8")
+    monkeypatch.setattr(prompts, "DOSSIER_PATH", dossier_dir)
+
+    dossier = prompts.get_dossier("test")
+
+    assert isinstance(dossier, str)
+    assert dossier == expected
 
 
 def test_invalid_dossier_uses_fallback_and_omits_dossier_rule(
