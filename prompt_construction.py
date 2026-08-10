@@ -10,11 +10,11 @@ import yaml
 import pandas as pd
 
 # Adjust the prompt version 
-PROMPT_VERSION = "1.1.0"
+PROMPT_VERSION = "1.2.0"
 
 # Paths to prompt file, rulebooks, industry map
 ROOT = Path(__file__).resolve().parent
-PROMPT_PATH = ROOT / "prompts" / "predict_v1.md"
+PROMPT_PATH = ROOT / "prompts" / "predict_v2.md"
 GLOBAL_PATH = ROOT / "knowledge" / "playbooks" / "_global.yaml"
 INDUSTRY_PATH = ROOT / "knowledge" / "playbooks" / "industry_playbooks.yaml"
 MAPPINGS_PATH = ROOT / "knowledge" / "mappings" / "industry_map.csv"
