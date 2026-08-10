@@ -43,7 +43,7 @@ app = modal.App("explaining-markets-starter")
 image = (
     modal.Image.debian_slim()
     .pip_install("fastapi[standard]", "httpx", "litellm", "pandas", "pydantic", "pyyaml")
-    .add_local_python_source("explaining_markets", "predict")
+    .add_local_python_source("explaining_markets", "predict", "prompt_construction")
     .add_local_dir("prompts", remote_path="/root/prompts")
     .add_local_dir("knowledge", remote_path="/root/knowledge")
 )
