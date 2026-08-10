@@ -18,6 +18,9 @@ PROMPT_PATH = ROOT / "prompts" / "predict_v2.md"
 GLOBAL_PATH = ROOT / "knowledge" / "playbooks" / "_global.yaml"
 INDUSTRY_PATH = ROOT / "knowledge" / "playbooks" / "industry_playbooks.yaml"
 MAPPINGS_PATH = ROOT / "knowledge" / "mappings" / "industry_map.csv"
+DOSSIER_PATH = ROOT / "knowledge" / "dossier"
+NO_CACHED_DOSSIER = "No cached dossier is available."
+DOSSIER_RULE_ID = "GLB-MOD-01"
 
 #####################################
 # Util functions to help build prompt
@@ -48,7 +51,8 @@ def format_industry_tag(industry: str) -> str:
         return None
 
 def load_prompt_rules(
-    industry: str
+    industry: str,
+    include_dossier_rule: bool = True,
 ) -> tuple[str, str] | tuple[str, None]:
     """
     Load global and industry-specific prompt rules.
@@ -68,9 +72,17 @@ def load_prompt_rules(
         sort_keys=False,
     )
 
-    # These global rules apply to every event.
+    global_rules = global_playbook.get("rules", [])
+    if not include_dossier_rule:
+        global_rules = [
+            rule for rule in global_rules
+            if rule.get("id") != DOSSIER_RULE_ID
+        ]
+
+    # These global rules apply to every event, except dossier-only rules when
+    # the ticker has no usable historical reaction observations.
     applicable_rules = {
-        "global_rules": global_playbook.get("rules", []),
+        "global_rules": global_rules,
 
         # This must be included for every industry.
         "quarter_calibration": industry_playbooks.get(
@@ -95,6 +107,27 @@ def load_prompt_rules(
         industry_rules = ""
 
     return core_directive, industry_rules
+
+def get_dossier(ticker: str) -> dict | None:
+    """Load a canonical ticker dossier, returning None when it is unavailable."""
+    path = DOSSIER_PATH / f"{ticker.strip().upper()}.yaml"
+    try:
+        dossier = load_yaml(path)
+    except (FileNotFoundError, OSError, yaml.YAMLError):
+        return None
+    return dossier if isinstance(dossier, dict) else None
+
+def is_valid_dossier(dossier: dict | None) -> bool:
+    """A dossier is usable only when it contains at least one reaction."""
+    if not isinstance(dossier, dict):
+        return False
+    observations = dossier.get("reaction_statistics", {}).get("observations")
+    if isinstance(observations, bool):
+        return False
+    try:
+        return float(observations) > 0
+    except (TypeError, ValueError):
+        return False
 
 ####################################
 ######### Build the prompt #########
@@ -129,10 +162,17 @@ def construct_prompt(
     )
 
     industry = format_industry_tag(get_industry(ticker))
-    core_directive, industry_rules = load_prompt_rules(industry)
-
-    # TODO: Implement dossier in next pass
-    dossier = "No cached dossier is available."
+    dossier_data = get_dossier(ticker)
+    has_valid_dossier = is_valid_dossier(dossier_data)
+    core_directive, industry_rules = load_prompt_rules(
+        industry,
+        include_dossier_rule=has_valid_dossier,
+    )
+    dossier = (
+        yaml.safe_dump(dossier_data, sort_keys=False)
+        if has_valid_dossier
+        else NO_CACHED_DOSSIER
+    )
 
     user_prompt = (
         prompt_template
