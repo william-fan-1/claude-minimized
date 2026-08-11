@@ -1,6 +1,6 @@
 # =============================================================================
 # _global.yaml — cross-market rulebook
-# Explaining Markets · Q3 2026 · version 0.3.0 · owner: ahi, Will · 2026-08-10
+# Explaining Markets · Q3 2026 · version 0.3.0 · owner: ahi · 2026-08-10
 # =============================================================================
 # CHANGELOG v0.2.0 -> v0.3.0
 # Driven by the Aug 10 scored results (docs/EM-Observations-Aug10.md).
@@ -344,21 +344,28 @@ rules:
     type: setter
     scope: {profile: out_of_favour}
     trigger: >
-      A company the market has already written off — depressed valuation,
-      persistent recent underperformance, widely known problems, heavily
-      shorted, or a broken narrative — reports a quarter that is merely
-      ADEQUATE rather than disastrous. Declining metrics stabilise, liquidity
-      concerns ease, or the feared outcome simply fails to materialise.
+      The summary ITSELF identifies a specific, previously-known problem —
+      a going-concern or liquidity warning, a covenant issue, a failed prior
+      guidance, an announced restructuring, activist pressure, delisting risk —
+      AND reports that this specific problem has stabilised, eased or resolved.
+      GATE: the feared outcome must be NAMED IN THE SUMMARY. Do not fire this
+      rule on inference from downbeat tone, from the company being small or
+      speculative, or from your own prior knowledge of the ticker. If you
+      cannot point to the specific fear in the text, this rule does not apply.
     action:
-      abnormal_return_pct: [8.0, 25.0]
-      percentile_range: [0.85, 0.97]
+      abnormal_return_pct: [3.0, 9.0]
+      percentile_range: [0.67, 0.87]
     rationale: >
-      Principle P8, and our single largest blind spot. When expectations are
-      near zero, the absence of bad news is powerfully good news. This pattern
-      produced several of the largest moves in the Aug 6 sample — HTZ +29.6%,
-      OPRT +33.0%, TRUP +15.6%, ZVRA +13.0% — every one of which we forecast
-      below 0.20. Do not confuse a WEAK COMPANY with a NEGATIVE SURPRISE.
-    confidence: high
+      When expectations are near zero, the absence of bad news is powerfully
+      good news — HTZ +29.6%, OPRT +33.0%, TRUP +15.6% on Aug 6, all forecast
+      below 0.20. The economics are real. BUT the range is deliberately
+      compressed from the original [8, 25] because the out_of_favour gate is
+      currently INFERRED FROM TONE rather than measured. On Aug 11 this rule
+      fired across the entire speculative small-cap complex and drove 52% of
+      predictions above 0.85. Restore the wider range only once the dossier
+      supplies 12-month price change and short interest, so the gate is a
+      measurement rather than a judgment.
+    confidence: medium
     source: observed_2026Q3
     evidence: {n: 0, hit_rate: null}
 
@@ -574,8 +581,7 @@ rules:
     rationale: >
       Use the median absolute abnormal reaction to calibrate magnitude. Consider
       beat-versus-miss asymmetry only when supported by multiple observations
-      on each side. Current-quarter evidence overrides history, particularly
-      when the event contains a new thesis-changing development.
+      on each side. Current-quarter evidence is sumpplemented by history.
     confidence: medium
 
 # -----------------------------------------------------------------------------

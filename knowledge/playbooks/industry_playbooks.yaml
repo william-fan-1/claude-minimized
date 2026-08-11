@@ -57,16 +57,6 @@ meta:
     - Public company earnings releases and market-reaction reporting available through 2026-08-07
 
 quarter_calibration:
-  - id: Q3-CAL-01
-    trigger: applies to all events this quarter
-    calibration_effect: {tail_risk: elevated, automatic_adjustment: false}
-    rationale: >
-      Single-stock dispersion (DSPX) is at a six-year high of ~47%, above the
-      April "Liberation Day" peak, while VIX sits near its median at ~18.
-      Index-level calm is masking violent single-stock divergence. Tails are
-      genuinely fatter this quarter, but use tails only when company-specific
-      evidence passes the materiality and tail gates.
-    confidence: high
 
   - id: Q3-CAL-02
     trigger: >

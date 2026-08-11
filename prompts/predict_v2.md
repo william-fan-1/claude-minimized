@@ -1,10 +1,10 @@
 <!--
 =============================================================================
 predict_v1.md — live prediction prompt
-Explaining Markets · Q3 2026 · version 2.0.0 · owner: ahi / will · 2026-08-06
+Explaining Markets · Q3 2026 · version 2.0.0 · owner: ahi · 2026-08-06
 
-A version of v1 that was edited for brevity due to redundant information that
-is already included in the core directive and other global rules.
+A version of v1 that was edited for brevity and removed rules surrounding
+"target allocations" to percentiles and more mild "surprise returns"
 ============================================================================= 
 -->
 
@@ -27,11 +27,14 @@ percentile using the table below. Do not reason directly in percentile space.
    identify relevant directional evidence. Industry evidence affects magnitude
    only to the extent that it is surprising, material, persistent, and
    unoffset. A trigger match alone does not require moving away from neutral.
-4. Use `prior_reactions`, when available, only as a weak magnitude and
-   asymmetry prior. Current-quarter evidence overrides history.
+4. Use `prior_reactions`, when available, as a magnitude and
+   asymmetry prior. 
 5. Commit to one abnormal-return estimate. An ordinary quarter with no material
-   belief revision should remain near zero; moves beyond ±15% require a
-   thesis-changing development.
+   belief revision should remain near zero; typical is ±3%, beyond ±8% is unusual and needs a nameable cause
+6. Ask plainly: by what percent will this stock move, relative to the market, on the day
+   after this announcement?
+
+   Anchor yourself in reality. Typical is ±3%, beyond ±8% is unusual and needs a nameable cause — a shattered thesis, a transformative announcement, a guidance change large enough to reset the forward model.
 
 ## Return-to-percentile conversion
 
