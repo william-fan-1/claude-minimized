@@ -6,6 +6,7 @@ mappings, then assembles the final prompt text used for event analysis.
 
 from pathlib import Path
 from dataclasses import dataclass
+from typing import Any
 import os
 import re
 import yaml
@@ -73,12 +74,12 @@ INDUSTRIES = (
 )
 
 class IndustryTag(BaseModel):
+    """Validated structured response returned by the fallback classifier."""
     industry: str
 
 @dataclass(frozen=True)
 class PromptRules:
     """Serialized rule sections inserted into the prompt template."""
-
     core_directive: str
     precedence: str
     anti_patterns: str
@@ -88,6 +89,7 @@ class PromptRules:
 #####################################
 # Util functions to help build prompt
 #####################################
+
 def load_yaml(path: Path) -> dict:
     """Load a YAML file from disk and return its contents as a dictionary."""
     with path.open("r", encoding="utf-8") as file:
@@ -161,6 +163,7 @@ def _classify_industry(*, ticker: str, summary_text: str) -> str | None:
 ####################################
 
 def _load_industry_rules(industry: str | None) -> str:
+    """Serialize quarter calibration and the matching industry playbook."""
     industry_playbooks = load_yaml(INDUSTRY_PATH)
 
     # Include quarterly calibration rules
@@ -197,6 +200,11 @@ def _load_block_from_global(
     *,
     include_dossier_rule: bool = True,
 ) -> str:
+    """Load, filter, and serialize one list-valued block from `_global.yaml`.
+
+    The dossier-dependent rule is removed only from the ``rules`` block. Rule
+    provenance metadata is removed from every block to reduce prompt tokens.
+    """
     global_playbook = load_yaml(GLOBAL_PATH)
     block = global_playbook.get(key, [])
 
@@ -212,18 +220,21 @@ def _load_block_from_global(
     return yaml.safe_dump(block, sort_keys=False)
 
 def _load_core_directive(include_dossier_rule: bool = True) -> str:
+    """Serialize the global principles used as the prompt's core directive."""
     return _load_block_from_global(
         "principles",
         include_dossier_rule=include_dossier_rule,
     )
 
 def _load_precedence_rules(include_dossier_rule: bool = True) -> str:
+    """Serialize the rules for resolving conflicting prompt evidence."""
     return _load_block_from_global(
         "precedence",
         include_dossier_rule=include_dossier_rule,
     )
 
 def _load_anti_patterns(include_dossier_rule: bool = True) -> str:
+    """Serialize global instructions describing when rules should not fire."""
     return _load_block_from_global(
         "anti_patterns",
         include_dossier_rule=include_dossier_rule,
@@ -232,6 +243,7 @@ def _load_anti_patterns(include_dossier_rule: bool = True) -> str:
 def _load_global_rules(
     include_dossier_rule: bool = True
 ) -> str:
+    """Serialize global rules, optionally excluding the dossier modifier."""
     return _load_block_from_global(
         "rules",
         include_dossier_rule=include_dossier_rule,
@@ -246,9 +258,11 @@ def load_prompt_rules(
 
     Args:
     industry: Normalized industry tag used to select the industry playbook.
+    include_dossier_rule: Whether to retain the dossier-dependent global
+        modifier rule.
 
     Returns:
-    A named collection of serialized sections ready for prompt substitution.
+    A named collection of serialized sections ready for substitution.
     """
     return PromptRules(
         core_directive=_load_core_directive(
@@ -270,7 +284,7 @@ def load_prompt_rules(
 ###### Check for valid dossier ######
 #####################################
 
-def _filter_dossier_fields(value):
+def _filter_dossier_fields(value: Any) -> Any:
     """Copy dossier data while recursively removing prompt-irrelevant fields."""
     excluded_fields = {"fiscal_quarter", "surprise_source"}
     if isinstance(value, dict):
