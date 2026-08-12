@@ -149,17 +149,33 @@ def test_is_valid_dossier_requires_positive_observations():
     )
 
 
-def test_get_dossier_returns_the_complete_file_text(tmp_path: Path, monkeypatch):
+def test_get_dossier_returns_sanitized_yaml_text(tmp_path: Path, monkeypatch):
     dossier_dir = tmp_path / "dossier"
     dossier_dir.mkdir()
-    expected = "ticker: TEST\nreaction_statistics:\n  observations: 2\n"
-    (dossier_dir / "TEST.yaml").write_text(expected, encoding="utf-8")
+    source = {
+        "ticker": "TEST",
+        "prior_reactions": [{
+            "fiscal_quarter": "Q2 2026",
+            "abnormal_return_pct": 2.5,
+            "surprise_source": "Yahoo Finance",
+        }],
+        "reaction_statistics": {"observations": 2},
+    }
+    source_text = yaml.safe_dump(source, sort_keys=False)
+    path = dossier_dir / "TEST.yaml"
+    path.write_text(source_text, encoding="utf-8")
     monkeypatch.setattr(prompts, "DOSSIER_PATH", dossier_dir)
 
     dossier = prompts.get_dossier("test")
+    parsed = yaml.safe_load(dossier)
 
     assert isinstance(dossier, str)
-    assert dossier == expected
+    assert parsed["ticker"] == "TEST"
+    assert parsed["prior_reactions"] == [{"abnormal_return_pct": 2.5}]
+    assert parsed["reaction_statistics"]["observations"] == 2
+    assert "fiscal_quarter" not in dossier
+    assert "surprise_source" not in dossier
+    assert path.read_text(encoding="utf-8") == source_text
 
 
 def test_invalid_dossier_uses_fallback_and_omits_dossier_rule(
