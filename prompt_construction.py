@@ -50,6 +50,21 @@ def format_industry_tag(industry: str) -> str:
     else: 
         return None
 
+def _load_industry_rules() -> str:
+    return ""
+
+def _load_core_directive() -> str:
+    return ""
+
+def _load_precedence_rules() -> str:
+    return ""
+
+def _load_anti_patterns() -> str:
+    return ""
+
+def _load_global_rules() -> str:
+    return ""
+
 def load_prompt_rules(
     industry: str,
     include_dossier_rule: bool = True,
@@ -185,12 +200,19 @@ def construct_prompt(
     user_prompt = (
         prompt_template
         # Summary of transcript
-        .replace("{event_bullets}", summary_text)
+        .replace("{summary_text}", summary_text)
         # Objective to complete
         .replace("{core_directive}", core_directive)
         # Industry specific trends to consider
         .replace("{industry_rules}", industry_rules)
+        # Previous earnings results
         .replace("{dossier}", dossier)
+        # Rules on how to handle conflicting rules
+        .replace("{precedence}", precedence)
+        # When not to fire
+        .replace("{anti_patterns}", anti_patterns)
+        # Global rules
+        .replace("{global_rules}", global_rules)
     )
 
     return user_prompt
