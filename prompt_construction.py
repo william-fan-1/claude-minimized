@@ -85,30 +85,6 @@ def _load_industry_rules(industry: str | None) -> str:
 
     return yaml.safe_dump(applicable_rules, sort_keys=False)
 
-def _load_core_directive() -> str:
-    global_playbook = load_yaml(GLOBAL_PATH)
-    core_directive = yaml.safe_dump(
-        global_playbook["principles"],
-        sort_keys=False,
-    )
-    return core_directive
-
-def _load_precedence_rules() -> str:
-    global_playbook = load_yaml(GLOBAL_PATH)
-    precedence_rules = yaml.safe_dump(
-        global_playbook["precedence"],
-        sort_keys=False,
-    )
-    return precedence_rules
-
-def _load_anti_patterns() -> str:
-    global_playbook = load_yaml(GLOBAL_PATH)
-    anti_patterns = yaml.safe_dump(
-        global_playbook["anti_patterns"],
-        sort_keys=False,
-    )
-    return anti_patterns
-
 def _filter_rule_metadata(rules: list[dict]) -> list[dict]:
     """Copy rules while removing prompt-irrelevant provenance metadata."""
     excluded_fields = {"source", "evidence"}
@@ -121,18 +97,50 @@ def _filter_rule_metadata(rules: list[dict]) -> list[dict]:
         for rule in rules
     ]
 
+def _load_block_from_global(
+    key: str,
+    *,
+    include_dossier_rule: bool = True,
+) -> str:
+    global_playbook = load_yaml(GLOBAL_PATH)
+    block = global_playbook.get(key, [])
+
+    if key == "rules" and not include_dossier_rule:
+        block = [
+            rule
+            for rule in block
+            if rule.get("id") != DOSSIER_RULE_ID
+        ]
+
+    block = _filter_rule_metadata(block)
+
+    return yaml.safe_dump(block, sort_keys=False)
+
+def _load_core_directive(include_dossier_rule: bool = True) -> str:
+    return _load_block_from_global(
+        "principles",
+        include_dossier_rule=include_dossier_rule,
+    )
+
+def _load_precedence_rules(include_dossier_rule: bool = True) -> str:
+    return _load_block_from_global(
+        "precedence",
+        include_dossier_rule=include_dossier_rule,
+    )
+
+def _load_anti_patterns(include_dossier_rule: bool = True) -> str:
+    return _load_block_from_global(
+        "anti_patterns",
+        include_dossier_rule=include_dossier_rule,
+    )
+
 def _load_global_rules(
     include_dossier_rule: bool = True
 ) -> str:
-    global_playbook = load_yaml(GLOBAL_PATH)
-    global_rules = global_playbook.get("rules", [])
-    if not include_dossier_rule:
-        global_rules = [
-            rule for rule in global_rules
-            if rule.get("id") != DOSSIER_RULE_ID
-        ]
-    global_rules = _filter_rule_metadata(global_rules)
-    return yaml.safe_dump(global_rules, sort_keys=False)
+    return _load_block_from_global(
+        "rules",
+        include_dossier_rule=include_dossier_rule,
+    )
 
 def load_prompt_rules(
     industry: str | None,
@@ -148,9 +156,15 @@ def load_prompt_rules(
     A named collection of serialized sections ready for prompt substitution.
     """
     return PromptRules(
-        core_directive=_load_core_directive(),
-        precedence=_load_precedence_rules(),
-        anti_patterns=_load_anti_patterns(),
+        core_directive=_load_core_directive(
+            include_dossier_rule=include_dossier_rule,
+        ),
+        precedence=_load_precedence_rules(
+            include_dossier_rule=include_dossier_rule,
+        ),
+        anti_patterns=_load_anti_patterns(
+            include_dossier_rule=include_dossier_rule,
+        ),
         global_rules=_load_global_rules(
             include_dossier_rule=include_dossier_rule,
         ),
