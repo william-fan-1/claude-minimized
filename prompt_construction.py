@@ -14,7 +14,7 @@ from litellm import completion
 from pydantic import BaseModel
 
 # Adjust the prompt version 
-PROMPT_VERSION = "2.0.0"
+PROMPT_VERSION = "2.1.0"
 
 # Paths to prompt file, rulebooks, industry map
 ROOT = Path(__file__).resolve().parent
@@ -72,7 +72,6 @@ INDUSTRIES = (
     "Other Materials",
 )
 
-
 class IndustryTag(BaseModel):
     industry: str
 
@@ -93,6 +92,10 @@ def load_yaml(path: Path) -> dict:
     """Load a YAML file from disk and return its contents as a dictionary."""
     with path.open("r", encoding="utf-8") as file:
         return yaml.safe_load(file)
+
+#####################################
+###### Industry Classification ######
+#####################################
 
 def _load_map() -> pd.DataFrame:
     """Read the industry mapping CSV and return it indexed by ticker."""
@@ -179,7 +182,7 @@ def _load_industry_rules(industry: str | None) -> str:
 
 def _filter_rule_metadata(rules: list[dict]) -> list[dict]:
     """Copy rules while removing prompt-irrelevant provenance metadata."""
-    excluded_fields = {"source", "evidence"}
+    excluded_fields = {"source", "evidence", "sources"}
     return [
         {
             key: value
@@ -267,13 +270,32 @@ def load_prompt_rules(
 ###### Check for valid dossier ######
 #####################################
 
+def _filter_dossier_fields(value):
+    """Copy dossier data while recursively removing prompt-irrelevant fields."""
+    excluded_fields = {"fiscal_quarter", "surprise_source"}
+    if isinstance(value, dict):
+        return {
+            key: _filter_dossier_fields(item)
+            for key, item in value.items()
+            if key not in excluded_fields
+        }
+    if isinstance(value, list):
+        return [_filter_dossier_fields(item) for item in value]
+    return value
+
 def get_dossier(ticker: str) -> str | None:
-    """Return the complete canonical ticker dossier file as text."""
+    """Return a sanitized canonical ticker dossier as YAML text."""
     path = DOSSIER_PATH / f"{ticker.strip().upper()}.yaml"
     try:
-        return path.read_text(encoding="utf-8")
-    except (FileNotFoundError, OSError):
+        dossier = yaml.safe_load(path.read_text(encoding="utf-8"))
+    except (FileNotFoundError, OSError, yaml.YAMLError):
         return None
+    if not isinstance(dossier, dict):
+        return None
+    return yaml.safe_dump(
+        _filter_dossier_fields(dossier),
+        sort_keys=False,
+    )
 
 def parse_dossier(dossier: str | dict | None) -> dict | None:
     """Parse dossier text for internal checks without changing prompt contents."""
