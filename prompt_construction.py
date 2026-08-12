@@ -109,6 +109,18 @@ def _load_anti_patterns() -> str:
     )
     return anti_patterns
 
+def _filter_rule_metadata(rules: list[dict]) -> list[dict]:
+    """Copy rules while removing prompt-irrelevant provenance metadata."""
+    excluded_fields = {"source", "evidence"}
+    return [
+        {
+            key: value
+            for key, value in rule.items()
+            if key not in excluded_fields
+        }
+        for rule in rules
+    ]
+
 def _load_global_rules(
     include_dossier_rule: bool = True
 ) -> str:
@@ -119,6 +131,7 @@ def _load_global_rules(
             rule for rule in global_rules
             if rule.get("id") != DOSSIER_RULE_ID
         ]
+    global_rules = _filter_rule_metadata(global_rules)
     return yaml.safe_dump(global_rules, sort_keys=False)
 
 def load_prompt_rules(
