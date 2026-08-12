@@ -5,6 +5,7 @@ mappings, then assembles the final prompt text used for event analysis.
 """
 
 from pathlib import Path
+from dataclasses import dataclass
 import re
 import yaml
 import pandas as pd
@@ -21,6 +22,17 @@ MAPPINGS_PATH = ROOT / "knowledge" / "mappings" / "industry_map.csv"
 DOSSIER_PATH = ROOT / "knowledge" / "dossier"
 NO_CACHED_DOSSIER = "No cached dossier is available."
 DOSSIER_RULE_ID = "GLB-MOD-01"
+
+
+@dataclass(frozen=True)
+class PromptRules:
+    """Serialized rule sections inserted into the prompt template."""
+
+    core_directive: str
+    precedence: str
+    anti_patterns: str
+    global_rules: str
+    industry_rules: str
 
 #####################################
 # Util functions to help build prompt
@@ -50,55 +62,11 @@ def format_industry_tag(industry: str) -> str:
     else: 
         return None
 
-def _load_industry_rules() -> str:
-    return ""
-
-def _load_core_directive() -> str:
-    return ""
-
-def _load_precedence_rules() -> str:
-    return ""
-
-def _load_anti_patterns() -> str:
-    return ""
-
-def _load_global_rules() -> str:
-    return ""
-
-def load_prompt_rules(
-    industry: str,
-    include_dossier_rule: bool = True,
-) -> tuple[str, str] | tuple[str, None]:
-    """
-    Load global and industry-specific prompt rules.
-
-    Args:
-    industry: Normalized industry tag used to select the industry playbook.
-
-    Returns:
-    A tuple containing the core directive YAML and the industry rules YAML.
-    """
-    global_playbook = load_yaml(GLOBAL_PATH)
+def _load_industry_rules(industry: str | None) -> str:
     industry_playbooks = load_yaml(INDUSTRY_PATH)
 
-    # The `principles` block becomes {core_directive}.
-    core_directive = yaml.safe_dump(
-        global_playbook["principles"],
-        sort_keys=False,
-    )
-
-    global_rules = global_playbook.get("rules", [])
-    if not include_dossier_rule:
-        global_rules = [
-            rule for rule in global_rules
-            if rule.get("id") != DOSSIER_RULE_ID
-        ]
-
-    # These global rules apply to every event, except dossier-only rules when
-    # the ticker has no usable historical reaction observations.
+    # Include quarterly calibration rules
     applicable_rules = {
-        "global_rules": global_rules,
-
         # This must be included for every industry.
         "quarter_calibration": industry_playbooks.get(
             "quarter_calibration",
@@ -106,22 +74,62 @@ def load_prompt_rules(
         ),
     }
 
-    # Add only the matching industry block.
     if industry is not None:
         industry_block = industry_playbooks.get(industry)
-
         if industry_block:
             applicable_rules["industry"] = industry
             applicable_rules["industry_playbook"] = industry_block
 
-        industry_rules = yaml.safe_dump(
-            applicable_rules,
-            sort_keys=False,
-        )
-    else:
-        industry_rules = ""
+    return yaml.safe_dump(applicable_rules, sort_keys=False)
 
-    return core_directive, industry_rules
+def _load_core_directive() -> str:
+    global_playbook = load_yaml(GLOBAL_PATH)
+    core_directive = yaml.safe_dump(
+        global_playbook["principles"],
+        sort_keys=False,
+    )
+    return core_directive
+
+def _load_precedence_rules() -> str:
+    return ""
+
+def _load_anti_patterns() -> str:
+    return ""
+
+def _load_global_rules(
+    include_dossier_rule: bool = True
+) -> str:
+    global_playbook = load_yaml(GLOBAL_PATH)
+    global_rules = global_playbook.get("rules", [])
+    if not include_dossier_rule:
+        global_rules = [
+            rule for rule in global_rules
+            if rule.get("id") != DOSSIER_RULE_ID
+        ]
+    return yaml.safe_dump(global_rules, sort_keys=False)
+
+def load_prompt_rules(
+    industry: str | None,
+    include_dossier_rule: bool = True,
+) -> PromptRules:
+    """
+    Load each independently owned prompt-rule section.
+
+    Args:
+    industry: Normalized industry tag used to select the industry playbook.
+
+    Returns:
+    A named collection of serialized sections ready for prompt substitution.
+    """
+    return PromptRules(
+        core_directive=_load_core_directive(),
+        precedence=_load_precedence_rules(),
+        anti_patterns=_load_anti_patterns(),
+        global_rules=_load_global_rules(
+            include_dossier_rule=include_dossier_rule,
+        ),
+        industry_rules=_load_industry_rules(industry),
+    )
 
 def get_dossier(ticker: str) -> str | None:
     """Return the complete canonical ticker dossier file as text."""
@@ -191,7 +199,7 @@ def construct_prompt(
     industry = format_industry_tag(get_industry(ticker))
     dossier_text = get_dossier(ticker)
     has_valid_dossier = is_valid_dossier(dossier_text)
-    core_directive, industry_rules = load_prompt_rules(
+    rules = load_prompt_rules(
         industry,
         include_dossier_rule=has_valid_dossier,
     )
@@ -202,17 +210,17 @@ def construct_prompt(
         # Summary of transcript
         .replace("{summary_text}", summary_text)
         # Objective to complete
-        .replace("{core_directive}", core_directive)
+        .replace("{core_directive}", rules.core_directive)
         # Industry specific trends to consider
-        .replace("{industry_rules}", industry_rules)
+        .replace("{industry_rules}", rules.industry_rules)
         # Previous earnings results
         .replace("{dossier}", dossier)
         # Rules on how to handle conflicting rules
-        .replace("{precedence}", precedence)
+        .replace("{precedence}", rules.precedence)
         # When not to fire
-        .replace("{anti_patterns}", anti_patterns)
+        .replace("{anti_patterns}", rules.anti_patterns)
         # Global rules
-        .replace("{global_rules}", global_rules)
+        .replace("{global_rules}", rules.global_rules)
     )
 
     return user_prompt
