@@ -11,7 +11,7 @@ import yaml
 import pandas as pd
 
 # Adjust the prompt version 
-PROMPT_VERSION = "1.2.0"
+PROMPT_VERSION = "2.0.0"
 
 # Paths to prompt file, rulebooks, industry map
 ROOT = Path(__file__).resolve().parent
@@ -22,7 +22,6 @@ MAPPINGS_PATH = ROOT / "knowledge" / "mappings" / "industry_map.csv"
 DOSSIER_PATH = ROOT / "knowledge" / "dossier"
 NO_CACHED_DOSSIER = "No cached dossier is available."
 DOSSIER_RULE_ID = "GLB-MOD-01"
-
 
 @dataclass(frozen=True)
 class PromptRules:
@@ -62,6 +61,10 @@ def format_industry_tag(industry: str) -> str:
     else: 
         return None
 
+####################################
+########## Retrieve rules ##########
+####################################
+
 def _load_industry_rules(industry: str | None) -> str:
     industry_playbooks = load_yaml(INDUSTRY_PATH)
 
@@ -91,10 +94,20 @@ def _load_core_directive() -> str:
     return core_directive
 
 def _load_precedence_rules() -> str:
-    return ""
+    global_playbook = load_yaml(GLOBAL_PATH)
+    precedence_rules = yaml.safe_dump(
+        global_playbook["precedence"],
+        sort_keys=False,
+    )
+    return precedence_rules
 
 def _load_anti_patterns() -> str:
-    return ""
+    global_playbook = load_yaml(GLOBAL_PATH)
+    anti_patterns = yaml.safe_dump(
+        global_playbook["anti_patterns"],
+        sort_keys=False,
+    )
+    return anti_patterns
 
 def _load_global_rules(
     include_dossier_rule: bool = True
@@ -130,6 +143,10 @@ def load_prompt_rules(
         ),
         industry_rules=_load_industry_rules(industry),
     )
+
+#####################################
+###### Check for valid dossier ######
+#####################################
 
 def get_dossier(ticker: str) -> str | None:
     """Return the complete canonical ticker dossier file as text."""
