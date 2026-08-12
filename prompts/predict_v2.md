@@ -64,7 +64,19 @@ percentile using the table below. Do not reason directly in percentile space.
 
 Interpolate between rows and report the percentile to two decimal places.
 
-## Playbook rules
+## Precedence
+
+{precedence}
+
+## Anti-patterns
+
+{anti_patterns}
+
+# Global rules
+
+{global_rules}
+
+## Playbook rRles
 
 {industry_rules}
 
@@ -74,7 +86,7 @@ Interpolate between rows and report the percentile to two decimal places.
 
 ## Earnings summary
 
-{event_bullets}
+{summary_text}
 
 ## Output
 
