@@ -6,9 +6,12 @@ mappings, then assembles the final prompt text used for event analysis.
 
 from pathlib import Path
 from dataclasses import dataclass
+import os
 import re
 import yaml
 import pandas as pd
+from litellm import completion
+from pydantic import BaseModel
 
 # Adjust the prompt version 
 PROMPT_VERSION = "2.0.0"
@@ -22,6 +25,56 @@ MAPPINGS_PATH = ROOT / "knowledge" / "mappings" / "industry_map.csv"
 DOSSIER_PATH = ROOT / "knowledge" / "dossier"
 NO_CACHED_DOSSIER = "No cached dossier is available."
 DOSSIER_RULE_ID = "GLB-MOD-01"
+CLASSIFIER_MODEL = "gemini/gemini-2.5-flash-lite"
+CLASSIFIER_TIMEOUT_SECONDS = 30.0
+
+INDUSTRIES = (
+    "Commercial Products",
+    "Commercial Services",
+    "Commercial Transportation",
+    "Other Business Products and Services",
+    "Apparel and Accessories",
+    "Consumer Durables",
+    "Consumer Non-Durables",
+    "Media",
+    "Restaurants, Hotels and Leisure",
+    "Retail",
+    "Services (Non-Financial)",
+    "Transportation",
+    "Other Consumer Products and Services",
+    "Energy Equipment",
+    "Exploration, Production and Refining",
+    "Energy Services",
+    "Utilities",
+    "Other Energy",
+    "Capital Markets/Institutions",
+    "Commercial Banks",
+    "Insurance",
+    "Other Financial Services",
+    "Healthcare Devices and Supplies",
+    "Healthcare Services",
+    "Healthcare Technology Systems",
+    "Pharmaceuticals and Biotechnology",
+    "Other Healthcare",
+    "Communications and Networking",
+    "Computer Hardware",
+    "Semiconductors",
+    "IT Services",
+    "Software",
+    "Other Information Technology",
+    "Agriculture",
+    "Chemicals and Gases",
+    "Construction (Non-Wood)",
+    "Containers and Packaging",
+    "Forestry",
+    "Metals, Minerals and Mining",
+    "Textiles",
+    "Other Materials",
+)
+
+
+class IndustryTag(BaseModel):
+    industry: str
 
 @dataclass(frozen=True)
 class PromptRules:
@@ -54,11 +107,50 @@ def get_industry(ticker: str) -> str | None:
         print(f"{ticker} not found in mappings.")
         return None
 
-def format_industry_tag(industry: str) -> str:
+def format_industry_tag(industry: str | None) -> str | None:
     """Normalize an industry name into an underscore-delimited lowercase tag."""
-    if industry is not None: 
-        return industry.lower().replace(" ", "_").replace(",", "")
-    else: 
+    if industry is None:
+        return None
+    return re.sub(r"[^a-z0-9]+", "_", industry.lower()).strip("_")
+
+def _classify_industry(*, ticker: str, summary_text: str) -> str | None:
+    """Classify an unmapped ticker into one supported industry; never fatal."""
+    if not os.environ.get("GEMINI_API_KEY"):
+        return None
+
+    prompt = (
+        "Classify the company into exactly one industry from the allowed list. "
+        "Use the ticker and earnings summary only as classification evidence.\n\n"
+        f"Ticker: {ticker}\n"
+        f"Earnings summary:\n{summary_text[:2500]}\n\n"
+        f"Allowed industries (choose exactly one): {', '.join(INDUSTRIES)}\n\n"
+        'Respond with JSON only: {"industry": "<exact allowed industry>"}'
+    )
+
+    try:
+        response = completion(
+            model=CLASSIFIER_MODEL,
+            messages=[{"role": "user", "content": prompt}],
+            response_format={"type": "json_object"},
+            temperature=0,
+            timeout=CLASSIFIER_TIMEOUT_SECONDS,
+            num_retries=0,
+        )
+        tag = IndustryTag.model_validate_json(
+            response.choices[0].message.content
+        )
+        if tag.industry not in INDUSTRIES:
+            print(
+                f"[WARN] unsupported industry classification for {ticker}: "
+                f"{tag.industry!r}"
+            )
+            return None
+        return tag.industry
+    except Exception as exc:
+        print(
+            f"[WARN] industry classification failed for {ticker}: "
+            f"{type(exc).__name__}: {exc}"
+        )
         return None
 
 ####################################
@@ -240,7 +332,13 @@ def construct_prompt(
         flags=re.DOTALL,
     )
 
-    industry = format_industry_tag(get_industry(ticker))
+    industry_name = get_industry(ticker)
+    if industry_name is None:
+        industry_name = _classify_industry(
+            ticker=ticker,
+            summary_text=summary_text,
+        )
+    industry = format_industry_tag(industry_name)
     dossier_text = get_dossier(ticker)
     has_valid_dossier = is_valid_dossier(dossier_text)
     rules = load_prompt_rules(
