@@ -15,6 +15,10 @@ dependencies = [
     # Needed locally so `modal deploy` can read .env via Secret.from_dotenv.
     "python-dotenv>=1.0",
     "pandas>=2.3.3",
+    # Imported directly by explaining_markets.scoring. pandas pulls it in
+    # anyway; declared rather than implied so the scoring layer is honest
+    # about what it depends on.
+    "numpy>=1.26",
     "yfinance>=0.2.65",
     "lxml>=5.3",
     "tqdm>=4.67",

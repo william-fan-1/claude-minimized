@@ -115,8 +115,26 @@ def predict_and_submit(event: dict, webhook_id: str | None = None):
     from predict import predict_with_metadata
 
     submitted = False
+    detailed = None
     try:
-        detailed = None if is_test(event) else predict_with_metadata(event)
+        if not is_test(event):
+            # A prediction failure must not become a NON-submission. `predict.py`
+            # already falls back to 0.5 on a model error, but the summary fetch
+            # ahead of it can raise (`raise_for_status`), and that used to
+            # propagate out and skip the submit entirely. Because we ACK 200
+            # before predicting, the platform never redelivers — so a dropped
+            # event was dropped permanently. The leaderboard then imputes our own
+            # mean into the gap, contributing exactly zero. A neutral 0.5 is
+            # strictly better than nothing.
+            try:
+                detailed = predict_with_metadata(event)
+            except Exception as exc:
+                print(
+                    f"[ERROR] predict failed for event {event.get('event_id')}: "
+                    f"{type(exc).__name__}: {exc} — submitting neutral 0.5"
+                )
+                detailed = None
+
         predictions = neutral_predictions(event) if detailed is None else [
             {
                 "identifier_value": row["identifier_value"],
@@ -133,19 +151,30 @@ def predict_and_submit(event: dict, webhook_id: str | None = None):
         if detailed is not None:
             for row in detailed:
                 ticker = row["identifier_value"]
+                # `.get` throughout: a ledger write must never be the thing that
+                # loses an already-successful submission.
                 prediction_ledger[f'{event["event_id"]}:{ticker}'] = {
                     "event_id": event["event_id"],
                     "ticker": ticker,
-                    "prompt_version": row["prompt_version"],
-                    "predicted_percentile": row["predicted_percentile"],
-                    "confidence": row["confidence"],
-                    "rules_applied": row["rules_applied"],
+                    "prompt_version": row.get("prompt_version"),
+                    "knowledge_version": row.get("knowledge_version"),
+                    "predicted_percentile": row.get("predicted_percentile"),
+                    "confidence": row.get("confidence"),
+                    "direction": row.get("direction"),
+                    "rules_applied": row.get("rules_applied"),
+                    "expected_abnormal_return_pct": row.get(
+                        "expected_abnormal_return_pct"
+                    ),
+                    "key_metrics": row.get("key_metrics"),
+                    "guidance": row.get("guidance"),
+                    "result_quality": row.get("result_quality"),
+                    "expectation_gap": row.get("expectation_gap"),
                     "realized_abnormal": None,
                     "realized_percentile": None,
                 }
     except Exception as exc:
         # Log loudly — `modal app logs explaining-markets-starter` finds it.
-        print(f"[ERROR] prediction failed for event {event.get('event_id')}: {exc}")
+        print(f"[ERROR] submission failed for event {event.get('event_id')}: {exc}")
     finally:
         _release(webhook_id, submitted)
 

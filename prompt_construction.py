@@ -6,7 +6,9 @@ mappings, then assembles the final prompt text used for event analysis.
 
 from pathlib import Path
 from dataclasses import dataclass
+from functools import lru_cache
 from typing import Any
+import hashlib
 import os
 import re
 import yaml
@@ -14,8 +16,8 @@ import pandas as pd
 from litellm import completion
 from pydantic import BaseModel
 
-# Adjust the prompt version 
-PROMPT_VERSION = "2.1.0"
+# Adjust the prompt version
+PROMPT_VERSION = "3.0.0"
 
 # Paths to prompt file, rulebooks, industry map
 ROOT = Path(__file__).resolve().parent
@@ -94,6 +96,37 @@ def load_yaml(path: Path) -> dict:
     """Load a YAML file from disk and return its contents as a dictionary."""
     with path.open("r", encoding="utf-8") as file:
         return yaml.safe_load(file)
+
+
+# Files whose contents determine what the model is actually told. A change to
+# any of these changes the agent's behaviour, whether or not anyone remembers
+# to bump PROMPT_VERSION.
+KNOWLEDGE_FILES = (PROMPT_PATH, GLOBAL_PATH, INDUSTRY_PATH)
+
+
+@lru_cache(maxsize=1)
+def knowledge_version() -> str:
+    """Return a short hash fingerprinting the prompt and rulebooks in force.
+
+    Written into every ledger row so a prediction can be traced back to the
+    exact configuration that produced it. This exists because ``PROMPT_VERSION``
+    was changed twice in the repo's history while the prompt and rules were
+    rewritten repeatedly underneath it — every prediction from Aug 9 to Aug 12
+    carries the same stamp across three materially different configurations,
+    which makes the Q3 sample impossible to segment after the fact.
+
+    Cached: the files are baked into the Modal image at deploy time and cannot
+    change while a container is alive, so this is computed once per process.
+    Returns ``"unknown"`` rather than raising if a file is missing — a failure
+    to fingerprint must never cost us a prediction.
+    """
+    digest = hashlib.sha256()
+    for path in KNOWLEDGE_FILES:
+        try:
+            digest.update(path.read_bytes())
+        except OSError:
+            return "unknown"
+    return digest.hexdigest()[:12]
 
 #####################################
 ###### Industry Classification ######
@@ -297,8 +330,58 @@ def _filter_dossier_fields(value: Any) -> Any:
         return [_filter_dossier_fields(item) for item in value]
     return value
 
-def get_dossier(ticker: str) -> str | None:
-    """Return a sanitized canonical ticker dossier as YAML text."""
+FORWARD_ESTIMATES_KEY = "forward_estimates"
+
+
+def forward_estimates_permitted(
+    as_of: str | None,
+    knowledge_cutoff: str | None,
+) -> bool:
+    """True only when the estimates provably predate the event's cutoff.
+
+    THIS IS A COMPLIANCE CONTROL, NOT AN OPTIMISATION. The rules bar using any
+    information that became available after an event's ``knowledge_cutoff``,
+    across "data collection, model inputs, features, prompts, retrieval
+    results" — and violating it costs prize eligibility, which is verified by
+    an independent code audit.
+
+    Prior reactions are historical and always safe. Forward estimates are not:
+    they are a snapshot of consensus taken on a particular day. The cutoffs in
+    this competition sit roughly one day before the event, not weeks — so a
+    dossier built on the 15th is post-cutoff for an event whose cutoff was the
+    14th, even though the event itself has not happened yet.
+
+    FAILS CLOSED. An unknown cutoff, an unknown ``as_of``, or an unparseable
+    value all return False. We drop a useful input rather than risk using one
+    we cannot prove was permitted; that trade is not close.
+
+    ``as_of`` is a date with no time, so it is treated as end-of-day UTC — the
+    latest instant the data could have been captured.
+    """
+    if not as_of or not knowledge_cutoff:
+        return False
+    try:
+        captured = pd.Timestamp(as_of)
+        if captured.tz is None:
+            captured = captured.tz_localize("UTC")
+        # No time component means "some time that day" — assume the worst.
+        captured = captured.normalize() + pd.Timedelta(hours=23, minutes=59, seconds=59)
+        cutoff = pd.Timestamp(knowledge_cutoff)
+        if cutoff.tz is None:
+            cutoff = cutoff.tz_localize("UTC")
+    except (ValueError, TypeError):
+        return False
+    return captured < cutoff
+
+
+def get_dossier(ticker: str, knowledge_cutoff: str | None = None) -> str | None:
+    """Return a sanitized canonical ticker dossier as YAML text.
+
+    Drops the ``forward_estimates`` block unless it can be shown to predate the
+    event's ``knowledge_cutoff`` — see :func:`forward_estimates_permitted`. The
+    prompt handles an absent block explicitly, so dropping it degrades to "no
+    consensus baseline available" rather than breaking anything.
+    """
     path = DOSSIER_PATH / f"{ticker.strip().upper()}.yaml"
     try:
         dossier = yaml.safe_load(path.read_text(encoding="utf-8"))
@@ -306,6 +389,21 @@ def get_dossier(ticker: str) -> str | None:
         return None
     if not isinstance(dossier, dict):
         return None
+
+    estimates = dossier.get(FORWARD_ESTIMATES_KEY)
+    if estimates is not None:
+        as_of = estimates.get("as_of") if isinstance(estimates, dict) else None
+        if not forward_estimates_permitted(as_of, knowledge_cutoff):
+            dossier = {
+                key: value
+                for key, value in dossier.items()
+                if key != FORWARD_ESTIMATES_KEY
+            }
+            print(
+                f"[INFO] {ticker}: forward_estimates withheld "
+                f"(as_of={as_of!r}, knowledge_cutoff={knowledge_cutoff!r})"
+            )
+
     return yaml.safe_dump(
         _filter_dossier_fields(dossier),
         sort_keys=False,
@@ -341,8 +439,9 @@ def is_valid_dossier(dossier: str | dict | None) -> bool:
 ####################################
 
 def construct_prompt(
-    summary_text: str, 
-    ticker: str
+    summary_text: str,
+    ticker: str,
+    knowledge_cutoff: str | None = None,
 ) -> str:
     """
     Construct the final prompt text for a given ticker and event summary.
@@ -375,7 +474,7 @@ def construct_prompt(
             summary_text=summary_text,
         )
     industry = format_industry_tag(industry_name)
-    dossier_text = get_dossier(ticker)
+    dossier_text = get_dossier(ticker, knowledge_cutoff=knowledge_cutoff)
     has_valid_dossier = is_valid_dossier(dossier_text)
     rules = load_prompt_rules(
         industry,

@@ -66,13 +66,24 @@
 # =============================================================================
 
 meta:
-  version: 0.2.0
+  version: 0.5.0
   scope: global
   owner: ahi
   added: 2026-08-03
-  revised: 2026-08-08
+  revised: 2026-08-13
   next_review: 2026-09-01
-  evidence_basis: docs/EM-Diagnostics-Aug6.md
+  evidence_basis: docs/EM-Diagnostics-Aug13.md
+  # v0.5.0 also prunes. Removed GLB-QUAL-04, GLB-TONE-03 and GLB-CAP-01 —
+  # two unevidenced team_prior rules and one explicit no-op. Added a baseline
+  # gate to GLB-TONE-01, which asked for a prior-quarter comparison the
+  # pipeline does not supply. Fixed two dangling references in precedence
+  # (P8 and P3) that pointed at rules the model never sees.
+  # v0.4.0 targets one measured failure: of 77 predictions at or above 0.70,
+  # 29 landed at or below 0.35, and those 29 events carry 67% of our total
+  # squared error. Cause is structural, not judgment — the positive setters had
+  # no rung below +4% abnormal return, so every non-negative quarter was forced
+  # upward. The negative setters are untouched: they are 81% directionally
+  # accurate and remain the whole of our measured edge.
 
 # -----------------------------------------------------------------------------
 # CORE PRINCIPLES — injected verbatim into the prompt as the core directive
@@ -133,14 +144,17 @@ precedence:
     rule: >
       Specific, material, forward-looking, persistent, and quantified evidence
       outweighs broad narrative or tone regardless of direction.
+    # v0.5.0: this cited "P8", which has never existed. The intent is AP-07.
   - order: 3
     rule: >
-      EXCEPT where P8 applies: if the company was already deeply out of favour
-      and the negative information is not NEW, the negative rule is already
-      priced and should be discounted heavily.
+      EXCEPT where AP-07 applies: if the company was already deeply out of
+      favour and the negative information is not NEW, the negative rule is
+      already priced and should be discounted heavily.
+    # v0.5.0: this cited P3, which is about calibration. The relevant
+    # principle is P2.
   - order: 4
     rule: >
-      Guidance-based rules outrank headline-result rules (principle P3).
+      Guidance-based rules outrank headline-result rules (principle P2).
   - order: 5
     rule: >
       SETTER rules establish the base estimate first; MODIFIER rules then
@@ -154,6 +168,17 @@ precedence:
       dominates, assess its net effect on the forward path, shrink the estimate
       toward 0.0% abnormal return, and downgrade confidence to "low". Do not
       mechanically average rule ranges or use their midpoints.
+
+    # Added v0.4.0. Governs which positive setter wins, which is the decision
+    # the model was getting wrong most often and most expensively.
+  - order: 7
+    rule: >
+      Among the positive setters, the DEFAULT is GLB-POS-07. A stronger
+      positive setter displaces it only when its materiality gate is satisfied
+      by a figure stated in the summary. Where two positive setters both appear
+      to fit, choose the weaker one unless the stronger one's gate is
+      explicitly met — see AP-09. This asymmetry does not apply to the negative
+      setters, whose measured precision is far higher.
 
 # =============================================================================
 # RULES
@@ -299,21 +324,9 @@ rules:
     source: koijen_levy_2026
     evidence: {n: 0, hit_rate: null}
 
-  - id: GLB-QUAL-04
-    type: setter
-    scope: {applies_to: all}
-    trigger: >
-      Revenue growth driven predominantly by price increases while volumes
-      decline, with no acknowledgement of volume recovery.
-    action:
-      abnormal_return_pct: [-5.0, -2.0]
-      percentile_range: [0.24, 0.38]
-    rationale: >
-      Price-led growth without volume is read as a ceiling on the runway and
-      raises demand-destruction concerns.
-    confidence: low
-    source: team_prior
-    evidence: {n: 0, hit_rate: null}
+  # REMOVED v0.5.0: GLB-QUAL-04 (price-led growth without volume). team_prior,
+  # confidence low, never evidenced, and the price/volume split is rarely
+  # present in a bullet summary — so the rule was firing on inference.
 
   - id: GLB-TONE-01
     type: setter
@@ -326,6 +339,12 @@ rules:
       in essentially every call and DO NOT fire this rule. Fire it only when
       the tone has demonstrably changed or management is visibly walking back
       a previously confident position.
+      BASELINE GATE (v0.5.0): you are not given prior-quarter commentary. Fire
+      this rule ONLY when the shift is visible inside this announcement itself
+      — management explicitly withdrawing, contradicting or walking back a
+      position they state they previously held. If you are inferring the change
+      by comparing against a prior tone you were never shown, you are inventing
+      the baseline. Do not fire it.
     action:
       abnormal_return_pct: [-3.0, 0.0]
       percentile_range: [0.34, 0.50]
@@ -353,8 +372,7 @@ rules:
       speculative, or from your own prior knowledge of the ticker. If you
       cannot point to the specific fear in the text, this rule does not apply.
     action:
-      abnormal_return_pct: [3.0, 9.0]
-      percentile_range: [0.67, 0.87]
+      abnormal_return_pct: [2.0, 7.0]
     rationale: >
       When expectations are near zero, the absence of bad news is powerfully
       good news — HTZ +29.6%, OPRT +33.0%, TRUP +15.6% on Aug 6, all forecast
@@ -376,9 +394,11 @@ rules:
       Forward guidance raised MATERIALLY above the prior path, or the full-year
       outlook lifted meaningfully — not a routine narrowing or a token raise
       that merely reflects the quarter just delivered.
+      MATERIALITY GATE: the summary must state the new guidance figure or the
+      size of the raise. A raise you inferred from optimistic commentary, or a
+      raise whose size is not given, is GLB-POS-07, not this rule.
     action:
-      abnormal_return_pct: [6.0, 15.0]
-      percentile_range: [0.80, 0.92]
+      abnormal_return_pct: [3.5, 9.0]
     rationale: >
       The direct mirror of GLB-GUID-01, which v0.1 lacked. If a lowered
       forward path is the strongest negative signal, a materially raised one
@@ -391,12 +411,13 @@ rules:
     type: setter
     scope: {profile: pre_profit_or_marginal}
     trigger: >
-      Inflection to profitability: first positive EBITDA or net income, losses
-      narrowing far faster than expected, or a credible near-term path to
-      break-even newly quantified.
+      Inflection to profitability: first positive EBITDA or net income, or
+      losses narrowing far faster than expected.
+      MATERIALITY GATE: the inflection must be REPORTED, not projected. A
+      "path to break-even" or a management target date is a roadmap item and
+      falls under AP-02 — it does not fire this rule.
     action:
-      abnormal_return_pct: [10.0, 25.0]
-      percentile_range: [0.88, 0.97]
+      abnormal_return_pct: [5.0, 14.0]
     rationale: >
       The mirror of GLB-QUAL-03. If growth without operating leverage is
       heavily punished, demonstrated operating leverage is heavily rewarded —
@@ -413,8 +434,7 @@ rules:
       driven by mix, pricing power, or cost actions that management quantifies
       and carries into guidance.
     action:
-      abnormal_return_pct: [4.0, 10.0]
-      percentile_range: [0.72, 0.88]
+      abnormal_return_pct: [2.0, 6.0]
     rationale: >
       The mirror of GLB-QUAL-01. Transitory margin gains earn no credit;
       durable ones re-rate the forward earnings base.
@@ -429,11 +449,12 @@ rules:
       A material and QUANTIFIED new catalyst: a large contract or customer win,
       a partnership with disclosed economics, a regulatory approval, or an
       asset sale at a clearly favourable price.
-      GATE: the economics must be quantified. An unquantified announcement is
-      a roadmap item and earns little (see AP-02).
+      GATE: the economics must be quantified AND material relative to the
+      company — a contract value that is a rounding error against revenue is
+      not a catalyst. An unquantified announcement is a roadmap item and earns
+      little (see AP-02).
     action:
-      abnormal_return_pct: [6.0, 20.0]
-      percentile_range: [0.80, 0.95]
+      abnormal_return_pct: [4.0, 12.0]
     rationale: >
       Discrete, quantifiable news changes the forward model immediately, which
       is exactly what the market prices.
@@ -448,9 +469,11 @@ rules:
       A previously identified problem — a declining segment, a margin drag, a
       troubled geography, an execution failure — demonstrably turning, with
       management quantifying the improvement.
+      GATE: the problem must be identifiable in the summary itself, and the
+      improvement must be quantified. "Segment returned to growth" without a
+      number is GLB-POS-07.
     action:
-      abnormal_return_pct: [4.0, 12.0]
-      percentile_range: [0.72, 0.90]
+      abnormal_return_pct: [2.0, 7.0]
     rationale: >
       The market prices known problems. Evidence that a known problem is
       resolving removes a discount that was already applied.
@@ -474,6 +497,34 @@ rules:
     source: literature
     evidence: {n: 0, hit_rate: null}
 
+  # The missing rung. Added v0.4.0. Before this rule existed, the lowest floor
+  # of any general positive setter was +4%, so an ordinary good quarter had
+  # nowhere to land except a rule that implied 0.72+. On Aug 10-12 that produced
+  # 54% of predictions above 0.85 against 16.5% of outcomes. Most good quarters
+  # are worth one to three percent, and this is where they belong.
+  - id: GLB-POS-07
+    type: setter
+    scope: {applies_to: all}
+    trigger: >
+      A genuinely good quarter that improves the forward path without resetting
+      it: a real beat, a modest guidance nudge, a segment inflecting, cost
+      control landing. The news is positive and slightly better than the market
+      expected, but it does not change the investment thesis.
+      This is the DEFAULT positive outcome. If a stronger positive rule's
+      materiality gate is not explicitly satisfied by the summary, the answer is
+      this rule, not the stronger one.
+    action:
+      abnormal_return_pct: [1.5, 4.0]
+    rationale: >
+      The positive mirror of GLB-TONE-01, and the rung the ladder was missing.
+      The negative side has always been graded — mild [-3, 0], moderate
+      [-5, -2], severe [-10, -4], extreme [-18, -7] — while the positive side
+      jumped straight from neutral to [4, 25]. That asymmetry, not the model's
+      judgment, is what put half the book above 0.85.
+    confidence: high
+    source: observed_2026Q3
+    evidence: {n: 0, hit_rate: null}
+
   - id: GLB-EXPECT-03
     type: setter
     scope: {applies_to: all}
@@ -481,12 +532,18 @@ rules:
       Genuinely shocking positive news: guidance raised dramatically, a
       transformative strategic announcement, a buyback very large relative to
       market cap, or the reversal of a widely-held negative thesis.
+      MATERIALITY GATE: you must be able to quote the specific figure from the
+      summary that justifies a move of this size. This rule describes the single
+      most positive handful of events in the entire quarter — roughly one event
+      in twenty. If you are firing it because the quarter was clearly good
+      rather than because something extraordinary happened, use GLB-POS-07.
     action:
-      abnormal_return_pct: [8.0, 25.0]
-      percentile_range: [0.85, 0.97]
+      abnormal_return_pct: [8.0, 22.0]
     rationale: >
-      Reserved for real surprise. If this rule fires on more than ~10% of
-      events, our threshold has drifted and needs re-tightening.
+      Reserved for real surprise. If this rule fires on more than ~5% of
+      events, our threshold has drifted and needs re-tightening. On Aug 10-12
+      our precision on predictions above 0.85 was 20% — we called it 69 times
+      and it happened 21 times. The bar was far too low.
     confidence: high
     source: koijen_levy_2026
     evidence: {n: 0, hit_rate: null}
@@ -495,34 +552,14 @@ rules:
   # MODIFIERS — adjustments in percentage points of abnormal return
   # ---------------------------------------------------------------------------
 
-  - id: GLB-TONE-03
-    type: modifier
-    scope: {applies_to: all}
-    trigger: >
-      Management proactively quantifies a previously vague concern, or provides
-      new disclosure that resolves a known analyst worry.
-    action: {adjust_return_pp: 2.0}
-    rationale: >
-      Mirror of GLB-TONE-02. Removing uncertainty on a contested issue is
-      itself value-relevant.
-    confidence: low
-    source: team_prior
-    evidence: {n: 0, hit_rate: null}
-
-  - id: GLB-CAP-01
-    type: modifier
-    scope: {applies_to: all}
-    trigger: >
-      A buyback or dividend routine in size relative to the company's history
-      and market cap.
-    action: {adjust_return_pp: 0.0}
-    rationale: >
-      Routine capital return is standard operating procedure, not a catalyst.
-      Explicit no-op to suppress the reflex to read any buyback headline as
-      bullish.
-    confidence: high
-    source: koijen_levy_2026
-    evidence: {n: 0, hit_rate: null}
+  # REMOVED v0.5.0: GLB-TONE-03 (management quantifies a vague concern, +2pp).
+  # team_prior, confidence low, and its rationale cited GLB-TONE-02 — a rule
+  # that no longer exists. The trigger is satisfiable by almost any call.
+  #
+  # REMOVED v0.5.0: GLB-CAP-01 (routine buyback, adjust_return_pp: 0.0). A rule
+  # whose action is explicitly nothing is pure prompt tax. Its real intent —
+  # don't read a buyback headline as bullish — is now carried by AP-01, where
+  # it belongs.
 
   - id: GLB-CAP-02
     type: modifier
@@ -591,7 +628,10 @@ anti_patterns:
   - id: AP-01
     text: >
       Do not treat "record" anything as automatically positive. Record results
-      are the baseline expectation for a public company.
+      are the baseline expectation for a public company. The same applies to a
+      routine buyback or dividend: capital return in ordinary size is standard
+      operating procedure, not a catalyst, and it is not evidence of anything
+      about the forward path.
     source: koijen_levy_2026
 
   - id: AP-02
@@ -602,12 +642,19 @@ anti_patterns:
 
   - id: AP-03
     text: >
-      Use the full range where the evidence supports it. Roughly 10% of events
-      deserve above 0.85 and 10% below 0.15 — but a genuinely ambiguous event
-      belongs near 0.50. Forcing conviction you do not have is worse than
-      admitting uncertainty: it adds noise without adding signal. Reserve the
-      tails for events where the read is clear.
-    source: team_prior
+      THE QUOTE TEST — apply this to every prediction before you commit to it.
+      To predict ABOVE 0.80, you must be able to quote a specific figure from
+      the summary that justifies a move of more than +6%: a guidance number, a
+      contract value, a margin figure, a reported swing to profit. To predict
+      BELOW 0.20, the same test applies in reverse.
+      If you cannot point at the number, you do not have the evidence for the
+      tail. Cap the estimate at 0.75 (or 0.25) and move on. Management tone,
+      your general impression of the quarter, and the absence of bad news are
+      not figures and do not pass this test.
+      This replaces the old distributional version of AP-03, which asked the
+      model to hit a 10% quota it has no way to track from inside a single
+      event. A per-event test is something you can actually apply.
+    source: observed_2026Q3
 
   - id: AP-04
     text: >
@@ -638,3 +685,32 @@ anti_patterns:
       Do not use any information dated after the event's knowledge_cutoff, and
       do not infer post-cutoff information from your own training data.
     source: team_prior
+
+  - id: AP-08
+    text: >
+      THE ABSENCE OF BAD NEWS IS NOT GOOD NEWS. A summary in which you find
+      nothing alarming describes an ORDINARY QUARTER, and an ordinary quarter
+      belongs between 0.45 and 0.65 — not at 0.90. Reaching the top decile
+      requires positive evidence you can point to, not the failure to find
+      negative evidence.
+      This is the single most expensive error in our Aug 10-12 results. Of the
+      77 predictions we made at or above 0.70, 29 landed at or below 0.35, and
+      those 29 events alone account for 67% of our total squared error. Almost
+      all of them were quarters where nothing was visibly wrong and the model
+      read "no red flags" as a catalyst.
+    source: observed_2026Q3
+
+  - id: AP-09
+    text: >
+      THE EVIDENTIARY BAR IS HIGHER ON THE UPSIDE THAN THE DOWNSIDE. This is
+      not a statement about the world; it is a measured property of this
+      pipeline. When we predict below 0.50 we are directionally right 81% of
+      the time. When we predict above 0.50 we are right 48% of the time — a
+      coin flip. Our precision in the top decile is 20%; in the bottom decile
+      it is 59%.
+      The negative rules are reading real evidence. The positive rules are
+      substantially reading tone. Until that changes, require strictly more
+      evidence before committing to a strong positive than you would before
+      committing to a strong negative, and prefer GLB-POS-07 over the more
+      aggressive positive setters whenever the gate is not explicitly met.
+    source: observed_2026Q3

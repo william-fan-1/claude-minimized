@@ -20,7 +20,11 @@ import httpx
 from litellm import completion
 from pydantic import AliasChoices, BaseModel, Field
 
-from prompt_construction import construct_prompt, PROMPT_VERSION
+from prompt_construction import (
+    construct_prompt,
+    knowledge_version,
+    PROMPT_VERSION,
+)
 
 # This is the only value to change when switching models. The provider prefix
 # selects both the LiteLLM backend and the corresponding environment variable.
@@ -97,13 +101,27 @@ def _predict_rows(*, event: dict, summary: dict) -> list[dict]:
             summary=summary,
             ticker=asset["identifier_value"],
             event_type=event["event_type"],
+            # Gates the dossier's forward_estimates block. Absent from the
+            # payload means the block is withheld — the guard fails closed.
+            knowledge_cutoff=event.get("knowledge_cutoff"),
         )
         rows.append({
             "identifier_value": asset["identifier_value"],
             "predicted_percentile": result.predicted_percentile,
             "confidence": result.confidence,
             "rules_applied": result.rules_applied,
+            "expected_abnormal_return_pct": result.expected_abnormal_return_pct,
+            "direction": result.direction,
+            "key_metrics": result.key_metrics,
+            "guidance": result.guidance,
+            "result_quality": result.result_quality,
+            "expectation_gap": result.expectation_gap,
             "prompt_version": PROMPT_VERSION,
+            # Fingerprints the rulebook + prompt actually in force. PROMPT_VERSION
+            # alone is not enough: between Aug 9 and Aug 12 the rules and the
+            # prompt were rewritten twice while the string stayed "1.2.0", so the
+            # ledger could not tell three different configurations apart.
+            "knowledge_version": knowledge_version(),
         })
     return rows
 
@@ -128,8 +146,77 @@ class Prediction(BaseModel):
             "prediction",
         )
     )
-    confidence: str = "low"
+    # None means the model did not state a conviction at all, which is treated
+    # differently from stating "low" — see _apply_conviction_band.
+    confidence: str | None = None
     rules_applied: list[str] = Field(default_factory=list)
+
+    # The prompt asks for all of the below and we were throwing them away.
+    #
+    # The return estimate is the load-bearing one: the prompt's whole design is
+    # "estimate an abnormal return, then convert it", so without it we cannot
+    # tell a bad return estimate apart from a bad return-to-percentile
+    # conversion.
+    #
+    # The extraction fields (key_metrics, guidance, result_quality,
+    # expectation_gap) exist because prompt v3 forces the model to establish the
+    # facts before interpreting them. Logging them separates "misread the
+    # quarter" from "misapplied a rule" — two failures we currently cannot tell
+    # apart at all. All are optional so an older or malformed response still
+    # validates rather than falling back to 0.5.
+    expected_abnormal_return_pct: float | None = Field(
+        default=None,
+        validation_alias=AliasChoices(
+            "expected_abnormal_return_pct",
+            "expected_abnormal_return",
+            "abnormal_return_pct",
+        ),
+    )
+    direction: str | None = None
+    key_metrics: list[str] = Field(default_factory=list)
+    guidance: str | None = None
+    result_quality: str | None = None
+    expectation_gap: str | None = None
+    # Retained for backward compatibility with responses from prompt v2.x.
+    top_drivers: list[str] = Field(default_factory=list)
+
+
+# Conviction is binding: it caps how far from 0.50 a prediction may sit. This is
+# enforced in code as well as in the prompt, because a band the model can talk
+# itself out of is not a band. Uniform shrinkage would be worthless — OLS
+# absorbs it — but this is CONDITIONAL on stated confidence, so it reorders
+# predictions relative to one another and therefore does move R².
+CONVICTION_BANDS = {
+    "high": (0.02, 0.98),
+    "medium": (0.20, 0.80),
+    "low": (0.35, 0.65),
+}
+
+
+def _apply_conviction_band(percentile: float, confidence: str | None) -> float:
+    """Clamp a percentile into the band the model's stated conviction permits.
+
+    The band binds ONLY on an explicit, recognised self-report. A missing or
+    unrecognised confidence passes through unclamped, with a warning.
+
+    That asymmetry is deliberate and it is a safety property, not laziness. Our
+    entire measured edge is the low tail — predictions at 0.05-0.15 on genuine
+    disasters, which are 81% directionally accurate. If a schema regression or a
+    provider change caused ``confidence`` to go missing and we defaulted to the
+    "low" band, every one of those would be clamped up to 0.35 and the edge
+    would vanish silently. Failing open costs us a little discipline on
+    over-confident calls; failing closed would cost us the score.
+    """
+    key = (confidence or "").strip().lower()
+    band = CONVICTION_BANDS.get(key)
+    if band is None:
+        print(
+            f"[WARN] no recognised confidence in model response "
+            f"(got {confidence!r}) — conviction band not applied"
+        )
+        return percentile
+    low, high = band
+    return max(low, min(high, percentile))
 
 # Normalization function as a safeguard 
 def _normalize_percentile(value: float) -> float:
@@ -147,7 +234,13 @@ def _ask_llm(*, summary: dict, ticker: str, event_type: str) -> float:
         summary=summary, ticker=ticker, event_type=event_type
     ).predicted_percentile
 
-def _ask_llm_details(*, summary: dict, ticker: str, event_type: str) -> Prediction:
+def _ask_llm_details(
+    *,
+    summary: dict,
+    ticker: str,
+    event_type: str,
+    knowledge_cutoff: str | None = None,
+) -> Prediction:
     """Ask MODEL for a percentile and the metadata needed by the ledger."""
     api_key_name = _required_api_key(MODEL)
     if not os.environ.get(api_key_name):
@@ -164,7 +257,9 @@ def _ask_llm_details(*, summary: dict, ticker: str, event_type: str) -> Predicti
         summary_text = json.dumps(summary)
     summary_text = summary_text[:8000]
 
-    user_prompt = construct_prompt(summary_text, ticker)
+    user_prompt = construct_prompt(
+        summary_text, ticker, knowledge_cutoff=knowledge_cutoff
+    )
 
     try:
         resp = completion(
@@ -181,8 +276,9 @@ def _ask_llm_details(*, summary: dict, ticker: str, event_type: str) -> Predicti
         )
         content = resp.choices[0].message.content
         result = Prediction.model_validate_json(content)
-        result.predicted_percentile = _normalize_percentile(
-            result.predicted_percentile
+        result.predicted_percentile = _apply_conviction_band(
+            _normalize_percentile(result.predicted_percentile),
+            result.confidence,
         )
         return result
     except Exception as exc:
