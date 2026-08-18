@@ -1,0 +1,11 @@
+{
+  "built_on": "2026-08-17",
+  "universe_size": 6660,
+  "attempted": 6587,
+  "built": 4431,
+  "failed": 2156,
+  "with_forward_estimates": 4038,
+  "estimates_requested": true,
+  "earnings_limit": 8,
+  "market_proxy": "VTI"
+}
