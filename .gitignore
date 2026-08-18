@@ -23,3 +23,6 @@ venv/
 .vscode/
 .idea/
 .DS_Store
+
+# Ignore CON.yaml due to naming constraints
+knowledge/dossier/CON.yaml
