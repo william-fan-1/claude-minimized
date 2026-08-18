@@ -1,0 +1,82 @@
+ticker: HTFL
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-09-19'
+  stock_return_pct: 1.2315
+  vti_return_pct: 0.3759
+  abnormal_return_pct: 0.8556
+  earnings_surprise_pct: -417.44
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-13'
+  stock_return_pct: -13.4303
+  vti_return_pct: -1.7716
+  abnormal_return_pct: -11.6588
+  earnings_surprise_pct: -12.5
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-19'
+  stock_return_pct: 1.649
+  vti_return_pct: -0.1779
+  abnormal_return_pct: 1.8269
+  earnings_surprise_pct: 23.18
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-15'
+  stock_return_pct: -12.1743
+  vti_return_pct: -1.2684
+  abnormal_return_pct: -10.9059
+  earnings_surprise_pct: 8.49
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-14'
+  stock_return_pct: 35.6982
+  vti_return_pct: -0.1171
+  abnormal_return_pct: 35.8153
+  earnings_surprise_pct: 47.85
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 5
+  median_abnormal_return_pct: 0.8556
+  mean_abnormal_return_pct: 3.1866
+  positive_reaction_rate: 0.6
+  median_absolute_reaction_pct: 10.9059
+  beat_observations: 3
+  median_reaction_after_beat_pct: 1.8269
+  miss_observations: 2
+  median_reaction_after_miss_pct: -5.4016
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.1046
+    eps_low: -0.14
+    eps_high: -0.08
+    eps_year_ago: -0.27
+    analysts: 8
+    growth: 0.6126
+    revenue_avg: 65264500
+  next_quarter:
+    eps_avg: -0.0918
+    eps_low: -0.11
+    eps_high: -0.08
+    eps_year_ago: -0.12
+    analysts: 8
+    growth: 0.235
+    revenue_avg: 66790380
+  current_year:
+    eps_avg: -0.4166
+    eps_low: -0.46
+    eps_high: -0.38
+    eps_year_ago: -1.62
+    analysts: 8
+    growth: 0.7429
+    revenue_avg: 248944430
+  eps_revisions_last_30d:
+    up: 1
+    down: 2

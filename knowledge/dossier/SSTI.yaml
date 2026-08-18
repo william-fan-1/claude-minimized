@@ -2,17 +2,9 @@ ticker: SSTI
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-07'
-  stock_return_pct: -0.8236
-  vti_return_pct: -0.7642
-  abnormal_return_pct: -0.0594
-  earnings_surprise_pct: -340.48
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-13'
   stock_return_pct: -7.3676
-  vti_return_pct: -0.0473
+  vti_return_pct: -0.0472
   abnormal_return_pct: -7.3203
   earnings_surprise_pct: -52.78
   surprise_source: Yahoo Finance (via yfinance)
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 2.0294
   earnings_surprise_pct: -59.06
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-14'
+  stock_return_pct: -25.0302
+  vti_return_pct: -0.1171
+  abnormal_return_pct: -24.9131
+  earnings_surprise_pct: -58.7
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -0.7407
-  mean_abnormal_return_pct: 0.0217
+  median_abnormal_return_pct: -4.3712
+  mean_abnormal_return_pct: -3.085
   positive_reaction_rate: 0.375
-  median_absolute_reaction_pct: 9.8325
+  median_absolute_reaction_pct: 13.8463
   beat_observations: 1
   median_reaction_after_beat_pct: -1.422
   miss_observations: 7
-  median_reaction_after_miss_pct: -0.0594
+  median_reaction_after_miss_pct: -7.3203
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.2
+    eps_low: -0.22
+    eps_high: -0.18
+    eps_year_ago: -0.16
+    analysts: 2
+    growth: -0.25
+    revenue_avg: 25022670
+  next_quarter:
+    eps_avg: -0.065
+    eps_low: -0.1
+    eps_high: -0.03
+    eps_year_ago: -0.2
+    analysts: 2
+    growth: 0.675
+    revenue_avg: 26275830
+  current_year:
+    eps_avg: -1.12
+    eps_low: -1.14
+    eps_high: -1.1
+    eps_year_ago: -0.73
+    analysts: 2
+    growth: -0.5342
+    revenue_avg: 99371830
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

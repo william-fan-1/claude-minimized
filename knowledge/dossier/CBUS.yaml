@@ -2,14 +2,6 @@ ticker: CBUS
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-09'
-  stock_return_pct: -5.8981
-  vti_return_pct: 0.4317
-  abnormal_return_pct: -6.3298
-  earnings_surprise_pct: -39.02
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-08'
   stock_return_pct: 19.8864
   vti_return_pct: 0.4673
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -5.8238
   earnings_surprise_pct: -175.0
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-14'
+  stock_return_pct: -6.8421
+  vti_return_pct: -0.1171
+  abnormal_return_pct: -6.725
+  earnings_surprise_pct: -52.63
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -6.0768
-  mean_abnormal_return_pct: -4.6712
+  median_abnormal_return_pct: -6.128
+  mean_abnormal_return_pct: -4.7206
   positive_reaction_rate: 0.125
-  median_absolute_reaction_pct: 6.381
+  median_absolute_reaction_pct: 6.5786
   beat_observations: 1
   median_reaction_after_beat_pct: 19.4191
   miss_observations: 7
-  median_reaction_after_miss_pct: -6.3298
+  median_reaction_after_miss_pct: -6.4322
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.175
+    eps_low: -0.27
+    eps_high: -0.08
+    eps_year_ago: -0.44
+    analysts: 2
+    growth: 0.6023
+    revenue_avg: 1283000
+  next_quarter:
+    eps_avg: -0.155
+    eps_low: -0.25
+    eps_high: -0.06
+    eps_year_ago: -0.4171
+    analysts: 2
+    growth: 0.6284
+    revenue_avg: 1834000
+  current_year:
+    eps_avg: -0.765
+    eps_low: -1.13
+    eps_high: -0.4
+    eps_year_ago: -2.1203
+    analysts: 2
+    growth: 0.6392
+    revenue_avg: 5194670
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

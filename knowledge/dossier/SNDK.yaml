@@ -1,0 +1,90 @@
+ticker: SNDK
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-08'
+  stock_return_pct: 4.8327
+  vti_return_pct: 0.7859
+  abnormal_return_pct: 4.0468
+  earnings_surprise_pct: 22.38
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-15'
+  stock_return_pct: -4.5844
+  vti_return_pct: -0.227
+  abnormal_return_pct: -4.3574
+  earnings_surprise_pct: 771.13
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-07'
+  stock_return_pct: 15.3065
+  vti_return_pct: 0.2186
+  abnormal_return_pct: 15.0879
+  earnings_surprise_pct: 36.89
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-01-30'
+  stock_return_pct: 6.8515
+  vti_return_pct: -0.5025
+  abnormal_return_pct: 7.354
+  earnings_surprise_pct: 74.97
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-01'
+  stock_return_pct: 8.2525
+  vti_return_pct: 0.3134
+  abnormal_return_pct: 7.9391
+  earnings_surprise_pct: 59.67
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-06'
+  stock_return_pct: -6.8064
+  vti_return_pct: -0.1528
+  abnormal_return_pct: -6.6536
+  earnings_surprise_pct: 13.72
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 6
+  median_abnormal_return_pct: 5.7004
+  mean_abnormal_return_pct: 3.9028
+  positive_reaction_rate: 0.6667
+  median_absolute_reaction_pct: 7.0038
+  beat_observations: 6
+  median_reaction_after_beat_pct: 5.7004
+  miss_observations: 0
+  median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 46.1258
+    eps_low: 44.05
+    eps_high: 49.8
+    eps_year_ago: 1.22
+    analysts: 16
+    growth: 36.808
+    revenue_avg: 10684691560
+  next_quarter:
+    eps_avg: 52.9347
+    eps_low: 48.4
+    eps_high: 59.94
+    eps_year_ago: 6.2
+    analysts: 16
+    growth: 7.5379
+    revenue_avg: 12278802570
+  current_year:
+    eps_avg: 214.7267
+    eps_low: 186.97
+    eps_high: 249.98
+    eps_year_ago: 70.88
+    analysts: 20
+    growth: 2.0294
+    revenue_avg: 49086548320
+  eps_revisions_last_30d:
+    up: 10
+    down: 3

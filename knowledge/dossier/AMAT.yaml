@@ -2,25 +2,17 @@ ticker: AMAT
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-16'
-  stock_return_pct: -1.8553
-  vti_return_pct: 0.2385
-  abnormal_return_pct: -2.0938
-  earnings_surprise_pct: 4.68
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-15'
   stock_return_pct: -9.2043
-  vti_return_pct: -1.2686
-  abnormal_return_pct: -7.9357
+  vti_return_pct: -1.2685
+  abnormal_return_pct: -7.9358
   earnings_surprise_pct: 5.71
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
   timing: after_market_close
   reaction_date: '2025-02-14'
   stock_return_pct: -8.1782
-  vti_return_pct: -0.0132
+  vti_return_pct: -0.0133
   abnormal_return_pct: -8.165
   earnings_surprise_pct: 3.67
   surprise_source: Yahoo Finance (via yfinance)
@@ -29,7 +21,7 @@ prior_reactions:
   reaction_date: '2025-05-16'
   stock_return_pct: -5.2532
   vti_return_pct: 0.6848
-  abnormal_return_pct: -5.9381
+  abnormal_return_pct: -5.938
   earnings_surprise_pct: 3.45
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 0.3741
   earnings_surprise_pct: 6.5
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-14'
+  stock_return_pct: -5.1184
+  vti_return_pct: -0.1171
+  abnormal_return_pct: -5.0013
+  earnings_surprise_pct: 3.11
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -4.016
-  mean_abnormal_return_pct: -3.5566
+  median_abnormal_return_pct: -5.4696
+  mean_abnormal_return_pct: -3.92
   positive_reaction_rate: 0.375
-  median_absolute_reaction_pct: 6.9117
+  median_absolute_reaction_pct: 6.9116
   beat_observations: 8
-  median_reaction_after_beat_pct: -4.016
+  median_reaction_after_beat_pct: -5.4696
   miss_observations: 0
   median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 4.0607
+    eps_low: 4.02
+    eps_high: 4.25
+    eps_year_ago: 2.17
+    analysts: 24
+    growth: 0.8713
+    revenue_avg: 10292645750
+  next_quarter:
+    eps_avg: 4.1971
+    eps_low: 3.71
+    eps_high: 4.769
+    eps_year_ago: 2.38
+    analysts: 26
+    growth: 0.7635
+    revenue_avg: 10725212250
+  current_year:
+    eps_avg: 12.7897
+    eps_low: 12.53
+    eps_high: 12.98
+    eps_year_ago: 9.42
+    analysts: 26
+    growth: 0.3577
+    revenue_avg: 34145177490
+  eps_revisions_last_30d:
+    up: 5
+    down: 0

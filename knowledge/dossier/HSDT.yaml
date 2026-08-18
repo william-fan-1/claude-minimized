@@ -2,14 +2,6 @@ ticker: HSDT
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-05-14'
-  stock_return_pct: -7.5282
-  vti_return_pct: 0.488
-  abnormal_return_pct: -8.0162
-  earnings_surprise_pct: 38.89
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-08-13'
   stock_return_pct: -4.5512
   vti_return_pct: 1.6632
@@ -20,7 +12,7 @@ prior_reactions:
   timing: after_market_close
   reaction_date: '2024-11-13'
   stock_return_pct: 1.9856
-  vti_return_pct: -0.0473
+  vti_return_pct: -0.0472
   abnormal_return_pct: 2.0328
   earnings_surprise_pct: 3.21
   surprise_source: Yahoo Finance (via yfinance)
@@ -64,13 +56,45 @@ prior_reactions:
   abnormal_return_pct: -5.1126
   earnings_surprise_pct: -54.76
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: -37.5
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
-  observations: 8
-  median_abnormal_return_pct: -3.4273
-  mean_abnormal_return_pct: -1.1066
-  positive_reaction_rate: 0.375
-  median_absolute_reaction_pct: 5.6635
-  beat_observations: 5
-  median_reaction_after_beat_pct: 0.3931
+  observations: 7
+  median_abnormal_return_pct: -1.7421
+  mean_abnormal_return_pct: -0.1196
+  positive_reaction_rate: 0.4286
+  median_absolute_reaction_pct: 5.1126
+  beat_observations: 4
+  median_reaction_after_beat_pct: 1.2129
   miss_observations: 3
   median_reaction_after_miss_pct: -5.1126
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.015
+    eps_low: -0.02
+    eps_high: -0.01
+    analysts: 2
+    revenue_avg: 3500000
+  next_quarter:
+    eps_avg: -0.015
+    eps_low: -0.02
+    eps_high: -0.01
+    analysts: 2
+    revenue_avg: 3550000
+  current_year:
+    eps_avg: -0.72
+    eps_low: -1.35
+    eps_high: -0.09
+    analysts: 2
+    revenue_avg: 14150000
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

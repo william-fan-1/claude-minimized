@@ -1,0 +1,82 @@
+ticker: JBS
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-14'
+  stock_return_pct: -4.5361
+  vti_return_pct: -0.1479
+  abnormal_return_pct: -4.3881
+  earnings_surprise_pct: -41.34
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-14'
+  stock_return_pct: 0.9132
+  vti_return_pct: -0.0152
+  abnormal_return_pct: 0.9284
+  earnings_surprise_pct: 4.64
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-26'
+  stock_return_pct: 5.6508
+  vti_return_pct: -1.7223
+  abnormal_return_pct: 7.3731
+  earnings_surprise_pct: 36.44
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: -2.9083
+  vti_return_pct: -0.2568
+  abnormal_return_pct: -2.6515
+  earnings_surprise_pct: -38.47
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: -2.9083
+  vti_return_pct: -0.2568
+  abnormal_return_pct: -2.6515
+  earnings_surprise_pct: null
+  surprise_source: null
+reaction_statistics:
+  observations: 5
+  median_abnormal_return_pct: -2.6515
+  mean_abnormal_return_pct: -0.2779
+  positive_reaction_rate: 0.4
+  median_absolute_reaction_pct: 2.6515
+  beat_observations: 2
+  median_reaction_after_beat_pct: 4.1508
+  miss_observations: 2
+  median_reaction_after_miss_pct: -3.5198
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 1.6585
+    eps_low: 1.39
+    eps_high: 1.786
+    eps_year_ago: 1.5409
+    analysts: 4
+    growth: 0.0763
+    revenue_avg: 117144925250
+  next_quarter:
+    eps_avg: 1.8986
+    eps_low: 1.499
+    eps_high: 2.208
+    eps_year_ago: 3.0682
+    analysts: 5
+    growth: -0.3812
+    revenue_avg: 124386079670
+  current_year:
+    eps_avg: 5.5043
+    eps_low: 3.618
+    eps_high: 6.531
+    eps_year_ago: 11.3775
+    analysts: 6
+    growth: -0.5162
+    revenue_avg: 472204246620
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

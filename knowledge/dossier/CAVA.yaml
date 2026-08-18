@@ -2,17 +2,9 @@ ticker: CAVA
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-23'
-  stock_return_pct: 19.6313
-  vti_return_pct: 1.2659
-  abnormal_return_pct: 18.3654
-  earnings_surprise_pct: 37.01
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-13'
   stock_return_pct: 1.5652
-  vti_return_pct: -0.0473
+  vti_return_pct: -0.0472
   abnormal_return_pct: 1.6124
   earnings_surprise_pct: 33.36
   surprise_source: Yahoo Finance (via yfinance)
@@ -44,7 +36,7 @@ prior_reactions:
   timing: after_market_close
   reaction_date: '2025-11-05'
   stock_return_pct: -2.5725
-  vti_return_pct: 0.428
+  vti_return_pct: 0.4281
   abnormal_return_pct: -3.0006
   earnings_surprise_pct: -7.31
   surprise_source: Yahoo Finance (via yfinance)
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 1.938
   earnings_surprise_pct: 16.2
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-12'
+  stock_return_pct: 14.2411
+  vti_return_pct: 0.31
+  abnormal_return_pct: 13.9311
+  earnings_surprise_pct: 2.88
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
   median_abnormal_return_pct: 0.6179
-  mean_abnormal_return_pct: 3.007
+  mean_abnormal_return_pct: 2.4527
   positive_reaction_rate: 0.5
   median_absolute_reaction_pct: 2.9784
   beat_observations: 6
   median_reaction_after_beat_pct: 1.7752
   miss_observations: 2
   median_reaction_after_miss_pct: -1.6885
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.1847
+    eps_low: 0.16
+    eps_high: 0.21
+    eps_year_ago: 0.16
+    analysts: 23
+    growth: 0.1543
+    revenue_avg: 360090410
+  next_quarter:
+    eps_avg: 0.1217
+    eps_low: 0.0895
+    eps_high: 0.17
+    eps_year_ago: 0.04
+    analysts: 23
+    growth: 2.0415
+    revenue_avg: 338296480
+  current_year:
+    eps_avg: 0.5454
+    eps_low: 0.51
+    eps_high: 0.59
+    eps_year_ago: 0.54
+    analysts: 25
+    growth: 0.0101
+    revenue_avg: 1504989930
+  eps_revisions_last_30d:
+    up: 1
+    down: 3

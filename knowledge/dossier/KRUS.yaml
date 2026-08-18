@@ -1,0 +1,106 @@
+ticker: KRUS
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-11-07'
+  stock_return_pct: -8.1079
+  vti_return_pct: 0.699
+  abnormal_return_pct: -8.8068
+  earnings_surprise_pct: 8590.57
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-01-08'
+  stock_return_pct: -11.8321
+  vti_return_pct: 0.0926
+  abnormal_return_pct: -11.9247
+  earnings_surprise_pct: 60.78
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-04-09'
+  stock_return_pct: 31.6208
+  vti_return_pct: 10.1457
+  abnormal_return_pct: 21.4752
+  earnings_surprise_pct: 1.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-07-09'
+  stock_return_pct: -11.8691
+  vti_return_pct: 0.6283
+  abnormal_return_pct: -12.4974
+  earnings_surprise_pct: 503.23
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-07'
+  stock_return_pct: -11.3101
+  vti_return_pct: 0.2186
+  abnormal_return_pct: -11.5287
+  earnings_surprise_pct: 63.43
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-01-08'
+  stock_return_pct: 16.6966
+  vti_return_pct: 0.0265
+  abnormal_return_pct: 16.6701
+  earnings_surprise_pct: -45.61
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-04-08'
+  stock_return_pct: -17.7833
+  vti_return_pct: 2.5413
+  abnormal_return_pct: -20.3245
+  earnings_surprise_pct: 80.29
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-07-08'
+  stock_return_pct: 0.7939
+  vti_return_pct: -0.368
+  abnormal_return_pct: 1.1619
+  earnings_surprise_pct: 237.87
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: -10.1678
+  mean_abnormal_return_pct: -3.2219
+  positive_reaction_rate: 0.375
+  median_absolute_reaction_pct: 12.2111
+  beat_observations: 7
+  median_reaction_after_beat_pct: -11.5287
+  miss_observations: 1
+  median_reaction_after_miss_pct: 16.6701
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.1993
+    eps_low: 0.15
+    eps_high: 0.26
+    eps_year_ago: 0.2
+    analysts: 7
+    growth: -0.0037
+    revenue_avg: 91306010
+  next_quarter:
+    eps_avg: -0.1528
+    eps_low: -0.25
+    eps_high: -0.07
+    eps_year_ago: -0.23
+    analysts: 5
+    growth: 0.3356
+    revenue_avg: 87121880
+  current_year:
+    eps_avg: -0.0482
+    eps_low: -0.08
+    eps_high: 0.0
+    eps_year_ago: 0.03
+    analysts: 6
+    growth: -2.608
+    revenue_avg: 330704010
+  eps_revisions_last_30d:
+    up: 7
+    down: 0

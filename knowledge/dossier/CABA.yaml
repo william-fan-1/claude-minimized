@@ -2,14 +2,6 @@ ticker: CABA
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-08-08'
-  stock_return_pct: -34.3699
-  vti_return_pct: 2.3417
-  abnormal_return_pct: -36.7116
-  earnings_surprise_pct: 2.0
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2024-11-14'
   stock_return_pct: -5.7357
   vti_return_pct: -0.7393
@@ -29,7 +21,7 @@ prior_reactions:
   reaction_date: '2025-05-15'
   stock_return_pct: 39.2308
   vti_return_pct: 0.4077
-  abnormal_return_pct: 38.823
+  abnormal_return_pct: 38.8231
   earnings_surprise_pct: -7.4
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -0.1805
   earnings_surprise_pct: -0.47
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-13'
+  stock_return_pct: -4.9123
+  vti_return_pct: 0.6469
+  abnormal_return_pct: -5.5592
+  earnings_surprise_pct: 0.76
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
   median_abnormal_return_pct: -5.14
-  mean_abnormal_return_pct: -3.2026
+  mean_abnormal_return_pct: 0.6914
   positive_reaction_rate: 0.25
-  median_absolute_reaction_pct: 5.7263
+  median_absolute_reaction_pct: 5.4214
   beat_observations: 3
-  median_reaction_after_beat_pct: -6.1691
+  median_reaction_after_beat_pct: -5.5592
   miss_observations: 5
   median_reaction_after_miss_pct: -0.1805
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.3059
+    eps_low: -0.34
+    eps_high: -0.24
+    eps_year_ago: -0.44
+    analysts: 5
+    growth: 0.3047
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: -0.3111
+    eps_low: -0.35
+    eps_high: -0.24
+    eps_year_ago: -0.4
+    analysts: 5
+    growth: 0.2223
+    revenue_avg: 0
+  current_year:
+    eps_avg: -1.3558
+    eps_low: -1.5492
+    eps_high: -1.15
+    eps_year_ago: -2.1
+    analysts: 5
+    growth: 0.3544
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

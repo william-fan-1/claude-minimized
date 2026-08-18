@@ -1,0 +1,85 @@
+ticker: ENIC
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2017-05-05'
+  stock_return_pct: 0.5566
+  vti_return_pct: 0.4971
+  abnormal_return_pct: 0.0595
+  earnings_surprise_pct: 64.17
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: unknown
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: -28.04
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2017-11-06'
+  stock_return_pct: 0.1724
+  vti_return_pct: 0.1882
+  abnormal_return_pct: -0.0158
+  earnings_surprise_pct: 32.28
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2018-02-28'
+  stock_return_pct: 0.4926
+  vti_return_pct: -1.1028
+  abnormal_return_pct: 1.5955
+  earnings_surprise_pct: 132.04
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: unknown
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: 225.59
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2018-07-27'
+  stock_return_pct: -2.0834
+  vti_return_pct: -0.7992
+  abnormal_return_pct: -1.2841
+  earnings_surprise_pct: -54.19
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2018-10-31'
+  stock_return_pct: 0.7026
+  vti_return_pct: 1.0428
+  abnormal_return_pct: -0.3402
+  earnings_surprise_pct: 44.45
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2021-11-01'
+  stock_return_pct: 0.4608
+  vti_return_pct: 0.4981
+  abnormal_return_pct: -0.0373
+  earnings_surprise_pct: -132.49
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 6
+  median_abnormal_return_pct: -0.0266
+  mean_abnormal_return_pct: -0.0037
+  positive_reaction_rate: 0.3333
+  median_absolute_reaction_pct: 0.1998
+  beat_observations: 4
+  median_reaction_after_beat_pct: 0.0218
+  miss_observations: 2
+  median_reaction_after_miss_pct: -0.6607
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    revenue_avg: 0
+  next_quarter:
+    revenue_avg: 0
+  current_year:
+    revenue_avg: 4292834719999

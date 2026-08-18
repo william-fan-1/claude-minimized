@@ -2,14 +2,6 @@ ticker: AVAH
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-08-08'
-  stock_return_pct: 32.2157
-  vti_return_pct: 2.3417
-  abnormal_return_pct: 29.8741
-  earnings_surprise_pct: 148.61
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2024-11-07'
   stock_return_pct: 16.2162
   vti_return_pct: 0.699
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 9.159
   earnings_surprise_pct: 41.92
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-13'
+  stock_return_pct: 24.7514
+  vti_return_pct: 0.6469
+  abnormal_return_pct: 24.1045
+  earnings_surprise_pct: 31.59
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
   median_abnormal_return_pct: 14.4196
-  mean_abnormal_return_pct: 17.8616
+  mean_abnormal_return_pct: 17.1405
   positive_reaction_rate: 0.75
   median_absolute_reaction_pct: 14.4196
   beat_observations: 8
   median_reaction_after_beat_pct: 14.4196
   miss_observations: 0
   median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.2032
+    eps_low: 0.189
+    eps_high: 0.22
+    eps_year_ago: 0.15
+    analysts: 7
+    growth: 0.3547
+    revenue_avg: 677913600
+  next_quarter:
+    eps_avg: 0.2119
+    eps_low: 0.2
+    eps_high: 0.23
+    eps_year_ago: 0.17
+    analysts: 7
+    growth: 0.2462
+    revenue_avg: 693211160
+  current_year:
+    eps_avg: 0.8213
+    eps_low: 0.798
+    eps_high: 0.85
+    eps_year_ago: 0.6
+    analysts: 7
+    growth: 0.3689
+    revenue_avg: 2685476160
+  eps_revisions_last_30d:
+    up: 3
+    down: 0

@@ -2,14 +2,6 @@ ticker: WBTN
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-09'
-  stock_return_pct: -38.1968
-  vti_return_pct: 0.4317
-  abnormal_return_pct: -38.6285
-  earnings_surprise_pct: 137.17
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-08'
   stock_return_pct: -7.6726
   vti_return_pct: 0.4673
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -8.4091
   earnings_surprise_pct: 566.67
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: -6.8254
+  vti_return_pct: -0.2568
+  abnormal_return_pct: -6.5686
+  earnings_surprise_pct: 700.0
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -10.2835
-  mean_abnormal_return_pct: -4.5862
+  median_abnormal_return_pct: -9.2367
+  mean_abnormal_return_pct: -0.5787
   positive_reaction_rate: 0.125
-  median_absolute_reaction_pct: 14.4213
+  median_absolute_reaction_pct: 10.2835
   beat_observations: 8
-  median_reaction_after_beat_pct: -10.2835
+  median_reaction_after_beat_pct: -9.2367
   miss_observations: 0
   median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-17'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.005
+    eps_low: 0.0
+    eps_high: 0.01
+    eps_year_ago: 0.04
+    analysts: 2
+    growth: -0.875
+    revenue_avg: 339456020
+  next_quarter:
+    eps_avg: 0.02
+    eps_low: 0.01
+    eps_high: 0.03
+    eps_year_ago: 0.0
+    analysts: 2
+    growth: 0.0
+    revenue_avg: 351118880
+  current_year:
+    eps_avg: 0.075
+    eps_low: 0.01
+    eps_high: 0.14
+    eps_year_ago: 0.15
+    analysts: 2
+    growth: -0.5
+    revenue_avg: 1375569900
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

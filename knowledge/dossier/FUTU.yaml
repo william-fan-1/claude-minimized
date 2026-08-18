@@ -1,0 +1,106 @@
+ticker: FUTU
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-08-20'
+  stock_return_pct: -4.4946
+  vti_return_pct: -0.243
+  abnormal_return_pct: -4.2516
+  earnings_surprise_pct: 12.6
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-11-19'
+  stock_return_pct: -6.0672
+  vti_return_pct: 0.4597
+  abnormal_return_pct: -6.5269
+  earnings_surprise_pct: 2.38
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-03-13'
+  stock_return_pct: -3.768
+  vti_return_pct: -1.4034
+  abnormal_return_pct: -2.3646
+  earnings_surprise_pct: 4.7
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-29'
+  stock_return_pct: -0.3249
+  vti_return_pct: 0.3216
+  abnormal_return_pct: -0.6465
+  earnings_surprise_pct: 30.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-08-20'
+  stock_return_pct: 6.0171
+  vti_return_pct: -0.2638
+  abnormal_return_pct: 6.2809
+  earnings_surprise_pct: 13.51
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-11-18'
+  stock_return_pct: -0.4924
+  vti_return_pct: -0.677
+  abnormal_return_pct: 0.1846
+  earnings_surprise_pct: 14.23
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-03-12'
+  stock_return_pct: -6.309
+  vti_return_pct: -1.5964
+  abnormal_return_pct: -4.7125
+  earnings_surprise_pct: 2.49
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-05-28'
+  stock_return_pct: -4.8176
+  vti_return_pct: 0.6227
+  abnormal_return_pct: -5.4403
+  earnings_surprise_pct: -72.46
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: -3.3081
+  mean_abnormal_return_pct: -2.1846
+  positive_reaction_rate: 0.25
+  median_absolute_reaction_pct: 4.4821
+  beat_observations: 7
+  median_reaction_after_beat_pct: -2.3646
+  miss_observations: 1
+  median_reaction_after_miss_pct: -5.4403
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 25.851
+    eps_low: 25.851
+    eps_high: 25.851
+    eps_year_ago: 18.8586
+    analysts: 1
+    growth: 0.3708
+    revenue_avg: 5912448000
+  next_quarter:
+    eps_avg: 30.237
+    eps_low: 30.237
+    eps_high: 30.237
+    eps_year_ago: 23.399
+    analysts: 1
+    growth: 0.2922
+    revenue_avg: 6055123000
+  current_year:
+    eps_avg: 71.1367
+    eps_low: 61.68
+    eps_high: 92.71
+    eps_year_ago: 82.4142
+    analysts: 9
+    growth: -0.1368
+    revenue_avg: 23537140400
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

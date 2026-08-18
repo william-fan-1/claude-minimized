@@ -2,14 +2,6 @@ ticker: IMXI
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-08-07'
-  stock_return_pct: -20.1642
-  vti_return_pct: -0.7642
-  abnormal_return_pct: -19.4
-  earnings_surprise_pct: -3.01
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2024-11-08'
   stock_return_pct: 11.8919
   vti_return_pct: 0.4673
@@ -37,7 +29,7 @@ prior_reactions:
   reaction_date: '2025-08-11'
   stock_return_pct: 60.5603
   vti_return_pct: -0.23
-  abnormal_return_pct: 60.7903
+  abnormal_return_pct: 60.7904
   earnings_surprise_pct: 1.7
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -0.5875
   earnings_surprise_pct: -63.25
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: -1.6074
+  vti_return_pct: -0.2568
+  abnormal_return_pct: -1.3506
+  earnings_surprise_pct: -34.27
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
   median_abnormal_return_pct: -0.6951
-  mean_abnormal_return_pct: 2.2652
+  mean_abnormal_return_pct: 4.5214
   positive_reaction_rate: 0.25
-  median_absolute_reaction_pct: 13.7081
+  median_absolute_reaction_pct: 6.3876
   beat_observations: 2
   median_reaction_after_beat_pct: 36.1075
   miss_observations: 6
-  median_reaction_after_miss_pct: -8.3972
+  median_reaction_after_miss_pct: -1.0766
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.2978
+    eps_low: 0.2
+    eps_high: 0.41
+    eps_year_ago: 0.38
+    analysts: 3
+    growth: -0.2164
+    revenue_avg: 146552170
+  next_quarter:
+    eps_avg: 0.3005
+    eps_low: 0.25
+    eps_high: 0.37
+    eps_year_ago: 0.42
+    analysts: 3
+    growth: -0.2846
+    revenue_avg: 142950500
+  current_year:
+    eps_avg: 1.1604
+    eps_low: 0.81
+    eps_high: 1.58
+    eps_year_ago: 1.66
+    analysts: 4
+    growth: -0.301
+    revenue_avg: 555047250
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

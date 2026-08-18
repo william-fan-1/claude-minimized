@@ -1,0 +1,44 @@
+ticker: LIME
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-05'
+  stock_return_pct: 14.5431
+  vti_return_pct: -0.3072
+  abnormal_return_pct: 14.8503
+  earnings_surprise_pct: 145.8
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 1
+  median_abnormal_return_pct: 14.8503
+  mean_abnormal_return_pct: 14.8503
+  positive_reaction_rate: 1.0
+  median_absolute_reaction_pct: 14.8503
+  beat_observations: 1
+  median_reaction_after_beat_pct: 14.8503
+  miss_observations: 0
+  median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.4641
+    eps_low: 0.2581
+    eps_high: 0.67
+    analysts: 2
+    revenue_avg: 351620570
+  next_quarter:
+    eps_avg: 0.0198
+    eps_low: 0.0095
+    eps_high: 0.03
+    analysts: 2
+    revenue_avg: 244202290
+  current_year:
+    eps_avg: 4.0851
+    eps_low: 3.5002
+    eps_high: 4.67
+    analysts: 2
+    revenue_avg: 1068134130
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

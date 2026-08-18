@@ -1,0 +1,90 @@
+ticker: CBIO
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-06-20'
+  stock_return_pct: 2.5992
+  vti_return_pct: -0.2312
+  abnormal_return_pct: 2.8304
+  earnings_surprise_pct: -405.22
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-07-31'
+  stock_return_pct: -1.4286
+  vti_return_pct: -0.4356
+  abnormal_return_pct: -0.993
+  earnings_surprise_pct: -1.14
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-11-06'
+  stock_return_pct: 5.3902
+  vti_return_pct: -1.1376
+  abnormal_return_pct: 6.5278
+  earnings_surprise_pct: 1.26
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-02-26'
+  stock_return_pct: -1.1209
+  vti_return_pct: -0.392
+  abnormal_return_pct: -0.7289
+  earnings_surprise_pct: -74.47
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-04-30'
+  stock_return_pct: 6.829
+  vti_return_pct: 1.1336
+  abnormal_return_pct: 5.6954
+  earnings_surprise_pct: 25.98
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-07-30'
+  stock_return_pct: 1.6926
+  vti_return_pct: 1.6231
+  abnormal_return_pct: 0.0695
+  earnings_surprise_pct: 2.83
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 6
+  median_abnormal_return_pct: 1.45
+  mean_abnormal_return_pct: 2.2335
+  positive_reaction_rate: 0.6667
+  median_absolute_reaction_pct: 1.9117
+  beat_observations: 3
+  median_reaction_after_beat_pct: 5.6954
+  miss_observations: 3
+  median_reaction_after_miss_pct: -0.7289
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.57
+    eps_low: -0.62
+    eps_high: -0.53
+    eps_year_ago: -1.3676
+    analysts: 3
+    growth: 0.5832
+    revenue_avg: 357140
+  next_quarter:
+    eps_avg: -0.6067
+    eps_low: -0.63
+    eps_high: -0.57
+    eps_year_ago: -4.92
+    analysts: 3
+    growth: 0.8767
+    revenue_avg: 357140
+  current_year:
+    eps_avg: -2.3533
+    eps_low: -2.36
+    eps_high: -2.35
+    eps_year_ago: -12.81
+    analysts: 3
+    growth: 0.8163
+    revenue_avg: 1725430
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

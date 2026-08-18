@@ -2,14 +2,6 @@ ticker: PAL
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-08-09'
-  stock_return_pct: -1.8819
-  vti_return_pct: 0.4317
-  abnormal_return_pct: -2.3135
-  earnings_surprise_pct: 37.71
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2024-11-08'
   stock_return_pct: 8.4599
   vti_return_pct: 0.4673
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -19.6786
   earnings_surprise_pct: -536.8
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: -29.558
+  vti_return_pct: -0.2568
+  abnormal_return_pct: -29.3012
+  earnings_surprise_pct: -146.83
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -3.4764
-  mean_abnormal_return_pct: 0.3691
+  median_abnormal_return_pct: -5.1757
+  mean_abnormal_return_pct: -3.0043
   positive_reaction_rate: 0.375
-  median_absolute_reaction_pct: 13.8356
-  beat_observations: 4
-  median_reaction_after_beat_pct: 2.8396
-  miss_observations: 4
-  median_reaction_after_miss_pct: -12.6953
+  median_absolute_reaction_pct: 21.2043
+  beat_observations: 3
+  median_reaction_after_beat_pct: 7.9926
+  miss_observations: 5
+  median_reaction_after_miss_pct: -19.6786
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.06
+    eps_low: 0.05
+    eps_high: 0.08
+    eps_year_ago: 0.0537
+    analysts: 4
+    growth: 0.1173
+    revenue_avg: 108525000
+  next_quarter:
+    eps_avg: 0.115
+    eps_low: 0.08
+    eps_high: 0.16
+    eps_year_ago: 0.0011
+    analysts: 4
+    growth: 103.5455
+    revenue_avg: 204075000
+  current_year:
+    eps_avg: 0.0575
+    eps_low: -0.02
+    eps_high: 0.13
+    eps_year_ago: 0.1215
+    analysts: 4
+    growth: -0.5267
+    revenue_avg: 564397500
+  eps_revisions_last_30d:
+    up: 0
+    down: 4

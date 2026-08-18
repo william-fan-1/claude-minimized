@@ -2,14 +2,6 @@ ticker: UPLD
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-02'
-  stock_return_pct: 8.4599
-  vti_return_pct: -2.0127
-  abnormal_return_pct: 10.4725
-  earnings_surprise_pct: 42.5
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-08'
   stock_return_pct: 15.9193
   vti_return_pct: 0.4673
@@ -36,7 +28,7 @@ prior_reactions:
   timing: before_market_open
   reaction_date: '2025-07-31'
   stock_return_pct: -2.381
-  vti_return_pct: -0.4355
+  vti_return_pct: -0.4356
   abnormal_return_pct: -1.9454
   earnings_surprise_pct: -18.18
   surprise_source: Yahoo Finance (via yfinance)
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -2.7134
   earnings_surprise_pct: 23.08
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-14'
+  stock_return_pct: -12.2951
+  vti_return_pct: -0.1171
+  abnormal_return_pct: -12.178
+  earnings_surprise_pct: 17.88
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: 2.9764
-  mean_abnormal_return_pct: 3.8758
-  positive_reaction_rate: 0.5
-  median_absolute_reaction_pct: 9.1854
+  median_abnormal_return_pct: -2.3294
+  mean_abnormal_return_pct: 1.0445
+  positive_reaction_rate: 0.375
+  median_absolute_reaction_pct: 9.7561
   beat_observations: 7
-  median_reaction_after_beat_pct: 7.8983
+  median_reaction_after_beat_pct: -2.7134
   miss_observations: 1
   median_reaction_after_miss_pct: -1.9454
+forward_estimates:
+  as_of: '2026-08-17'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 1.6
+    eps_low: 1.6
+    eps_high: 1.6
+    eps_year_ago: 3.0
+    analysts: 1
+    growth: -0.4667
+    revenue_avg: 47238000
+  next_quarter:
+    eps_avg: 1.68
+    eps_low: 1.68
+    eps_high: 1.68
+    eps_year_ago: 2.4
+    analysts: 1
+    growth: -0.3
+    revenue_avg: 48034000
+  current_year:
+    eps_avg: 6.67
+    eps_low: 6.67
+    eps_high: 6.67
+    eps_year_ago: 9.2
+    analysts: 1
+    growth: -0.275
+    revenue_avg: 193103000
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

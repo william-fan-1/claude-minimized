@@ -1,0 +1,36 @@
+ticker: TGL
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2023-09-29'
+  stock_return_pct: 8.9362
+  vti_return_pct: -0.291
+  abnormal_return_pct: 9.2272
+  earnings_surprise_pct: -6.25
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2023-11-15'
+  stock_return_pct: -6.2963
+  vti_return_pct: 0.2476
+  abnormal_return_pct: -6.5439
+  earnings_surprise_pct: 15.38
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-02-15'
+  stock_return_pct: -45.283
+  vti_return_pct: 0.7706
+  abnormal_return_pct: -46.0536
+  earnings_surprise_pct: 62.5
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 3
+  median_abnormal_return_pct: -6.5439
+  mean_abnormal_return_pct: -14.4568
+  positive_reaction_rate: 0.3333
+  median_absolute_reaction_pct: 9.2272
+  beat_observations: 2
+  median_reaction_after_beat_pct: -26.2988
+  miss_observations: 1
+  median_reaction_after_miss_pct: 9.2272

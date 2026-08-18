@@ -1,0 +1,76 @@
+ticker: DFSC
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2022-03-01'
+  stock_return_pct: 9.6939
+  vti_return_pct: -1.5599
+  abnormal_return_pct: 11.2538
+  earnings_surprise_pct: -75.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2022-05-31'
+  stock_return_pct: -1.5209
+  vti_return_pct: -0.8218
+  abnormal_return_pct: -0.6991
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2022-08-12'
+  stock_return_pct: 1.8072
+  vti_return_pct: 1.7323
+  abnormal_return_pct: 0.0749
+  earnings_surprise_pct: -25.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2023-01-30'
+  stock_return_pct: -3.7801
+  vti_return_pct: -1.3386
+  abnormal_return_pct: -2.4414
+  earnings_surprise_pct: -55.63
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2023-02-15'
+  stock_return_pct: -0.7037
+  vti_return_pct: 0.4481
+  abnormal_return_pct: -1.1518
+  earnings_surprise_pct: 34.76
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2023-08-14'
+  stock_return_pct: 2.7961
+  vti_return_pct: 0.4959
+  abnormal_return_pct: 2.3001
+  earnings_surprise_pct: -9.46
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-01-17'
+  stock_return_pct: 2.8169
+  vti_return_pct: -0.6017
+  abnormal_return_pct: 3.4186
+  earnings_surprise_pct: 96.67
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: unknown
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: 88.71
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 7
+  median_abnormal_return_pct: 0.0749
+  mean_abnormal_return_pct: 1.8222
+  positive_reaction_rate: 0.5714
+  median_absolute_reaction_pct: 2.3001
+  beat_observations: 2
+  median_reaction_after_beat_pct: 1.1334
+  miss_observations: 4
+  median_reaction_after_miss_pct: 1.1875

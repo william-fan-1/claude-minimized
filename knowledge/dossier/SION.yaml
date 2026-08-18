@@ -1,0 +1,98 @@
+ticker: SION
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-03-20'
+  stock_return_pct: 0.0
+  vti_return_pct: -0.2398
+  abnormal_return_pct: 0.2398
+  earnings_surprise_pct: -26.12
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-05-12'
+  stock_return_pct: 4.7078
+  vti_return_pct: 3.3457
+  abnormal_return_pct: 1.3621
+  earnings_surprise_pct: -37.78
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-08-11'
+  stock_return_pct: 13.356
+  vti_return_pct: -0.23
+  abnormal_return_pct: 13.586
+  earnings_surprise_pct: 9.56
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-11-05'
+  stock_return_pct: -1.5713
+  vti_return_pct: 0.4281
+  abnormal_return_pct: -1.9993
+  earnings_surprise_pct: 3.16
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-03-02'
+  stock_return_pct: -7.1702
+  vti_return_pct: 0.1033
+  abnormal_return_pct: -7.2735
+  earnings_surprise_pct: 14.02
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-05-12'
+  stock_return_pct: -10.9032
+  vti_return_pct: -0.231
+  abnormal_return_pct: -10.6722
+  earnings_surprise_pct: -19.11
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-06'
+  stock_return_pct: 4.7951
+  vti_return_pct: -0.1528
+  abnormal_return_pct: 4.9479
+  earnings_surprise_pct: -1.99
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 7
+  median_abnormal_return_pct: 0.2398
+  mean_abnormal_return_pct: 0.0273
+  positive_reaction_rate: 0.5714
+  median_absolute_reaction_pct: 4.9479
+  beat_observations: 3
+  median_reaction_after_beat_pct: -1.9993
+  miss_observations: 4
+  median_reaction_after_miss_pct: 0.801
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.6737
+    eps_low: -0.86
+    eps_high: -0.56
+    eps_year_ago: -0.46
+    analysts: 8
+    growth: -0.4647
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: -0.6225
+    eps_low: -1.06
+    eps_high: -0.45
+    eps_year_ago: -0.46
+    analysts: 8
+    growth: -0.3533
+    revenue_avg: 0
+  current_year:
+    eps_avg: -2.5644
+    eps_low: -3.18
+    eps_high: -2.32
+    eps_year_ago: -1.88
+    analysts: 9
+    growth: -0.3641
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 1
+    down: 3

@@ -2,14 +2,6 @@ ticker: MDAI
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-05-08'
-  stock_return_pct: 0.5814
-  vti_return_pct: -0.0702
-  abnormal_return_pct: 0.6516
-  earnings_surprise_pct: 42.31
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-08-13'
   stock_return_pct: -9.6386
   vti_return_pct: 1.6632
@@ -21,7 +13,7 @@ prior_reactions:
   reaction_date: '2024-11-07'
   stock_return_pct: -11.2583
   vti_return_pct: 0.699
-  abnormal_return_pct: -11.9572
+  abnormal_return_pct: -11.9573
   earnings_surprise_pct: 78.24
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 0.4236
   earnings_surprise_pct: 114.29
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-12'
+  stock_return_pct: -8.1871
+  vti_return_pct: 0.31
+  abnormal_return_pct: -8.4971
+  earnings_surprise_pct: 3.7
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 7
-  median_abnormal_return_pct: -7.0125
-  mean_abnormal_return_pct: -6.3661
-  positive_reaction_rate: 0.2857
-  median_absolute_reaction_pct: 7.0125
+  median_abnormal_return_pct: -8.4971
+  mean_abnormal_return_pct: -7.6731
+  positive_reaction_rate: 0.1429
+  median_absolute_reaction_pct: 8.4971
   beat_observations: 4
-  median_reaction_after_beat_pct: -4.6511
+  median_reaction_after_beat_pct: -9.1114
   miss_observations: 3
   median_reaction_after_miss_pct: -7.0125
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.135
+    eps_low: -0.16
+    eps_high: -0.11
+    eps_year_ago: -0.31
+    analysts: 2
+    growth: 0.5645
+    revenue_avg: 4168000
+  next_quarter:
+    eps_avg: -0.13
+    eps_low: -0.15
+    eps_high: -0.11
+    eps_year_ago: -0.13
+    analysts: 2
+    growth: 0.0
+    revenue_avg: 4875000
+  current_year:
+    eps_avg: -0.505
+    eps_low: -0.56
+    eps_high: -0.45
+    eps_year_ago: -0.29
+    analysts: 2
+    growth: -0.7414
+    revenue_avg: 18553500
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

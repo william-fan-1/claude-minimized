@@ -1,0 +1,74 @@
+ticker: NP
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-13'
+  stock_return_pct: -1.1526
+  vti_return_pct: -1.7716
+  abnormal_return_pct: 0.619
+  earnings_surprise_pct: 4.2
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-02-19'
+  stock_return_pct: 12.7413
+  vti_return_pct: -0.1889
+  abnormal_return_pct: 12.9302
+  earnings_surprise_pct: 1.36
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-04-23'
+  stock_return_pct: -3.1706
+  vti_return_pct: -0.4043
+  abnormal_return_pct: -2.7663
+  earnings_surprise_pct: -6.43
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-07-22'
+  stock_return_pct: -5.0332
+  vti_return_pct: 0.7154
+  abnormal_return_pct: -5.7486
+  earnings_surprise_pct: 4.42
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 4
+  median_abnormal_return_pct: -1.0737
+  mean_abnormal_return_pct: 1.2586
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 4.2575
+  beat_observations: 3
+  median_reaction_after_beat_pct: 0.619
+  miss_observations: 1
+  median_reaction_after_miss_pct: -2.7663
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.158
+    eps_low: 0.15
+    eps_high: 0.17
+    eps_year_ago: 0.11
+    analysts: 12
+    growth: 0.4359
+    revenue_avg: 56176830
+  next_quarter:
+    eps_avg: 0.1458
+    eps_low: 0.13
+    eps_high: 0.16
+    eps_year_ago: 0.1
+    analysts: 12
+    growth: 0.4582
+    revenue_avg: 53495830
+  current_year:
+    eps_avg: 0.5477
+    eps_low: 0.53
+    eps_high: 0.57
+    eps_year_ago: 0.41
+    analysts: 13
+    growth: 0.3358
+    revenue_avg: 203146780
+  eps_revisions_last_30d:
+    up: 5
+    down: 1

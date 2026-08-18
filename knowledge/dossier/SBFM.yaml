@@ -1,14 +1,6 @@
 ticker: SBFM
 prior_reactions:
 - fiscal_quarter: null
-  timing: after_market_close
-  reaction_date: '2024-04-01'
-  stock_return_pct: 75.4098
-  vti_return_pct: -0.0769
-  abnormal_return_pct: 75.4868
-  earnings_surprise_pct: -90.0
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
   timing: unknown
   reaction_date: null
   stock_return_pct: null
@@ -20,7 +12,7 @@ prior_reactions:
   timing: after_market_close
   reaction_date: '2024-08-19'
   stock_return_pct: 5.8219
-  vti_return_pct: 0.9445
+  vti_return_pct: 0.9444
   abnormal_return_pct: 4.8775
   earnings_surprise_pct: -33033.33
   surprise_source: Yahoo Finance (via yfinance)
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -29.677
   earnings_surprise_pct: -56.25
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-14'
+  stock_return_pct: -4.1667
+  vti_return_pct: -0.1171
+  abnormal_return_pct: -4.0496
+  earnings_surprise_pct: 4.17
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 6
-  median_abnormal_return_pct: 1.2487
-  mean_abnormal_return_pct: 7.3944
-  positive_reaction_rate: 0.5
-  median_absolute_reaction_pct: 7.1203
-  beat_observations: 1
-  median_reaction_after_beat_pct: -9.0908
-  miss_observations: 5
-  median_reaction_after_miss_pct: 4.8775
+  median_abnormal_return_pct: -3.2149
+  mean_abnormal_return_pct: -5.8617
+  positive_reaction_rate: 0.3333
+  median_absolute_reaction_pct: 5.0137
+  beat_observations: 2
+  median_reaction_after_beat_pct: -6.5702
+  miss_observations: 4
+  median_reaction_after_miss_pct: 1.2487
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.2
+    eps_low: -0.2
+    eps_high: -0.2
+    eps_year_ago: -1.9
+    analysts: 1
+    growth: 0.8947
+    revenue_avg: 9100000
+  next_quarter:
+    eps_avg: -1.3
+    eps_low: -1.3
+    eps_high: -1.3
+    eps_year_ago: -4.6
+    analysts: 1
+    growth: 0.7174
+    revenue_avg: 9600000
+  current_year:
+    eps_avg: -6.3
+    eps_low: -6.3
+    eps_high: -6.3
+    eps_year_ago: -14.4
+    analysts: 1
+    growth: 0.5625
+    revenue_avg: 35388770
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

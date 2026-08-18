@@ -1,0 +1,106 @@
+ticker: INDV
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-10-24'
+  stock_return_pct: 2.4533
+  vti_return_pct: 0.2666
+  abnormal_return_pct: 2.1867
+  earnings_surprise_pct: 32.79
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-02-20'
+  stock_return_pct: -17.5985
+  vti_return_pct: -0.5377
+  abnormal_return_pct: -17.0608
+  earnings_surprise_pct: 22.65
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-04-24'
+  stock_return_pct: 13.8624
+  vti_return_pct: 2.1067
+  abnormal_return_pct: 11.7557
+  earnings_surprise_pct: 75.72
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-07-31'
+  stock_return_pct: 16.092
+  vti_return_pct: -0.4356
+  abnormal_return_pct: 16.5275
+  earnings_surprise_pct: 104.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-10-30'
+  stock_return_pct: 15.412
+  vti_return_pct: -1.0749
+  abnormal_return_pct: 16.4869
+  earnings_surprise_pct: 74.9
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-02-26'
+  stock_return_pct: 0.2379
+  vti_return_pct: -0.392
+  abnormal_return_pct: 0.6299
+  earnings_surprise_pct: 21.66
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-04-30'
+  stock_return_pct: 7.7013
+  vti_return_pct: 1.1336
+  abnormal_return_pct: 6.5677
+  earnings_surprise_pct: 45.45
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-03'
+  stock_return_pct: -7.086
+  vti_return_pct: 2.0668
+  abnormal_return_pct: -9.1528
+  earnings_surprise_pct: 24.76
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: 4.3772
+  mean_abnormal_return_pct: 3.4926
+  positive_reaction_rate: 0.75
+  median_absolute_reaction_pct: 10.4542
+  beat_observations: 8
+  median_reaction_after_beat_pct: 4.3772
+  miss_observations: 0
+  median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 1.119
+    eps_low: 1.088
+    eps_high: 1.15
+    eps_year_ago: 0.72
+    analysts: 2
+    growth: 0.5542
+    revenue_avg: 329350000
+  next_quarter:
+    eps_avg: 1.2145
+    eps_low: 1.209
+    eps_high: 1.22
+    eps_year_ago: 0.82
+    analysts: 2
+    growth: 0.4811
+    revenue_avg: 337900000
+  current_year:
+    eps_avg: 4.4087
+    eps_low: 4.36
+    eps_high: 4.47
+    eps_year_ago: 2.5
+    analysts: 3
+    growth: 0.7635
+    revenue_avg: 1331966670
+  eps_revisions_last_30d:
+    up: 2
+    down: 0

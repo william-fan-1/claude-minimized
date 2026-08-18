@@ -2,14 +2,6 @@ ticker: FSTR
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-08-06'
-  stock_return_pct: -19.7183
-  vti_return_pct: 1.015
-  abnormal_return_pct: -20.7333
-  earnings_surprise_pct: -38.1
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2024-11-07'
   stock_return_pct: -3.7247
   vti_return_pct: 0.699
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 19.5869
   earnings_surprise_pct: 177.78
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-10'
+  stock_return_pct: -4.095
+  vti_return_pct: -0.0393
+  abnormal_return_pct: -4.0557
+  earnings_surprise_pct: -28.4
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
   median_abnormal_return_pct: -2.4922
-  mean_abnormal_return_pct: -2.6574
+  mean_abnormal_return_pct: -0.5727
   positive_reaction_rate: 0.25
-  median_absolute_reaction_pct: 3.8079
+  median_absolute_reaction_pct: 3.624
   beat_observations: 2
   median_reaction_after_beat_pct: 7.5816
   miss_observations: 6
   median_reaction_after_miss_pct: -2.4922
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.405
+    eps_low: 0.4
+    eps_high: 0.41
+    eps_year_ago: 0.27
+    analysts: 2
+    growth: 0.5
+    revenue_avg: 134488000
+  next_quarter:
+    eps_avg: 0.6
+    eps_low: 0.59
+    eps_high: 0.61
+    eps_year_ago: 0.22
+    analysts: 2
+    growth: 1.7273
+    revenue_avg: 150413500
+  current_year:
+    eps_avg: 1.62
+    eps_low: 1.6
+    eps_high: 1.64
+    eps_year_ago: 0.69
+    analysts: 2
+    growth: 1.3478
+    revenue_avg: 562353000
+  eps_revisions_last_30d:
+    up: 1
+    down: 1

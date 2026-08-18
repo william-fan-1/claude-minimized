@@ -1,0 +1,44 @@
+ticker: FCBM
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-07-30'
+  stock_return_pct: 0.9709
+  vti_return_pct: 1.6231
+  abnormal_return_pct: -0.6522
+  earnings_surprise_pct: -3.23
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 1
+  median_abnormal_return_pct: -0.6522
+  mean_abnormal_return_pct: -0.6522
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 0.6522
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 1
+  median_reaction_after_miss_pct: -0.6522
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.2233
+    eps_low: 0.21
+    eps_high: 0.24
+    analysts: 3
+    revenue_avg: 35968000
+  next_quarter:
+    eps_avg: 0.25
+    eps_low: 0.24
+    eps_high: 0.26
+    analysts: 3
+    revenue_avg: 37438670
+  current_year:
+    eps_avg: 0.9167
+    eps_low: 0.9
+    eps_high: 0.95
+    analysts: 3
+    revenue_avg: 138761330
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

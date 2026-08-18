@@ -2,14 +2,6 @@ ticker: IE
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-11-08'
-  stock_return_pct: -2.2321
-  vti_return_pct: 0.4673
-  abnormal_return_pct: -2.6994
-  earnings_surprise_pct: -6.82
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2025-02-27'
   stock_return_pct: -4.4262
   vti_return_pct: -1.5492
@@ -37,7 +29,7 @@ prior_reactions:
   reaction_date: '2025-11-06'
   stock_return_pct: -3.1538
   vti_return_pct: -1.1376
-  abnormal_return_pct: -2.0163
+  abnormal_return_pct: -2.0162
   earnings_surprise_pct: 36.38
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 2.2758
   earnings_surprise_pct: -37.4
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: 1.0909
+  vti_return_pct: -0.2568
+  abnormal_return_pct: 1.3477
+  earnings_surprise_pct: null
+  surprise_source: null
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -0.7228
-  mean_abnormal_return_pct: 0.0996
-  positive_reaction_rate: 0.5
-  median_absolute_reaction_pct: 2.2293
+  median_abnormal_return_pct: 0.9592
+  mean_abnormal_return_pct: 0.6055
+  positive_reaction_rate: 0.625
+  median_absolute_reaction_pct: 2.1496
   beat_observations: 3
-  median_reaction_after_beat_pct: -2.0163
-  miss_observations: 5
-  median_reaction_after_miss_pct: 0.5707
+  median_reaction_after_beat_pct: -2.0162
+  miss_observations: 4
+  median_reaction_after_miss_pct: 1.3767
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.06
+    eps_low: -0.06
+    eps_high: -0.06
+    eps_year_ago: -0.13
+    analysts: 1
+    growth: 0.5385
+    revenue_avg: 1000000
+  next_quarter:
+    eps_avg: -0.06
+    eps_low: -0.06
+    eps_high: -0.06
+    eps_year_ago: -0.1657
+    analysts: 1
+    growth: 0.6379
+    revenue_avg: 1000000
+  current_year:
+    eps_avg: -0.16
+    eps_low: -0.16
+    eps_high: -0.16
+    eps_year_ago: -0.6963
+    analysts: 1
+    growth: 0.7702
+    revenue_avg: 3335870
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

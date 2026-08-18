@@ -1,0 +1,90 @@
+ticker: GRO
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-03-31'
+  stock_return_pct: 0.9901
+  vti_return_pct: 0.5157
+  abnormal_return_pct: 0.4744
+  earnings_surprise_pct: -625.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-12'
+  stock_return_pct: -0.9009
+  vti_return_pct: 3.3457
+  abnormal_return_pct: -4.2466
+  earnings_surprise_pct: -500.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-14'
+  stock_return_pct: -4.4304
+  vti_return_pct: -0.1479
+  abnormal_return_pct: -4.2824
+  earnings_surprise_pct: -382.52
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-13'
+  stock_return_pct: -7.2115
+  vti_return_pct: -1.7716
+  abnormal_return_pct: -5.44
+  earnings_surprise_pct: -314.29
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-24'
+  stock_return_pct: 15.5172
+  vti_return_pct: -0.3115
+  abnormal_return_pct: 15.8288
+  earnings_surprise_pct: -40.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-14'
+  stock_return_pct: 2.3148
+  vti_return_pct: -0.1171
+  abnormal_return_pct: 2.4319
+  earnings_surprise_pct: 41.94
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 6
+  median_abnormal_return_pct: -1.8861
+  mean_abnormal_return_pct: 0.7943
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 4.2645
+  beat_observations: 1
+  median_reaction_after_beat_pct: 2.4319
+  miss_observations: 5
+  median_reaction_after_miss_pct: -4.2466
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.095
+    eps_low: -0.12
+    eps_high: -0.07
+    eps_year_ago: -0.29
+    analysts: 2
+    growth: 0.6724
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: -0.125
+    eps_low: -0.13
+    eps_high: -0.12
+    eps_year_ago: -0.084
+    analysts: 2
+    growth: -0.4881
+    revenue_avg: 0
+  current_year:
+    eps_avg: -0.7333
+    eps_low: -1.16
+    eps_high: -0.46
+    eps_year_ago: -1.2277
+    analysts: 3
+    growth: 0.4027
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

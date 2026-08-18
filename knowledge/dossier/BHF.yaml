@@ -37,7 +37,7 @@ prior_reactions:
   reaction_date: '2025-11-07'
   stock_return_pct: 0.4718
   vti_return_pct: 0.2186
-  abnormal_return_pct: 0.2533
+  abnormal_return_pct: 0.2532
   earnings_surprise_pct: 92.82
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -66,11 +66,41 @@ prior_reactions:
   surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -0.3552
+  median_abnormal_return_pct: -0.3553
   mean_abnormal_return_pct: -0.706
   positive_reaction_rate: 0.5
   median_absolute_reaction_pct: 1.2717
   beat_observations: 2
-  median_reaction_after_beat_pct: 0.2918
+  median_reaction_after_beat_pct: 0.2917
   miss_observations: 6
   median_reaction_after_miss_pct: -1.2831
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 4.91
+    eps_low: 4.82
+    eps_high: 5.0
+    eps_year_ago: 4.54
+    analysts: 4
+    growth: 0.0815
+    revenue_avg: 2251500000
+  next_quarter:
+    eps_avg: 4.8067
+    eps_low: 4.46
+    eps_high: 5.24
+    eps_year_ago: 3.7
+    analysts: 3
+    growth: 0.2991
+    revenue_avg: 2247500000
+  current_year:
+    eps_avg: 18.4075
+    eps_low: 18.0
+    eps_high: 18.75
+    eps_year_ago: 27.92
+    analysts: 4
+    growth: -0.3407
+    revenue_avg: 8832000000
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

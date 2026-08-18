@@ -2,17 +2,9 @@ ticker: PLBY
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-09'
-  stock_return_pct: -23.2323
-  vti_return_pct: 0.4317
-  abnormal_return_pct: -23.664
-  earnings_surprise_pct: -76.92
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-13'
   stock_return_pct: -12.2222
-  vti_return_pct: -0.0473
+  vti_return_pct: -0.0472
   abnormal_return_pct: -12.175
   earnings_surprise_pct: -246.15
   surprise_source: Yahoo Finance (via yfinance)
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -13.0638
   earnings_surprise_pct: -119.6
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: 15.2542
+  vti_return_pct: -0.2568
+  abnormal_return_pct: 15.511
+  earnings_surprise_pct: 100.0
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -1.3915
-  mean_abnormal_return_pct: 1.7197
-  positive_reaction_rate: 0.375
+  median_abnormal_return_pct: 4.2515
+  mean_abnormal_return_pct: 6.6166
+  positive_reaction_rate: 0.5
   median_absolute_reaction_pct: 12.6194
-  beat_observations: 1
-  median_reaction_after_beat_pct: 23.8304
-  miss_observations: 5
-  median_reaction_after_miss_pct: -12.175
+  beat_observations: 2
+  median_reaction_after_beat_pct: 19.6707
+  miss_observations: 4
+  median_reaction_after_miss_pct: -6.7455
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.0033
+    eps_low: -0.01
+    eps_high: 0.0
+    eps_year_ago: -0.08
+    analysts: 3
+    growth: 0.9584
+    revenue_avg: 29689330
+  next_quarter:
+    eps_avg: 0.025
+    eps_low: 0.01
+    eps_high: 0.04
+    eps_year_ago: 0.03
+    analysts: 2
+    growth: -0.1667
+    revenue_avg: 37112330
+  current_year:
+    eps_avg: -0.01
+    eps_low: -0.03
+    eps_high: 0.01
+    eps_year_ago: -0.13
+    analysts: 2
+    growth: 0.9231
+    revenue_avg: 128913500
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

@@ -2,17 +2,9 @@ ticker: PIII
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-08'
-  stock_return_pct: -4.0584
-  vti_return_pct: 2.3417
-  abnormal_return_pct: -6.4001
-  earnings_surprise_pct: 6.9
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-13'
   stock_return_pct: -35.8974
-  vti_return_pct: -0.0473
+  vti_return_pct: -0.0472
   abnormal_return_pct: -35.8502
   earnings_surprise_pct: -673.33
   surprise_source: Yahoo Finance (via yfinance)
@@ -45,7 +37,7 @@ prior_reactions:
   reaction_date: '2025-11-14'
   stock_return_pct: -2.2857
   vti_return_pct: -0.0152
-  abnormal_return_pct: -2.2705
+  abnormal_return_pct: -2.2706
   earnings_surprise_pct: -60.19
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 181.4172
   earnings_surprise_pct: 109.13
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: -3.5853
+  vti_return_pct: -0.2568
+  abnormal_return_pct: -3.3286
+  earnings_surprise_pct: 66.75
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -2.3487
-  mean_abnormal_return_pct: 16.8738
+  median_abnormal_return_pct: -2.3488
+  mean_abnormal_return_pct: 17.2577
   positive_reaction_rate: 0.25
-  median_absolute_reaction_pct: 5.41
+  median_absolute_reaction_pct: 3.8742
   beat_observations: 3
-  median_reaction_after_beat_pct: -4.4198
+  median_reaction_after_beat_pct: -3.3286
   miss_observations: 5
-  median_reaction_after_miss_pct: -2.2705
+  median_reaction_after_miss_pct: -2.2706
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -1.895
+    eps_low: -2.1
+    eps_high: -1.69
+    eps_year_ago: -6.23
+    analysts: 2
+    growth: 0.6958
+    revenue_avg: 377800000
+  next_quarter:
+    eps_avg: -7.04
+    eps_low: -7.04
+    eps_high: -7.04
+    eps_year_ago: -23.02
+    analysts: 1
+    growth: 0.6942
+    revenue_avg: 401700000
+  current_year:
+    eps_avg: -14.84
+    eps_low: -14.84
+    eps_high: -14.84
+    eps_year_ago: -45.26
+    analysts: 1
+    growth: 0.6721
+    revenue_avg: 1559700000
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

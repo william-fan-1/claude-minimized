@@ -18,3 +18,18 @@ reaction_statistics:
   median_reaction_after_beat_pct: null
   miss_observations: 0
   median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-17'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    revenue_avg: 0
+  next_quarter:
+    revenue_avg: 0
+  current_year:
+    eps_avg: -0.49
+    eps_low: -0.49
+    eps_high: -0.49
+    eps_year_ago: -0.55
+    analysts: 1.0
+    growth: 0.1091
+    revenue_avg: 0

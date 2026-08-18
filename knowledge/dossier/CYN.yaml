@@ -2,14 +2,6 @@ ticker: CYN
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2023-11-09'
-  stock_return_pct: -27.9245
-  vti_return_pct: -0.8514
-  abnormal_return_pct: -27.0731
-  earnings_surprise_pct: 23.0
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-03-07'
   stock_return_pct: -13.4615
   vti_return_pct: 0.9746
@@ -64,13 +56,47 @@ prior_reactions:
   abnormal_return_pct: -14.1879
   earnings_surprise_pct: 1.67
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-13'
+  stock_return_pct: -11.6183
+  vti_return_pct: 0.6469
+  abnormal_return_pct: -12.2651
+  earnings_surprise_pct: -50.0
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -14.312
-  mean_abnormal_return_pct: -9.2345
+  median_abnormal_return_pct: -13.2265
+  mean_abnormal_return_pct: -7.3835
   positive_reaction_rate: 0.375
-  median_absolute_reaction_pct: 16.0872
-  beat_observations: 5
-  median_reaction_after_beat_pct: 1.5753
-  miss_observations: 3
-  median_reaction_after_miss_pct: -17.7383
+  median_absolute_reaction_pct: 14.312
+  beat_observations: 4
+  median_reaction_after_beat_pct: 1.7423
+  miss_observations: 4
+  median_reaction_after_miss_pct: -16.0872
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.5
+    eps_low: -0.5
+    eps_high: -0.5
+    eps_year_ago: -1.2
+    analysts: 1
+    growth: 0.5833
+    revenue_avg: 300000
+  next_quarter:
+    eps_avg: -0.5
+    eps_low: -0.5
+    eps_high: -0.5
+    analysts: 1
+    revenue_avg: 600000
+  current_year:
+    eps_avg: -2.02
+    eps_low: -2.02
+    eps_high: -2.02
+    analysts: 1
+    revenue_avg: 1149000
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

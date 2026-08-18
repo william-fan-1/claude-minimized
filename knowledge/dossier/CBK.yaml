@@ -1,0 +1,74 @@
+ticker: CBK
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-10-28'
+  stock_return_pct: -1.627
+  vti_return_pct: 0.1541
+  abnormal_return_pct: -1.7811
+  earnings_surprise_pct: -6.1
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-01-27'
+  stock_return_pct: -0.1577
+  vti_return_pct: 0.3625
+  abnormal_return_pct: -0.5202
+  earnings_surprise_pct: 7.46
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: unknown
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: 7.35
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-07-28'
+  stock_return_pct: 3.3085
+  vti_return_pct: 0.2218
+  abnormal_return_pct: 3.0867
+  earnings_surprise_pct: 7.14
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 3
+  median_abnormal_return_pct: -0.5202
+  mean_abnormal_return_pct: 0.2618
+  positive_reaction_rate: 0.3333
+  median_absolute_reaction_pct: 1.7811
+  beat_observations: 2
+  median_reaction_after_beat_pct: 1.2833
+  miss_observations: 1
+  median_reaction_after_miss_pct: -1.7811
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.74
+    eps_low: 0.74
+    eps_high: 0.74
+    eps_year_ago: 0.77
+    analysts: 1
+    growth: -0.039
+    revenue_avg: 24600000
+  next_quarter:
+    eps_avg: 0.76
+    eps_low: 0.76
+    eps_high: 0.76
+    eps_year_ago: 0.72
+    analysts: 1
+    growth: 0.0556
+    revenue_avg: 24800000
+  current_year:
+    eps_avg: 2.98
+    eps_low: 2.98
+    eps_high: 2.98
+    eps_year_ago: 2.96
+    analysts: 1
+    growth: 0.0068
+    revenue_avg: 96700000
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

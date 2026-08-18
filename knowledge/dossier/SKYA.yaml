@@ -1,0 +1,68 @@
+ticker: SKYA
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2023-05-16'
+  stock_return_pct: -7.3585
+  vti_return_pct: -0.7753
+  abnormal_return_pct: -6.5832
+  earnings_surprise_pct: -53.85
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2023-08-15'
+  stock_return_pct: 0.0
+  vti_return_pct: -1.135
+  abnormal_return_pct: 1.135
+  earnings_surprise_pct: -175.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2023-11-15'
+  stock_return_pct: 0.7143
+  vti_return_pct: 0.2476
+  abnormal_return_pct: 0.4667
+  earnings_surprise_pct: -88.89
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: unknown
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: -21.43
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-05-15'
+  stock_return_pct: -4.5455
+  vti_return_pct: 1.2295
+  abnormal_return_pct: -5.775
+  earnings_surprise_pct: -25.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-14'
+  stock_return_pct: -4.4776
+  vti_return_pct: -0.1479
+  abnormal_return_pct: -4.3297
+  earnings_surprise_pct: 480.85
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: unknown
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: -328.71
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 5
+  median_abnormal_return_pct: -4.3297
+  mean_abnormal_return_pct: -3.0172
+  positive_reaction_rate: 0.4
+  median_absolute_reaction_pct: 4.3297
+  beat_observations: 1
+  median_reaction_after_beat_pct: -4.3297
+  miss_observations: 4
+  median_reaction_after_miss_pct: -2.6542

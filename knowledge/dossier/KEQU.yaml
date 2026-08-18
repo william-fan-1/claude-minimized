@@ -1,0 +1,36 @@
+ticker: KEQU
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2018-12-06'
+  stock_return_pct: -8.871
+  vti_return_pct: -0.1229
+  abnormal_return_pct: -8.7481
+  earnings_surprise_pct: -16.39
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2019-02-27'
+  stock_return_pct: -19.3338
+  vti_return_pct: 0.0348
+  abnormal_return_pct: -19.3685
+  earnings_surprise_pct: -101.79
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2019-06-19'
+  stock_return_pct: -12.5465
+  vti_return_pct: 0.3427
+  abnormal_return_pct: -12.8891
+  earnings_surprise_pct: -128.3
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 3
+  median_abnormal_return_pct: -12.8891
+  mean_abnormal_return_pct: -13.6686
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 12.8891
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 3
+  median_reaction_after_miss_pct: -12.8891

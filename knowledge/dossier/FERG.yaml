@@ -2,14 +2,6 @@ ticker: FERG
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-03-05'
-  stock_return_pct: -6.7177
-  vti_return_pct: -1.0603
-  abnormal_return_pct: -5.6574
-  earnings_surprise_pct: -5.59
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2024-06-04'
   stock_return_pct: -2.918
   vti_return_pct: -0.0115
@@ -21,7 +13,7 @@ prior_reactions:
   reaction_date: '2024-09-17'
   stock_return_pct: 4.9894
   vti_return_pct: 0.1008
-  abnormal_return_pct: 4.8886
+  abnormal_return_pct: 4.8885
   earnings_surprise_pct: 4.06
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,49 @@ prior_reactions:
   abnormal_return_pct: -3.914
   earnings_surprise_pct: 4.34
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-10'
+  stock_return_pct: 2.7621
+  vti_return_pct: -0.0393
+  abnormal_return_pct: 2.8014
+  earnings_surprise_pct: 2.76
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -3.4102
-  mean_abnormal_return_pct: -0.2808
-  positive_reaction_rate: 0.375
-  median_absolute_reaction_pct: 4.6854
-  beat_observations: 5
-  median_reaction_after_beat_pct: 3.3767
-  miss_observations: 3
-  median_reaction_after_miss_pct: -5.6574
+  median_abnormal_return_pct: -0.0525
+  mean_abnormal_return_pct: 0.7765
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 4.1981
+  beat_observations: 6
+  median_reaction_after_beat_pct: 3.0891
+  miss_observations: 2
+  median_reaction_after_miss_pct: -7.2887
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 3.2989
+    eps_low: 3.0
+    eps_high: 3.42
+    analysts: 17
+    revenue_avg: 8624937460
+  next_quarter:
+    eps_avg: 3.3096
+    eps_low: 3.23
+    eps_high: 3.42
+    eps_year_ago: 1.52
+    analysts: 9
+    growth: 1.1774
+    revenue_avg: 8043584100
+  current_year:
+    eps_avg: 11.3532
+    eps_low: 11.2531
+    eps_high: 11.461
+    eps_year_ago: 10.58
+    analysts: 11
+    growth: 0.0731
+    revenue_avg: 32842082000
+  eps_revisions_last_30d:
+    up: 2
+    down: 0

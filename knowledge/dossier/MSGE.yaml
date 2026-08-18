@@ -2,14 +2,6 @@ ticker: MSGE
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-08-16'
-  stock_return_pct: 4.7594
-  vti_return_pct: 0.2385
-  abnormal_return_pct: 4.5209
-  earnings_surprise_pct: 385.23
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2024-11-08'
   stock_return_pct: -9.1226
   vti_return_pct: 0.4673
@@ -21,7 +13,7 @@ prior_reactions:
   reaction_date: '2025-02-06'
   stock_return_pct: -0.3345
   vti_return_pct: 0.2467
-  abnormal_return_pct: -0.5812
+  abnormal_return_pct: -0.5813
   earnings_surprise_pct: -20.74
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 0.1451
   earnings_surprise_pct: 26.78
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-12'
+  stock_return_pct: 11.4023
+  vti_return_pct: 0.31
+  abnormal_return_pct: 11.0923
+  earnings_surprise_pct: 69.85
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
   median_abnormal_return_pct: -0.2181
-  mean_abnormal_return_pct: -1.2739
+  mean_abnormal_return_pct: -0.4525
   positive_reaction_rate: 0.5
-  median_absolute_reaction_pct: 3.1681
+  median_absolute_reaction_pct: 3.7126
   beat_observations: 6
   median_reaction_after_beat_pct: 0.3382
   miss_observations: 2
-  median_reaction_after_miss_pct: -1.1982
+  median_reaction_after_miss_pct: -1.1983
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.14
+    eps_low: -0.14
+    eps_high: -0.14
+    eps_year_ago: -0.4448
+    analysts: 2
+    growth: 0.6853
+    revenue_avg: 208096710
+  next_quarter:
+    eps_avg: 2.92
+    eps_low: 2.92
+    eps_high: 2.92
+    eps_year_ago: 1.9685
+    analysts: 1
+    growth: 0.4834
+    revenue_avg: 465242150
+  current_year:
+    eps_avg: 2.3825
+    eps_low: 0.0
+    eps_high: 2.92
+    eps_year_ago: 1.38
+    analysts: 8
+    growth: 0.7264
+    revenue_avg: 1031287700
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

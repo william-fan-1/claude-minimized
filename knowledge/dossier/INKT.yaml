@@ -2,14 +2,6 @@ ticker: INKT
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-08-13'
-  stock_return_pct: 1.6766
-  vti_return_pct: 1.6632
-  abnormal_return_pct: 0.0135
-  earnings_surprise_pct: 27.59
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2024-11-14'
   stock_return_pct: -5.5416
   vti_return_pct: -0.7393
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -6.2385
   earnings_surprise_pct: 25.97
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-13'
+  stock_return_pct: -3.169
+  vti_return_pct: 0.6469
+  abnormal_return_pct: -3.8159
+  earnings_surprise_pct: -3.33
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
   median_abnormal_return_pct: -4.7384
-  mean_abnormal_return_pct: -4.4299
-  positive_reaction_rate: 0.125
+  mean_abnormal_return_pct: -4.9086
+  positive_reaction_rate: 0.0
   median_absolute_reaction_pct: 4.7384
-  beat_observations: 5
-  median_reaction_after_beat_pct: -4.8023
-  miss_observations: 3
-  median_reaction_after_miss_pct: -4.6744
+  beat_observations: 4
+  median_reaction_after_beat_pct: -4.8224
+  miss_observations: 4
+  median_reaction_after_miss_pct: -4.2452
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.35
+    eps_low: -0.35
+    eps_high: -0.35
+    eps_year_ago: -0.65
+    analysts: 1
+    growth: 0.4615
+    revenue_avg: 1600000
+  next_quarter:
+    eps_avg: -0.39
+    eps_low: -0.39
+    eps_high: -0.39
+    eps_year_ago: -0.56
+    analysts: 1
+    growth: 0.3036
+    revenue_avg: 1800000
+  current_year:
+    eps_avg: -1.93
+    eps_low: -1.93
+    eps_high: -1.93
+    eps_year_ago: -2.93
+    analysts: 1
+    growth: 0.3413
+    revenue_avg: 3400000
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

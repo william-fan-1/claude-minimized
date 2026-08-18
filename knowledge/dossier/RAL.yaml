@@ -1,0 +1,74 @@
+ticker: RAL
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-12'
+  stock_return_pct: -0.4694
+  vti_return_pct: 1.2232
+  abnormal_return_pct: -1.6925
+  earnings_surprise_pct: 18.79
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-06'
+  stock_return_pct: 5.5405
+  vti_return_pct: -1.1376
+  abnormal_return_pct: 6.6781
+  earnings_surprise_pct: 4.54
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-02-05'
+  stock_return_pct: -31.7875
+  vti_return_pct: -1.286
+  abnormal_return_pct: -30.5015
+  earnings_surprise_pct: 4.19
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-03'
+  stock_return_pct: -2.7612
+  vti_return_pct: 2.0668
+  abnormal_return_pct: -4.828
+  earnings_surprise_pct: 9.24
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 4
+  median_abnormal_return_pct: -3.2603
+  mean_abnormal_return_pct: -7.586
+  positive_reaction_rate: 0.25
+  median_absolute_reaction_pct: 5.753
+  beat_observations: 4
+  median_reaction_after_beat_pct: -3.2603
+  miss_observations: 0
+  median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.7574
+    eps_low: 0.68
+    eps_high: 0.8
+    eps_year_ago: 0.6
+    analysts: 11
+    growth: 0.2623
+    revenue_avg: 585202260
+  next_quarter:
+    eps_avg: 0.8401
+    eps_low: 0.78
+    eps_high: 0.9
+    eps_year_ago: 0.69
+    analysts: 11
+    growth: 0.2176
+    revenue_avg: 606278100
+  current_year:
+    eps_avg: 2.838
+    eps_low: 2.66
+    eps_high: 2.94
+    eps_year_ago: 2.69
+    analysts: 11
+    growth: 0.055
+    revenue_avg: 2288979770
+  eps_revisions_last_30d:
+    up: 8
+    down: 0

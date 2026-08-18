@@ -2,14 +2,6 @@ ticker: YCBD
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-02-14'
-  stock_return_pct: -8.5714
-  vti_return_pct: 1.1054
-  abnormal_return_pct: -9.6769
-  earnings_surprise_pct: 11.95
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-05-16'
   stock_return_pct: 0.5666
   vti_return_pct: -0.2703
@@ -28,8 +20,8 @@ prior_reactions:
   timing: after_market_close
   reaction_date: '2025-02-14'
   stock_return_pct: -15.0877
-  vti_return_pct: -0.0132
-  abnormal_return_pct: -15.0745
+  vti_return_pct: -0.0133
+  abnormal_return_pct: -15.0744
   earnings_surprise_pct: 40.54
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,43 @@ prior_reactions:
   abnormal_return_pct: -4.0403
   earnings_surprise_pct: -60.0
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-14'
+  stock_return_pct: -12.2124
+  vti_return_pct: -0.1171
+  abnormal_return_pct: -12.0953
+  earnings_surprise_pct: -266.67
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
   median_abnormal_return_pct: -6.0387
-  mean_abnormal_return_pct: -6.3683
+  mean_abnormal_return_pct: -6.6706
   positive_reaction_rate: 0.125
   median_absolute_reaction_pct: 6.0387
-  beat_observations: 4
-  median_reaction_after_beat_pct: -8.5145
-  miss_observations: 4
-  median_reaction_after_miss_pct: -4.3827
+  beat_observations: 3
+  median_reaction_after_beat_pct: -7.3521
+  miss_observations: 5
+  median_reaction_after_miss_pct: -4.7252
+forward_estimates:
+  as_of: '2026-08-17'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.03
+    eps_low: -0.03
+    eps_high: -0.03
+    analysts: 1.0
+    revenue_avg: 5807000
+  next_quarter:
+    revenue_avg: 0
+  current_year:
+    eps_avg: -0.19
+    eps_low: -0.19
+    eps_high: -0.19
+    eps_year_ago: -1.09
+    analysts: 1.0
+    growth: 0.8257
+    revenue_avg: 22153000
+  eps_revisions_last_30d:
+    up: 1.0
+    down: 0.0

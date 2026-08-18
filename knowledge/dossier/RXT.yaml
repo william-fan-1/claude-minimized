@@ -2,17 +2,9 @@ ticker: RXT
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-09'
-  stock_return_pct: 0.4464
-  vti_return_pct: 0.4317
-  abnormal_return_pct: 0.0148
-  earnings_surprise_pct: 25.35
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-13'
   stock_return_pct: 5.9441
-  vti_return_pct: -0.0473
+  vti_return_pct: -0.0472
   abnormal_return_pct: 5.9913
   earnings_surprise_pct: 46.1
   surprise_source: Yahoo Finance (via yfinance)
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 55.5248
   earnings_surprise_pct: -86.51
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: -8.0338
+  vti_return_pct: -0.2568
+  abnormal_return_pct: -7.777
+  earnings_surprise_pct: 11.19
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: 1.2784
-  mean_abnormal_return_pct: 12.497
-  positive_reaction_rate: 0.625
-  median_absolute_reaction_pct: 9.3636
+  median_abnormal_return_pct: -1.4063
+  mean_abnormal_return_pct: 11.5231
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 10.2564
   beat_observations: 6
-  median_reaction_after_beat_pct: 1.2784
+  median_reaction_after_beat_pct: -2.6176
   miss_observations: 2
   median_reaction_after_miss_pct: 25.0851
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.0901
+    eps_low: -0.1
+    eps_high: -0.08
+    eps_year_ago: -0.06
+    analysts: 3
+    growth: -0.5013
+    revenue_avg: 646000000
+  next_quarter:
+    eps_avg: -0.0459
+    eps_low: -0.0519
+    eps_high: -0.04
+    eps_year_ago: -0.01
+    analysts: 3
+    growth: -3.594
+    revenue_avg: 582468000
+  current_year:
+    eps_avg: -0.2695
+    eps_low: -0.28
+    eps_high: -0.2484
+    eps_year_ago: -0.18
+    analysts: 3
+    growth: -0.497
+    revenue_avg: 2503333330
+  eps_revisions_last_30d:
+    up: 0
+    down: 3

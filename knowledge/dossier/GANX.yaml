@@ -2,17 +2,9 @@ ticker: GANX
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-09'
-  stock_return_pct: 1.4478
-  vti_return_pct: 0.4317
-  abnormal_return_pct: 1.0161
-  earnings_surprise_pct: -90.91
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-15'
   stock_return_pct: 5.7307
-  vti_return_pct: -1.2686
+  vti_return_pct: -1.2685
   abnormal_return_pct: 6.9992
   earnings_surprise_pct: 20.31
   surprise_source: Yahoo Finance (via yfinance)
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -0.8679
   earnings_surprise_pct: 4.88
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-12'
+  stock_return_pct: 2.9126
+  vti_return_pct: 0.31
+  abnormal_return_pct: 2.6026
+  earnings_surprise_pct: 26.67
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
   median_abnormal_return_pct: -0.0223
-  mean_abnormal_return_pct: -0.0201
+  mean_abnormal_return_pct: 0.1782
   positive_reaction_rate: 0.5
-  median_absolute_reaction_pct: 2.2779
-  beat_observations: 6
-  median_reaction_after_beat_pct: -1.164
-  miss_observations: 2
-  median_reaction_after_miss_pct: 0.9197
+  median_absolute_reaction_pct: 2.8492
+  beat_observations: 7
+  median_reaction_after_beat_pct: -0.8679
+  miss_observations: 1
+  median_reaction_after_miss_pct: 0.8232
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.15
+    eps_low: -0.18
+    eps_high: -0.13
+    eps_year_ago: -0.19
+    analysts: 4
+    growth: 0.2105
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: -0.1575
+    eps_low: -0.21
+    eps_high: -0.13
+    eps_year_ago: -0.15
+    analysts: 4
+    growth: -0.05
+    revenue_avg: 0
+  current_year:
+    eps_avg: -0.6025
+    eps_low: -0.79
+    eps_high: -0.51
+    eps_year_ago: -0.61
+    analysts: 4
+    growth: 0.0123
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

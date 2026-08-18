@@ -1,0 +1,60 @@
+ticker: IVF
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-04-30'
+  stock_return_pct: 48.4472
+  vti_return_pct: 0.0587
+  abnormal_return_pct: 48.3885
+  earnings_surprise_pct: -158.29
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-06-22'
+  stock_return_pct: -7.3333
+  vti_return_pct: -0.3189
+  abnormal_return_pct: -7.0144
+  earnings_surprise_pct: 66.36
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: 89.36
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 2
+  median_abnormal_return_pct: 20.687
+  mean_abnormal_return_pct: 20.687
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 27.7015
+  beat_observations: 1
+  median_reaction_after_beat_pct: -7.0144
+  miss_observations: 1
+  median_reaction_after_miss_pct: 48.3885
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -5.6
+    eps_low: -5.6
+    eps_high: -5.6
+    analysts: 1
+    revenue_avg: 2396000
+  next_quarter:
+    eps_avg: -5.2
+    eps_low: -5.2
+    eps_high: -5.2
+    analysts: 1
+    revenue_avg: 2709000
+  current_year:
+    eps_avg: -23.2
+    eps_low: -23.2
+    eps_high: -23.2
+    analysts: 1
+    revenue_avg: 10419000
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

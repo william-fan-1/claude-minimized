@@ -1,0 +1,82 @@
+ticker: JMSB
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-07-23'
+  stock_return_pct: 1.0747
+  vti_return_pct: 0.8425
+  abnormal_return_pct: 0.2322
+  earnings_surprise_pct: 5.88
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-10-29'
+  stock_return_pct: -2.8169
+  vti_return_pct: -0.071
+  abnormal_return_pct: -2.7459
+  earnings_surprise_pct: 2.7
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-01-28'
+  stock_return_pct: 0.1001
+  vti_return_pct: -0.0554
+  abnormal_return_pct: 0.1555
+  earnings_surprise_pct: 7.69
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-04-29'
+  stock_return_pct: -3.4228
+  vti_return_pct: -0.1198
+  abnormal_return_pct: -3.303
+  earnings_surprise_pct: 7.5
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-07-22'
+  stock_return_pct: 1.14
+  vti_return_pct: -0.157
+  abnormal_return_pct: 1.297
+  earnings_surprise_pct: 14.94
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 5
+  median_abnormal_return_pct: 0.1555
+  mean_abnormal_return_pct: -0.8728
+  positive_reaction_rate: 0.6
+  median_absolute_reaction_pct: 1.297
+  beat_observations: 5
+  median_reaction_after_beat_pct: 0.1555
+  miss_observations: 0
+  median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.5
+    eps_low: 0.49
+    eps_high: 0.51
+    eps_year_ago: 0.38
+    analysts: 2
+    growth: 0.3158
+    revenue_avg: 18658000
+  next_quarter:
+    eps_avg: 0.52
+    eps_low: 0.52
+    eps_high: 0.52
+    eps_year_ago: 0.42
+    analysts: 2
+    growth: 0.2381
+    revenue_avg: 19092000
+  current_year:
+    eps_avg: 1.93
+    eps_low: 1.9
+    eps_high: 1.96
+    eps_year_ago: 1.49
+    analysts: 2
+    growth: 0.2953
+    revenue_avg: 72996500
+  eps_revisions_last_30d:
+    up: 2
+    down: 0

@@ -1,0 +1,106 @@
+ticker: DOLE
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-11-13'
+  stock_return_pct: -10.727
+  vti_return_pct: -0.0472
+  abnormal_return_pct: -10.6798
+  earnings_surprise_pct: -4.39
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-02-26'
+  stock_return_pct: 4.5552
+  vti_return_pct: 0.0341
+  abnormal_return_pct: 4.521
+  earnings_surprise_pct: 109.04
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-05-12'
+  stock_return_pct: -5.7588
+  vti_return_pct: 3.3457
+  abnormal_return_pct: -9.1045
+  earnings_surprise_pct: -12.5
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-08-11'
+  stock_return_pct: -8.0656
+  vti_return_pct: -0.23
+  abnormal_return_pct: -7.8356
+  earnings_surprise_pct: 1.85
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-11-10'
+  stock_return_pct: 5.0228
+  vti_return_pct: 1.4632
+  abnormal_return_pct: 3.5596
+  earnings_surprise_pct: -5.88
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-02-25'
+  stock_return_pct: -2.1263
+  vti_return_pct: 0.7724
+  abnormal_return_pct: -2.8987
+  earnings_surprise_pct: -6.67
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-05-11'
+  stock_return_pct: 2.2177
+  vti_return_pct: 0.2094
+  abnormal_return_pct: 2.0083
+  earnings_surprise_pct: -1.77
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-10'
+  stock_return_pct: -6.1461
+  vti_return_pct: -0.0393
+  abnormal_return_pct: -6.1068
+  earnings_surprise_pct: 1.62
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: -4.5027
+  mean_abnormal_return_pct: -3.3171
+  positive_reaction_rate: 0.375
+  median_absolute_reaction_pct: 5.3139
+  beat_observations: 3
+  median_reaction_after_beat_pct: -6.1068
+  miss_observations: 5
+  median_reaction_after_miss_pct: -2.8987
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.4527
+    eps_low: 0.41
+    eps_high: 0.4954
+    eps_year_ago: 0.55
+    analysts: 2
+    growth: -0.1769
+    revenue_avg: 2526192930
+  next_quarter:
+    eps_avg: 0.3413
+    eps_low: 0.3125
+    eps_high: 0.37
+    eps_year_ago: 0.14
+    analysts: 2
+    growth: 1.4377
+    revenue_avg: 2467433970
+  current_year:
+    eps_avg: 1.3323
+    eps_low: 1.269
+    eps_high: 1.39
+    eps_year_ago: 1.2
+    analysts: 4
+    growth: 0.1103
+    revenue_avg: 9746325860
+  eps_revisions_last_30d:
+    up: 0
+    down: 2

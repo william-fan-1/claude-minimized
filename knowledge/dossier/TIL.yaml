@@ -2,14 +2,6 @@ ticker: TIL
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-11-13'
-  stock_return_pct: -5.5123
-  vti_return_pct: -0.0473
-  abnormal_return_pct: -5.465
-  earnings_surprise_pct: 17.21
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2025-03-04'
   stock_return_pct: -4.267
   vti_return_pct: -1.2478
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 1.5791
   earnings_surprise_pct: -5.08
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-14'
+  stock_return_pct: 1.5131
+  vti_return_pct: -0.1171
+  abnormal_return_pct: 1.6302
+  earnings_surprise_pct: -80.0
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -4.0614
-  mean_abnormal_return_pct: -2.5181
-  positive_reaction_rate: 0.375
-  median_absolute_reaction_pct: 4.9565
-  beat_observations: 4
-  median_reaction_after_beat_pct: -5.2683
-  miss_observations: 3
-  median_reaction_after_miss_pct: 0.0378
+  median_abnormal_return_pct: -1.4907
+  mean_abnormal_return_pct: -1.6312
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 3.9143
+  beat_observations: 3
+  median_reaction_after_beat_pct: -5.1035
+  miss_observations: 4
+  median_reaction_after_miss_pct: 0.8085
+forward_estimates:
+  as_of: '2026-08-17'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.17
+    eps_low: -0.17
+    eps_high: -0.17
+    eps_year_ago: -2.01
+    analysts: 1.0
+    growth: 0.9154
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: -0.04
+    eps_low: -0.04
+    eps_high: -0.04
+    eps_year_ago: -1.21
+    analysts: 1.0
+    growth: 0.9669
+    revenue_avg: 0
+  current_year:
+    eps_avg: -1.17
+    eps_low: -1.17
+    eps_high: -1.17
+    eps_year_ago: -10.7
+    analysts: 1.0
+    growth: 0.8907
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 1.0
+    down: 0.0

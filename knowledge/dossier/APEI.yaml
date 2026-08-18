@@ -2,17 +2,9 @@ ticker: APEI
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-07'
-  stock_return_pct: -27.9438
-  vti_return_pct: -0.7642
-  abnormal_return_pct: -27.1795
-  earnings_surprise_pct: 6.29
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-13'
   stock_return_pct: 14.6074
-  vti_return_pct: -0.0473
+  vti_return_pct: -0.0472
   abnormal_return_pct: 14.6546
   earnings_surprise_pct: 32.08
   surprise_source: Yahoo Finance (via yfinance)
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -5.7474
   earnings_surprise_pct: 61.16
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: -3.5239
+  vti_return_pct: -0.2568
+  abnormal_return_pct: -3.2672
+  earnings_surprise_pct: 33.92
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
   median_abnormal_return_pct: 4.9161
-  mean_abnormal_return_pct: 3.3783
+  mean_abnormal_return_pct: 6.3673
   positive_reaction_rate: 0.625
-  median_absolute_reaction_pct: 11.2629
+  median_absolute_reaction_pct: 6.8093
   beat_observations: 8
   median_reaction_after_beat_pct: 4.9161
   miss_observations: 0
   median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.475
+    eps_low: 0.46
+    eps_high: 0.49
+    eps_year_ago: 0.197
+    analysts: 2
+    growth: 1.4112
+    revenue_avg: 170879140
+  next_quarter:
+    eps_avg: 0.965
+    eps_low: 0.96
+    eps_high: 0.97
+    eps_year_ago: 0.5387
+    analysts: 2
+    growth: 0.7913
+    revenue_avg: 180883710
+  current_year:
+    eps_avg: 3.025
+    eps_low: 3.02
+    eps_high: 3.03
+    eps_year_ago: 2.1936
+    analysts: 2
+    growth: 0.379
+    revenue_avg: 693502140
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

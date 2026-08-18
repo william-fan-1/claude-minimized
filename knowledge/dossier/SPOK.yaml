@@ -1,0 +1,106 @@
+ticker: SPOK
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-10-31'
+  stock_return_pct: 4.2867
+  vti_return_pct: -1.8647
+  abnormal_return_pct: 6.1514
+  earnings_surprise_pct: 12.5
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-02-27'
+  stock_return_pct: 2.4184
+  vti_return_pct: -1.5492
+  abnormal_return_pct: 3.9676
+  earnings_surprise_pct: -10.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-01'
+  stock_return_pct: 13.1799
+  vti_return_pct: 0.6231
+  abnormal_return_pct: 12.5568
+  earnings_surprise_pct: 38.89
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-07-31'
+  stock_return_pct: 7.6923
+  vti_return_pct: -0.4356
+  abnormal_return_pct: 8.1279
+  earnings_surprise_pct: 22.22
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-10-30'
+  stock_return_pct: -12.5237
+  vti_return_pct: -1.0749
+  abnormal_return_pct: -11.4488
+  earnings_surprise_pct: -21.05
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-02-26'
+  stock_return_pct: -13.435
+  vti_return_pct: -0.392
+  abnormal_return_pct: -13.043
+  earnings_surprise_pct: -22.22
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-04-30'
+  stock_return_pct: -3.2579
+  vti_return_pct: 1.1336
+  abnormal_return_pct: -4.3915
+  earnings_surprise_pct: -50.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-07-30'
+  stock_return_pct: -1.9161
+  vti_return_pct: 1.6231
+  abnormal_return_pct: -3.5392
+  earnings_surprise_pct: 33.33
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: 0.2142
+  mean_abnormal_return_pct: -0.2024
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 7.1396
+  beat_observations: 4
+  median_reaction_after_beat_pct: 7.1396
+  miss_observations: 4
+  median_reaction_after_miss_pct: -7.9201
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.16
+    eps_low: 0.16
+    eps_high: 0.16
+    eps_year_ago: 0.15
+    analysts: 1.0
+    growth: 0.0667
+    revenue_avg: 34700000
+  next_quarter:
+    eps_avg: 0.17
+    eps_low: 0.17
+    eps_high: 0.17
+    eps_year_ago: 0.14
+    analysts: 1.0
+    growth: 0.2143
+    revenue_avg: 35300000
+  current_year:
+    eps_avg: 0.66
+    eps_low: 0.66
+    eps_high: 0.66
+    eps_year_ago: 0.75
+    analysts: 1.0
+    growth: -0.12
+    revenue_avg: 139300000
+  eps_revisions_last_30d:
+    up: 0.0
+    down: 1.0

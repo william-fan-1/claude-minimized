@@ -4,7 +4,7 @@ prior_reactions:
   timing: before_market_open
   reaction_date: '2018-05-03'
   stock_return_pct: 9.8712
-  vti_return_pct: -0.2726
+  vti_return_pct: -0.2725
   abnormal_return_pct: 10.1438
   earnings_surprise_pct: 30.0
   surprise_source: Yahoo Finance (via yfinance)
@@ -12,8 +12,8 @@ prior_reactions:
   timing: before_market_open
   reaction_date: '2018-08-02'
   stock_return_pct: -18.7739
-  vti_return_pct: 0.5934
-  abnormal_return_pct: -19.3674
+  vti_return_pct: 0.5935
+  abnormal_return_pct: -19.3675
   earnings_surprise_pct: 27.08
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -36,16 +36,16 @@ prior_reactions:
   timing: before_market_open
   reaction_date: '2019-05-01'
   stock_return_pct: -4.6429
-  vti_return_pct: -0.7447
-  abnormal_return_pct: -3.8982
+  vti_return_pct: -0.7448
+  abnormal_return_pct: -3.8981
   earnings_surprise_pct: 96.0
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
   timing: before_market_open
   reaction_date: '2019-08-01'
   stock_return_pct: 2.521
-  vti_return_pct: -0.9264
-  abnormal_return_pct: 3.4474
+  vti_return_pct: -0.9263
+  abnormal_return_pct: 3.4473
   earnings_surprise_pct: -19.51
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -66,11 +66,11 @@ prior_reactions:
   surprise_source: null
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -2.1903
+  median_abnormal_return_pct: -2.1902
   mean_abnormal_return_pct: -0.4824
   positive_reaction_rate: 0.375
   median_absolute_reaction_pct: 8.2501
   beat_observations: 5
-  median_reaction_after_beat_pct: -3.8982
+  median_reaction_after_beat_pct: -3.8981
   miss_observations: 2
   median_reaction_after_miss_pct: -1.771

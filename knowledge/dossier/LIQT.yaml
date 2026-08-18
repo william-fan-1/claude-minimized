@@ -2,17 +2,9 @@ ticker: LIQT
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-15'
-  stock_return_pct: 13.1915
-  vti_return_pct: 1.7321
-  abnormal_return_pct: 11.4594
-  earnings_surprise_pct: 1.82
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-15'
   stock_return_pct: -8.9286
-  vti_return_pct: -1.2686
+  vti_return_pct: -1.2685
   abnormal_return_pct: -7.66
   earnings_surprise_pct: -30.94
   surprise_source: Yahoo Finance (via yfinance)
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -3.1959
   earnings_surprise_pct: -18.67
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-12'
+  stock_return_pct: -12.8571
+  vti_return_pct: 0.31
+  abnormal_return_pct: -13.1671
+  earnings_surprise_pct: 36.63
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: 3.947
-  mean_abnormal_return_pct: 3.6729
-  positive_reaction_rate: 0.75
+  median_abnormal_return_pct: 3.3197
+  mean_abnormal_return_pct: 0.5946
+  positive_reaction_rate: 0.625
   median_absolute_reaction_pct: 5.5397
   beat_observations: 3
-  median_reaction_after_beat_pct: 6.5681
+  median_reaction_after_beat_pct: 4.5113
   miss_observations: 5
   median_reaction_after_miss_pct: 3.2568
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.19
+    eps_low: -0.19
+    eps_high: -0.19
+    eps_year_ago: -0.2185
+    analysts: 1
+    growth: 0.1304
+    revenue_avg: 6000000
+  next_quarter:
+    eps_avg: -0.14
+    eps_low: -0.14
+    eps_high: -0.14
+    eps_year_ago: -0.14
+    analysts: 1
+    growth: 0.0
+    revenue_avg: 6000000
+  current_year:
+    eps_avg: -0.79
+    eps_low: -0.79
+    eps_high: -0.79
+    eps_year_ago: -0.8428
+    analysts: 1
+    growth: 0.0626
+    revenue_avg: 21600000
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

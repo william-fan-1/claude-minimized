@@ -2,17 +2,9 @@ ticker: BGS
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-05-09'
-  stock_return_pct: -28.3117
-  vti_return_pct: 0.5892
-  abnormal_return_pct: -28.9009
-  earnings_surprise_pct: -15.36
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-08-07'
   stock_return_pct: -2.6559
-  vti_return_pct: -0.7642
+  vti_return_pct: -0.7643
   abnormal_return_pct: -1.8916
   earnings_surprise_pct: -19.03
   surprise_source: Yahoo Finance (via yfinance)
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 15.5049
   earnings_surprise_pct: -7.05
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-12'
+  stock_return_pct: 4.9853
+  vti_return_pct: 0.31
+  abnormal_return_pct: 4.6753
+  earnings_surprise_pct: 6.76
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -2.0634
-  mean_abnormal_return_pct: -4.6399
-  positive_reaction_rate: 0.375
-  median_absolute_reaction_pct: 19.0716
-  beat_observations: 2
-  median_reaction_after_beat_pct: 14.3274
-  miss_observations: 6
-  median_reaction_after_miss_pct: -12.4367
+  median_abnormal_return_pct: 0.5012
+  mean_abnormal_return_pct: -0.4429
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 10.0901
+  beat_observations: 3
+  median_reaction_after_beat_pct: 4.6753
+  miss_observations: 5
+  median_reaction_after_miss_pct: -2.2352
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.148
+    eps_low: 0.13
+    eps_high: 0.16
+    eps_year_ago: 0.15
+    analysts: 5
+    growth: -0.0133
+    revenue_avg: 394900000
+  next_quarter:
+    eps_avg: 0.2564
+    eps_low: 0.21
+    eps_high: 0.28
+    eps_year_ago: 0.28
+    analysts: 5
+    growth: -0.0843
+    revenue_avg: 514800000
+  current_year:
+    eps_avg: 0.5498
+    eps_low: 0.49
+    eps_high: 0.58
+    eps_year_ago: 0.51
+    analysts: 5
+    growth: 0.078
+    revenue_avg: 1729950000
+  eps_revisions_last_30d:
+    up: 1
+    down: 1

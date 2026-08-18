@@ -2,16 +2,8 @@ ticker: WWW
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-08-07'
-  stock_return_pct: -6.8017
-  vti_return_pct: -0.7642
-  abnormal_return_pct: -6.0375
-  earnings_surprise_pct: 37.67
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2024-11-07'
-  stock_return_pct: 35.8255
+  stock_return_pct: 35.8256
   vti_return_pct: 0.699
   abnormal_return_pct: 35.1266
   earnings_surprise_pct: 34.15
@@ -29,7 +21,7 @@ prior_reactions:
   reaction_date: '2025-05-08'
   stock_return_pct: 10.2703
   vti_return_pct: 0.7859
-  abnormal_return_pct: 9.4843
+  abnormal_return_pct: 9.4844
   earnings_surprise_pct: 64.2
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -44,7 +36,7 @@ prior_reactions:
   timing: before_market_open
   reaction_date: '2025-11-05'
   stock_return_pct: -24.2754
-  vti_return_pct: 0.428
+  vti_return_pct: 0.4281
   abnormal_return_pct: -24.7034
   earnings_surprise_pct: 9.24
   surprise_source: Yahoo Finance (via yfinance)
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -2.7337
   earnings_surprise_pct: 12.53
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-13'
+  stock_return_pct: 10.0775
+  vti_return_pct: 0.6469
+  abnormal_return_pct: 9.4306
+  earnings_surprise_pct: 4.97
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: 3.3753
-  mean_abnormal_return_pct: 2.4585
-  positive_reaction_rate: 0.5
+  median_abnormal_return_pct: 9.4575
+  mean_abnormal_return_pct: 4.3921
+  positive_reaction_rate: 0.625
   median_absolute_reaction_pct: 12.6392
   beat_observations: 8
-  median_reaction_after_beat_pct: 3.3753
+  median_reaction_after_beat_pct: 9.4575
   miss_observations: 0
   median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-17'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.4561
+    eps_low: 0.45
+    eps_high: 0.48
+    eps_year_ago: 0.36
+    analysts: 9
+    growth: 0.2668
+    revenue_avg: 499868270
+  next_quarter:
+    eps_avg: 0.5338
+    eps_low: 0.48
+    eps_high: 0.55
+    eps_year_ago: 0.45
+    analysts: 9
+    growth: 0.1863
+    revenue_avg: 537333170
+  current_year:
+    eps_avg: 1.6472
+    eps_low: 1.63
+    eps_high: 1.66
+    eps_year_ago: 1.35
+    analysts: 9
+    growth: 0.2201
+    revenue_avg: 2001190320
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

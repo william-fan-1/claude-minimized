@@ -1,0 +1,46 @@
+ticker: MRT
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-07-28'
+  stock_return_pct: -10.7527
+  vti_return_pct: 0.2218
+  abnormal_return_pct: -10.9745
+  earnings_surprise_pct: null
+  surprise_source: null
+reaction_statistics:
+  observations: 1
+  median_abnormal_return_pct: -10.9745
+  mean_abnormal_return_pct: -10.9745
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 10.9745
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 0
+  median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.065
+    eps_low: -0.08
+    eps_high: -0.05
+    analysts: 2
+    revenue_avg: 19713000
+  next_quarter:
+    eps_avg: -0.04
+    eps_low: -0.04
+    eps_high: -0.04
+    analysts: 2
+    revenue_avg: 24069500
+  current_year:
+    eps_avg: -0.225
+    eps_low: -0.24
+    eps_high: -0.21
+    eps_year_ago: -0.5487
+    analysts: 2
+    growth: 0.5899
+    revenue_avg: 85034500
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

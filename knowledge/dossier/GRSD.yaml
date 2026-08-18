@@ -1,0 +1,106 @@
+ticker: GRSD
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-11-14'
+  stock_return_pct: 20.5626
+  vti_return_pct: -0.7393
+  abnormal_return_pct: 21.3019
+  earnings_surprise_pct: 53.64
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-03-20'
+  stock_return_pct: 6.8109
+  vti_return_pct: -0.2398
+  abnormal_return_pct: 7.0507
+  earnings_surprise_pct: 48.49
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-05-15'
+  stock_return_pct: -14.9457
+  vti_return_pct: 0.4077
+  abnormal_return_pct: -15.3534
+  earnings_surprise_pct: 101.83
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-15'
+  stock_return_pct: -17.052
+  vti_return_pct: -0.227
+  abnormal_return_pct: -16.825
+  earnings_surprise_pct: 147.86
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-11-13'
+  stock_return_pct: -23.1332
+  vti_return_pct: -1.7716
+  abnormal_return_pct: -21.3617
+  earnings_surprise_pct: 58.3
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-03-12'
+  stock_return_pct: 5.0725
+  vti_return_pct: -1.5964
+  abnormal_return_pct: 6.6689
+  earnings_surprise_pct: 48.37
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-15'
+  stock_return_pct: -42.029
+  vti_return_pct: -1.2684
+  abnormal_return_pct: -40.7606
+  earnings_surprise_pct: -27.33
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-14'
+  stock_return_pct: 19.3717
+  vti_return_pct: -0.1171
+  abnormal_return_pct: 19.4888
+  earnings_surprise_pct: 78.51
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: -4.3422
+  mean_abnormal_return_pct: -4.9738
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 18.1569
+  beat_observations: 7
+  median_reaction_after_beat_pct: 6.6689
+  miss_observations: 1
+  median_reaction_after_miss_pct: -40.7606
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.1
+    eps_low: 0.1
+    eps_high: 0.1
+    eps_year_ago: 0.26
+    analysts: 1
+    growth: -0.6154
+    revenue_avg: 41346460
+  next_quarter:
+    eps_avg: 0.205
+    eps_low: 0.19
+    eps_high: 0.22
+    eps_year_ago: 0.3
+    analysts: 2
+    growth: -0.3167
+    revenue_avg: 45785310
+  current_year:
+    eps_avg: 0.45
+    eps_low: 0.45
+    eps_high: 0.45
+    eps_year_ago: 1.26
+    analysts: 1
+    growth: -0.6429
+    revenue_avg: 165301490
+  eps_revisions_last_30d:
+    up: 0
+    down: 4

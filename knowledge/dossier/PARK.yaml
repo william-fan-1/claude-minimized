@@ -1,0 +1,64 @@
+ticker: PARK
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-02-26'
+  stock_return_pct: -4.4783
+  vti_return_pct: -0.392
+  abnormal_return_pct: -4.0863
+  earnings_surprise_pct: 385.71
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-14'
+  stock_return_pct: -1.7486
+  vti_return_pct: 0.7376
+  abnormal_return_pct: -2.4862
+  earnings_surprise_pct: 120.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-13'
+  stock_return_pct: 10.3399
+  vti_return_pct: 0.6469
+  abnormal_return_pct: 9.693
+  earnings_surprise_pct: 100.0
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 3
+  median_abnormal_return_pct: -2.4862
+  mean_abnormal_return_pct: 1.0402
+  positive_reaction_rate: 0.3333
+  median_absolute_reaction_pct: 4.0863
+  beat_observations: 3
+  median_reaction_after_beat_pct: -2.4862
+  miss_observations: 0
+  median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.3
+    eps_low: 0.27
+    eps_high: 0.33
+    analysts: 2
+    revenue_avg: 64592000
+  next_quarter:
+    eps_avg: 0.27
+    eps_low: 0.25
+    eps_high: 0.29
+    eps_year_ago: 0.3
+    analysts: 2
+    growth: -0.1
+    revenue_avg: 64660500
+  current_year:
+    eps_avg: 1.66
+    eps_low: 1.66
+    eps_high: 1.66
+    eps_year_ago: 2.44
+    analysts: 2
+    growth: -0.3197
+    revenue_avg: 258159500
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

@@ -2,14 +2,6 @@ ticker: ATEX
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-07'
-  stock_return_pct: -2.2955
-  vti_return_pct: -0.7642
-  abnormal_return_pct: -1.5313
-  earnings_surprise_pct: -85.71
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-14'
   stock_return_pct: -5.0268
   vti_return_pct: -0.7393
@@ -29,7 +21,7 @@ prior_reactions:
   reaction_date: '2025-06-25'
   stock_return_pct: -6.9145
   vti_return_pct: -0.1168
-  abnormal_return_pct: -6.7977
+  abnormal_return_pct: -6.7978
   earnings_surprise_pct: -7.52
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -45,7 +37,7 @@ prior_reactions:
   reaction_date: '2025-11-13'
   stock_return_pct: 13.6785
   vti_return_pct: -1.7716
-  abnormal_return_pct: 15.45
+  abnormal_return_pct: 15.4501
   earnings_surprise_pct: 576.67
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 23.9694
   earnings_surprise_pct: -28.47
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-12'
+  stock_return_pct: -4.4545
+  vti_return_pct: 0.31
+  abnormal_return_pct: -4.7645
+  earnings_surprise_pct: 106.05
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -0.9462
-  mean_abnormal_return_pct: 2.7112
+  median_abnormal_return_pct: -2.3243
+  mean_abnormal_return_pct: 2.307
   positive_reaction_rate: 0.375
-  median_absolute_reaction_pct: 4.5955
-  beat_observations: 4
-  median_reaction_after_beat_pct: -0.1049
-  miss_observations: 4
-  median_reaction_after_miss_pct: -2.9094
+  median_absolute_reaction_pct: 4.834
+  beat_observations: 5
+  median_reaction_after_beat_pct: -0.3611
+  miss_observations: 3
+  median_reaction_after_miss_pct: -4.2875
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.1653
+    eps_low: -0.5558
+    eps_high: 0.45
+    eps_year_ago: 1.35
+    analysts: 3
+    growth: -1.1224
+    revenue_avg: 1979000
+  next_quarter:
+    eps_avg: -0.2147
+    eps_low: -0.4594
+    eps_high: 0.28
+    eps_year_ago: -0.35
+    analysts: 3
+    growth: 0.3865
+    revenue_avg: 1958000
+  current_year:
+    eps_avg: -0.4063
+    eps_low: -1.499
+    eps_high: 1.01
+    eps_year_ago: 4.83
+    analysts: 3
+    growth: -1.0841
+    revenue_avg: 20832000
+  eps_revisions_last_30d:
+    up: 2
+    down: 0

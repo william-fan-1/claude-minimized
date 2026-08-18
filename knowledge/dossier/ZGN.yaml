@@ -1,0 +1,51 @@
+ticker: ZGN
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2022-05-05'
+  stock_return_pct: -3.6145
+  vti_return_pct: -3.6879
+  abnormal_return_pct: 0.0734
+  earnings_surprise_pct: -59.55
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2022-09-09'
+  stock_return_pct: 3.3366
+  vti_return_pct: 1.6608
+  abnormal_return_pct: 1.6758
+  earnings_surprise_pct: 26.8
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2022-11-04'
+  stock_return_pct: 0.091
+  vti_return_pct: 1.2866
+  abnormal_return_pct: -1.1956
+  earnings_surprise_pct: -16.85
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 3
+  median_abnormal_return_pct: 0.0734
+  mean_abnormal_return_pct: 0.1845
+  positive_reaction_rate: 0.6667
+  median_absolute_reaction_pct: 1.1956
+  beat_observations: 1
+  median_reaction_after_beat_pct: 1.6758
+  miss_observations: 2
+  median_reaction_after_miss_pct: -0.5611
+forward_estimates:
+  as_of: '2026-08-17'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    revenue_avg: 466666670
+  next_quarter:
+    revenue_avg: 0
+  current_year:
+    eps_avg: 0.4268
+    eps_low: 0.391
+    eps_high: 0.49
+    eps_year_ago: 0.45
+    analysts: 11.0
+    growth: -0.0516
+    revenue_avg: 2042321200

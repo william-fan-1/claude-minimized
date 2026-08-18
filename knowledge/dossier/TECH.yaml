@@ -2,14 +2,6 @@ ticker: TECH
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-08-07'
-  stock_return_pct: -9.5129
-  vti_return_pct: -0.7642
-  abnormal_return_pct: -8.7486
-  earnings_surprise_pct: -0.96
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2024-10-30'
   stock_return_pct: 7.464
   vti_return_pct: -0.2473
@@ -21,7 +13,7 @@ prior_reactions:
   reaction_date: '2025-02-05'
   stock_return_pct: 3.7216
   vti_return_pct: 0.4622
-  abnormal_return_pct: 3.2593
+  abnormal_return_pct: 3.2594
   earnings_surprise_pct: 7.77
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -44,7 +36,7 @@ prior_reactions:
   timing: before_market_open
   reaction_date: '2025-11-05'
   stock_return_pct: -1.8985
-  vti_return_pct: 0.428
+  vti_return_pct: 0.4281
   abnormal_return_pct: -2.3266
   earnings_surprise_pct: -0.36
   surprise_source: Yahoo Finance (via yfinance)
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -17.7192
   earnings_surprise_pct: -0.82
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-12'
+  stock_return_pct: 0.1109
+  vti_return_pct: 0.31
+  abnormal_return_pct: -0.1991
+  earnings_surprise_pct: 0.13
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -0.2914
-  mean_abnormal_return_pct: -2.3455
+  median_abnormal_return_pct: 0.7723
+  mean_abnormal_return_pct: -1.2768
   positive_reaction_rate: 0.5
-  median_absolute_reaction_pct: 7.2165
-  beat_observations: 5
-  median_reaction_after_beat_pct: 3.2593
-  miss_observations: 3
-  median_reaction_after_miss_pct: -8.7486
+  median_absolute_reaction_pct: 4.9906
+  beat_observations: 6
+  median_reaction_after_beat_pct: 2.5016
+  miss_observations: 2
+  median_reaction_after_miss_pct: -10.0229
+forward_estimates:
+  as_of: '2026-08-17'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.5193
+    eps_low: 0.51
+    eps_high: 0.53
+    eps_year_ago: 0.53
+    analysts: 11
+    growth: -0.0202
+    revenue_avg: 291754070
+  next_quarter:
+    eps_avg: 0.4767
+    eps_low: 0.46
+    eps_high: 0.5
+    eps_year_ago: 0.46
+    analysts: 3
+    growth: 0.0362
+    revenue_avg: 308022980
+  current_year:
+    eps_avg: 2.0466
+    eps_low: 1.99
+    eps_high: 2.11
+    eps_year_ago: 1.93
+    analysts: 13
+    growth: 0.0604
+    revenue_avg: 1209592090
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

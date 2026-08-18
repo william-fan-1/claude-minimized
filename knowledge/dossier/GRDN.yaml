@@ -1,0 +1,106 @@
+ticker: GRDN
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-11-13'
+  stock_return_pct: -10.7304
+  vti_return_pct: -0.0472
+  abnormal_return_pct: -10.6832
+  earnings_surprise_pct: 44.75
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-03-27'
+  stock_return_pct: 4.35
+  vti_return_pct: -0.423
+  abnormal_return_pct: 4.7729
+  earnings_surprise_pct: 8.23
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-13'
+  stock_return_pct: -3.9751
+  vti_return_pct: 0.6788
+  abnormal_return_pct: -4.6539
+  earnings_surprise_pct: -5.86
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-12'
+  stock_return_pct: 13.7827
+  vti_return_pct: 1.2232
+  abnormal_return_pct: 12.5596
+  earnings_surprise_pct: 2.28
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-11'
+  stock_return_pct: 5.042
+  vti_return_pct: 0.2448
+  abnormal_return_pct: 4.7972
+  earnings_surprise_pct: 6.38
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-12'
+  stock_return_pct: -0.7162
+  vti_return_pct: -1.5964
+  abnormal_return_pct: 0.8802
+  earnings_surprise_pct: 38.32
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-07'
+  stock_return_pct: -0.8475
+  vti_return_pct: -0.4587
+  abnormal_return_pct: -0.3887
+  earnings_surprise_pct: 20.83
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-07'
+  stock_return_pct: 11.0464
+  vti_return_pct: 0.7149
+  abnormal_return_pct: 10.3315
+  earnings_surprise_pct: 5.84
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: 2.8266
+  mean_abnormal_return_pct: 2.202
+  positive_reaction_rate: 0.625
+  median_absolute_reaction_pct: 4.7851
+  beat_observations: 7
+  median_reaction_after_beat_pct: 4.7729
+  miss_observations: 1
+  median_reaction_after_miss_pct: -4.6539
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.315
+    eps_low: 0.29
+    eps_high: 0.33
+    eps_year_ago: 0.25
+    analysts: 6
+    growth: 0.26
+    revenue_avg: 365835230
+  next_quarter:
+    eps_avg: 0.415
+    eps_low: 0.39
+    eps_high: 0.45
+    eps_year_ago: 0.37
+    analysts: 6
+    growth: 0.1216
+    revenue_avg: 386907840
+  current_year:
+    eps_avg: 1.3033
+    eps_low: 1.25
+    eps_high: 1.34
+    eps_year_ago: 1.07
+    analysts: 6
+    growth: 0.2181
+    revenue_avg: 1441112570
+  eps_revisions_last_30d:
+    up: 4
+    down: 0

@@ -2,14 +2,6 @@ ticker: ACM
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-06'
-  stock_return_pct: 5.0554
-  vti_return_pct: 1.015
-  abnormal_return_pct: 4.0404
-  earnings_surprise_pct: 3.24
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-19'
   stock_return_pct: -0.2749
   vti_return_pct: 0.4597
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -11.7816
   earnings_surprise_pct: 3.5
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: -8.5266
+  vti_return_pct: -0.2568
+  abnormal_return_pct: -8.2698
+  earnings_surprise_pct: -134.17
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: 0.4836
-  mean_abnormal_return_pct: -0.2702
-  positive_reaction_rate: 0.5
+  median_abnormal_return_pct: -0.5711
+  mean_abnormal_return_pct: -1.8089
+  positive_reaction_rate: 0.375
   median_absolute_reaction_pct: 2.246
-  beat_observations: 8
-  median_reaction_after_beat_pct: 0.4836
-  miss_observations: 0
-  median_reaction_after_miss_pct: null
+  beat_observations: 7
+  median_reaction_after_beat_pct: -0.4075
+  miss_observations: 1
+  median_reaction_after_miss_pct: -8.2698
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 1.5858
+    eps_low: 1.51
+    eps_high: 1.66
+    eps_year_ago: 1.36
+    analysts: 10
+    growth: 0.166
+    revenue_avg: 4084050650
+  next_quarter:
+    eps_avg: 1.4082
+    eps_low: 1.28
+    eps_high: 1.61
+    eps_year_ago: 1.29
+    analysts: 6
+    growth: 0.0916
+    revenue_avg: 3906846220
+  current_year:
+    eps_avg: 3.9791
+    eps_low: 3.9491
+    eps_high: 4.0454
+    eps_year_ago: 5.26
+    analysts: 9
+    growth: -0.2435
+    revenue_avg: 15302024650
+  eps_revisions_last_30d:
+    up: 1
+    down: 7

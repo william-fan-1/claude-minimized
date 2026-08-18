@@ -1,0 +1,64 @@
+ticker: APC
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-31'
+  stock_return_pct: 3.1719
+  vti_return_pct: 2.9293
+  abnormal_return_pct: 0.2426
+  earnings_surprise_pct: 36.06
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-05-11'
+  stock_return_pct: 3.878
+  vti_return_pct: 0.2094
+  abnormal_return_pct: 3.6685
+  earnings_surprise_pct: 10.55
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-07'
+  stock_return_pct: -1.8677
+  vti_return_pct: 0.7149
+  abnormal_return_pct: -2.5826
+  earnings_surprise_pct: -26.25
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 3
+  median_abnormal_return_pct: 0.2426
+  mean_abnormal_return_pct: 0.4428
+  positive_reaction_rate: 0.6667
+  median_absolute_reaction_pct: 2.5826
+  beat_observations: 2
+  median_reaction_after_beat_pct: 1.9555
+  miss_observations: 1
+  median_reaction_after_miss_pct: -2.5826
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.31
+    eps_low: 0.31
+    eps_high: 0.31
+    analysts: 1
+    revenue_avg: 1549282970
+  next_quarter:
+    eps_avg: 0.19
+    eps_low: 0.19
+    eps_high: 0.19
+    eps_year_ago: 0.3081
+    analysts: 1
+    growth: -0.3833
+    revenue_avg: 1441546720
+  current_year:
+    eps_avg: 0.95
+    eps_low: 0.95
+    eps_high: 0.95
+    eps_year_ago: 1.0435
+    analysts: 1
+    growth: -0.0896
+    revenue_avg: 6079227620
+  eps_revisions_last_30d:
+    up: 2
+    down: 0

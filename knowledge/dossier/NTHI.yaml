@@ -1,0 +1,64 @@
+ticker: NTHI
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-03-31'
+  stock_return_pct: 0.1429
+  vti_return_pct: 2.9293
+  abnormal_return_pct: -2.7864
+  earnings_surprise_pct: 5.41
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-18'
+  stock_return_pct: -2.9091
+  vti_return_pct: -0.1048
+  abnormal_return_pct: -2.8043
+  earnings_surprise_pct: -2.7
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-10'
+  stock_return_pct: 0.0
+  vti_return_pct: -0.0393
+  abnormal_return_pct: 0.0393
+  earnings_surprise_pct: -247.99
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 3
+  median_abnormal_return_pct: -2.7864
+  mean_abnormal_return_pct: -1.8505
+  positive_reaction_rate: 0.3333
+  median_absolute_reaction_pct: 2.7864
+  beat_observations: 1
+  median_reaction_after_beat_pct: -2.7864
+  miss_observations: 2
+  median_reaction_after_miss_pct: -1.3825
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.105
+    eps_low: -0.11
+    eps_high: -0.1
+    analysts: 2
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: -0.14
+    eps_low: -0.19
+    eps_high: -0.08
+    eps_year_ago: -0.35
+    analysts: 2
+    growth: 0.6
+    revenue_avg: 0
+  current_year:
+    eps_avg: -0.77
+    eps_low: -0.8
+    eps_high: -0.74
+    eps_year_ago: -3.2
+    analysts: 2
+    growth: 0.7594
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

@@ -2,14 +2,6 @@ ticker: AIT
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-08-15'
-  stock_return_pct: 0.7454
-  vti_return_pct: 1.7321
-  abnormal_return_pct: -0.9867
-  earnings_surprise_pct: 5.47
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2024-10-24'
   stock_return_pct: 3.6413
   vti_return_pct: 0.2666
@@ -37,7 +29,7 @@ prior_reactions:
   reaction_date: '2025-08-14'
   stock_return_pct: -0.972
   vti_return_pct: -0.1479
-  abnormal_return_pct: -0.824
+  abnormal_return_pct: -0.8241
   earnings_surprise_pct: 6.67
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 1.5923
   earnings_surprise_pct: 0.16
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-13'
+  stock_return_pct: 1.513
+  vti_return_pct: 0.6469
+  abnormal_return_pct: 0.8661
+  earnings_surprise_pct: 8.65
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -0.8679
-  mean_abnormal_return_pct: -1.2783
-  positive_reaction_rate: 0.375
+  median_abnormal_return_pct: 0.021
+  mean_abnormal_return_pct: -1.0467
+  positive_reaction_rate: 0.5
   median_absolute_reaction_pct: 1.4538
   beat_observations: 8
-  median_reaction_after_beat_pct: -0.8679
+  median_reaction_after_beat_pct: 0.021
   miss_observations: 0
   median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 2.8763
+    eps_low: 2.82
+    eps_high: 2.95
+    eps_year_ago: 2.63
+    analysts: 8
+    growth: 0.0936
+    revenue_avg: 1290219360
+  next_quarter:
+    eps_avg: 2.79
+    eps_low: 2.74
+    eps_high: 2.84
+    eps_year_ago: 2.51
+    analysts: 8
+    growth: 0.1116
+    revenue_avg: 1254471930
+  current_year:
+    eps_avg: 12.025
+    eps_low: 11.77
+    eps_high: 12.15
+    eps_year_ago: 10.95
+    analysts: 8
+    growth: 0.0982
+    revenue_avg: 5258378860
+  eps_revisions_last_30d:
+    up: 3
+    down: 0

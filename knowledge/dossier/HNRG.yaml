@@ -2,17 +2,9 @@ ticker: HNRG
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-07'
-  stock_return_pct: -21.8567
-  vti_return_pct: -0.7642
-  abnormal_return_pct: -21.0925
-  earnings_surprise_pct: -172.81
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-13'
   stock_return_pct: 25.6459
-  vti_return_pct: -0.0473
+  vti_return_pct: -0.0472
   abnormal_return_pct: 25.6932
   earnings_surprise_pct: 140.0
   surprise_source: Yahoo Finance (via yfinance)
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 2.1838
   earnings_surprise_pct: -71.55
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: -1.5113
+  vti_return_pct: -0.2568
+  abnormal_return_pct: -1.2545
+  earnings_surprise_pct: -231.02
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
   median_abnormal_return_pct: 3.6778
-  mean_abnormal_return_pct: 4.0342
+  mean_abnormal_return_pct: 6.5139
   positive_reaction_rate: 0.625
-  median_absolute_reaction_pct: 14.8681
+  median_absolute_reaction_pct: 9.5727
   beat_observations: 5
   median_reaction_after_beat_pct: 18.7457
   miss_observations: 3
   median_reaction_after_miss_pct: 2.1838
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.0967
+    eps_low: -0.21
+    eps_high: -0.02
+    eps_year_ago: 0.19
+    analysts: 3
+    growth: -1.5088
+    revenue_avg: 90035330
+  next_quarter:
+    eps_avg: 0.19
+    eps_low: 0.1
+    eps_high: 0.28
+    eps_year_ago: 0.0085
+    analysts: 2
+    growth: 21.3529
+    revenue_avg: 124932500
+  current_year:
+    eps_avg: -0.275
+    eps_low: -0.44
+    eps_high: -0.11
+    eps_year_ago: 0.9781
+    analysts: 2
+    growth: -1.2812
+    revenue_avg: 447142000
+  eps_revisions_last_30d:
+    up: 1
+    down: 2

@@ -2,14 +2,6 @@ ticker: ARMK
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-08-06'
-  stock_return_pct: 0.4536
-  vti_return_pct: 1.015
-  abnormal_return_pct: -0.5614
-  earnings_surprise_pct: 2.63
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2024-11-11'
   stock_return_pct: -1.0995
   vti_return_pct: 0.2798
@@ -21,7 +13,7 @@ prior_reactions:
   reaction_date: '2025-02-04'
   stock_return_pct: -2.0546
   vti_return_pct: 0.7253
-  abnormal_return_pct: -2.7799
+  abnormal_return_pct: -2.78
   earnings_surprise_pct: 4.39
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 8.871
   earnings_surprise_pct: 2.7
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-11'
+  stock_return_pct: 8.5443
+  vti_return_pct: -0.2568
+  abnormal_return_pct: 8.801
+  earnings_surprise_pct: 7.22
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -0.9703
-  mean_abnormal_return_pct: 1.1058
-  positive_reaction_rate: 0.375
-  median_absolute_reaction_pct: 5.0025
+  median_abnormal_return_pct: 2.2165
+  mean_abnormal_return_pct: 2.2761
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 6.8029
   beat_observations: 7
-  median_reaction_after_beat_pct: -0.5614
+  median_reaction_after_beat_pct: 5.8122
   miss_observations: 1
   median_reaction_after_miss_pct: -4.1929
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.485
+    eps_low: 0.4632
+    eps_high: 0.51
+    eps_year_ago: 0.4
+    analysts: 13
+    growth: 0.2124
+    revenue_avg: 5291254150
+  next_quarter:
+    eps_avg: 0.7531
+    eps_low: 0.69
+    eps_high: 0.84
+    eps_year_ago: 0.57
+    analysts: 12
+    growth: 0.3212
+    revenue_avg: 5281048480
+  current_year:
+    eps_avg: 2.2728
+    eps_low: 2.21
+    eps_high: 2.36
+    eps_year_ago: 1.82
+    analysts: 15
+    growth: 0.2488
+    revenue_avg: 20094096820
+  eps_revisions_last_30d:
+    up: 2
+    down: 1

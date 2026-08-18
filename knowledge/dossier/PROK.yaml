@@ -2,14 +2,6 @@ ticker: PROK
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-08-09'
-  stock_return_pct: 4.3062
-  vti_return_pct: 0.4317
-  abnormal_return_pct: 3.8746
-  earnings_surprise_pct: 10.25
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2024-11-12'
   stock_return_pct: -4.6512
   vti_return_pct: -0.3932
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: null
   earnings_surprise_pct: -1.83
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: -4.7337
+  vti_return_pct: -0.2568
+  abnormal_return_pct: -4.4769
+  earnings_surprise_pct: -8.7
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 7
-  median_abnormal_return_pct: 3.8746
-  mean_abnormal_return_pct: 3.1774
-  positive_reaction_rate: 0.7143
+  median_abnormal_return_pct: 3.4589
+  mean_abnormal_return_pct: 1.9843
+  positive_reaction_rate: 0.5714
   median_absolute_reaction_pct: 4.8643
-  beat_observations: 6
-  median_reaction_after_beat_pct: 3.6667
-  miss_observations: 1
-  median_reaction_after_miss_pct: 4.8643
+  beat_observations: 5
+  median_reaction_after_beat_pct: 3.4589
+  miss_observations: 2
+  median_reaction_after_miss_pct: 0.1937
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.1434
+    eps_low: -0.17
+    eps_high: -0.12
+    eps_year_ago: -0.12
+    analysts: 5
+    growth: -0.1948
+    revenue_avg: 99800
+  next_quarter:
+    eps_avg: -0.155
+    eps_low: -0.24
+    eps_high: -0.11
+    eps_year_ago: -0.14
+    analysts: 6
+    growth: -0.1074
+    revenue_avg: 142000
+  current_year:
+    eps_avg: -0.5483
+    eps_low: -0.66
+    eps_high: -0.489
+    eps_year_ago: -0.52
+    analysts: 5
+    growth: -0.0545
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 3
+    down: 0

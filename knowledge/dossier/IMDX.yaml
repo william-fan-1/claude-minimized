@@ -2,18 +2,10 @@ ticker: IMDX
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-09'
-  stock_return_pct: 1.2987
-  vti_return_pct: 0.4317
-  abnormal_return_pct: 0.867
-  earnings_surprise_pct: -16.76
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-13'
   stock_return_pct: -2.0
-  vti_return_pct: -0.0473
-  abnormal_return_pct: -1.9527
+  vti_return_pct: -0.0472
+  abnormal_return_pct: -1.9528
   earnings_surprise_pct: -124.43
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,47 @@ prior_reactions:
   abnormal_return_pct: 25.1448
   earnings_surprise_pct: 54.29
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: -7.1279
+  vti_return_pct: -0.2568
+  abnormal_return_pct: -6.8711
+  earnings_surprise_pct: -6.17
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -2.0275
-  mean_abnormal_return_pct: 0.8468
-  positive_reaction_rate: 0.375
-  median_absolute_reaction_pct: 6.9662
+  median_abnormal_return_pct: -3.5785
+  mean_abnormal_return_pct: -0.1205
+  positive_reaction_rate: 0.25
+  median_absolute_reaction_pct: 7.8744
   beat_observations: 3
   median_reaction_after_beat_pct: 10.4169
   miss_observations: 5
-  median_reaction_after_miss_pct: -5.0546
+  median_reaction_after_miss_pct: -6.8711
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.18
+    eps_low: -0.18
+    eps_high: -0.18
+    eps_year_ago: -0.2334
+    analysts: 1
+    growth: 0.2288
+    revenue_avg: 543900
+  next_quarter:
+    eps_avg: -0.18
+    eps_low: -0.18
+    eps_high: -0.18
+    analysts: 1
+    revenue_avg: 1410000
+  current_year:
+    eps_avg: -0.85
+    eps_low: -0.85
+    eps_high: -0.85
+    analysts: 1
+    revenue_avg: 2533330
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

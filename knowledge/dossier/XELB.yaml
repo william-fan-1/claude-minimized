@@ -1,14 +1,6 @@
 ticker: XELB
 prior_reactions:
 - fiscal_quarter: null
-  timing: before_market_open
-  reaction_date: '2024-08-14'
-  stock_return_pct: -4.2832
-  vti_return_pct: 0.2845
-  abnormal_return_pct: -4.5677
-  earnings_surprise_pct: 87.5
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
   timing: after_market_close
   reaction_date: '2024-12-23'
   stock_return_pct: -15.0
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -0.5921
   earnings_surprise_pct: 12.5
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-14'
+  stock_return_pct: -11.3208
+  vti_return_pct: -0.1171
+  abnormal_return_pct: -11.2037
+  earnings_surprise_pct: -5.26
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 7
-  median_abnormal_return_pct: -4.5677
-  mean_abnormal_return_pct: -5.2558
+  median_abnormal_return_pct: -5.4927
+  mean_abnormal_return_pct: -6.2038
   positive_reaction_rate: 0.2857
-  median_absolute_reaction_pct: 4.5677
-  beat_observations: 6
-  median_reaction_after_beat_pct: -5.0302
-  miss_observations: 1
-  median_reaction_after_miss_pct: 1.0497
+  median_absolute_reaction_pct: 5.4927
+  beat_observations: 5
+  median_reaction_after_beat_pct: -5.4927
+  miss_observations: 2
+  median_reaction_after_miss_pct: -5.077
+forward_estimates:
+  as_of: '2026-08-17'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.34
+    eps_low: -0.34
+    eps_high: -0.34
+    eps_year_ago: -2.02
+    analysts: 1
+    growth: 0.8317
+    revenue_avg: 2000000
+  next_quarter:
+    eps_avg: -0.27
+    eps_low: -0.27
+    eps_high: -0.27
+    eps_year_ago: -0.55
+    analysts: 1
+    growth: 0.5091
+    revenue_avg: 2500000
+  current_year:
+    eps_avg: -1.41
+    eps_low: -1.41
+    eps_high: -1.41
+    eps_year_ago: -5.08
+    analysts: 1
+    growth: 0.7224
+    revenue_avg: 7400000
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

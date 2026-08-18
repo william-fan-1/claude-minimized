@@ -2,14 +2,6 @@ ticker: NMTC
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2023-08-15'
-  stock_return_pct: -3.758
-  vti_return_pct: -1.135
-  abnormal_return_pct: -2.623
-  earnings_surprise_pct: 2.44
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2023-12-15'
   stock_return_pct: -11.0465
   vti_return_pct: -0.1358
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -16.6069
   earnings_surprise_pct: 25.0
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-13'
+  stock_return_pct: 20.3947
+  vti_return_pct: 0.6469
+  abnormal_return_pct: 19.7479
+  earnings_surprise_pct: -29.23
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
   median_abnormal_return_pct: -3.8825
-  mean_abnormal_return_pct: -7.0801
-  positive_reaction_rate: 0.25
-  median_absolute_reaction_pct: 3.8825
-  beat_observations: 6
-  median_reaction_after_beat_pct: -2.9817
-  miss_observations: 0
-  median_reaction_after_miss_pct: null
+  mean_abnormal_return_pct: -4.2837
+  positive_reaction_rate: 0.375
+  median_absolute_reaction_pct: 7.6677
+  beat_observations: 5
+  median_reaction_after_beat_pct: -3.3404
+  miss_observations: 1
+  median_reaction_after_miss_pct: 19.7479
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.225
+    eps_low: -0.26
+    eps_high: -0.19
+    eps_year_ago: -0.24
+    analysts: 2
+    growth: 0.0625
+    revenue_avg: 2807000
+  next_quarter:
+    eps_avg: -0.1567
+    eps_low: -0.22
+    eps_high: -0.1
+    eps_year_ago: -0.18
+    analysts: 3
+    growth: 0.1296
+    revenue_avg: 3365670
+  current_year:
+    eps_avg: -0.94
+    eps_low: -0.94
+    eps_high: -0.94
+    eps_year_ago: -0.54
+    analysts: 1
+    growth: -0.7407
+    revenue_avg: 9905670
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

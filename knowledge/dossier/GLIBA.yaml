@@ -1,0 +1,64 @@
+ticker: GLIBA
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-02-12'
+  stock_return_pct: -1.2513
+  vti_return_pct: -1.599
+  abnormal_return_pct: 0.3477
+  earnings_surprise_pct: -65.98
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-08'
+  stock_return_pct: -1.4359
+  vti_return_pct: 0.7412
+  abnormal_return_pct: -2.1772
+  earnings_surprise_pct: -58.52
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-07'
+  stock_return_pct: 0.7371
+  vti_return_pct: 0.7149
+  abnormal_return_pct: 0.0222
+  earnings_surprise_pct: -59.17
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 3
+  median_abnormal_return_pct: 0.0222
+  mean_abnormal_return_pct: -0.6024
+  positive_reaction_rate: 0.6667
+  median_absolute_reaction_pct: 0.3477
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 3
+  median_reaction_after_miss_pct: 0.0222
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.86
+    eps_low: 0.86
+    eps_high: 0.86
+    analysts: 1
+    revenue_avg: 265100000
+  next_quarter:
+    eps_avg: 0.87
+    eps_low: 0.87
+    eps_high: 0.87
+    eps_year_ago: 0.3402
+    analysts: 1
+    growth: 1.5573
+    revenue_avg: 270700000
+  current_year:
+    eps_avg: 2.58
+    eps_low: 2.58
+    eps_high: 2.58
+    eps_year_ago: 3.5902
+    analysts: 1
+    growth: -0.2814
+    revenue_avg: 1053000000
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

@@ -1,0 +1,44 @@
+ticker: TRAX
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-13'
+  stock_return_pct: -4.5524
+  vti_return_pct: 0.6469
+  abnormal_return_pct: -5.1992
+  earnings_surprise_pct: -17.27
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 1
+  median_abnormal_return_pct: -5.1992
+  mean_abnormal_return_pct: -5.1992
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 5.1992
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 1
+  median_reaction_after_miss_pct: -5.1992
+forward_estimates:
+  as_of: '2026-08-17'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.8669
+    eps_low: -0.96
+    eps_high: -0.63
+    analysts: 7
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: -0.8028
+    eps_low: -1.0
+    eps_high: -0.51
+    analysts: 7
+    revenue_avg: 0
+  current_year:
+    eps_avg: -3.912
+    eps_low: -4.4933
+    eps_high: -3.2
+    analysts: 8
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

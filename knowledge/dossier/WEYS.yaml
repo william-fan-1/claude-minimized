@@ -1,0 +1,76 @@
+ticker: WEYS
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2016-08-15'
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: 1.39
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2016-08-15'
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: 18.54
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2016-08-15'
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: -4.62
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2016-08-15'
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: 8.7
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2016-08-15'
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: -43.75
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2016-11-08'
+  stock_return_pct: 2.2865
+  vti_return_pct: 0.4306
+  abnormal_return_pct: 1.8559
+  earnings_surprise_pct: 33.33
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2017-03-09'
+  stock_return_pct: -10.9111
+  vti_return_pct: 0.0494
+  abnormal_return_pct: -10.9604
+  earnings_surprise_pct: -4.92
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2017-05-03'
+  stock_return_pct: 0.107
+  vti_return_pct: -0.2441
+  abnormal_return_pct: 0.3511
+  earnings_surprise_pct: -16.0
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 3
+  median_abnormal_return_pct: 0.3511
+  mean_abnormal_return_pct: -2.9178
+  positive_reaction_rate: 0.6667
+  median_absolute_reaction_pct: 1.8559
+  beat_observations: 1
+  median_reaction_after_beat_pct: 1.8559
+  miss_observations: 2
+  median_reaction_after_miss_pct: -5.3046

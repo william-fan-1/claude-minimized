@@ -1,0 +1,90 @@
+ticker: FUFU
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-03-25'
+  stock_return_pct: 23.3184
+  vti_return_pct: 0.169
+  abnormal_return_pct: 23.1494
+  earnings_surprise_pct: 573.83
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-06-05'
+  stock_return_pct: -3.8356
+  vti_return_pct: -0.5523
+  abnormal_return_pct: -3.2834
+  earnings_surprise_pct: -266.67
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-08-15'
+  stock_return_pct: -5.0378
+  vti_return_pct: -0.227
+  abnormal_return_pct: -4.8108
+  earnings_surprise_pct: 200.01
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-11-12'
+  stock_return_pct: -8.4639
+  vti_return_pct: 0.0357
+  abnormal_return_pct: -8.4997
+  earnings_surprise_pct: 250.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-03-20'
+  stock_return_pct: -30.6667
+  vti_return_pct: -1.5671
+  abnormal_return_pct: -29.0996
+  earnings_surprise_pct: -1768.8
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-05-29'
+  stock_return_pct: -7.0
+  vti_return_pct: 0.2368
+  abnormal_return_pct: -7.2368
+  earnings_surprise_pct: null
+  surprise_source: null
+reaction_statistics:
+  observations: 6
+  median_abnormal_return_pct: -6.0238
+  mean_abnormal_return_pct: -4.9635
+  positive_reaction_rate: 0.1667
+  median_absolute_reaction_pct: 7.8682
+  beat_observations: 3
+  median_reaction_after_beat_pct: -4.8108
+  miss_observations: 2
+  median_reaction_after_miss_pct: -16.1915
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.02
+    eps_low: 0.02
+    eps_high: 0.02
+    eps_year_ago: 0.28
+    analysts: 1
+    growth: -0.9286
+    revenue_avg: 75021000
+  next_quarter:
+    eps_avg: 0.03
+    eps_low: 0.03
+    eps_high: 0.03
+    eps_year_ago: 0.07
+    analysts: 1
+    growth: -0.5714
+    revenue_avg: 75402000
+  current_year:
+    eps_avg: 0.08
+    eps_low: 0.08
+    eps_high: 0.08
+    eps_year_ago: -0.1672
+    analysts: 1
+    growth: 1.4785
+    revenue_avg: 298850000
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

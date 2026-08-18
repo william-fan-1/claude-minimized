@@ -2,14 +2,6 @@ ticker: BOXL
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-11-14'
-  stock_return_pct: -1.5686
-  vti_return_pct: -0.7393
-  abnormal_return_pct: -0.8294
-  earnings_surprise_pct: -130.93
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2025-03-31'
   stock_return_pct: -8.75
   vti_return_pct: 0.5157
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -7.1722
   earnings_surprise_pct: 66.72
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-13'
+  stock_return_pct: -13.5959
+  vti_return_pct: 0.6469
+  abnormal_return_pct: -14.2428
+  earnings_surprise_pct: 106.03
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 7
-  median_abnormal_return_pct: -6.5506
-  mean_abnormal_return_pct: -5.457
+  median_abnormal_return_pct: -7.1722
+  mean_abnormal_return_pct: -7.3732
   positive_reaction_rate: 0.1429
-  median_absolute_reaction_pct: 6.5506
-  beat_observations: 2
-  median_reaction_after_beat_pct: -3.165
-  miss_observations: 5
-  median_reaction_after_miss_pct: -6.5506
+  median_absolute_reaction_pct: 7.1722
+  beat_observations: 3
+  median_reaction_after_beat_pct: -7.1722
+  miss_observations: 4
+  median_reaction_after_miss_pct: -7.9082
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -21.72
+    eps_low: -21.72
+    eps_high: -21.72
+    eps_year_ago: -60.8472
+    analysts: 1
+    growth: 0.643
+    revenue_avg: 29337000
+  next_quarter:
+    eps_avg: -23.22
+    eps_low: -23.22
+    eps_high: -23.22
+    eps_year_ago: -62.325
+    analysts: 1
+    growth: 0.6274
+    revenue_avg: 27388000
+  current_year:
+    eps_avg: -104.22
+    eps_low: -104.22
+    eps_high: -104.22
+    eps_year_ago: -246.6
+    analysts: 1
+    growth: 0.5774
+    revenue_avg: 110000000
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

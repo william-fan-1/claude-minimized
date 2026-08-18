@@ -1,0 +1,44 @@
+ticker: MLCI
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-12'
+  stock_return_pct: -7.0175
+  vti_return_pct: 0.31
+  abnormal_return_pct: -7.3275
+  earnings_surprise_pct: -3781.5
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 1
+  median_abnormal_return_pct: -7.3275
+  mean_abnormal_return_pct: -7.3275
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 7.3275
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 1
+  median_reaction_after_miss_pct: -7.3275
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.014
+    eps_low: 0.014
+    eps_high: 0.014
+    analysts: 1
+    revenue_avg: 18004050
+  next_quarter:
+    eps_avg: -0.251
+    eps_low: -0.251
+    eps_high: -0.251
+    analysts: 1
+    revenue_avg: 31022240
+  current_year:
+    eps_avg: -1.74
+    eps_low: -1.74
+    eps_high: -1.74
+    analysts: 1
+    revenue_avg: 87776220
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

@@ -2,14 +2,6 @@ ticker: DH
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-06'
-  stock_return_pct: 2.8169
-  vti_return_pct: 1.015
-  abnormal_return_pct: 1.8019
-  earnings_surprise_pct: 4.03
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-08'
   stock_return_pct: -1.6241
   vti_return_pct: 0.4673
@@ -37,7 +29,7 @@ prior_reactions:
   reaction_date: '2025-08-08'
   stock_return_pct: -2.7708
   vti_return_pct: 0.6301
-  abnormal_return_pct: -3.4008
+  abnormal_return_pct: -3.4009
   earnings_surprise_pct: 40.48
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 2.621
   earnings_surprise_pct: 84.33
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: -7.8684
+  vti_return_pct: -0.2568
+  abnormal_return_pct: -7.6116
+  earnings_surprise_pct: 17.07
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -0.1448
-  mean_abnormal_return_pct: -0.4065
-  positive_reaction_rate: 0.5
-  median_absolute_reaction_pct: 5.7336
+  median_abnormal_return_pct: -2.7462
+  mean_abnormal_return_pct: -1.5832
+  positive_reaction_rate: 0.375
+  median_absolute_reaction_pct: 7.839
   beat_observations: 7
-  median_reaction_after_beat_pct: 1.8019
+  median_reaction_after_beat_pct: -2.0914
   miss_observations: 1
   median_reaction_after_miss_pct: -8.0663
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.0427
+    eps_low: 0.04
+    eps_high: 0.05
+    eps_year_ago: 0.07
+    analysts: 7
+    growth: -0.3899
+    revenue_avg: 55385730
+  next_quarter:
+    eps_avg: 0.0424
+    eps_low: 0.04
+    eps_high: 0.05
+    eps_year_ago: 0.06
+    analysts: 7
+    growth: -0.2928
+    revenue_avg: 55725070
+  current_year:
+    eps_avg: 0.192
+    eps_low: 0.19
+    eps_high: 0.2
+    eps_year_ago: 0.24
+    analysts: 5
+    growth: -0.2
+    revenue_avg: 221114860
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

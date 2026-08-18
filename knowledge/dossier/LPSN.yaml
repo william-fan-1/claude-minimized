@@ -2,14 +2,6 @@ ticker: LPSN
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-11-08'
-  stock_return_pct: -28.0992
-  vti_return_pct: 0.4673
-  abnormal_return_pct: -28.5664
-  earnings_surprise_pct: 0.6
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2025-03-06'
   stock_return_pct: -16.3636
   vti_return_pct: -1.8584
@@ -58,19 +50,57 @@ prior_reactions:
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: null
-  stock_return_pct: null
-  vti_return_pct: null
-  abnormal_return_pct: null
+  reaction_date: '2026-08-10'
+  stock_return_pct: -3.4351
+  vti_return_pct: -0.0393
+  abnormal_return_pct: -3.3958
   earnings_surprise_pct: -326.32
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: 7.5099
+  vti_return_pct: -0.2568
+  abnormal_return_pct: 7.7667
+  earnings_surprise_pct: null
+  surprise_source: null
 reaction_statistics:
-  observations: 7
-  median_abnormal_return_pct: -7.7193
-  mean_abnormal_return_pct: -7.0663
-  positive_reaction_rate: 0.2857
-  median_absolute_reaction_pct: 14.259
-  beat_observations: 6
-  median_reaction_after_beat_pct: -4.1444
-  miss_observations: 1
-  median_reaction_after_miss_pct: -14.5053
+  observations: 8
+  median_abnormal_return_pct: -1.9826
+  mean_abnormal_return_pct: -2.0658
+  positive_reaction_rate: 0.375
+  median_absolute_reaction_pct: 7.9775
+  beat_observations: 5
+  median_reaction_after_beat_pct: -0.5694
+  miss_observations: 2
+  median_reaction_after_miss_pct: -8.9505
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -1.125
+    eps_low: -1.26
+    eps_high: -0.99
+    eps_year_ago: 2.6611
+    analysts: 2.0
+    growth: -1.4228
+    revenue_avg: 49159670
+  next_quarter:
+    eps_avg: -1.095
+    eps_low: -1.22
+    eps_high: -0.97
+    eps_year_ago: -0.3819
+    analysts: 2.0
+    growth: -1.8672
+    revenue_avg: 48409670
+  current_year:
+    eps_avg: -4.29
+    eps_low: -4.83
+    eps_high: -3.75
+    eps_year_ago: -4.2729
+    analysts: 2.0
+    growth: -0.004
+    revenue_avg: 200277330
+  eps_revisions_last_30d:
+    up: 2.0
+    down: 0.0

@@ -1,0 +1,46 @@
+ticker: OBAI
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-14'
+  stock_return_pct: -23.5294
+  vti_return_pct: -0.1171
+  abnormal_return_pct: -23.4123
+  earnings_surprise_pct: 4.76
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 1
+  median_abnormal_return_pct: -23.4123
+  mean_abnormal_return_pct: -23.4123
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 23.4123
+  beat_observations: 1
+  median_reaction_after_beat_pct: -23.4123
+  miss_observations: 0
+  median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.21
+    eps_low: -0.21
+    eps_high: -0.21
+    analysts: 1
+    revenue_avg: 2800000
+  next_quarter:
+    eps_avg: -0.15
+    eps_low: -0.15
+    eps_high: -0.15
+    analysts: 1
+    revenue_avg: 3500000
+  current_year:
+    eps_avg: -0.92
+    eps_low: -0.92
+    eps_high: -0.92
+    eps_year_ago: -2.23
+    analysts: 1
+    growth: 0.5874
+    revenue_avg: 11000000
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

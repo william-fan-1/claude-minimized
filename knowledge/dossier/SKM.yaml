@@ -1,0 +1,89 @@
+ticker: SKM
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2016-08-15'
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: -31.72
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: unknown
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: 4.33
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2016-10-27'
+  stock_return_pct: 0.6341
+  vti_return_pct: -0.3377
+  abnormal_return_pct: 0.9718
+  earnings_surprise_pct: 21.26
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: unknown
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: 88.62
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: unknown
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: 96.68
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2017-07-27'
+  stock_return_pct: 1.8135
+  vti_return_pct: -0.1728
+  abnormal_return_pct: 1.9863
+  earnings_surprise_pct: 14.95
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2017-11-14'
+  stock_return_pct: 0.1995
+  vti_return_pct: -0.181
+  abnormal_return_pct: 0.3805
+  earnings_surprise_pct: 26.19
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2018-02-05'
+  stock_return_pct: -2.3613
+  vti_return_pct: -3.9349
+  abnormal_return_pct: 1.5736
+  earnings_surprise_pct: -1.25
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 4
+  median_abnormal_return_pct: 1.2727
+  mean_abnormal_return_pct: 1.2281
+  positive_reaction_rate: 1.0
+  median_absolute_reaction_pct: 1.2727
+  beat_observations: 3
+  median_reaction_after_beat_pct: 0.9718
+  miss_observations: 1
+  median_reaction_after_miss_pct: 1.5736
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    revenue_avg: 4473097850000
+  next_quarter:
+    revenue_avg: 4470694350000
+  current_year:
+    eps_avg: 2.6335
+    eps_low: 2.6335
+    eps_high: 2.6335
+    analysts: 1.0
+    revenue_avg: 17692258520000

@@ -2,14 +2,6 @@ ticker: NCMI
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-05-07'
-  stock_return_pct: -4.5548
-  vti_return_pct: 0.0898
-  abnormal_return_pct: -4.6446
-  earnings_surprise_pct: -58.33
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-08-06'
   stock_return_pct: 19.1288
   vti_return_pct: 1.015
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 1.9297
   earnings_surprise_pct: 3.7
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-12'
+  stock_return_pct: -41.4248
+  vti_return_pct: 0.31
+  abnormal_return_pct: -41.7348
+  earnings_surprise_pct: -17.65
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -1.3574
-  mean_abnormal_return_pct: -2.0683
+  median_abnormal_return_pct: -5.0183
+  mean_abnormal_return_pct: -6.7046
   positive_reaction_rate: 0.5
-  median_absolute_reaction_pct: 10.4855
+  median_absolute_reaction_pct: 12.6557
   beat_observations: 5
   median_reaction_after_beat_pct: 2.6279
   miss_observations: 2
-  median_reaction_after_miss_pct: -11.4558
+  median_reaction_after_miss_pct: -30.0008
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.085
+    eps_low: -0.09
+    eps_high: -0.08
+    eps_year_ago: -0.117
+    analysts: 2
+    growth: 0.2735
+    revenue_avg: 59525000
+  next_quarter:
+    eps_avg: 0.47
+    eps_low: 0.47
+    eps_high: 0.47
+    eps_year_ago: 0.28
+    analysts: 1
+    growth: 0.6786
+    revenue_avg: 101925000
+  current_year:
+    eps_avg: 0.17
+    eps_low: 0.17
+    eps_high: 0.17
+    eps_year_ago: -0.09
+    analysts: 1
+    growth: 2.8889
+    revenue_avg: 265250000
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

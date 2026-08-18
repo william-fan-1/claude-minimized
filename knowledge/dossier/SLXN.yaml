@@ -1,0 +1,88 @@
+ticker: SLXN
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-11-14'
+  stock_return_pct: -8.5714
+  vti_return_pct: -0.7393
+  abnormal_return_pct: -7.8321
+  earnings_surprise_pct: -1745.45
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-03-19'
+  stock_return_pct: -11.2
+  vti_return_pct: 1.1366
+  abnormal_return_pct: -12.3366
+  earnings_surprise_pct: -2018.37
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-08'
+  stock_return_pct: -4.0793
+  vti_return_pct: 0.6301
+  abnormal_return_pct: -4.7093
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-11-12'
+  stock_return_pct: 3.5587
+  vti_return_pct: 0.0357
+  abnormal_return_pct: 3.523
+  earnings_surprise_pct: 15.29
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-18'
+  stock_return_pct: -5.1903
+  vti_return_pct: -0.1048
+  abnormal_return_pct: -5.0855
+  earnings_surprise_pct: 34.11
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-14'
+  stock_return_pct: -8.6957
+  vti_return_pct: -0.1171
+  abnormal_return_pct: -8.5786
+  earnings_surprise_pct: -143.87
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 6
+  median_abnormal_return_pct: -6.4588
+  mean_abnormal_return_pct: -5.8365
+  positive_reaction_rate: 0.1667
+  median_absolute_reaction_pct: 6.4588
+  beat_observations: 2
+  median_reaction_after_beat_pct: -0.7812
+  miss_observations: 3
+  median_reaction_after_miss_pct: -8.5786
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -1.52
+    eps_low: -1.52
+    eps_high: -1.52
+    eps_year_ago: -28.8
+    analysts: 1
+    growth: 0.9472
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: -0.73
+    eps_low: -0.73
+    eps_high: -0.73
+    analysts: 1
+    revenue_avg: 0
+  current_year:
+    eps_avg: -5.31
+    eps_low: -5.31
+    eps_high: -5.31
+    eps_year_ago: -89.6
+    analysts: 1
+    growth: 0.9407
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

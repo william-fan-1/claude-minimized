@@ -2,14 +2,6 @@ ticker: PFGC
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-08-14'
-  stock_return_pct: 7.7072
-  vti_return_pct: 0.2845
-  abnormal_return_pct: 7.4227
-  earnings_surprise_pct: 6.04
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2024-11-06'
   stock_return_pct: 6.4254
   vti_return_pct: 2.7971
@@ -44,7 +36,7 @@ prior_reactions:
   timing: before_market_open
   reaction_date: '2025-11-05'
   stock_return_pct: -1.1899
-  vti_return_pct: 0.428
+  vti_return_pct: 0.4281
   abnormal_return_pct: -1.6179
   earnings_surprise_pct: -2.33
   surprise_source: Yahoo Finance (via yfinance)
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 5.2474
   earnings_surprise_pct: 3.06
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-12'
+  stock_return_pct: -5.7476
+  vti_return_pct: 0.31
+  abnormal_return_pct: -6.0576
+  earnings_surprise_pct: -0.57
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: 2.1647
-  mean_abnormal_return_pct: 1.1181
-  positive_reaction_rate: 0.625
+  median_abnormal_return_pct: 0.1185
+  mean_abnormal_return_pct: -0.5669
+  positive_reaction_rate: 0.5
   median_absolute_reaction_pct: 3.3587
-  beat_observations: 3
-  median_reaction_after_beat_pct: 5.2474
-  miss_observations: 5
-  median_reaction_after_miss_pct: -1.6179
+  beat_observations: 2
+  median_reaction_after_beat_pct: 3.861
+  miss_observations: 6
+  median_reaction_after_miss_pct: -2.3535
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 1.5991
+    eps_low: 1.55
+    eps_high: 1.64
+    eps_year_ago: 1.55
+    analysts: 12
+    growth: 0.0317
+    revenue_avg: 18054093290
+  next_quarter:
+    eps_avg: 1.2219
+    eps_low: 1.16
+    eps_high: 1.3069
+    eps_year_ago: 0.98
+    analysts: 12
+    growth: 0.2468
+    revenue_avg: 17402768580
+  current_year:
+    eps_avg: 5.5977
+    eps_low: 4.75
+    eps_high: 6.19
+    eps_year_ago: 4.5836
+    analysts: 14
+    growth: 0.2212
+    revenue_avg: 67918422130
+  eps_revisions_last_30d:
+    up: 5
+    down: 2

@@ -1,0 +1,64 @@
+ticker: PLYX
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-03-24'
+  stock_return_pct: 16.6667
+  vti_return_pct: -0.3115
+  abnormal_return_pct: 16.9782
+  earnings_surprise_pct: -700.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-05-15'
+  stock_return_pct: -21.7009
+  vti_return_pct: -1.2684
+  abnormal_return_pct: -20.4325
+  earnings_surprise_pct: -150.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-14'
+  stock_return_pct: 4.0
+  vti_return_pct: -0.1171
+  abnormal_return_pct: 4.1171
+  earnings_surprise_pct: 25.0
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 3
+  median_abnormal_return_pct: 4.1171
+  mean_abnormal_return_pct: 0.2209
+  positive_reaction_rate: 0.6667
+  median_absolute_reaction_pct: 16.9782
+  beat_observations: 1
+  median_reaction_after_beat_pct: 4.1171
+  miss_observations: 2
+  median_reaction_after_miss_pct: -1.7271
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.0475
+    eps_low: -0.06
+    eps_high: -0.03
+    analysts: 4
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: -0.055
+    eps_low: -0.07
+    eps_high: -0.04
+    eps_year_ago: -0.16
+    analysts: 4
+    growth: 0.6563
+    revenue_avg: 0
+  current_year:
+    eps_avg: -0.195
+    eps_low: -0.22
+    eps_high: -0.15
+    eps_year_ago: -0.2
+    analysts: 4
+    growth: 0.025
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

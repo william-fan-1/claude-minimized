@@ -2,14 +2,6 @@ ticker: LTRN
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-09'
-  stock_return_pct: -7.6832
-  vti_return_pct: 0.4317
-  abnormal_return_pct: -8.1149
-  earnings_surprise_pct: 16.36
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-08'
   stock_return_pct: 12.2807
   vti_return_pct: 0.4673
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -4.3538
   earnings_surprise_pct: 16.67
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-14'
+  stock_return_pct: 0.7605
+  vti_return_pct: -0.1171
+  abnormal_return_pct: 0.8775
+  earnings_surprise_pct: 26.63
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -3.2104
-  mean_abnormal_return_pct: -0.4014
-  positive_reaction_rate: 0.375
-  median_absolute_reaction_pct: 4.8438
+  median_abnormal_return_pct: -0.8498
+  mean_abnormal_return_pct: 0.7227
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 4.0987
   beat_observations: 7
-  median_reaction_after_beat_pct: -3.8437
+  median_reaction_after_beat_pct: 0.8775
   miss_observations: 1
   median_reaction_after_miss_pct: -2.577
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.38
+    eps_low: -0.38
+    eps_high: -0.38
+    eps_year_ago: -0.39
+    analysts: 1
+    growth: 0.0256
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: -0.44
+    eps_low: -0.44
+    eps_high: -0.44
+    eps_year_ago: -0.36
+    analysts: 1
+    growth: -0.2222
+    revenue_avg: 0
+  current_year:
+    eps_avg: -1.51
+    eps_low: -1.51
+    eps_high: -1.51
+    eps_year_ago: -1.57
+    analysts: 1
+    growth: 0.0382
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

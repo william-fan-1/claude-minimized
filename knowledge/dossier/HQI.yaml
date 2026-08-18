@@ -2,14 +2,6 @@ ticker: HQI
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-05-10'
-  stock_return_pct: -7.8947
-  vti_return_pct: 0.0931
-  abnormal_return_pct: -7.9878
-  earnings_surprise_pct: 44.1
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-08-09'
   stock_return_pct: 10.4538
   vti_return_pct: 0.4317
@@ -53,7 +45,7 @@ prior_reactions:
   reaction_date: '2025-11-07'
   stock_return_pct: 15.5316
   vti_return_pct: 0.2186
-  abnormal_return_pct: 15.3131
+  abnormal_return_pct: 15.313
   earnings_surprise_pct: 54.84
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -0.9885
   earnings_surprise_pct: 46.15
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: 26.6765
+  vti_return_pct: -0.2568
+  abnormal_return_pct: 26.9333
+  earnings_surprise_pct: 76.92
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -1.3221
-  mean_abnormal_return_pct: 0.8927
-  positive_reaction_rate: 0.375
+  median_abnormal_return_pct: 0.5338
+  mean_abnormal_return_pct: 5.2579
+  positive_reaction_rate: 0.5
   median_absolute_reaction_pct: 4.8088
   beat_observations: 7
-  median_reaction_after_beat_pct: -0.9885
+  median_reaction_after_beat_pct: 2.0562
   miss_observations: 1
   median_reaction_after_miss_pct: -2.5331
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.23
+    eps_low: 0.23
+    eps_high: 0.23
+    eps_year_ago: 0.24
+    analysts: 1
+    growth: -0.0417
+    revenue_avg: 9200000
+  next_quarter:
+    eps_avg: 0.16
+    eps_low: 0.16
+    eps_high: 0.16
+    eps_year_ago: 0.19
+    analysts: 1
+    growth: -0.1579
+    revenue_avg: 7600000
+  current_year:
+    eps_avg: 0.75
+    eps_low: 0.75
+    eps_high: 0.75
+    eps_year_ago: 0.71
+    analysts: 1
+    growth: 0.0563
+    revenue_avg: 31400000
+  eps_revisions_last_30d:
+    up: 1
+    down: 1

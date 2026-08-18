@@ -2,14 +2,6 @@ ticker: SGA
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-05-09'
-  stock_return_pct: -5.9081
-  vti_return_pct: 0.5892
-  abnormal_return_pct: -6.4973
-  earnings_surprise_pct: null
-  surprise_source: null
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2024-08-08'
   stock_return_pct: 3.2258
   vti_return_pct: 2.3417
@@ -53,7 +45,7 @@ prior_reactions:
   reaction_date: '2025-11-06'
   stock_return_pct: -1.7045
   vti_return_pct: -1.1376
-  abnormal_return_pct: -0.567
+  abnormal_return_pct: -0.5669
   earnings_surprise_pct: -138.1
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 2.4146
   earnings_surprise_pct: -2775.0
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-13'
+  stock_return_pct: -4.335
+  vti_return_pct: 0.6469
+  abnormal_return_pct: -4.9819
+  earnings_surprise_pct: 183.33
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
   median_abnormal_return_pct: 1.0474
-  mean_abnormal_return_pct: 1.4042
+  mean_abnormal_return_pct: 1.5936
   positive_reaction_rate: 0.625
   median_absolute_reaction_pct: 1.8784
-  beat_observations: 4
-  median_reaction_after_beat_pct: 1.0474
+  beat_observations: 5
+  median_reaction_after_beat_pct: 0.8841
   miss_observations: 3
   median_reaction_after_miss_pct: 2.4146
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.0
+    eps_low: 0.0
+    eps_high: 0.0
+    eps_year_ago: -0.08
+    analysts: 1
+    growth: 1.0
+    revenue_avg: 27600000
+  next_quarter:
+    eps_avg: 0.05
+    eps_low: 0.05
+    eps_high: 0.05
+    eps_year_ago: -1.07
+    analysts: 1
+    growth: 1.0467
+    revenue_avg: 28500000
+  current_year:
+    eps_avg: -0.52
+    eps_low: -0.52
+    eps_high: -0.52
+    eps_year_ago: -1.22
+    analysts: 1
+    growth: 0.5738
+    revenue_avg: 104500000
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

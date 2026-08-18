@@ -1,0 +1,64 @@
+ticker: GLOO
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-12-18'
+  stock_return_pct: -3.0488
+  vti_return_pct: 0.768
+  abnormal_return_pct: -3.8168
+  earnings_surprise_pct: 1.05
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-04-15'
+  stock_return_pct: 2.2727
+  vti_return_pct: 0.7559
+  abnormal_return_pct: 1.5169
+  earnings_surprise_pct: -51.9
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-06-09'
+  stock_return_pct: -5.9055
+  vti_return_pct: -0.2195
+  abnormal_return_pct: -5.686
+  earnings_surprise_pct: -22.22
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 3
+  median_abnormal_return_pct: -3.8168
+  mean_abnormal_return_pct: -2.662
+  positive_reaction_rate: 0.3333
+  median_absolute_reaction_pct: 3.8168
+  beat_observations: 1
+  median_reaction_after_beat_pct: -3.8168
+  miss_observations: 2
+  median_reaction_after_miss_pct: -2.0846
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.11
+    eps_low: -0.11
+    eps_high: -0.11
+    analysts: 1
+    revenue_avg: 44065170
+  next_quarter:
+    eps_avg: -0.04
+    eps_low: -0.04
+    eps_high: -0.04
+    eps_year_ago: -4.71
+    analysts: 1
+    growth: 0.9915
+    revenue_avg: 51229330
+  current_year:
+    eps_avg: -0.28
+    eps_low: -0.28
+    eps_high: -0.28
+    eps_year_ago: -6.14
+    analysts: 1
+    growth: 0.9544
+    revenue_avg: 195086830
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

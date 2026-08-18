@@ -1,0 +1,74 @@
+ticker: PEW
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-14'
+  stock_return_pct: -8.9157
+  vti_return_pct: -0.0152
+  abnormal_return_pct: -8.9005
+  earnings_surprise_pct: -1300.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-13'
+  stock_return_pct: 9.0278
+  vti_return_pct: -0.5459
+  abnormal_return_pct: 9.5736
+  earnings_surprise_pct: 200.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-14'
+  stock_return_pct: -1.6129
+  vti_return_pct: 0.7376
+  abnormal_return_pct: -2.3505
+  earnings_surprise_pct: 25.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-14'
+  stock_return_pct: -5.5556
+  vti_return_pct: -0.1171
+  abnormal_return_pct: -5.4385
+  earnings_surprise_pct: 33.33
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 4
+  median_abnormal_return_pct: -3.8945
+  mean_abnormal_return_pct: -1.779
+  positive_reaction_rate: 0.25
+  median_absolute_reaction_pct: 7.1695
+  beat_observations: 3
+  median_reaction_after_beat_pct: -2.3505
+  miss_observations: 1
+  median_reaction_after_miss_pct: -8.9005
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.09
+    eps_low: -0.09
+    eps_high: -0.09
+    eps_year_ago: -0.12
+    analysts: 1
+    growth: 0.25
+    revenue_avg: 23300000
+  next_quarter:
+    eps_avg: -0.01
+    eps_low: -0.01
+    eps_high: -0.01
+    eps_year_ago: 0.01
+    analysts: 1
+    growth: -2.0
+    revenue_avg: 30700000
+  current_year:
+    eps_avg: -0.25
+    eps_low: -0.25
+    eps_high: -0.25
+    eps_year_ago: -0.13
+    analysts: 1
+    growth: -0.9231
+    revenue_avg: 102600000
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

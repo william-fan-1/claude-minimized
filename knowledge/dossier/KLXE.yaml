@@ -2,22 +2,6 @@ ticker: KLXE
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-05-08'
-  stock_return_pct: -8.5973
-  vti_return_pct: -0.0702
-  abnormal_return_pct: -8.5271
-  earnings_surprise_pct: -90.77
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
-  reaction_date: '2024-08-08'
-  stock_return_pct: 5.5556
-  vti_return_pct: 2.3417
-  abnormal_return_pct: 3.2139
-  earnings_surprise_pct: -11.11
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-01'
   stock_return_pct: -3.8462
   vti_return_pct: 0.427
@@ -64,13 +48,59 @@ prior_reactions:
   abnormal_return_pct: -7.8951
   earnings_surprise_pct: 5.0
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: -30.8036
+  vti_return_pct: -0.2568
+  abnormal_return_pct: -30.5468
+  earnings_surprise_pct: 21.95
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: -30.8036
+  vti_return_pct: -0.2568
+  abnormal_return_pct: -30.5468
+  earnings_surprise_pct: null
+  surprise_source: null
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -5.5609
-  mean_abnormal_return_pct: -6.2847
-  positive_reaction_rate: 0.125
-  median_absolute_reaction_pct: 5.5609
-  beat_observations: 2
-  median_reaction_after_beat_pct: -6.0842
-  miss_observations: 6
+  median_abnormal_return_pct: -6.7595
+  mean_abnormal_return_pct: -13.2572
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 6.7595
+  beat_observations: 3
+  median_reaction_after_beat_pct: -7.8951
+  miss_observations: 4
   median_reaction_after_miss_pct: -5.5609
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.56
+    eps_low: -0.56
+    eps_high: -0.56
+    eps_year_ago: -0.73
+    analysts: 1
+    growth: 0.2329
+    revenue_avg: 181300000
+  next_quarter:
+    eps_avg: -0.6
+    eps_low: -0.6
+    eps_high: -0.6
+    eps_year_ago: -0.76
+    analysts: 1
+    growth: 0.2105
+    revenue_avg: 173300000
+  current_year:
+    eps_avg: -3.15
+    eps_low: -3.15
+    eps_high: -3.15
+    eps_year_ago: -3.66
+    analysts: 1
+    growth: 0.1393
+    revenue_avg: 666700000
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

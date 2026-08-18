@@ -1,0 +1,76 @@
+ticker: CELU
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2022-04-01'
+  stock_return_pct: 1.9518
+  vti_return_pct: 0.3997
+  abnormal_return_pct: 1.5521
+  earnings_surprise_pct: 85.71
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2022-05-17'
+  stock_return_pct: 17.757
+  vti_return_pct: 2.136
+  abnormal_return_pct: 15.621
+  earnings_surprise_pct: -71.43
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2022-08-10'
+  stock_return_pct: 3.8339
+  vti_return_pct: 2.2802
+  abnormal_return_pct: 1.5537
+  earnings_surprise_pct: 223.08
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2022-11-11'
+  stock_return_pct: -4.6948
+  vti_return_pct: 1.0195
+  abnormal_return_pct: -5.7143
+  earnings_surprise_pct: 15.15
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2023-04-03'
+  stock_return_pct: 19.3548
+  vti_return_pct: 0.2646
+  abnormal_return_pct: 19.0903
+  earnings_surprise_pct: 65.13
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2023-05-23'
+  stock_return_pct: -2.2222
+  vti_return_pct: -1.0574
+  abnormal_return_pct: -1.1648
+  earnings_surprise_pct: -70.83
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2023-08-15'
+  stock_return_pct: 0.0
+  vti_return_pct: -1.135
+  abnormal_return_pct: 1.135
+  earnings_surprise_pct: -800.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-19'
+  stock_return_pct: -13.0121
+  vti_return_pct: -0.6065
+  abnormal_return_pct: -12.4056
+  earnings_surprise_pct: null
+  surprise_source: null
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: 1.3436
+  mean_abnormal_return_pct: 2.4584
+  positive_reaction_rate: 0.625
+  median_absolute_reaction_pct: 3.634
+  beat_observations: 4
+  median_reaction_after_beat_pct: 1.5529
+  miss_observations: 3
+  median_reaction_after_miss_pct: 1.135

@@ -1,0 +1,76 @@
+ticker: DUO
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2020-06-11'
+  stock_return_pct: -20.0379
+  vti_return_pct: -5.8988
+  abnormal_return_pct: -14.1392
+  earnings_surprise_pct: -111.52
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2020-08-14'
+  stock_return_pct: -5.6689
+  vti_return_pct: -0.0292
+  abnormal_return_pct: -5.6397
+  earnings_surprise_pct: -3.32
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2020-11-20'
+  stock_return_pct: -8.5
+  vti_return_pct: -0.5266
+  abnormal_return_pct: -7.9734
+  earnings_surprise_pct: -55.83
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2021-03-26'
+  stock_return_pct: -2.0231
+  vti_return_pct: 1.6342
+  abnormal_return_pct: -3.6573
+  earnings_surprise_pct: -147.07
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2021-05-14'
+  stock_return_pct: -0.3185
+  vti_return_pct: 1.7082
+  abnormal_return_pct: -2.0267
+  earnings_surprise_pct: -83.39
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2021-08-13'
+  stock_return_pct: -2.9412
+  vti_return_pct: 0.0565
+  abnormal_return_pct: -2.9977
+  earnings_surprise_pct: -277.02
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2021-11-22'
+  stock_return_pct: -12.7907
+  vti_return_pct: -0.4804
+  abnormal_return_pct: -12.3103
+  earnings_surprise_pct: 66.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2022-04-25'
+  stock_return_pct: -4.7945
+  vti_return_pct: 0.5462
+  abnormal_return_pct: -5.3407
+  earnings_surprise_pct: 330.0
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: -5.4902
+  mean_abnormal_return_pct: -6.7606
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 5.4902
+  beat_observations: 2
+  median_reaction_after_beat_pct: -8.8255
+  miss_observations: 6
+  median_reaction_after_miss_pct: -4.6485

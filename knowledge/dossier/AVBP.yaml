@@ -1,14 +1,6 @@
 ticker: AVBP
 prior_reactions:
 - fiscal_quarter: null
-  timing: after_market_close
-  reaction_date: '2024-08-15'
-  stock_return_pct: -0.3758
-  vti_return_pct: 1.7321
-  abnormal_return_pct: -2.1079
-  earnings_surprise_pct: -10.47
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
   timing: before_market_open
   reaction_date: '2024-11-14'
   stock_return_pct: -11.8644
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 0.0587
   earnings_surprise_pct: -7.4
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-13'
+  stock_return_pct: -4.6408
+  vti_return_pct: 0.6469
+  abnormal_return_pct: -5.2877
+  earnings_surprise_pct: -6.73
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -3.6225
-  mean_abnormal_return_pct: -3.6936
+  median_abnormal_return_pct: -4.5198
+  mean_abnormal_return_pct: -4.0911
   positive_reaction_rate: 0.25
-  median_absolute_reaction_pct: 3.6225
+  median_absolute_reaction_pct: 4.5198
   beat_observations: 3
   median_reaction_after_beat_pct: -5.8419
   miss_observations: 5
-  median_reaction_after_miss_pct: -2.1079
+  median_reaction_after_miss_pct: -3.1052
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -1.0779
+    eps_low: -1.16
+    eps_high: -1.0333
+    eps_year_ago: -0.83
+    analysts: 8
+    growth: -0.2987
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: -1.1418
+    eps_low: -1.62
+    eps_high: -0.97
+    eps_year_ago: -0.78
+    analysts: 8
+    growth: -0.4639
+    revenue_avg: 0
+  current_year:
+    eps_avg: -4.3716
+    eps_low: -4.9409
+    eps_high: -4.15
+    eps_year_ago: -4.32
+    analysts: 7
+    growth: -0.0119
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

@@ -2,14 +2,6 @@ ticker: CDXS
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-09'
-  stock_return_pct: -11.1111
-  vti_return_pct: 0.4317
-  abnormal_return_pct: -11.5428
-  earnings_surprise_pct: -34.68
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-01'
   stock_return_pct: 11.465
   vti_return_pct: 0.427
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 9.7239
   earnings_surprise_pct: 4.76
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-12'
+  stock_return_pct: 8.1081
+  vti_return_pct: 0.31
+  abnormal_return_pct: 7.7981
+  earnings_surprise_pct: -8.33
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: 1.4995
-  mean_abnormal_return_pct: 0.862
-  positive_reaction_rate: 0.625
-  median_absolute_reaction_pct: 11.2904
+  median_abnormal_return_pct: 4.7927
+  mean_abnormal_return_pct: 3.2796
+  positive_reaction_rate: 0.75
+  median_absolute_reaction_pct: 10.381
   beat_observations: 2
   median_reaction_after_beat_pct: 22.983
   miss_observations: 6
-  median_reaction_after_miss_pct: -5.1655
+  median_reaction_after_miss_pct: 1.4995
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.12
+    eps_low: -0.15
+    eps_high: -0.09
+    eps_year_ago: -0.16
+    analysts: 2
+    growth: 0.25
+    revenue_avg: 13824570
+  next_quarter:
+    eps_avg: -0.08
+    eps_low: -0.08
+    eps_high: -0.08
+    eps_year_ago: 0.143
+    analysts: 1
+    growth: -1.5594
+    revenue_avg: 25464430
+  current_year:
+    eps_avg: -0.42
+    eps_low: -0.42
+    eps_high: -0.42
+    eps_year_ago: -0.4655
+    analysts: 1
+    growth: 0.0977
+    revenue_avg: 73883860
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

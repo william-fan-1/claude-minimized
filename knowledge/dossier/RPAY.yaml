@@ -2,18 +2,10 @@ ticker: RPAY
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-09'
-  stock_return_pct: -10.1433
-  vti_return_pct: 0.4317
-  abnormal_return_pct: -10.575
-  earnings_surprise_pct: -1.95
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-13'
   stock_return_pct: -1.3652
-  vti_return_pct: -0.0473
-  abnormal_return_pct: -1.3179
+  vti_return_pct: -0.0472
+  abnormal_return_pct: -1.318
   earnings_surprise_pct: 1.62
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -11.6003
   earnings_surprise_pct: 5.87
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: -3.3943
+  vti_return_pct: -0.2568
+  abnormal_return_pct: -3.1375
+  earnings_surprise_pct: -4.56
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
   median_abnormal_return_pct: -2.1581
-  mean_abnormal_return_pct: -3.9049
+  mean_abnormal_return_pct: -2.9753
   positive_reaction_rate: 0.25
-  median_absolute_reaction_pct: 5.6609
+  median_absolute_reaction_pct: 3.022
   beat_observations: 4
   median_reaction_after_beat_pct: -2.1581
   miss_observations: 4
-  median_reaction_after_miss_pct: -4.7414
+  median_reaction_after_miss_pct: -1.0227
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.2095
+    eps_low: 0.2
+    eps_high: 0.22
+    eps_year_ago: 0.2
+    analysts: 4
+    growth: 0.0477
+    revenue_avg: 101864800
+  next_quarter:
+    eps_avg: 0.2859
+    eps_low: 0.26
+    eps_high: 0.32
+    eps_year_ago: 0.19
+    analysts: 4
+    growth: 0.5045
+    revenue_avg: 157809550
+  current_year:
+    eps_avg: 0.9664
+    eps_low: 0.9
+    eps_high: 1.04
+    eps_year_ago: 0.82
+    analysts: 4
+    growth: 0.1785
+    revenue_avg: 492077580
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

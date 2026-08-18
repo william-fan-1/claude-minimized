@@ -1,0 +1,44 @@
+ticker: FRBT
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-07-30'
+  stock_return_pct: 0.0
+  vti_return_pct: 1.6231
+  abnormal_return_pct: -1.6231
+  earnings_surprise_pct: -56.48
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 1
+  median_abnormal_return_pct: -1.6231
+  mean_abnormal_return_pct: -1.6231
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 1.6231
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 1
+  median_reaction_after_miss_pct: -1.6231
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.3386
+    eps_low: 0.29
+    eps_high: 0.43
+    analysts: 5
+    revenue_avg: 91738000
+  next_quarter:
+    eps_avg: 0.3769
+    eps_low: 0.33
+    eps_high: 0.45
+    analysts: 5
+    revenue_avg: 97244800
+  current_year:
+    eps_avg: 1.1388
+    eps_low: 0.97
+    eps_high: 1.25
+    analysts: 6
+    revenue_avg: 350117040
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

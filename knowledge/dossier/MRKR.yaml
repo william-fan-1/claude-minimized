@@ -2,17 +2,9 @@ ticker: MRKR
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-15'
-  stock_return_pct: -5.3571
-  vti_return_pct: 1.7321
-  abnormal_return_pct: -7.0893
-  earnings_surprise_pct: 41.86
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-15'
   stock_return_pct: -12.2857
-  vti_return_pct: -1.2686
+  vti_return_pct: -1.2685
   abnormal_return_pct: -11.0172
   earnings_surprise_pct: 33.33
   surprise_source: Yahoo Finance (via yfinance)
@@ -45,7 +37,7 @@ prior_reactions:
   reaction_date: '2025-11-14'
   stock_return_pct: 3.3708
   vti_return_pct: -0.0152
-  abnormal_return_pct: 3.386
+  abnormal_return_pct: 3.3859
   earnings_surprise_pct: 42.86
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -2.0079
   earnings_surprise_pct: 15.79
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: 50.0
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
-  observations: 8
-  median_abnormal_return_pct: -2.2313
-  mean_abnormal_return_pct: -2.892
-  positive_reaction_rate: 0.25
-  median_absolute_reaction_pct: 2.9204
-  beat_observations: 6
-  median_reaction_after_beat_pct: -2.2313
+  observations: 7
+  median_abnormal_return_pct: -2.0079
+  mean_abnormal_return_pct: -2.2924
+  positive_reaction_rate: 0.2857
+  median_absolute_reaction_pct: 2.4547
+  beat_observations: 5
+  median_reaction_after_beat_pct: -2.0079
   miss_observations: 2
   median_reaction_after_miss_pct: -1.3192
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.185
+    eps_low: -0.25
+    eps_high: -0.12
+    eps_year_ago: -0.12
+    analysts: 2
+    growth: -0.5417
+    revenue_avg: 682000
+  next_quarter:
+    eps_avg: -0.17
+    eps_low: -0.22
+    eps_high: -0.12
+    eps_year_ago: -0.04
+    analysts: 2
+    growth: -3.25
+    revenue_avg: 682000
+  current_year:
+    eps_avg: -0.69
+    eps_low: -0.83
+    eps_high: -0.55
+    eps_year_ago: -0.7649
+    analysts: 2
+    growth: 0.0979
+    revenue_avg: 2830330
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

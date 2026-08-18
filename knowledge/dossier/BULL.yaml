@@ -1,0 +1,64 @@
+ticker: BULL
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-21'
+  stock_return_pct: 0.4848
+  vti_return_pct: 1.1559
+  abnormal_return_pct: -0.671
+  earnings_surprise_pct: 116.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-05'
+  stock_return_pct: -5.6013
+  vti_return_pct: -0.6476
+  abnormal_return_pct: -4.9538
+  earnings_surprise_pct: -20.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-22'
+  stock_return_pct: -6.5053
+  vti_return_pct: 0.4656
+  abnormal_return_pct: -6.9709
+  earnings_surprise_pct: -42.67
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 3
+  median_abnormal_return_pct: -4.9538
+  mean_abnormal_return_pct: -4.1986
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 4.9538
+  beat_observations: 1
+  median_reaction_after_beat_pct: -0.671
+  miss_observations: 2
+  median_reaction_after_miss_pct: -5.9624
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.025
+    eps_low: 0.0
+    eps_high: 0.05
+    analysts: 2
+    revenue_avg: 182829330
+  next_quarter:
+    eps_avg: 0.04
+    eps_low: 0.03
+    eps_high: 0.05
+    eps_year_ago: 0.0648
+    analysts: 2
+    growth: -0.3827
+    revenue_avg: 195292670
+  current_year:
+    eps_avg: 0.135
+    eps_low: 0.08
+    eps_high: 0.19
+    eps_year_ago: 0.28
+    analysts: 2
+    growth: -0.5179
+    revenue_avg: 744037000
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

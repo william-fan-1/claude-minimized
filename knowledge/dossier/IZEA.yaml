@@ -28,8 +28,8 @@ prior_reactions:
   timing: after_market_close
   reaction_date: '2024-11-15'
   stock_return_pct: 1.3986
-  vti_return_pct: -1.2686
-  abnormal_return_pct: 2.6672
+  vti_return_pct: -1.2685
+  abnormal_return_pct: 2.6671
   earnings_surprise_pct: -372.73
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -37,7 +37,7 @@ prior_reactions:
   reaction_date: '2025-03-28'
   stock_return_pct: 1.6867
   vti_return_pct: -1.9929
-  abnormal_return_pct: 3.6796
+  abnormal_return_pct: 3.6797
   earnings_surprise_pct: -170.0
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -69,7 +69,7 @@ reaction_statistics:
   median_abnormal_return_pct: 3.1734
   mean_abnormal_return_pct: 4.2349
   positive_reaction_rate: 0.75
-  median_absolute_reaction_pct: 3.8651
+  median_absolute_reaction_pct: 3.8652
   beat_observations: 2
   median_reaction_after_beat_pct: 11.8714
   miss_observations: 5

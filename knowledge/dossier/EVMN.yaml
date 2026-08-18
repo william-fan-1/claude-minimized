@@ -1,0 +1,66 @@
+ticker: EVMN
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-12-12'
+  stock_return_pct: -8.5323
+  vti_return_pct: -1.1416
+  abnormal_return_pct: -7.3906
+  earnings_surprise_pct: 28.93
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-06'
+  stock_return_pct: 5.6198
+  vti_return_pct: -1.3661
+  abnormal_return_pct: 6.9858
+  earnings_surprise_pct: -69.83
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-07'
+  stock_return_pct: 5.2317
+  vti_return_pct: 0.7149
+  abnormal_return_pct: 4.5168
+  earnings_surprise_pct: -32.84
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 3
+  median_abnormal_return_pct: 4.5168
+  mean_abnormal_return_pct: 1.3707
+  positive_reaction_rate: 0.6667
+  median_absolute_reaction_pct: 6.9858
+  beat_observations: 1
+  median_reaction_after_beat_pct: -7.3906
+  miss_observations: 2
+  median_reaction_after_miss_pct: 5.7513
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.8144
+    eps_low: -1.01
+    eps_high: -0.63
+    eps_year_ago: -8.07
+    analysts: 9
+    growth: 0.8991
+    revenue_avg: 375000
+  next_quarter:
+    eps_avg: -0.8056
+    eps_low: -1.05
+    eps_high: -0.29
+    eps_year_ago: -1.43
+    analysts: 9
+    growth: 0.4367
+    revenue_avg: 2750000
+  current_year:
+    eps_avg: -3.379
+    eps_low: -5.53
+    eps_high: -2.69
+    eps_year_ago: -11.22
+    analysts: 10
+    growth: 0.6988
+    revenue_avg: 714290
+  eps_revisions_last_30d:
+    up: 1
+    down: 5

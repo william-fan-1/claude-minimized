@@ -1,0 +1,66 @@
+ticker: LBRX
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-11-06'
+  stock_return_pct: -4.2593
+  vti_return_pct: -1.1376
+  abnormal_return_pct: -3.1217
+  earnings_surprise_pct: -117.86
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-27'
+  stock_return_pct: -2.8129
+  vti_return_pct: -1.7146
+  abnormal_return_pct: -1.0983
+  earnings_surprise_pct: -42.1
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-11'
+  stock_return_pct: -1.1341
+  vti_return_pct: -0.2568
+  abnormal_return_pct: -0.8773
+  earnings_surprise_pct: -114.2
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 3
+  median_abnormal_return_pct: -1.0983
+  mean_abnormal_return_pct: -1.6991
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 1.0983
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 3
+  median_reaction_after_miss_pct: -1.0983
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.7983
+    eps_low: -0.89
+    eps_high: -0.73
+    eps_year_ago: -0.61
+    analysts: 6
+    growth: -0.3087
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: -1.5475
+    eps_low: -1.66
+    eps_high: -1.33
+    eps_year_ago: -0.45
+    analysts: 4
+    growth: -2.4389
+    revenue_avg: 0
+  current_year:
+    eps_avg: -5.556
+    eps_low: -5.85
+    eps_high: -5.19
+    eps_year_ago: -3.13
+    analysts: 5
+    growth: -0.7751
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

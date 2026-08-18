@@ -37,7 +37,7 @@ prior_reactions:
   reaction_date: '2024-05-15'
   stock_return_pct: 1.1429
   vti_return_pct: 1.2295
-  abnormal_return_pct: -0.0867
+  abnormal_return_pct: -0.0866
   earnings_surprise_pct: 1500.0
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -52,7 +52,7 @@ prior_reactions:
   timing: after_market_close
   reaction_date: '2024-11-15'
   stock_return_pct: -3.0172
-  vti_return_pct: -1.2686
+  vti_return_pct: -1.2685
   abnormal_return_pct: -1.7487
   earnings_surprise_pct: -150.0
   surprise_source: Yahoo Finance (via yfinance)

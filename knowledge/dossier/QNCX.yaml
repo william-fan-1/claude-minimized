@@ -2,18 +2,10 @@ ticker: QNCX
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2022-11-10'
-  stock_return_pct: 3.8926
-  vti_return_pct: 5.6578
-  abnormal_return_pct: -1.7652
-  earnings_surprise_pct: 22.42
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-14'
   stock_return_pct: 19.4969
   vti_return_pct: -0.7393
-  abnormal_return_pct: 20.2361
+  abnormal_return_pct: 20.2362
   earnings_surprise_pct: -30.0
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 1.8439
   earnings_surprise_pct: 210.77
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-14'
+  stock_return_pct: 5.0293
+  vti_return_pct: -0.1171
+  abnormal_return_pct: 5.1464
+  earnings_surprise_pct: 1.88
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: 0.9306
-  mean_abnormal_return_pct: 3.1653
-  positive_reaction_rate: 0.625
-  median_absolute_reaction_pct: 2.4539
+  median_abnormal_return_pct: 2.2199
+  mean_abnormal_return_pct: 4.0292
+  positive_reaction_rate: 0.75
+  median_absolute_reaction_pct: 3.8712
   beat_observations: 2
-  median_reaction_after_beat_pct: 0.0393
+  median_reaction_after_beat_pct: 3.4951
   miss_observations: 6
   median_reaction_after_miss_pct: 1.3066
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -1.4033
+    eps_low: -1.44
+    eps_high: -1.37
+    eps_year_ago: -50.0
+    analysts: 3
+    growth: 0.9719
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: -1.36
+    eps_low: -1.6
+    eps_high: -1.02
+    eps_year_ago: -152.0
+    analysts: 3
+    growth: 0.9911
+    revenue_avg: 0
+  current_year:
+    eps_avg: -1.48
+    eps_low: -2.0
+    eps_high: -0.96
+    eps_year_ago: -336.0
+    analysts: 2
+    growth: 0.9956
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

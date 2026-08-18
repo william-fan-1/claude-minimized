@@ -1,0 +1,52 @@
+ticker: HAWK
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-06-22'
+  stock_return_pct: -2.7074
+  vti_return_pct: -0.3189
+  abnormal_return_pct: -2.3885
+  earnings_surprise_pct: -913.86
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-14'
+  stock_return_pct: -6.5244
+  vti_return_pct: -0.1171
+  abnormal_return_pct: -6.4073
+  earnings_surprise_pct: 148.45
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 2
+  median_abnormal_return_pct: -4.3979
+  mean_abnormal_return_pct: -4.3979
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 4.3979
+  beat_observations: 1
+  median_reaction_after_beat_pct: -6.4073
+  miss_observations: 1
+  median_reaction_after_miss_pct: -2.3885
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.005
+    eps_low: -0.03
+    eps_high: 0.02
+    analysts: 4
+    revenue_avg: 56885710
+  next_quarter:
+    eps_avg: 0.0375
+    eps_low: 0.0
+    eps_high: 0.05
+    analysts: 4
+    revenue_avg: 60114290
+  current_year:
+    eps_avg: -0.025
+    eps_low: -0.15
+    eps_high: 0.22
+    analysts: 6
+    revenue_avg: 217242970
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

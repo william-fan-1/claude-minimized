@@ -2,14 +2,6 @@ ticker: HROW
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-08'
-  stock_return_pct: 54.3221
-  vti_return_pct: 2.3417
-  abnormal_return_pct: 51.9804
-  earnings_surprise_pct: 45.45
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-14'
   stock_return_pct: -17.2587
   vti_return_pct: -0.7393
@@ -29,7 +21,7 @@ prior_reactions:
   reaction_date: '2025-05-09'
   stock_return_pct: 3.4337
   vti_return_pct: -0.1114
-  abnormal_return_pct: 3.5451
+  abnormal_return_pct: 3.545
   earnings_surprise_pct: -5797.15
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,47 @@ prior_reactions:
   abnormal_return_pct: -23.4546
   earnings_surprise_pct: -124.24
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: -3.145
+  vti_return_pct: -0.2568
+  abnormal_return_pct: -2.8882
+  earnings_surprise_pct: -91.67
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -0.9779
-  mean_abnormal_return_pct: -0.0161
-  positive_reaction_rate: 0.5
-  median_absolute_reaction_pct: 14.8742
-  beat_observations: 4
-  median_reaction_after_beat_pct: 7.6183
-  miss_observations: 4
-  median_reaction_after_miss_pct: -19.987
+  median_abnormal_return_pct: -3.4257
+  mean_abnormal_return_pct: -6.8747
+  positive_reaction_rate: 0.375
+  median_absolute_reaction_pct: 8.5962
+  beat_observations: 3
+  median_reaction_after_beat_pct: 2.0074
+  miss_observations: 5
+  median_reaction_after_miss_pct: -16.5194
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.2667
+    eps_low: -0.5
+    eps_high: 0.34
+    eps_year_ago: 0.33
+    analysts: 3
+    growth: -0.1919
+    revenue_avg: 70350120
+  next_quarter:
+    eps_avg: 1.0
+    eps_low: 0.94
+    eps_high: 1.07
+    analysts: 3
+    revenue_avg: 135563000
+  current_year:
+    eps_avg: 0.28
+    eps_low: 0.14
+    eps_high: 0.42
+    analysts: 2
+    revenue_avg: 350831880
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

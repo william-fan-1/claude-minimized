@@ -2,14 +2,6 @@ ticker: ORMP
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-05-10'
-  stock_return_pct: 0.8403
-  vti_return_pct: 0.0931
-  abnormal_return_pct: 0.7472
-  earnings_surprise_pct: 100.0
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-08-15'
   stock_return_pct: 4.9107
   vti_return_pct: 1.7321
@@ -21,7 +13,7 @@ prior_reactions:
   reaction_date: '2024-11-08'
   stock_return_pct: -2.9412
   vti_return_pct: 0.4673
-  abnormal_return_pct: -3.4085
+  abnormal_return_pct: -3.4084
   earnings_surprise_pct: -2300.0
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 1.4134
   earnings_surprise_pct: null
   surprise_source: null
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: 1.1905
+  vti_return_pct: -0.2568
+  abnormal_return_pct: 1.4473
+  earnings_surprise_pct: 327.91
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
   median_abnormal_return_pct: -1.7899
-  mean_abnormal_return_pct: -0.9385
+  mean_abnormal_return_pct: -0.851
   positive_reaction_rate: 0.375
   median_absolute_reaction_pct: 2.4108
   beat_observations: 4
-  median_reaction_after_beat_pct: -0.4563
+  median_reaction_after_beat_pct: -0.1062
   miss_observations: 3
   median_reaction_after_miss_pct: -2.9576
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.52
+    eps_low: 0.52
+    eps_high: 0.52
+    eps_year_ago: 1.13
+    analysts: 1.0
+    growth: -0.5398
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: 0.46
+    eps_low: 0.46
+    eps_high: 0.46
+    eps_year_ago: 0.25
+    analysts: 1.0
+    growth: 0.84
+    revenue_avg: 0
+  current_year:
+    eps_avg: 2.31
+    eps_low: 2.31
+    eps_high: 2.31
+    eps_year_ago: 1.5
+    analysts: 1.0
+    growth: 0.54
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 0.0
+    down: 0.0

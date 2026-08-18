@@ -1,0 +1,54 @@
+ticker: SGP
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-15'
+  stock_return_pct: -4.3675
+  vti_return_pct: -1.2684
+  abnormal_return_pct: -3.0992
+  earnings_surprise_pct: -91.67
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-07'
+  stock_return_pct: 2.2626
+  vti_return_pct: 0.7149
+  abnormal_return_pct: 1.5477
+  earnings_surprise_pct: -7.79
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 2
+  median_abnormal_return_pct: -0.7758
+  mean_abnormal_return_pct: -0.7758
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 2.3235
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 2
+  median_reaction_after_miss_pct: -0.7758
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.6212
+    eps_low: -0.71
+    eps_high: -0.5248
+    analysts: 4
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: -0.6594
+    eps_low: -0.77
+    eps_high: -0.5476
+    analysts: 4
+    revenue_avg: 0
+  current_year:
+    eps_avg: -2.4808
+    eps_low: -2.57
+    eps_high: -2.3133
+    eps_year_ago: -1.9599
+    analysts: 4
+    growth: -0.2658
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

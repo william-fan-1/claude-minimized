@@ -1,0 +1,106 @@
+ticker: CFBK
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2023-02-07'
+  stock_return_pct: -0.0483
+  vti_return_pct: 1.2604
+  abnormal_return_pct: -1.3088
+  earnings_surprise_pct: 0.09
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2023-05-10'
+  stock_return_pct: 2.7617
+  vti_return_pct: 0.441
+  abnormal_return_pct: 2.3207
+  earnings_surprise_pct: 3.03
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2023-08-03'
+  stock_return_pct: -0.9444
+  vti_return_pct: -0.2895
+  abnormal_return_pct: -0.6549
+  earnings_surprise_pct: 8.2
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-08-04'
+  stock_return_pct: -0.8085
+  vti_return_pct: 1.5667
+  abnormal_return_pct: -2.3752
+  earnings_surprise_pct: 6.94
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-11-03'
+  stock_return_pct: 0.6466
+  vti_return_pct: 0.1133
+  abnormal_return_pct: 0.5333
+  earnings_surprise_pct: -57.14
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-02-05'
+  stock_return_pct: 2.316
+  vti_return_pct: -1.286
+  abnormal_return_pct: 3.602
+  earnings_surprise_pct: 15.79
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: unknown
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: -4.94
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-07-28'
+  stock_return_pct: 6.0276
+  vti_return_pct: 0.2218
+  abnormal_return_pct: 5.8058
+  earnings_surprise_pct: 1.12
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 7
+  median_abnormal_return_pct: 0.5333
+  mean_abnormal_return_pct: 1.1318
+  positive_reaction_rate: 0.5714
+  median_absolute_reaction_pct: 2.3207
+  beat_observations: 6
+  median_reaction_after_beat_pct: 0.8329
+  miss_observations: 1
+  median_reaction_after_miss_pct: 0.5333
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.91
+    eps_low: 0.91
+    eps_high: 0.91
+    eps_year_ago: 0.36
+    analysts: 1
+    growth: 1.5278
+    revenue_avg: 16800000
+  next_quarter:
+    eps_avg: 0.98
+    eps_low: 0.98
+    eps_high: 0.98
+    eps_year_ago: 0.88
+    analysts: 1
+    growth: 0.1136
+    revenue_avg: 17400000
+  current_year:
+    eps_avg: 3.56
+    eps_low: 3.56
+    eps_high: 3.56
+    eps_year_ago: 2.69
+    analysts: 1
+    growth: 0.3234
+    revenue_avg: 65500000
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

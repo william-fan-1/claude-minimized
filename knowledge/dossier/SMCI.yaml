@@ -2,14 +2,6 @@ ticker: SMCI
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-07'
-  stock_return_pct: -20.1381
-  vti_return_pct: -0.7642
-  abnormal_return_pct: -19.3739
-  earnings_surprise_pct: -23.24
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2025-02-26'
   stock_return_pct: 12.231
   vti_return_pct: 0.0341
@@ -44,7 +36,7 @@ prior_reactions:
   timing: after_market_close
   reaction_date: '2025-11-05'
   stock_return_pct: -11.3291
-  vti_return_pct: 0.428
+  vti_return_pct: 0.4281
   abnormal_return_pct: -11.7572
   earnings_surprise_pct: -10.08
   surprise_source: Yahoo Finance (via yfinance)
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 23.1777
   earnings_surprise_pct: 34.51
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-12'
+  stock_return_pct: 19.019
+  vti_return_pct: 0.31
+  abnormal_return_pct: 18.709
+  earnings_surprise_pct: 77.55
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: 5.1929
-  mean_abnormal_return_pct: 1.2405
-  positive_reaction_rate: 0.5
+  median_abnormal_return_pct: 12.1969
+  mean_abnormal_return_pct: 6.0009
+  positive_reaction_rate: 0.625
   median_absolute_reaction_pct: 13.2264
-  beat_observations: 4
-  median_reaction_after_beat_pct: 13.2264
-  miss_observations: 4
-  median_reaction_after_miss_pct: -15.3591
+  beat_observations: 5
+  median_reaction_after_beat_pct: 14.2558
+  miss_observations: 3
+  median_reaction_after_miss_pct: -11.7572
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 1.0371
+    eps_low: 0.8
+    eps_high: 1.66
+    eps_year_ago: 0.41
+    analysts: 17
+    growth: 1.5294
+    revenue_avg: 14971092730
+  next_quarter:
+    eps_avg: 1.0426
+    eps_low: 0.85
+    eps_high: 1.22
+    eps_year_ago: 0.69
+    analysts: 17
+    growth: 0.5111
+    revenue_avg: 16289780260
+  current_year:
+    eps_avg: 4.3382
+    eps_low: 3.5
+    eps_high: 5.13
+    eps_year_ago: 3.63
+    analysts: 18
+    growth: 0.1951
+    revenue_avg: 39506334870
+  eps_revisions_last_30d:
+    up: 4
+    down: 1

@@ -74,3 +74,33 @@ reaction_statistics:
   median_reaction_after_beat_pct: -0.7859
   miss_observations: 5
   median_reaction_after_miss_pct: -4.1721
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.0988
+    eps_low: -0.16
+    eps_high: -0.07
+    eps_year_ago: -0.1
+    analysts: 8
+    growth: 0.0125
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: -0.105
+    eps_low: -0.17
+    eps_high: -0.07
+    eps_year_ago: -0.14
+    analysts: 8
+    growth: 0.25
+    revenue_avg: 0
+  current_year:
+    eps_avg: -0.45
+    eps_low: -0.57
+    eps_high: -0.4
+    eps_year_ago: -0.38
+    analysts: 7
+    growth: -0.1842
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

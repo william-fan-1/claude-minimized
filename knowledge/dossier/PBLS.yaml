@@ -1,0 +1,44 @@
+ticker: PBLS
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-13'
+  stock_return_pct: -4.6512
+  vti_return_pct: 0.6469
+  abnormal_return_pct: -5.2981
+  earnings_surprise_pct: -772.85
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 1
+  median_abnormal_return_pct: -5.2981
+  mean_abnormal_return_pct: -5.2981
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 5.2981
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 1
+  median_reaction_after_miss_pct: -5.2981
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.38
+    eps_low: -0.45
+    eps_high: -0.25
+    analysts: 3
+    revenue_avg: 500000
+  next_quarter:
+    eps_avg: -0.3967
+    eps_low: -0.47
+    eps_high: -0.26
+    analysts: 3
+    revenue_avg: 1000000
+  current_year:
+    eps_avg: -2.5767
+    eps_low: -3.09
+    eps_high: -1.63
+    analysts: 3
+    revenue_avg: 1033330
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

@@ -1,0 +1,83 @@
+ticker: HEPS
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2021-08-26'
+  stock_return_pct: -25.3744
+  vti_return_pct: -0.6687
+  abnormal_return_pct: -24.7057
+  earnings_surprise_pct: -21.61
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2021-11-23'
+  stock_return_pct: -9.8101
+  vti_return_pct: 0.0333
+  abnormal_return_pct: -9.8434
+  earnings_surprise_pct: -136.67
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2022-03-24'
+  stock_return_pct: 4.8469
+  vti_return_pct: 1.4246
+  abnormal_return_pct: 3.4224
+  earnings_surprise_pct: 227.71
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2022-06-01'
+  stock_return_pct: -7.4627
+  vti_return_pct: -0.6591
+  abnormal_return_pct: -6.8036
+  earnings_surprise_pct: -825.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2022-09-28'
+  stock_return_pct: 6.7778
+  vti_return_pct: 2.1047
+  abnormal_return_pct: 4.6731
+  earnings_surprise_pct: -132.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2022-12-06'
+  stock_return_pct: -2.5543
+  vti_return_pct: -1.5001
+  abnormal_return_pct: -1.0541
+  earnings_surprise_pct: -92.31
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-06-12'
+  stock_return_pct: 5.2045
+  vti_return_pct: 0.3208
+  abnormal_return_pct: 4.8836
+  earnings_surprise_pct: null
+  surprise_source: null
+reaction_statistics:
+  observations: 7
+  median_abnormal_return_pct: -1.0541
+  mean_abnormal_return_pct: -4.204
+  positive_reaction_rate: 0.4286
+  median_absolute_reaction_pct: 4.8836
+  beat_observations: 1
+  median_reaction_after_beat_pct: 3.4224
+  miss_observations: 5
+  median_reaction_after_miss_pct: -6.8036
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    revenue_avg: 0
+  next_quarter:
+    revenue_avg: 0
+  current_year:
+    eps_avg: -15.3549
+    eps_low: -15.8558
+    eps_high: -14.854
+    eps_year_ago: -18.0
+    analysts: 2.0
+    growth: 0.1469
+    revenue_avg: 118868325030

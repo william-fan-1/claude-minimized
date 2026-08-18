@@ -2,14 +2,6 @@ ticker: APGE
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-08-12'
-  stock_return_pct: 9.7778
-  vti_return_pct: -0.0647
-  abnormal_return_pct: 9.8425
-  earnings_surprise_pct: -9.09
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2024-11-12'
   stock_return_pct: -5.1439
   vti_return_pct: -0.3932
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 1.6814
   earnings_surprise_pct: 6.3
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-10'
+  stock_return_pct: -0.1409
+  vti_return_pct: -0.0393
+  abnormal_return_pct: -0.1016
+  earnings_surprise_pct: -12.39
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: 1.6572
-  mean_abnormal_return_pct: 1.6058
-  positive_reaction_rate: 0.75
-  median_absolute_reaction_pct: 2.0816
+  median_abnormal_return_pct: 1.4184
+  mean_abnormal_return_pct: 0.3628
+  positive_reaction_rate: 0.625
+  median_absolute_reaction_pct: 1.7712
   beat_observations: 4
   median_reaction_after_beat_pct: 1.9917
   miss_observations: 4
-  median_reaction_after_miss_pct: -0.114
+  median_reaction_after_miss_pct: -0.9813
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.9611
+    eps_low: -1.25
+    eps_high: 0.31
+    eps_year_ago: -1.13
+    analysts: 11
+    growth: 0.1495
+    revenue_avg: 10000000
+  next_quarter:
+    eps_avg: -1.1894
+    eps_low: -1.27
+    eps_high: -1.11
+    eps_year_ago: -1.11
+    analysts: 10
+    growth: -0.0715
+    revenue_avg: 0
+  current_year:
+    eps_avg: -4.7463
+    eps_low: -5.1066
+    eps_high: -4.4653
+    eps_year_ago: -4.22
+    analysts: 7
+    growth: -0.1247
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 2
+    down: 1

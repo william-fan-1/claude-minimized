@@ -1,14 +1,6 @@
 ticker: ARQ
 prior_reactions:
 - fiscal_quarter: null
-  timing: after_market_close
-  reaction_date: '2024-08-13'
-  stock_return_pct: 4.6099
-  vti_return_pct: 1.6632
-  abnormal_return_pct: 2.9468
-  earnings_surprise_pct: -20.0
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
   timing: before_market_open
   reaction_date: '2024-11-07'
   stock_return_pct: 11.6279
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 12.5799
   earnings_surprise_pct: 25.01
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: 9.6618
+  vti_return_pct: -0.2568
+  abnormal_return_pct: 9.9186
+  earnings_surprise_pct: 130.33
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -0.5267
-  mean_abnormal_return_pct: -8.1353
+  median_abnormal_return_pct: 2.4342
+  mean_abnormal_return_pct: -7.2638
   positive_reaction_rate: 0.5
   median_absolute_reaction_pct: 11.7544
-  beat_observations: 4
-  median_reaction_after_beat_pct: 9.8987
-  miss_observations: 4
-  median_reaction_after_miss_pct: -19.1478
+  beat_observations: 5
+  median_reaction_after_beat_pct: 9.9186
+  miss_observations: 3
+  median_reaction_after_miss_pct: -34.2955
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.03
+    eps_low: -0.03
+    eps_high: -0.04
+    eps_year_ago: -0.0057
+    analysts: 1
+    growth: -4.2632
+    revenue_avg: 35053600
+  next_quarter:
+    eps_avg: 0.0367
+    eps_low: 0.03
+    eps_high: 0.04
+    eps_year_ago: -0.1126
+    analysts: 3
+    growth: 1.3257
+    revenue_avg: 30109200
+  current_year:
+    eps_avg: -0.0133
+    eps_low: -0.02
+    eps_high: 0.0
+    eps_year_ago: -0.1195
+    analysts: 3
+    growth: 0.8885
+    revenue_avg: 124097200
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

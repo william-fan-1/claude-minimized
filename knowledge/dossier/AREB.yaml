@@ -4,7 +4,7 @@ prior_reactions:
   timing: before_market_open
   reaction_date: '2022-11-14'
   stock_return_pct: 3.4921
-  vti_return_pct: -0.9043
+  vti_return_pct: -0.9042
   abnormal_return_pct: 4.3963
   earnings_surprise_pct: -3500.0
   surprise_source: Yahoo Finance (via yfinance)

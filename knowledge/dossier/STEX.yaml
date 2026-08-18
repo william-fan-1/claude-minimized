@@ -1,14 +1,6 @@
 ticker: STEX
 prior_reactions:
 - fiscal_quarter: null
-  timing: after_market_close
-  reaction_date: '2024-08-15'
-  stock_return_pct: -1.9608
-  vti_return_pct: 1.7321
-  abnormal_return_pct: -3.6929
-  earnings_surprise_pct: -310.8
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
   timing: unknown
   reaction_date: null
   stock_return_pct: null
@@ -64,13 +56,47 @@ prior_reactions:
   abnormal_return_pct: 1.5822
   earnings_surprise_pct: -803.0
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: -297.35
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
-  observations: 6
-  median_abnormal_return_pct: -1.072
-  mean_abnormal_return_pct: 0.5652
-  positive_reaction_rate: 0.5
-  median_absolute_reaction_pct: 2.5526
+  observations: 5
+  median_abnormal_return_pct: 0.3833
+  mean_abnormal_return_pct: 1.4168
+  positive_reaction_rate: 0.6
+  median_absolute_reaction_pct: 2.5274
   beat_observations: 1
   median_reaction_after_beat_pct: 0.3833
-  miss_observations: 5
-  median_reaction_after_miss_pct: -2.5274
+  miss_observations: 4
+  median_reaction_after_miss_pct: -0.4726
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.01
+    eps_low: -0.01
+    eps_high: -0.01
+    analysts: 1
+    revenue_avg: 1600000
+  next_quarter:
+    eps_avg: 0.01
+    eps_low: 0.01
+    eps_high: 0.01
+    eps_year_ago: -0.4537
+    analysts: 1
+    growth: 1.022
+    revenue_avg: 6100000
+  current_year:
+    eps_avg: -0.29
+    eps_low: -0.29
+    eps_high: -0.29
+    analysts: 1
+    revenue_avg: 8100000
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

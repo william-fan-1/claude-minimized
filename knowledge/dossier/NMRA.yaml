@@ -2,14 +2,6 @@ ticker: NMRA
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-08-06'
-  stock_return_pct: 0.2508
-  vti_return_pct: 1.015
-  abnormal_return_pct: -0.7641
-  earnings_surprise_pct: -3.48
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2024-11-12'
   stock_return_pct: -17.0821
   vti_return_pct: -0.3932
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -16.2795
   earnings_surprise_pct: 3.23
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-14'
+  stock_return_pct: -7.5145
+  vti_return_pct: -0.1171
+  abnormal_return_pct: -7.3974
+  earnings_surprise_pct: 5.34
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -5.4214
-  mean_abnormal_return_pct: -7.2312
+  median_abnormal_return_pct: -7.7706
+  mean_abnormal_return_pct: -8.0604
   positive_reaction_rate: 0.125
-  median_absolute_reaction_pct: 5.9876
-  beat_observations: 3
-  median_reaction_after_beat_pct: -8.1438
-  miss_observations: 5
-  median_reaction_after_miss_pct: -2.699
+  median_absolute_reaction_pct: 7.7706
+  beat_observations: 4
+  median_reaction_after_beat_pct: -7.7706
+  miss_observations: 4
+  median_reaction_after_miss_pct: -9.694
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.196
+    eps_low: -0.21
+    eps_high: -0.19
+    eps_year_ago: -0.35
+    analysts: 5
+    growth: 0.44
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: -0.182
+    eps_low: -0.2
+    eps_high: -0.17
+    eps_year_ago: -0.35
+    analysts: 5
+    growth: 0.48
+    revenue_avg: 0
+  current_year:
+    eps_avg: -0.912
+    eps_low: -0.94
+    eps_high: -0.89
+    eps_year_ago: -1.45
+    analysts: 5
+    growth: 0.371
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 1
+    down: 1

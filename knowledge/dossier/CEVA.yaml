@@ -2,14 +2,6 @@ ticker: CEVA
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-08-07'
-  stock_return_pct: 20.5208
-  vti_return_pct: -0.7642
-  abnormal_return_pct: 21.285
-  earnings_surprise_pct: 522.03
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2024-11-07'
   stock_return_pct: 16.521
   vti_return_pct: 0.699
@@ -21,7 +13,7 @@ prior_reactions:
   reaction_date: '2025-02-13'
   stock_return_pct: 10.2144
   vti_return_pct: 1.0443
-  abnormal_return_pct: 9.1701
+  abnormal_return_pct: 9.17
   earnings_surprise_pct: 1.1
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -1.589
   earnings_surprise_pct: 121.98
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-10'
+  stock_return_pct: -17.4554
+  vti_return_pct: -0.0393
+  abnormal_return_pct: -17.4161
+  earnings_surprise_pct: 8.96
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -1.5773
-  mean_abnormal_return_pct: 1.3235
-  positive_reaction_rate: 0.375
+  median_abnormal_return_pct: -1.8128
+  mean_abnormal_return_pct: -3.5142
+  positive_reaction_rate: 0.25
   median_absolute_reaction_pct: 9.5437
   beat_observations: 6
-  median_reaction_after_beat_pct: 3.8022
+  median_reaction_after_beat_pct: -1.5773
   miss_observations: 2
   median_reaction_after_miss_pct: -15.2491
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.0734
+    eps_low: 0.16
+    eps_high: 0.2
+    eps_year_ago: 0.11
+    analysts: 9
+    growth: -0.3325
+    revenue_avg: 28177030
+  next_quarter:
+    eps_avg: 0.2454
+    eps_low: 0.2386
+    eps_high: 0.2701
+    eps_year_ago: 0.11
+    analysts: 9
+    growth: 1.231
+    revenue_avg: 36212080
+  current_year:
+    eps_avg: 0.548
+    eps_low: 0.53
+    eps_high: 0.5827
+    eps_year_ago: 0.42
+    analysts: 9
+    growth: 0.3048
+    revenue_avg: 124984560
+  eps_revisions_last_30d:
+    up: 2
+    down: 0

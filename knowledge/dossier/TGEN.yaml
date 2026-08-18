@@ -2,18 +2,10 @@ ticker: TGEN
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2022-08-11'
-  stock_return_pct: -4.1379
-  vti_return_pct: 0.0047
-  abnormal_return_pct: -4.1427
-  earnings_surprise_pct: -400.0
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2022-11-10'
   stock_return_pct: -6.25
   vti_return_pct: 5.6578
-  abnormal_return_pct: -11.9078
+  abnormal_return_pct: -11.9077
   earnings_surprise_pct: 50.0
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,49 @@ prior_reactions:
   abnormal_return_pct: -28.201
   earnings_surprise_pct: 4.2
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-13'
+  stock_return_pct: 4.4888
+  vti_return_pct: 0.6469
+  abnormal_return_pct: 3.8419
+  earnings_surprise_pct: 12.5
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
   median_abnormal_return_pct: -6.0638
-  mean_abnormal_return_pct: -10.6525
-  positive_reaction_rate: 0.125
+  mean_abnormal_return_pct: -9.6544
+  positive_reaction_rate: 0.25
   median_absolute_reaction_pct: 6.0638
-  beat_observations: 3
-  median_reaction_after_beat_pct: -11.9078
-  miss_observations: 5
-  median_reaction_after_miss_pct: -4.1905
+  beat_observations: 4
+  median_reaction_after_beat_pct: -7.1948
+  miss_observations: 4
+  median_reaction_after_miss_pct: -6.0638
+forward_estimates:
+  as_of: '2026-08-17'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.08
+    eps_low: -0.08
+    eps_high: -0.08
+    eps_year_ago: -0.072
+    analysts: 1
+    growth: -0.1111
+    revenue_avg: 6660000
+  next_quarter:
+    eps_avg: -0.07
+    eps_low: -0.07
+    eps_high: -0.07
+    eps_year_ago: -0.0958
+    analysts: 1
+    growth: 0.2693
+    revenue_avg: 7336670
+  current_year:
+    eps_avg: -0.29
+    eps_low: -0.29
+    eps_high: -0.29
+    analysts: 1
+    revenue_avg: 26023330
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

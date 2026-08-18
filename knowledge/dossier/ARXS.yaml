@@ -1,0 +1,44 @@
+ticker: ARXS
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-07-30'
+  stock_return_pct: 15.3285
+  vti_return_pct: 1.6231
+  abnormal_return_pct: 13.7054
+  earnings_surprise_pct: 48.94
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 1
+  median_abnormal_return_pct: 13.7054
+  mean_abnormal_return_pct: 13.7054
+  positive_reaction_rate: 1.0
+  median_absolute_reaction_pct: 13.7054
+  beat_observations: 1
+  median_reaction_after_beat_pct: 13.7054
+  miss_observations: 0
+  median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.29
+    eps_low: 0.18
+    eps_high: 0.34
+    analysts: 8
+    revenue_avg: 522318140
+  next_quarter:
+    eps_avg: 0.28
+    eps_low: 0.18
+    eps_high: 0.36
+    analysts: 8
+    revenue_avg: 509134950
+  current_year:
+    eps_avg: 1.018
+    eps_low: 0.76
+    eps_high: 1.2
+    analysts: 9
+    revenue_avg: 1988817990
+  eps_revisions_last_30d:
+    up: 5
+    down: 0

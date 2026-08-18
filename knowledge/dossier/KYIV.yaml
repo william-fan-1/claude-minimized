@@ -1,0 +1,74 @@
+ticker: KYIV
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-10'
+  stock_return_pct: 7.0724
+  vti_return_pct: 1.4632
+  abnormal_return_pct: 5.6091
+  earnings_surprise_pct: -3.64
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-13'
+  stock_return_pct: 8.5294
+  vti_return_pct: -0.5459
+  abnormal_return_pct: 9.0753
+  earnings_surprise_pct: 20.47
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-05-13'
+  stock_return_pct: 4.1518
+  vti_return_pct: 0.5292
+  abnormal_return_pct: 3.6225
+  earnings_surprise_pct: 7.48
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-07-31'
+  stock_return_pct: -3.281
+  vti_return_pct: 0.5297
+  abnormal_return_pct: -3.8107
+  earnings_surprise_pct: -6.49
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 4
+  median_abnormal_return_pct: 4.6158
+  mean_abnormal_return_pct: 3.624
+  positive_reaction_rate: 0.75
+  median_absolute_reaction_pct: 4.7099
+  beat_observations: 2
+  median_reaction_after_beat_pct: 6.3489
+  miss_observations: 2
+  median_reaction_after_miss_pct: 0.8992
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 15.6777
+    eps_low: 15.238
+    eps_high: 16.122
+    eps_year_ago: 13.8698
+    analysts: 3
+    growth: 0.1303
+    revenue_avg: 333850000
+  next_quarter:
+    eps_avg: 15.528
+    eps_low: 14.341
+    eps_high: 17.465
+    eps_year_ago: 16.3484
+    analysts: 3
+    growth: -0.0502
+    revenue_avg: 335298000
+  current_year:
+    eps_avg: 62.4562
+    eps_low: 59.99
+    eps_high: 65.055
+    eps_year_ago: 58.3242
+    analysts: 5
+    growth: 0.0708
+    revenue_avg: 1328548000
+  eps_revisions_last_30d:
+    up: 2
+    down: 1

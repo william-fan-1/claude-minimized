@@ -2,7 +2,7 @@ ticker: PLPC
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2016-08-08'
+  reaction_date: '2016-08-15'
   stock_return_pct: null
   vti_return_pct: null
   abnormal_return_pct: null
@@ -10,7 +10,7 @@ prior_reactions:
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2016-08-08'
+  reaction_date: '2016-08-15'
   stock_return_pct: null
   vti_return_pct: null
   abnormal_return_pct: null
@@ -18,7 +18,7 @@ prior_reactions:
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2016-08-08'
+  reaction_date: '2016-08-15'
   stock_return_pct: null
   vti_return_pct: null
   abnormal_return_pct: null
@@ -26,7 +26,7 @@ prior_reactions:
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2016-08-08'
+  reaction_date: '2016-08-15'
   stock_return_pct: null
   vti_return_pct: null
   abnormal_return_pct: null
@@ -34,7 +34,7 @@ prior_reactions:
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2016-08-08'
+  reaction_date: '2016-08-15'
   stock_return_pct: null
   vti_return_pct: null
   abnormal_return_pct: null
@@ -74,3 +74,33 @@ reaction_statistics:
   median_reaction_after_beat_pct: -1.919
   miss_observations: 0
   median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 3.37
+    eps_low: 3.37
+    eps_high: 3.37
+    eps_year_ago: 0.53
+    analysts: 1
+    growth: 5.3585
+    revenue_avg: 215000000
+  next_quarter:
+    eps_avg: 3.28
+    eps_low: 3.28
+    eps_high: 3.28
+    eps_year_ago: 1.72
+    analysts: 1
+    growth: 0.907
+    revenue_avg: 210000000
+  current_year:
+    eps_avg: 13.27
+    eps_low: 13.27
+    eps_high: 13.27
+    eps_year_ago: 7.14
+    analysts: 1
+    growth: 0.8585
+    revenue_avg: 813000000
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

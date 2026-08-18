@@ -2,14 +2,6 @@ ticker: HYPD
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2023-11-14'
-  stock_return_pct: 5.042
-  vti_return_pct: 2.2178
-  abnormal_return_pct: 2.8242
-  earnings_surprise_pct: 5.26
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-03-19'
   stock_return_pct: -23.2026
   vti_return_pct: 0.5765
@@ -36,7 +28,7 @@ prior_reactions:
   timing: after_market_close
   reaction_date: '2024-11-13'
   stock_return_pct: -19.2079
-  vti_return_pct: -0.0473
+  vti_return_pct: -0.0472
   abnormal_return_pct: -19.1607
   earnings_surprise_pct: -10.0
   surprise_source: Yahoo Finance (via yfinance)
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -3.9534
   earnings_surprise_pct: -36.15
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-13'
+  stock_return_pct: 5.2045
+  vti_return_pct: 0.6469
+  abnormal_return_pct: 4.5576
+  earnings_surprise_pct: -58.93
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
   median_abnormal_return_pct: -4.2493
-  mean_abnormal_return_pct: -9.0571
+  mean_abnormal_return_pct: -8.8405
   positive_reaction_rate: 0.25
-  median_absolute_reaction_pct: 4.2493
-  beat_observations: 5
-  median_reaction_after_beat_pct: -2.3861
-  miss_observations: 3
-  median_reaction_after_miss_pct: -19.1607
+  median_absolute_reaction_pct: 4.5514
+  beat_observations: 4
+  median_reaction_after_beat_pct: -3.4657
+  miss_observations: 4
+  median_reaction_after_miss_pct: -11.557
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.33
+    eps_low: -1.02
+    eps_high: 0.36
+    eps_year_ago: 0.05
+    analysts: 2
+    growth: -7.6
+    revenue_avg: 550000
+  next_quarter:
+    eps_avg: 0.29
+    eps_low: 0.18
+    eps_high: 0.4
+    eps_year_ago: -6.29
+    analysts: 2
+    growth: 1.0461
+    revenue_avg: 600000
+  current_year:
+    eps_avg: 2.35
+    eps_low: 1.78
+    eps_high: 2.92
+    eps_year_ago: -9.4
+    analysts: 2
+    growth: 1.25
+    revenue_avg: 1734500
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

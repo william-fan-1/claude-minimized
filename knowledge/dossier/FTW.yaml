@@ -1,0 +1,44 @@
+ticker: FTW
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-12'
+  stock_return_pct: 0.0
+  vti_return_pct: 0.31
+  abnormal_return_pct: -0.31
+  earnings_surprise_pct: 426.63
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 1
+  median_abnormal_return_pct: -0.31
+  mean_abnormal_return_pct: -0.31
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 0.31
+  beat_observations: 1
+  median_reaction_after_beat_pct: -0.31
+  miss_observations: 0
+  median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.095
+    eps_low: -0.27
+    eps_high: 0.08
+    analysts: 2
+    revenue_avg: 59015000
+  next_quarter:
+    eps_avg: 0.1
+    eps_low: 0.1
+    eps_high: 0.1
+    analysts: 1
+    revenue_avg: 61000000
+  current_year:
+    eps_avg: -3.93
+    eps_low: -3.93
+    eps_high: -3.93
+    analysts: 1
+    revenue_avg: 228000000
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

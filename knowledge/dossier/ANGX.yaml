@@ -1,0 +1,72 @@
+ticker: ANGX
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-14'
+  stock_return_pct: 13.9048
+  vti_return_pct: -0.0152
+  abnormal_return_pct: 13.9199
+  earnings_surprise_pct: 5.73
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-13'
+  stock_return_pct: -17.0404
+  vti_return_pct: -0.5459
+  abnormal_return_pct: -16.4945
+  earnings_surprise_pct: -109.25
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-01'
+  stock_return_pct: 22.5681
+  vti_return_pct: 0.3134
+  abnormal_return_pct: 22.2547
+  earnings_surprise_pct: 57.28
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-05'
+  stock_return_pct: -4.9327
+  vti_return_pct: -0.3072
+  abnormal_return_pct: -4.6255
+  earnings_surprise_pct: 24.53
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 4
+  median_abnormal_return_pct: 4.6472
+  mean_abnormal_return_pct: 3.7637
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 15.2072
+  beat_observations: 3
+  median_reaction_after_beat_pct: 13.9199
+  miss_observations: 1
+  median_reaction_after_miss_pct: -16.4945
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.09
+    eps_low: -0.1
+    eps_high: -0.08
+    eps_year_ago: -0.2451
+    analysts: 2
+    growth: 0.6328
+    revenue_avg: 136877800
+  next_quarter:
+    eps_avg: -0.095
+    eps_low: -0.12
+    eps_high: -0.07
+    eps_year_ago: -0.4185
+    analysts: 2
+    growth: 0.773
+    revenue_avg: 145386600
+  current_year:
+    eps_avg: -0.38
+    eps_low: -0.38
+    eps_high: -0.38
+    analysts: 1
+    revenue_avg: 508908600
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

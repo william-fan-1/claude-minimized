@@ -1,0 +1,46 @@
+ticker: SECZ
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-13'
+  stock_return_pct: -27.4809
+  vti_return_pct: 0.6469
+  abnormal_return_pct: -28.1278
+  earnings_surprise_pct: -3003.11
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 1
+  median_abnormal_return_pct: -28.1278
+  mean_abnormal_return_pct: -28.1278
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 28.1278
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 1
+  median_reaction_after_miss_pct: -28.1278
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.04
+    eps_low: -0.04
+    eps_high: -0.04
+    analysts: 1
+    revenue_avg: 17413610
+  next_quarter:
+    eps_avg: -0.03
+    eps_low: -0.03
+    eps_high: -0.03
+    analysts: 1
+    revenue_avg: 21400230
+  current_year:
+    eps_avg: -0.3373
+    eps_low: -0.3645
+    eps_high: -0.31
+    eps_year_ago: -5.67
+    analysts: 2
+    growth: 0.9405
+    revenue_avg: 72756280
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

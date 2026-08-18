@@ -1,0 +1,46 @@
+ticker: HMH
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-06'
+  stock_return_pct: -3.3463
+  vti_return_pct: -0.1528
+  abnormal_return_pct: -3.1935
+  earnings_surprise_pct: -57.66
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 1
+  median_abnormal_return_pct: -3.1935
+  mean_abnormal_return_pct: -3.1935
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 3.1935
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 1
+  median_reaction_after_miss_pct: -3.1935
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.4472
+    eps_low: 0.4344
+    eps_high: 0.46
+    analysts: 2
+    revenue_avg: 214904510
+  next_quarter:
+    eps_avg: 0.5795
+    eps_low: 0.5389
+    eps_high: 0.62
+    analysts: 2
+    revenue_avg: 239515270
+  current_year:
+    eps_avg: 1.1425
+    eps_low: 1.12
+    eps_high: 1.165
+    eps_year_ago: 227270.0
+    analysts: 2
+    growth: -1.0
+    revenue_avg: 796837970
+  eps_revisions_last_30d:
+    up: 1
+    down: 1

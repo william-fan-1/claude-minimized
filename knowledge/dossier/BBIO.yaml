@@ -2,14 +2,6 @@ ticker: BBIO
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-08-01'
-  stock_return_pct: 0.8863
-  vti_return_pct: -1.5666
-  abnormal_return_pct: 2.4529
-  earnings_surprise_pct: -7.24
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2024-11-12'
   stock_return_pct: -5.7427
   vti_return_pct: -0.3932
@@ -20,7 +12,7 @@ prior_reactions:
   timing: before_market_open
   reaction_date: '2025-02-20'
   stock_return_pct: 1.4191
-  vti_return_pct: -0.5378
+  vti_return_pct: -0.5377
   abnormal_return_pct: 1.9569
   earnings_surprise_pct: -26.09
   surprise_source: Yahoo Finance (via yfinance)
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -0.8302
   earnings_surprise_pct: -36.22
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: -1.1456
+  vti_return_pct: -0.2568
+  abnormal_return_pct: -0.8888
+  earnings_surprise_pct: -33.87
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -2.0968
-  mean_abnormal_return_pct: -1.6608
-  positive_reaction_rate: 0.375
+  median_abnormal_return_pct: -2.1261
+  mean_abnormal_return_pct: -2.0785
+  positive_reaction_rate: 0.25
   median_absolute_reaction_pct: 3.5835
   beat_observations: 2
   median_reaction_after_beat_pct: 0.7323
   miss_observations: 6
-  median_reaction_after_miss_pct: -2.0968
+  median_reaction_after_miss_pct: -2.1261
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.5827
+    eps_low: -0.79
+    eps_high: -0.42
+    eps_year_ago: -0.9506
+    analysts: 7
+    growth: 0.387
+    revenue_avg: 219712600
+  next_quarter:
+    eps_avg: -0.5292
+    eps_low: -0.63
+    eps_high: -0.4
+    eps_year_ago: -0.9389
+    analysts: 6
+    growth: 0.4364
+    revenue_avg: 309753760
+  current_year:
+    eps_avg: -2.6849
+    eps_low: -2.91
+    eps_high: -2.24
+    eps_year_ago: -3.784
+    analysts: 7
+    growth: 0.2905
+    revenue_avg: 1014613900
+  eps_revisions_last_30d:
+    up: 2
+    down: 1

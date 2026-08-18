@@ -1,0 +1,74 @@
+ticker: PXED
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-21'
+  stock_return_pct: 2.8317
+  vti_return_pct: 1.1559
+  abnormal_return_pct: 1.6758
+  earnings_surprise_pct: 2.81
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-01-14'
+  stock_return_pct: -10.4699
+  vti_return_pct: -0.3914
+  abnormal_return_pct: -10.0785
+  earnings_surprise_pct: 7.81
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-04-08'
+  stock_return_pct: -0.8054
+  vti_return_pct: 2.5413
+  abnormal_return_pct: -3.3467
+  earnings_surprise_pct: 71.6
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-07-15'
+  stock_return_pct: -12.7857
+  vti_return_pct: 0.3395
+  abnormal_return_pct: -13.1251
+  earnings_surprise_pct: 8.33
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 4
+  median_abnormal_return_pct: -6.7126
+  mean_abnormal_return_pct: -6.2186
+  positive_reaction_rate: 0.25
+  median_absolute_reaction_pct: 6.7126
+  beat_observations: 4
+  median_reaction_after_beat_pct: -6.7126
+  miss_observations: 0
+  median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 1.07
+    eps_low: 1.0
+    eps_high: 1.11
+    eps_year_ago: 1.0363
+    analysts: 6
+    growth: 0.0325
+    revenue_avg: 266836830
+  next_quarter:
+    eps_avg: 1.364
+    eps_low: 1.16
+    eps_high: 1.49
+    eps_year_ago: 1.38
+    analysts: 5
+    growth: -0.0116
+    revenue_avg: 269625200
+  current_year:
+    eps_avg: 4.4657
+    eps_low: 4.39
+    eps_high: 4.5
+    eps_year_ago: 4.5392
+    analysts: 7
+    growth: -0.0162
+    revenue_avg: 1022943400
+  eps_revisions_last_30d:
+    up: 0
+    down: 4

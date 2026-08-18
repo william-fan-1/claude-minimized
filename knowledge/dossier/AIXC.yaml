@@ -1,0 +1,76 @@
+ticker: AIXC
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2022-05-13'
+  stock_return_pct: 7.5248
+  vti_return_pct: 2.6781
+  abnormal_return_pct: 4.8467
+  earnings_surprise_pct: 20.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2022-08-16'
+  stock_return_pct: -2.1176
+  vti_return_pct: 0.2132
+  abnormal_return_pct: -2.3309
+  earnings_surprise_pct: 21.43
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2022-11-15'
+  stock_return_pct: 0.4545
+  vti_return_pct: 1.0133
+  abnormal_return_pct: -0.5588
+  earnings_surprise_pct: 16.67
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2023-05-03'
+  stock_return_pct: -6.0
+  vti_return_pct: -0.5842
+  abnormal_return_pct: -5.4158
+  earnings_surprise_pct: 57.84
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2023-05-16'
+  stock_return_pct: -2.9412
+  vti_return_pct: -0.7753
+  abnormal_return_pct: -2.1659
+  earnings_surprise_pct: 40.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2023-08-15'
+  stock_return_pct: 4.0952
+  vti_return_pct: -1.135
+  abnormal_return_pct: 5.2303
+  earnings_surprise_pct: -32.69
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2023-11-15'
+  stock_return_pct: 0.0
+  vti_return_pct: 0.2476
+  abnormal_return_pct: -0.2476
+  earnings_surprise_pct: 21.74
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-04-08'
+  stock_return_pct: -3.2911
+  vti_return_pct: 0.1167
+  abnormal_return_pct: -3.4078
+  earnings_surprise_pct: 70.33
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: -1.3624
+  mean_abnormal_return_pct: -0.5062
+  positive_reaction_rate: 0.25
+  median_absolute_reaction_pct: 2.8693
+  beat_observations: 7
+  median_reaction_after_beat_pct: -2.1659
+  miss_observations: 1
+  median_reaction_after_miss_pct: 5.2303

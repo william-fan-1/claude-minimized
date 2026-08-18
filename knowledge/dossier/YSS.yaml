@@ -1,0 +1,64 @@
+ticker: YSS
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-20'
+  stock_return_pct: 19.1742
+  vti_return_pct: -1.5671
+  abnormal_return_pct: 20.7413
+  earnings_surprise_pct: -44.86
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-15'
+  stock_return_pct: -17.0007
+  vti_return_pct: -1.2684
+  abnormal_return_pct: -15.7323
+  earnings_surprise_pct: -497.87
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-14'
+  stock_return_pct: -5.0391
+  vti_return_pct: -0.1171
+  abnormal_return_pct: -4.922
+  earnings_surprise_pct: 52.48
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 3
+  median_abnormal_return_pct: -4.922
+  mean_abnormal_return_pct: 0.029
+  positive_reaction_rate: 0.3333
+  median_absolute_reaction_pct: 15.7323
+  beat_observations: 1
+  median_reaction_after_beat_pct: -4.922
+  miss_observations: 2
+  median_reaction_after_miss_pct: 2.5045
+forward_estimates:
+  as_of: '2026-08-17'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.0253
+    eps_low: 0.0
+    eps_high: 0.0507
+    analysts: 2
+    revenue_avg: 122800800
+  next_quarter:
+    eps_avg: 0.0879
+    eps_low: 0.06
+    eps_high: 0.1158
+    eps_year_ago: -0.254
+    analysts: 2
+    growth: 1.3461
+    revenue_avg: 162170600
+  current_year:
+    eps_avg: -0.515
+    eps_low: -0.805
+    eps_high: -0.19
+    eps_year_ago: -0.773
+    analysts: 3
+    growth: 0.3338
+    revenue_avg: 490643600
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

@@ -2,14 +2,6 @@ ticker: TNGX
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-08-07'
-  stock_return_pct: -3.2186
-  vti_return_pct: -0.7642
-  abnormal_return_pct: -2.4544
-  earnings_surprise_pct: 31.67
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2024-11-06'
   stock_return_pct: -37.4517
   vti_return_pct: 2.7971
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -3.2464
   earnings_surprise_pct: -1.73
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-11'
+  stock_return_pct: -4.8066
+  vti_return_pct: -0.2568
+  abnormal_return_pct: -4.5499
+  earnings_surprise_pct: -14.23
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -0.6227
-  mean_abnormal_return_pct: 0.5197
+  median_abnormal_return_pct: -1.0187
+  mean_abnormal_return_pct: 0.2577
   positive_reaction_rate: 0.5
   median_absolute_reaction_pct: 5.0927
-  beat_observations: 5
-  median_reaction_after_beat_pct: -2.4544
-  miss_observations: 3
-  median_reaction_after_miss_pct: 5.297
+  beat_observations: 4
+  median_reaction_after_beat_pct: -1.8397
+  miss_observations: 4
+  median_reaction_after_miss_pct: 1.0253
+forward_estimates:
+  as_of: '2026-08-17'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.3239
+    eps_low: -0.35
+    eps_high: -0.3
+    eps_year_ago: -0.35
+    analysts: 11
+    growth: 0.0746
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: -0.3478
+    eps_low: -0.42
+    eps_high: -0.27
+    eps_year_ago: -0.29
+    analysts: 12
+    growth: -0.1992
+    revenue_avg: 0
+  current_year:
+    eps_avg: -1.3837
+    eps_low: -1.57
+    eps_high: -1.17
+    eps_year_ago: -0.87
+    analysts: 12
+    growth: -0.5904
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 3
+    down: 1

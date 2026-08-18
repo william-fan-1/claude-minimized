@@ -1,0 +1,74 @@
+ticker: CHA
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-08-29'
+  stock_return_pct: -13.1364
+  vti_return_pct: -0.5936
+  abnormal_return_pct: -12.5428
+  earnings_surprise_pct: 415.63
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-11-28'
+  stock_return_pct: 6.0863
+  vti_return_pct: 0.5591
+  abnormal_return_pct: 5.5272
+  earnings_surprise_pct: -12.46
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-03-31'
+  stock_return_pct: -3.1217
+  vti_return_pct: 2.9293
+  abnormal_return_pct: -6.051
+  earnings_surprise_pct: -68.08
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-29'
+  stock_return_pct: 25.5906
+  vti_return_pct: 0.2368
+  abnormal_return_pct: 25.3538
+  earnings_surprise_pct: 30.47
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 4
+  median_abnormal_return_pct: -0.2619
+  mean_abnormal_return_pct: 3.0718
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 9.2969
+  beat_observations: 2
+  median_reaction_after_beat_pct: 6.4055
+  miss_observations: 2
+  median_reaction_after_miss_pct: -0.2619
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 2.2985
+    eps_low: 2.067
+    eps_high: 2.53
+    eps_year_ago: 3.3
+    analysts: 2
+    growth: -0.3035
+    revenue_avg: 3575211870
+  next_quarter:
+    eps_avg: 2.147
+    eps_low: 1.684
+    eps_high: 2.61
+    eps_year_ago: 2.57
+    analysts: 2
+    growth: -0.1646
+    revenue_avg: 3682894470
+  current_year:
+    eps_avg: 9.8845
+    eps_low: 9.3831
+    eps_high: 10.5
+    eps_year_ago: 10.07
+    analysts: 7
+    growth: -0.0184
+    revenue_avg: 14133641060
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

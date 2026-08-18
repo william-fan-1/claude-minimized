@@ -2,22 +2,6 @@ ticker: RIOT
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-01'
-  stock_return_pct: -8.5378
-  vti_return_pct: -1.5666
-  abnormal_return_pct: -6.9712
-  earnings_surprise_pct: -2219.0
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
-  reaction_date: '2024-10-31'
-  stock_return_pct: -11.8321
-  vti_return_pct: -1.8647
-  abnormal_return_pct: -9.9673
-  earnings_surprise_pct: -1120.5
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2025-02-25'
   stock_return_pct: -6.7067
   vti_return_pct: -0.4959
@@ -64,13 +48,59 @@ prior_reactions:
   abnormal_return_pct: 6.9952
   earnings_surprise_pct: -25.29
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: 4.3299
+  vti_return_pct: -0.2568
+  abnormal_return_pct: 4.5867
+  earnings_surprise_pct: -83.47
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: 4.3299
+  vti_return_pct: -0.2568
+  abnormal_return_pct: 4.5867
+  earnings_surprise_pct: null
+  surprise_source: null
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -6.4117
-  mean_abnormal_return_pct: -4.7971
-  positive_reaction_rate: 0.25
-  median_absolute_reaction_pct: 6.7919
+  median_abnormal_return_pct: -0.6761
+  mean_abnormal_return_pct: -1.5331
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 6.3155
   beat_observations: 3
   median_reaction_after_beat_pct: -6.6126
-  miss_observations: 5
-  median_reaction_after_miss_pct: -5.9389
+  miss_observations: 4
+  median_reaction_after_miss_pct: 5.5035
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.3168
+    eps_low: -0.33
+    eps_high: -0.2257
+    eps_year_ago: 0.9894
+    analysts: 3
+    growth: -1.3202
+    revenue_avg: 159949170
+  next_quarter:
+    eps_avg: -0.2919
+    eps_low: -0.37
+    eps_high: -0.2587
+    eps_year_ago: 0.1886
+    analysts: 3
+    growth: -2.5477
+    revenue_avg: 175618550
+  current_year:
+    eps_avg: -1.4271
+    eps_low: -1.7814
+    eps_high: -1.25
+    eps_year_ago: -1.3783
+    analysts: 3
+    growth: -0.0354
+    revenue_avg: 675009660
+  eps_revisions_last_30d:
+    up: 0
+    down: 2

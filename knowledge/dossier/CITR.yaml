@@ -1,0 +1,44 @@
+ticker: CITR
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-10'
+  stock_return_pct: -1.0169
+  vti_return_pct: -0.0393
+  abnormal_return_pct: -0.9777
+  earnings_surprise_pct: 14.29
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 1
+  median_abnormal_return_pct: -0.9777
+  mean_abnormal_return_pct: -0.9777
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 0.9777
+  beat_observations: 1
+  median_reaction_after_beat_pct: -0.9777
+  miss_observations: 0
+  median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.21
+    eps_low: -0.18
+    eps_high: -0.21
+    analysts: 1
+    revenue_avg: 900000
+  next_quarter:
+    eps_avg: -0.18
+    eps_low: -0.19
+    eps_high: -0.18
+    analysts: 1
+    revenue_avg: 570000
+  current_year:
+    eps_avg: -0.88
+    eps_low: -0.88
+    eps_high: -0.88
+    analysts: 1
+    revenue_avg: 1870000
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

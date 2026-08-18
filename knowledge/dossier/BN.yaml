@@ -1,0 +1,76 @@
+ticker: BN
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2021-11-11'
+  stock_return_pct: -2.4172
+  vti_return_pct: 0.121
+  abnormal_return_pct: -2.5382
+  earnings_surprise_pct: 209.3
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2022-02-10'
+  stock_return_pct: 4.9561
+  vti_return_pct: -1.695
+  abnormal_return_pct: 6.6511
+  earnings_surprise_pct: 243.48
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2022-05-12'
+  stock_return_pct: -2.9895
+  vti_return_pct: 0.1075
+  abnormal_return_pct: -3.097
+  earnings_surprise_pct: 17.39
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2022-08-11'
+  stock_return_pct: 1.1138
+  vti_return_pct: 0.0047
+  abnormal_return_pct: 1.1091
+  earnings_surprise_pct: -55.26
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2022-11-10'
+  stock_return_pct: 10.2861
+  vti_return_pct: 5.6578
+  abnormal_return_pct: 4.6284
+  earnings_surprise_pct: -70.93
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2023-02-09'
+  stock_return_pct: -0.2447
+  vti_return_pct: -0.9726
+  abnormal_return_pct: 0.7279
+  earnings_surprise_pct: -139.65
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2023-05-11'
+  stock_return_pct: 0.1605
+  vti_return_pct: -0.1317
+  abnormal_return_pct: 0.2923
+  earnings_surprise_pct: -92.42
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2023-08-10'
+  stock_return_pct: 4.9833
+  vti_return_pct: 0.018
+  abnormal_return_pct: 4.9652
+  earnings_surprise_pct: -95.08
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: 0.9185
+  mean_abnormal_return_pct: 1.5924
+  positive_reaction_rate: 0.75
+  median_absolute_reaction_pct: 2.8176
+  beat_observations: 3
+  median_reaction_after_beat_pct: -2.5382
+  miss_observations: 5
+  median_reaction_after_miss_pct: 1.1091

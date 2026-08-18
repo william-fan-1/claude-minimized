@@ -2,14 +2,6 @@ ticker: AREN
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2023-08-15'
-  stock_return_pct: 10.9467
-  vti_return_pct: -1.135
-  abnormal_return_pct: 12.0818
-  earnings_surprise_pct: 16.65
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2023-11-15'
   stock_return_pct: -1.5544
   vti_return_pct: 0.2476
@@ -64,13 +56,49 @@ prior_reactions:
   abnormal_return_pct: -29.0466
   earnings_surprise_pct: -160.0
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: -27.2727
+  vti_return_pct: -0.2568
+  abnormal_return_pct: -27.0159
+  earnings_surprise_pct: -100.92
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -2.2024
-  mean_abnormal_return_pct: -5.8944
-  positive_reaction_rate: 0.375
+  median_abnormal_return_pct: -5.0947
+  mean_abnormal_return_pct: -10.7816
+  positive_reaction_rate: 0.25
   median_absolute_reaction_pct: 7.8009
-  beat_observations: 3
-  median_reaction_after_beat_pct: 0.2974
-  miss_observations: 5
-  median_reaction_after_miss_pct: -7.5865
+  beat_observations: 2
+  median_reaction_after_beat_pct: -1.1527
+  miss_observations: 6
+  median_reaction_after_miss_pct: -17.0489
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.12
+    eps_low: 0.12
+    eps_high: 0.12
+    eps_year_ago: 0.1455
+    analysts: 1
+    growth: -0.1751
+    revenue_avg: 20000000
+  next_quarter:
+    eps_avg: 0.0
+    eps_low: 0.0
+    eps_high: 0.0
+    eps_year_ago: 0.1177
+    analysts: 1
+    growth: -1.0
+    revenue_avg: 22000000
+  current_year:
+    eps_avg: -0.08
+    eps_low: -0.08
+    eps_high: -0.08
+    analysts: 1
+    revenue_avg: 84589000
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

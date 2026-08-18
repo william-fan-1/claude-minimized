@@ -1,0 +1,35 @@
+ticker: RELX
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2023-02-23'
+  stock_return_pct: -0.098
+  vti_return_pct: 0.5332
+  abnormal_return_pct: -0.6313
+  earnings_surprise_pct: -7.04
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 1
+  median_abnormal_return_pct: -0.6313
+  mean_abnormal_return_pct: -0.6313
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 0.6313
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 1
+  median_reaction_after_miss_pct: -0.6313
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    revenue_avg: 0
+  next_quarter:
+    revenue_avg: 0
+  current_year:
+    eps_avg: 1.9168
+    eps_low: 1.8775
+    eps_high: 1.956
+    eps_year_ago: 1.7424
+    analysts: 2.0
+    growth: 0.1001
+    revenue_avg: 10077790710

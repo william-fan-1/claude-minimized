@@ -1,0 +1,46 @@
+ticker: LABT
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-14'
+  stock_return_pct: -2.5751
+  vti_return_pct: -0.1171
+  abnormal_return_pct: -2.458
+  earnings_surprise_pct: -323.08
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 1
+  median_abnormal_return_pct: -2.458
+  mean_abnormal_return_pct: -2.458
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 2.458
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 1
+  median_reaction_after_miss_pct: -2.458
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.65
+    eps_low: -0.65
+    eps_high: -0.65
+    analysts: 1
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: -0.56
+    eps_low: -0.56
+    eps_high: -0.56
+    analysts: 1
+    revenue_avg: 0
+  current_year:
+    eps_avg: -2.52
+    eps_low: -2.52
+    eps_high: -2.52
+    eps_year_ago: -0.84
+    analysts: 1
+    growth: -2.0
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

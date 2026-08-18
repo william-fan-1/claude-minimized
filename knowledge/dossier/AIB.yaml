@@ -1,0 +1,44 @@
+ticker: AIB
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-14'
+  stock_return_pct: 0.0
+  vti_return_pct: -0.1171
+  abnormal_return_pct: 0.1171
+  earnings_surprise_pct: -133.33
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 1
+  median_abnormal_return_pct: 0.1171
+  mean_abnormal_return_pct: 0.1171
+  positive_reaction_rate: 1.0
+  median_absolute_reaction_pct: 0.1171
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 1
+  median_reaction_after_miss_pct: 0.1171
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.03
+    eps_low: -0.03
+    eps_high: -0.03
+    analysts: 1
+    revenue_avg: 77500
+  next_quarter:
+    eps_avg: -0.04
+    eps_low: -0.04
+    eps_high: -0.04
+    analysts: 1
+    revenue_avg: 0
+  current_year:
+    eps_avg: -0.13
+    eps_low: -0.13
+    eps_high: -0.13
+    analysts: 1
+    revenue_avg: 8641500
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

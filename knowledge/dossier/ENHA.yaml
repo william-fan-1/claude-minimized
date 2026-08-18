@@ -1,0 +1,44 @@
+ticker: ENHA
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-14'
+  stock_return_pct: -21.6
+  vti_return_pct: -0.1171
+  abnormal_return_pct: -21.4829
+  earnings_surprise_pct: -132.38
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 1
+  median_abnormal_return_pct: -21.4829
+  mean_abnormal_return_pct: -21.4829
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 21.4829
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 1
+  median_reaction_after_miss_pct: -21.4829
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.03
+    eps_low: -0.03
+    eps_high: -0.03
+    analysts: 2
+    revenue_avg: 10150000
+  next_quarter:
+    eps_avg: 0.0
+    eps_low: 0.0
+    eps_high: 0.0
+    analysts: 2
+    revenue_avg: 15848600
+  current_year:
+    eps_avg: -0.58
+    eps_low: -0.61
+    eps_high: -0.55
+    analysts: 2
+    revenue_avg: 43701600
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

@@ -2,14 +2,6 @@ ticker: XPON
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2023-05-12'
-  stock_return_pct: -12.945
-  vti_return_pct: -0.2345
-  abnormal_return_pct: -12.7105
-  earnings_surprise_pct: -38.1
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2023-08-11'
   stock_return_pct: -2.3077
   vti_return_pct: -0.0946
@@ -52,7 +44,7 @@ prior_reactions:
   timing: after_market_close
   reaction_date: '2024-11-15'
   stock_return_pct: -24.6377
-  vti_return_pct: -1.2686
+  vti_return_pct: -1.2685
   abnormal_return_pct: -23.3691
   earnings_surprise_pct: -172.78
   surprise_source: Yahoo Finance (via yfinance)
@@ -64,13 +56,21 @@ prior_reactions:
   abnormal_return_pct: -3.7461
   earnings_surprise_pct: 42.19
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-14'
+  stock_return_pct: 0.3308
+  vti_return_pct: -0.1171
+  abnormal_return_pct: 0.4479
+  earnings_surprise_pct: null
+  surprise_source: null
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -4.2286
-  mean_abnormal_return_pct: -8.1137
-  positive_reaction_rate: 0.125
-  median_absolute_reaction_pct: 4.2286
+  median_abnormal_return_pct: -2.9796
+  mean_abnormal_return_pct: -6.4689
+  positive_reaction_rate: 0.25
+  median_absolute_reaction_pct: 2.9796
   beat_observations: 1
   median_reaction_after_beat_pct: -3.7461
-  miss_observations: 6
-  median_reaction_after_miss_pct: -8.7108
+  miss_observations: 5
+  median_reaction_after_miss_pct: -4.711

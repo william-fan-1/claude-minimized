@@ -1,0 +1,64 @@
+ticker: ABTC
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-03-27'
+  stock_return_pct: -5.805
+  vti_return_pct: -1.7146
+  abnormal_return_pct: -4.0904
+  earnings_surprise_pct: -828.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-07'
+  stock_return_pct: -7.2
+  vti_return_pct: -0.4587
+  abnormal_return_pct: -6.7413
+  earnings_surprise_pct: -2442.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-03'
+  stock_return_pct: 5.9783
+  vti_return_pct: 1.529
+  abnormal_return_pct: 4.4492
+  earnings_surprise_pct: null
+  surprise_source: null
+reaction_statistics:
+  observations: 3
+  median_abnormal_return_pct: -4.0904
+  mean_abnormal_return_pct: -2.1275
+  positive_reaction_rate: 0.3333
+  median_absolute_reaction_pct: 4.4492
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 2
+  median_reaction_after_miss_pct: -5.4158
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.02
+    eps_low: -0.02
+    eps_high: -0.02
+    analysts: 1
+    revenue_avg: 70300000
+  next_quarter:
+    eps_avg: 0.0
+    eps_low: 0.0
+    eps_high: 0.0
+    eps_year_ago: -1.05
+    analysts: 1
+    growth: 1.0
+    revenue_avg: 74200000
+  current_year:
+    eps_avg: -2.03
+    eps_low: -2.03
+    eps_high: -2.03
+    eps_year_ago: -2.55
+    analysts: 1
+    growth: 0.2039
+    revenue_avg: 273600000
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

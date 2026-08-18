@@ -13,7 +13,7 @@ prior_reactions:
   reaction_date: '2023-03-31'
   stock_return_pct: -4.6444
   vti_return_pct: 1.5069
-  abnormal_return_pct: -6.1514
+  abnormal_return_pct: -6.1513
   earnings_surprise_pct: 247.46
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -34,10 +34,10 @@ prior_reactions:
   surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 4
-  median_abnormal_return_pct: -6.6563
+  median_abnormal_return_pct: -6.6562
   mean_abnormal_return_pct: -5.4986
   positive_reaction_rate: 0.25
-  median_absolute_reaction_pct: 6.6563
+  median_absolute_reaction_pct: 6.6562
   beat_observations: 2
   median_reaction_after_beat_pct: -1.6533
   miss_observations: 2

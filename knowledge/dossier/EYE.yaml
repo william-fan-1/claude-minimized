@@ -2,14 +2,6 @@ ticker: EYE
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-08-07'
-  stock_return_pct: -21.7049
-  vti_return_pct: -0.7642
-  abnormal_return_pct: -20.9406
-  earnings_surprise_pct: 71.19
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2024-11-06'
   stock_return_pct: -2.541
   vti_return_pct: 2.7971
@@ -44,7 +36,7 @@ prior_reactions:
   timing: before_market_open
   reaction_date: '2025-11-05'
   stock_return_pct: -3.5156
-  vti_return_pct: 0.428
+  vti_return_pct: 0.4281
   abnormal_return_pct: -3.9437
   earnings_surprise_pct: 0.16
   surprise_source: Yahoo Finance (via yfinance)
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -19.7269
   earnings_surprise_pct: 5.27
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-12'
+  stock_return_pct: -11.5594
+  vti_return_pct: 0.31
+  abnormal_return_pct: -11.8694
+  earnings_surprise_pct: 37.37
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
   median_abnormal_return_pct: -4.1841
-  mean_abnormal_return_pct: -2.2219
+  mean_abnormal_return_pct: -1.088
   positive_reaction_rate: 0.375
   median_absolute_reaction_pct: 9.9544
   beat_observations: 8
   median_reaction_after_beat_pct: -4.1841
   miss_observations: 0
   median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.182
+    eps_low: 0.15
+    eps_high: 0.221
+    eps_year_ago: 0.13
+    analysts: 12
+    growth: 0.3999
+    revenue_avg: 499067800
+  next_quarter:
+    eps_avg: 0.1327
+    eps_low: 0.13
+    eps_high: 0.167
+    eps_year_ago: 0.15
+    analysts: 12
+    growth: -0.1152
+    revenue_avg: 524000000
+  current_year:
+    eps_avg: 0.9996
+    eps_low: 0.94
+    eps_high: 1.089
+    eps_year_ago: 0.8
+    analysts: 12
+    growth: 0.2494
+    revenue_avg: 2072300000
+  eps_revisions_last_30d:
+    up: 0
+    down: 2

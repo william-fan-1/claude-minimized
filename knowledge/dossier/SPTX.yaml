@@ -1,0 +1,52 @@
+ticker: SPTX
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-06-08'
+  stock_return_pct: -1.4599
+  vti_return_pct: 0.3
+  abnormal_return_pct: -1.7598
+  earnings_surprise_pct: -166.27
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-03'
+  stock_return_pct: 1.624
+  vti_return_pct: 2.0668
+  abnormal_return_pct: -0.4428
+  earnings_surprise_pct: -171.19
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 2
+  median_abnormal_return_pct: -1.1013
+  mean_abnormal_return_pct: -1.1013
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 1.1013
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 2
+  median_reaction_after_miss_pct: -1.1013
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.5613
+    eps_low: -0.63
+    eps_high: -0.51
+    analysts: 5
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: -0.6062
+    eps_low: -0.77
+    eps_high: -0.4737
+    analysts: 5
+    revenue_avg: 0
+  current_year:
+    eps_avg: -6.2403
+    eps_low: -13.1023
+    eps_high: -4.09
+    analysts: 5
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 2
+    down: 1

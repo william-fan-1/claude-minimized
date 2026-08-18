@@ -2,18 +2,10 @@ ticker: EDBL
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-04-01'
-  stock_return_pct: 9.0625
-  vti_return_pct: -0.0769
-  abnormal_return_pct: 9.1394
-  earnings_surprise_pct: -62.79
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2024-05-15'
   stock_return_pct: 15.6909
   vti_return_pct: 1.2295
-  abnormal_return_pct: 14.4613
+  abnormal_return_pct: 14.4614
   earnings_surprise_pct: -79.61
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -28,8 +20,8 @@ prior_reactions:
   timing: before_market_open
   reaction_date: '2024-11-13'
   stock_return_pct: -11.5607
-  vti_return_pct: -0.0473
-  abnormal_return_pct: -11.5134
+  vti_return_pct: -0.0472
+  abnormal_return_pct: -11.5135
   earnings_surprise_pct: -39.74
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -53,7 +45,7 @@ prior_reactions:
   reaction_date: '2025-08-15'
   stock_return_pct: -5.4795
   vti_return_pct: -0.227
-  abnormal_return_pct: -5.2524
+  abnormal_return_pct: -5.2525
   earnings_surprise_pct: -781.69
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -61,16 +53,54 @@ prior_reactions:
   reaction_date: '2025-11-14'
   stock_return_pct: -2.2388
   vti_return_pct: -0.0152
-  abnormal_return_pct: -2.2236
+  abnormal_return_pct: -2.2237
   earnings_surprise_pct: -163.01
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-14'
+  stock_return_pct: 0.0
+  vti_return_pct: -0.1171
+  abnormal_return_pct: 0.1171
+  earnings_surprise_pct: -60.6
   surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -3.738
-  mean_abnormal_return_pct: -3.7303
+  median_abnormal_return_pct: -3.7381
+  mean_abnormal_return_pct: -4.8581
   positive_reaction_rate: 0.375
-  median_absolute_reaction_pct: 10.9336
+  median_absolute_reaction_pct: 10.9337
   beat_observations: 2
   median_reaction_after_beat_pct: -1.9835
   miss_observations: 6
-  median_reaction_after_miss_pct: -3.738
+  median_reaction_after_miss_pct: -3.7381
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -11.7
+    eps_low: -11.7
+    eps_high: -11.7
+    eps_year_ago: -2961.003
+    analysts: 1
+    growth: 0.996
+    revenue_avg: 3381000
+  next_quarter:
+    eps_avg: -6.3
+    eps_low: -6.3
+    eps_high: -6.3
+    eps_year_ago: -621.0006
+    analysts: 1
+    growth: 0.9899
+    revenue_avg: 3099000
+  current_year:
+    eps_avg: -37.35
+    eps_low: -37.35
+    eps_high: -37.35
+    eps_year_ago: -5293.805
+    analysts: 1
+    growth: 0.9929
+    revenue_avg: 15716000
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

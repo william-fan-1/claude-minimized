@@ -1,14 +1,6 @@
 ticker: NGNE
 prior_reactions:
 - fiscal_quarter: null
-  timing: after_market_close
-  reaction_date: '2024-05-13'
-  stock_return_pct: -5.7231
-  vti_return_pct: 0.0543
-  abnormal_return_pct: -5.7773
-  earnings_surprise_pct: -5.54
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
   timing: before_market_open
   reaction_date: '2024-08-09'
   stock_return_pct: -2.6265
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 4.7971
   earnings_surprise_pct: 8.69
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-12'
+  stock_return_pct: 3.2961
+  vti_return_pct: 0.31
+  abnormal_return_pct: 2.9861
+  earnings_surprise_pct: -11.68
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -4.4177
-  mean_abnormal_return_pct: -4.8135
-  positive_reaction_rate: 0.25
-  median_absolute_reaction_pct: 5.2872
+  median_abnormal_return_pct: -2.3734
+  mean_abnormal_return_pct: -3.7181
+  positive_reaction_rate: 0.375
+  median_absolute_reaction_pct: 3.9276
   beat_observations: 5
   median_reaction_after_beat_pct: -6.776
   miss_observations: 3
-  median_reaction_after_miss_pct: -3.0582
+  median_reaction_after_miss_pct: -1.6886
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -1.37
+    eps_low: -1.44
+    eps_high: -1.3
+    eps_year_ago: -1.05
+    analysts: 2
+    growth: -0.3048
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: -1.3725
+    eps_low: -1.46
+    eps_high: -1.2
+    eps_year_ago: -1.13
+    analysts: 4
+    growth: -0.2146
+    revenue_avg: 0
+  current_year:
+    eps_avg: -5.656
+    eps_low: -5.89
+    eps_high: -5.44
+    eps_year_ago: -4.24
+    analysts: 5
+    growth: -0.334
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

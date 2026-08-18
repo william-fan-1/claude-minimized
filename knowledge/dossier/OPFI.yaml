@@ -2,26 +2,10 @@ ticker: OPFI
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-08-07'
-  stock_return_pct: 13.2743
-  vti_return_pct: -0.7642
-  abnormal_return_pct: 14.0386
-  earnings_surprise_pct: 103.51
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
-  reaction_date: '2024-11-07'
-  stock_return_pct: 22.366
-  vti_return_pct: 0.699
-  abnormal_return_pct: 21.667
-  earnings_surprise_pct: 65.0
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2025-03-05'
   stock_return_pct: 10.8021
-  vti_return_pct: 1.1368
-  abnormal_return_pct: 9.6653
+  vti_return_pct: 1.1369
+  abnormal_return_pct: 9.6652
   earnings_surprise_pct: 56.81
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +48,59 @@ prior_reactions:
   abnormal_return_pct: 1.8946
   earnings_surprise_pct: 6.87
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: -24.8575
+  vti_return_pct: -0.2568
+  abnormal_return_pct: -24.6007
+  earnings_surprise_pct: -25.84
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: -24.8575
+  vti_return_pct: -0.2568
+  abnormal_return_pct: -24.6007
+  earnings_surprise_pct: null
+  surprise_source: null
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: 10.5016
-  mean_abnormal_return_pct: 8.6784
-  positive_reaction_rate: 0.875
+  median_abnormal_return_pct: 2.8847
+  mean_abnormal_return_pct: -1.935
+  positive_reaction_rate: 0.625
   median_absolute_reaction_pct: 10.5016
-  beat_observations: 8
-  median_reaction_after_beat_pct: 10.5016
-  miss_observations: 0
-  median_reaction_after_miss_pct: null
+  beat_observations: 6
+  median_reaction_after_beat_pct: 6.77
+  miss_observations: 1
+  median_reaction_after_miss_pct: -24.6007
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.3975
+    eps_low: 0.33
+    eps_high: 0.55
+    eps_year_ago: 0.46
+    analysts: 4
+    growth: -0.1359
+    revenue_avg: 152639000
+  next_quarter:
+    eps_avg: 0.38
+    eps_low: 0.37
+    eps_high: 0.39
+    eps_year_ago: 0.3
+    analysts: 4
+    growth: 0.2667
+    revenue_avg: 162507670
+  current_year:
+    eps_avg: 1.5075
+    eps_low: 1.38
+    eps_high: 1.8
+    eps_year_ago: 1.59
+    analysts: 4
+    growth: -0.0519
+    revenue_avg: 612181000
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

@@ -2,14 +2,6 @@ ticker: CRVO
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-11-12'
-  stock_return_pct: -2.5535
-  vti_return_pct: -0.3932
-  abnormal_return_pct: -2.1603
-  earnings_surprise_pct: -33.33
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2025-03-17'
   stock_return_pct: 40.528
   vti_return_pct: 0.8267
@@ -58,19 +50,57 @@ prior_reactions:
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: null
-  stock_return_pct: null
-  vti_return_pct: null
-  abnormal_return_pct: null
+  reaction_date: '2026-08-10'
+  stock_return_pct: -0.3484
+  vti_return_pct: -0.0393
+  abnormal_return_pct: -0.3091
   earnings_surprise_pct: 25.93
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-13'
+  stock_return_pct: -4.5603
+  vti_return_pct: 0.6469
+  abnormal_return_pct: -5.2071
+  earnings_surprise_pct: null
+  surprise_source: null
 reaction_statistics:
-  observations: 7
-  median_abnormal_return_pct: 0.3907
-  mean_abnormal_return_pct: 5.3724
-  positive_reaction_rate: 0.5714
-  median_absolute_reaction_pct: 3.8393
-  beat_observations: 1
-  median_reaction_after_beat_pct: 3.8393
-  miss_observations: 6
-  median_reaction_after_miss_pct: -0.6807
+  observations: 8
+  median_abnormal_return_pct: 0.0408
+  mean_abnormal_return_pct: 4.2813
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 4.3348
+  beat_observations: 2
+  median_reaction_after_beat_pct: 1.7651
+  miss_observations: 5
+  median_reaction_after_miss_pct: 0.3907
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.55
+    eps_low: -0.73
+    eps_high: -0.44
+    eps_year_ago: -0.84
+    analysts: 3
+    growth: 0.3452
+    revenue_avg: 50000
+  next_quarter:
+    eps_avg: -0.4467
+    eps_low: -0.75
+    eps_high: -0.11
+    eps_year_ago: -0.88
+    analysts: 3
+    growth: 0.4924
+    revenue_avg: 83330
+  current_year:
+    eps_avg: -2.154
+    eps_low: -2.97
+    eps_high: -1.16
+    eps_year_ago: -2.98
+    analysts: 5
+    growth: 0.2772
+    revenue_avg: 133330
+  eps_revisions_last_30d:
+    up: 2
+    down: 2

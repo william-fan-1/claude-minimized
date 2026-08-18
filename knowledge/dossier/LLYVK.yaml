@@ -1,0 +1,86 @@
+ticker: LLYVK
+prior_reactions:
+- fiscal_quarter: null
+  timing: unknown
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: -41.22
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-02-27'
+  stock_return_pct: -2.3209
+  vti_return_pct: -1.5492
+  abnormal_return_pct: -0.7716
+  earnings_surprise_pct: 309.07
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-07'
+  stock_return_pct: 0.8419
+  vti_return_pct: 0.4146
+  abnormal_return_pct: 0.4273
+  earnings_surprise_pct: -100.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-06'
+  stock_return_pct: 2.1199
+  vti_return_pct: -1.1376
+  abnormal_return_pct: 3.2575
+  earnings_surprise_pct: -172.36
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-08'
+  stock_return_pct: -1.7041
+  vti_return_pct: 0.7412
+  abnormal_return_pct: -2.4454
+  earnings_surprise_pct: -2361.54
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-07'
+  stock_return_pct: -0.8966
+  vti_return_pct: 0.7149
+  abnormal_return_pct: -1.6115
+  earnings_surprise_pct: -795.24
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 5
+  median_abnormal_return_pct: -0.7716
+  mean_abnormal_return_pct: -0.2287
+  positive_reaction_rate: 0.4
+  median_absolute_reaction_pct: 1.6115
+  beat_observations: 1
+  median_reaction_after_beat_pct: -0.7716
+  miss_observations: 4
+  median_reaction_after_miss_pct: -0.5921
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 1.06
+    eps_low: 1.06
+    eps_high: 1.06
+    eps_year_ago: -0.8467
+    analysts: 1
+    growth: 2.252
+    revenue_avg: 75300000
+  next_quarter:
+    eps_avg: -2.98
+    eps_low: -2.98
+    eps_high: -2.98
+    analysts: 1
+    revenue_avg: 141000000
+  current_year:
+    eps_avg: -7.69
+    eps_low: -7.69
+    eps_high: -7.69
+    analysts: 1
+    revenue_avg: 427000000
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

@@ -2,17 +2,9 @@ ticker: FLNT
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-20'
-  stock_return_pct: -9.6667
-  vti_return_pct: -0.243
-  abnormal_return_pct: -9.4237
-  earnings_surprise_pct: -80.77
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-15'
   stock_return_pct: -6.6225
-  vti_return_pct: -1.2686
+  vti_return_pct: -1.2685
   abnormal_return_pct: -5.354
   earnings_surprise_pct: -193.33
   surprise_source: Yahoo Finance (via yfinance)
@@ -21,7 +13,7 @@ prior_reactions:
   reaction_date: '2025-02-28'
   stock_return_pct: 2.2641
   vti_return_pct: 1.5424
-  abnormal_return_pct: 0.7218
+  abnormal_return_pct: 0.7217
   earnings_surprise_pct: 21.74
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 12.2395
   earnings_surprise_pct: 10.94
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: -3.5129
+  vti_return_pct: -0.2568
+  abnormal_return_pct: -3.2561
+  earnings_surprise_pct: 11.37
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -4.1886
-  mean_abnormal_return_pct: -3.0201
+  median_abnormal_return_pct: -3.3491
+  mean_abnormal_return_pct: -2.2491
   positive_reaction_rate: 0.25
-  median_absolute_reaction_pct: 5.1447
-  beat_observations: 3
-  median_reaction_after_beat_pct: 0.7218
-  miss_observations: 5
-  median_reaction_after_miss_pct: -4.9353
+  median_absolute_reaction_pct: 4.1886
+  beat_observations: 4
+  median_reaction_after_beat_pct: -1.2672
+  miss_observations: 4
+  median_reaction_after_miss_pct: -4.1886
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.1467
+    eps_low: -0.16
+    eps_high: -0.13
+    eps_year_ago: -0.24
+    analysts: 3
+    growth: 0.3889
+    revenue_avg: 44640670
+  next_quarter:
+    eps_avg: 0.0333
+    eps_low: -0.04
+    eps_high: 0.08
+    eps_year_ago: -0.23
+    analysts: 3
+    growth: 1.1449
+    revenue_avg: 70227330
+  current_year:
+    eps_avg: -0.3633
+    eps_low: -0.49
+    eps_high: -0.27
+    eps_year_ago: -0.84
+    analysts: 3
+    growth: 0.5675
+    revenue_avg: 213372000
+  eps_revisions_last_30d:
+    up: 0
+    down: 2

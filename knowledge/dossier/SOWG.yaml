@@ -2,7 +2,7 @@ ticker: SOWG
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2016-08-08'
+  reaction_date: '2016-08-15'
   stock_return_pct: null
   vti_return_pct: null
   abnormal_return_pct: null
@@ -10,7 +10,7 @@ prior_reactions:
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2016-08-08'
+  reaction_date: '2016-08-15'
   stock_return_pct: null
   vti_return_pct: null
   abnormal_return_pct: null
@@ -18,7 +18,7 @@ prior_reactions:
   surprise_source: null
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2016-08-08'
+  reaction_date: '2016-08-15'
   stock_return_pct: null
   vti_return_pct: null
   abnormal_return_pct: null
@@ -37,7 +37,7 @@ prior_reactions:
   reaction_date: '2024-08-15'
   stock_return_pct: -34.7654
   vti_return_pct: 1.7321
-  abnormal_return_pct: -36.4975
+  abnormal_return_pct: -36.4976
   earnings_surprise_pct: 2800.0
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -66,11 +66,11 @@ prior_reactions:
   surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 5
-  median_abnormal_return_pct: -36.4975
-  mean_abnormal_return_pct: -24.3254
+  median_abnormal_return_pct: -36.4976
+  mean_abnormal_return_pct: -24.3255
   positive_reaction_rate: 0.2
   median_absolute_reaction_pct: 40.6247
   beat_observations: 2
-  median_reaction_after_beat_pct: 2.0636
+  median_reaction_after_beat_pct: 2.0635
   miss_observations: 3
   median_reaction_after_miss_pct: -44.0395

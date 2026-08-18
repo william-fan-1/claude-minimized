@@ -1,14 +1,6 @@
 ticker: INUV
 prior_reactions:
 - fiscal_quarter: null
-  timing: after_market_close
-  reaction_date: '2024-08-09'
-  stock_return_pct: -12.5
-  vti_return_pct: 0.4317
-  abnormal_return_pct: -12.9317
-  earnings_surprise_pct: 32.0
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
   timing: before_market_open
   reaction_date: '2024-11-08'
   stock_return_pct: -4.1667
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -18.9389
   earnings_surprise_pct: 176.47
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-12'
+  stock_return_pct: -16.5049
+  vti_return_pct: 0.31
+  abnormal_return_pct: -16.8148
+  earnings_surprise_pct: -184.21
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
   median_abnormal_return_pct: -7.6341
-  mean_abnormal_return_pct: -9.826
+  mean_abnormal_return_pct: -10.3114
   positive_reaction_rate: 0.125
   median_absolute_reaction_pct: 7.6341
-  beat_observations: 7
-  median_reaction_after_beat_pct: -9.0747
-  miss_observations: 0
-  median_reaction_after_miss_pct: null
+  beat_observations: 6
+  median_reaction_after_beat_pct: -6.8543
+  miss_observations: 1
+  median_reaction_after_miss_pct: -16.8148
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.0333
+    eps_low: -0.21
+    eps_high: 0.24
+    eps_year_ago: -0.1
+    analysts: 3
+    growth: 0.6667
+    revenue_avg: 7816040
+  next_quarter:
+    eps_avg: 0.0533
+    eps_low: -0.11
+    eps_high: 0.29
+    eps_year_ago: -0.04
+    analysts: 3
+    growth: 2.3333
+    revenue_avg: 9123560
+  current_year:
+    eps_avg: 0.1467
+    eps_low: -0.36
+    eps_high: 0.93
+    eps_year_ago: -0.35
+    analysts: 3
+    growth: 1.4191
+    revenue_avg: 33472240
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

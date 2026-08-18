@@ -2,17 +2,9 @@ ticker: GTBP
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-05-16'
-  stock_return_pct: 7.2131
-  vti_return_pct: -0.2703
-  abnormal_return_pct: 7.4834
-  earnings_surprise_pct: 39.26
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-15'
   stock_return_pct: -2.99
-  vti_return_pct: -1.2686
+  vti_return_pct: -1.2685
   abnormal_return_pct: -1.7215
   earnings_surprise_pct: 43.33
   surprise_source: Yahoo Finance (via yfinance)
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -8.9822
   earnings_surprise_pct: -37.5
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-14'
+  stock_return_pct: -0.3367
+  vti_return_pct: -0.1171
+  abnormal_return_pct: -0.2196
+  earnings_surprise_pct: -50.0
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 7
   median_abnormal_return_pct: -5.0711
-  mean_abnormal_return_pct: -6.0604
-  positive_reaction_rate: 0.1429
-  median_absolute_reaction_pct: 7.3592
-  beat_observations: 3
-  median_reaction_after_beat_pct: -1.7215
-  miss_observations: 4
-  median_reaction_after_miss_pct: -7.0267
+  mean_abnormal_return_pct: -7.1608
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 5.0711
+  beat_observations: 2
+  median_reaction_after_beat_pct: -4.5404
+  miss_observations: 5
+  median_reaction_after_miss_pct: -5.0711
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.08
+    eps_low: -0.08
+    eps_high: -0.08
+    eps_year_ago: -0.55
+    analysts: 1
+    growth: 0.8545
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: -0.08
+    eps_low: -0.08
+    eps_high: -0.08
+    eps_year_ago: -0.83
+    analysts: 1
+    growth: 0.9036
+    revenue_avg: 0
+  current_year:
+    eps_avg: -0.34
+    eps_low: -0.34
+    eps_high: -0.34
+    eps_year_ago: -6.68
+    analysts: 1
+    growth: 0.9491
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

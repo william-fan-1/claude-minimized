@@ -1,19 +1,11 @@
 ticker: VANI
 prior_reactions:
 - fiscal_quarter: null
-  timing: after_market_close
-  reaction_date: '2024-08-14'
-  stock_return_pct: 8.6207
-  vti_return_pct: 0.2845
-  abnormal_return_pct: 8.3362
-  earnings_surprise_pct: 16.67
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
   timing: before_market_open
   reaction_date: '2024-11-13'
   stock_return_pct: 11.2
-  vti_return_pct: -0.0473
-  abnormal_return_pct: 11.2473
+  vti_return_pct: -0.0472
+  abnormal_return_pct: 11.2472
   earnings_surprise_pct: -4.76
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 2.7107
   earnings_surprise_pct: null
   surprise_source: null
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-14'
+  stock_return_pct: 4.4776
+  vti_return_pct: -0.1171
+  abnormal_return_pct: 4.5947
+  earnings_surprise_pct: 16.0
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
   median_abnormal_return_pct: -1.4497
-  mean_abnormal_return_pct: -0.0085
+  mean_abnormal_return_pct: -0.4762
   positive_reaction_rate: 0.5
-  median_absolute_reaction_pct: 4.8982
+  median_absolute_reaction_pct: 4.2349
   beat_observations: 1
-  median_reaction_after_beat_pct: 8.3362
+  median_reaction_after_beat_pct: 4.5947
   miss_observations: 3
   median_reaction_after_miss_pct: 0.9416
+forward_estimates:
+  as_of: '2026-08-17'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.0833
+    eps_low: -0.09
+    eps_high: -0.07
+    eps_year_ago: -0.11
+    analysts: 3
+    growth: 0.2425
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: -0.0867
+    eps_low: -0.1
+    eps_high: -0.07
+    eps_year_ago: -0.09
+    analysts: 3
+    growth: 0.037
+    revenue_avg: 0
+  current_year:
+    eps_avg: -0.33
+    eps_low: -0.36
+    eps_high: -0.3
+    eps_year_ago: -0.43
+    analysts: 3
+    growth: 0.2326
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

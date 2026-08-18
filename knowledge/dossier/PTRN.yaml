@@ -1,0 +1,66 @@
+ticker: PTRN
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-11-06'
+  stock_return_pct: 0.8315
+  vti_return_pct: -1.1376
+  abnormal_return_pct: 1.9691
+  earnings_surprise_pct: -15.35
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-06'
+  stock_return_pct: -7.2165
+  vti_return_pct: -1.3661
+  abnormal_return_pct: -5.8504
+  earnings_surprise_pct: 98.62
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-06'
+  stock_return_pct: -6.5171
+  vti_return_pct: -0.1528
+  abnormal_return_pct: -6.3644
+  earnings_surprise_pct: 34.93
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 3
+  median_abnormal_return_pct: -5.8504
+  mean_abnormal_return_pct: -3.4152
+  positive_reaction_rate: 0.3333
+  median_absolute_reaction_pct: 5.8504
+  beat_observations: 2
+  median_reaction_after_beat_pct: -6.1074
+  miss_observations: 1
+  median_reaction_after_miss_pct: 1.9691
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.1525
+    eps_low: 0.14
+    eps_high: 0.16
+    eps_year_ago: -1.9485
+    analysts: 3
+    growth: 1.0783
+    revenue_avg: 853716500
+  next_quarter:
+    eps_avg: 0.1504
+    eps_low: 0.14
+    eps_high: 0.16
+    eps_year_ago: 0.2331
+    analysts: 3
+    growth: -0.355
+    revenue_avg: 939597880
+  current_year:
+    eps_avg: 0.6266
+    eps_low: 0.6231
+    eps_high: 0.63
+    eps_year_ago: -0.1066
+    analysts: 2
+    growth: 6.8778
+    revenue_avg: 3443757210
+  eps_revisions_last_30d:
+    up: 3
+    down: 0

@@ -1,0 +1,64 @@
+ticker: SUNC
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-02-17'
+  stock_return_pct: 2.4492
+  vti_return_pct: 0.1248
+  abnormal_return_pct: 2.3245
+  earnings_surprise_pct: 1.08
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-05-05'
+  stock_return_pct: 2.1674
+  vti_return_pct: 0.8503
+  abnormal_return_pct: 1.317
+  earnings_surprise_pct: -365.86
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-04'
+  stock_return_pct: -2.6742
+  vti_return_pct: 1.8671
+  abnormal_return_pct: -4.5413
+  earnings_surprise_pct: -13.52
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 3
+  median_abnormal_return_pct: 1.317
+  mean_abnormal_return_pct: -0.2999
+  positive_reaction_rate: 0.6667
+  median_absolute_reaction_pct: 2.3245
+  beat_observations: 1
+  median_reaction_after_beat_pct: 2.3245
+  miss_observations: 2
+  median_reaction_after_miss_pct: -1.6121
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 4.202
+    eps_low: 2.97
+    eps_high: 5.434
+    analysts: 2
+    revenue_avg: 12141000000
+  next_quarter:
+    eps_avg: 2.884
+    eps_low: 1.96
+    eps_high: 3.808
+    eps_year_ago: 1.2984
+    analysts: 2
+    growth: 1.2211
+    revenue_avg: 11800000000
+  current_year:
+    eps_avg: 10.3243
+    eps_low: 8.66
+    eps_high: 12.133
+    eps_year_ago: 5.0219
+    analysts: 3
+    growth: 1.0558
+    revenue_avg: 46261000000
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

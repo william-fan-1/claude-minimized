@@ -1,0 +1,106 @@
+ticker: MGPI
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-10-31'
+  stock_return_pct: -14.6866
+  vti_return_pct: -1.8647
+  abnormal_return_pct: -12.8218
+  earnings_surprise_pct: 4.59
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-02-26'
+  stock_return_pct: -1.1353
+  vti_return_pct: 0.0341
+  abnormal_return_pct: -1.1694
+  earnings_surprise_pct: 4.43
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-05-01'
+  stock_return_pct: 4.7506
+  vti_return_pct: 0.6231
+  abnormal_return_pct: 4.1275
+  earnings_surprise_pct: -3.74
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-07-31'
+  stock_return_pct: -3.7113
+  vti_return_pct: -0.4356
+  abnormal_return_pct: -3.2757
+  earnings_surprise_pct: 47.34
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-10-29'
+  stock_return_pct: 4.3093
+  vti_return_pct: -0.071
+  abnormal_return_pct: 4.3803
+  earnings_surprise_pct: 40.88
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-02-25'
+  stock_return_pct: -21.1933
+  vti_return_pct: 0.7724
+  abnormal_return_pct: -21.9657
+  earnings_surprise_pct: 26.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-04-29'
+  stock_return_pct: -5.1954
+  vti_return_pct: -0.1198
+  abnormal_return_pct: -5.0757
+  earnings_surprise_pct: 316.67
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-07-29'
+  stock_return_pct: 0.9086
+  vti_return_pct: -1.5219
+  abnormal_return_pct: 2.4305
+  earnings_surprise_pct: 43.28
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: -2.2226
+  mean_abnormal_return_pct: -4.1712
+  positive_reaction_rate: 0.375
+  median_absolute_reaction_pct: 4.2539
+  beat_observations: 7
+  median_reaction_after_beat_pct: -3.2757
+  miss_observations: 1
+  median_reaction_after_miss_pct: 4.1275
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.324
+    eps_low: 0.26
+    eps_high: 0.39
+    eps_year_ago: 0.85
+    analysts: 5
+    growth: -0.6188
+    revenue_avg: 118750750
+  next_quarter:
+    eps_avg: 0.476
+    eps_low: 0.44
+    eps_high: 0.52
+    eps_year_ago: 0.63
+    analysts: 5
+    growth: -0.2444
+    revenue_avg: 134303500
+  current_year:
+    eps_avg: 1.652
+    eps_low: 1.56
+    eps_high: 1.75
+    eps_year_ago: 2.85
+    analysts: 5
+    growth: -0.4204
+    revenue_avg: 484473800
+  eps_revisions_last_30d:
+    up: 0
+    down: 3

@@ -1,0 +1,60 @@
+ticker: AZIO
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2021-05-26'
+  stock_return_pct: 3.0043
+  vti_return_pct: 0.3602
+  abnormal_return_pct: 2.6441
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2021-08-20'
+  stock_return_pct: 8.4615
+  vti_return_pct: 0.8979
+  abnormal_return_pct: 7.5636
+  earnings_surprise_pct: 100.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2021-11-15'
+  stock_return_pct: -6.5292
+  vti_return_pct: 0.0
+  abnormal_return_pct: -6.5292
+  earnings_surprise_pct: 100.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2022-04-27'
+  stock_return_pct: -0.3546
+  vti_return_pct: 0.1959
+  abnormal_return_pct: -0.5505
+  earnings_surprise_pct: -100.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2022-05-17'
+  stock_return_pct: -2.2222
+  vti_return_pct: 2.136
+  abnormal_return_pct: -4.3582
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2022-08-16'
+  stock_return_pct: -5.4
+  vti_return_pct: 0.2132
+  abnormal_return_pct: -5.6132
+  earnings_surprise_pct: 65.0
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 6
+  median_abnormal_return_pct: -2.4543
+  mean_abnormal_return_pct: -1.1406
+  positive_reaction_rate: 0.3333
+  median_absolute_reaction_pct: 4.9857
+  beat_observations: 3
+  median_reaction_after_beat_pct: -5.6132
+  miss_observations: 1
+  median_reaction_after_miss_pct: -0.5505

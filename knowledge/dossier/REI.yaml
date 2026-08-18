@@ -1,0 +1,106 @@
+ticker: REI
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-11-07'
+  stock_return_pct: 8.0745
+  vti_return_pct: 0.699
+  abnormal_return_pct: 7.3755
+  earnings_surprise_pct: -3.45
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-03-06'
+  stock_return_pct: -6.6667
+  vti_return_pct: -1.8584
+  abnormal_return_pct: -4.8083
+  earnings_surprise_pct: -4.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-05-08'
+  stock_return_pct: -3.5294
+  vti_return_pct: 0.7859
+  abnormal_return_pct: -4.3153
+  earnings_surprise_pct: -6.24
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-07'
+  stock_return_pct: 1.3514
+  vti_return_pct: -0.0578
+  abnormal_return_pct: 1.4092
+  earnings_surprise_pct: 66.67
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-07'
+  stock_return_pct: -1.0526
+  vti_return_pct: 0.2186
+  abnormal_return_pct: -1.2712
+  earnings_surprise_pct: 50.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-05'
+  stock_return_pct: 3.3333
+  vti_return_pct: -0.6476
+  abnormal_return_pct: 3.9809
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-07'
+  stock_return_pct: -8.3333
+  vti_return_pct: -0.4587
+  abnormal_return_pct: -7.8746
+  earnings_surprise_pct: 100.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-06'
+  stock_return_pct: 4.065
+  vti_return_pct: -0.1528
+  abnormal_return_pct: 4.2178
+  earnings_surprise_pct: 185.71
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: 0.069
+  mean_abnormal_return_pct: -0.1607
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 4.2666
+  beat_observations: 4
+  median_reaction_after_beat_pct: 0.069
+  miss_observations: 3
+  median_reaction_after_miss_pct: -4.3153
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.07
+    eps_low: 0.07
+    eps_high: 0.07
+    eps_year_ago: 0.06
+    analysts: 1
+    growth: 0.1667
+    revenue_avg: 84500000
+  next_quarter:
+    eps_avg: 0.06
+    eps_low: 0.06
+    eps_high: 0.06
+    eps_year_ago: 0.02
+    analysts: 1
+    growth: 2.0
+    revenue_avg: 86100000
+  current_year:
+    eps_avg: 0.26
+    eps_low: 0.26
+    eps_high: 0.26
+    eps_year_ago: 0.19
+    analysts: 1
+    growth: 0.3684
+    revenue_avg: 348900000
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

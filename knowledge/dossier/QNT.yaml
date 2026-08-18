@@ -1,0 +1,44 @@
+ticker: QNT
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-12'
+  stock_return_pct: 27.97
+  vti_return_pct: 0.31
+  abnormal_return_pct: 27.66
+  earnings_surprise_pct: -8.21
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 1
+  median_abnormal_return_pct: 27.66
+  mean_abnormal_return_pct: 27.66
+  positive_reaction_rate: 1.0
+  median_absolute_reaction_pct: 27.66
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 1
+  median_reaction_after_miss_pct: 27.66
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.3487
+    eps_low: -0.38
+    eps_high: -0.31
+    analysts: 11
+    revenue_avg: 7200920
+  next_quarter:
+    eps_avg: -0.3783
+    eps_low: -0.4
+    eps_high: -0.3399
+    analysts: 11
+    revenue_avg: 6347590
+  current_year:
+    eps_avg: -1.3995
+    eps_low: -1.63
+    eps_high: -1.07
+    analysts: 11
+    revenue_avg: 26474780
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

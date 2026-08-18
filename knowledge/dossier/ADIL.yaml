@@ -2,14 +2,6 @@ ticker: ADIL
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-14'
-  stock_return_pct: 0.0
-  vti_return_pct: 0.2845
-  abnormal_return_pct: -0.2845
-  earnings_surprise_pct: -51.28
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-14'
   stock_return_pct: 15.1515
   vti_return_pct: -0.7393
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 0.4899
   earnings_surprise_pct: 34.22
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: -41.78
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
-  observations: 8
-  median_abnormal_return_pct: 0.8103
-  mean_abnormal_return_pct: 2.0328
-  positive_reaction_rate: 0.625
-  median_absolute_reaction_pct: 2.7462
+  observations: 7
+  median_abnormal_return_pct: 1.1307
+  mean_abnormal_return_pct: 2.3638
+  positive_reaction_rate: 0.7143
+  median_absolute_reaction_pct: 3.1402
   beat_observations: 6
   median_reaction_after_beat_pct: 2.1355
-  miss_observations: 2
-  median_reaction_after_miss_pct: -3.0125
+  miss_observations: 1
+  median_reaction_after_miss_pct: -5.7405
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -2.575
+    eps_low: -5.0
+    eps_high: -0.15
+    eps_year_ago: -2.0
+    analysts: 2
+    growth: -0.2875
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: -2.59
+    eps_low: -5.0
+    eps_high: -0.18
+    eps_year_ago: -11.48
+    analysts: 2
+    growth: 0.7744
+    revenue_avg: 0
+  current_year:
+    eps_avg: -1.05
+    eps_low: -1.05
+    eps_high: -1.05
+    eps_year_ago: -11.93
+    analysts: 1
+    growth: 0.912
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

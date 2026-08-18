@@ -2,14 +2,6 @@ ticker: XOS
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-14'
-  stock_return_pct: -0.1938
-  vti_return_pct: 0.2845
-  abnormal_return_pct: -0.4783
-  earnings_surprise_pct: 32.45
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-14'
   stock_return_pct: -14.4231
   vti_return_pct: -0.7393
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 8.8441
   earnings_surprise_pct: 39.86
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-14'
+  stock_return_pct: -18.7984
+  vti_return_pct: -0.1171
+  abnormal_return_pct: -18.6814
+  earnings_surprise_pct: -3.77
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -5.165
-  mean_abnormal_return_pct: -4.5676
+  median_abnormal_return_pct: -9.8948
+  mean_abnormal_return_pct: -6.843
   positive_reaction_rate: 0.25
-  median_absolute_reaction_pct: 8.6507
-  beat_observations: 5
-  median_reaction_after_beat_pct: -0.4783
-  miss_observations: 3
-  median_reaction_after_miss_pct: -13.0157
+  median_absolute_reaction_pct: 10.9299
+  beat_observations: 4
+  median_reaction_after_beat_pct: 2.4505
+  miss_observations: 4
+  median_reaction_after_miss_pct: -14.6749
+forward_estimates:
+  as_of: '2026-08-17'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.45
+    eps_low: -0.45
+    eps_high: -0.45
+    eps_year_ago: 0.22
+    analysts: 1
+    growth: -3.0455
+    revenue_avg: 14650000
+  next_quarter:
+    eps_avg: -0.56
+    eps_low: -0.56
+    eps_high: -0.56
+    eps_year_ago: -0.86
+    analysts: 1
+    growth: 0.3488
+    revenue_avg: 8900000
+  current_year:
+    eps_avg: -1.99
+    eps_low: -1.99
+    eps_high: -1.99
+    eps_year_ago: -2.71
+    analysts: 1
+    growth: 0.2657
+    revenue_avg: 39515000
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

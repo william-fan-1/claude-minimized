@@ -1,0 +1,44 @@
+ticker: COHN
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-03'
+  stock_return_pct: 9.2075
+  vti_return_pct: 1.529
+  abnormal_return_pct: 7.6785
+  earnings_surprise_pct: 285.71
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 1
+  median_abnormal_return_pct: 7.6785
+  mean_abnormal_return_pct: 7.6785
+  positive_reaction_rate: 1.0
+  median_absolute_reaction_pct: 7.6785
+  beat_observations: 1
+  median_reaction_after_beat_pct: 7.6785
+  miss_observations: 0
+  median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.42
+    eps_low: 0.42
+    eps_high: 0.42
+    analysts: 1
+    revenue_avg: 40802000
+  next_quarter:
+    eps_avg: 0.42
+    eps_low: 0.42
+    eps_high: 0.42
+    analysts: 1
+    revenue_avg: 41110000
+  current_year:
+    eps_avg: 1.9
+    eps_low: 1.9
+    eps_high: 1.9
+    analysts: 1
+    revenue_avg: 180111000
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

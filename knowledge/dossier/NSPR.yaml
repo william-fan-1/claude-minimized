@@ -1,22 +1,6 @@
 ticker: NSPR
 prior_reactions:
 - fiscal_quarter: null
-  timing: after_market_close
-  reaction_date: '2024-08-06'
-  stock_return_pct: 0.6757
-  vti_return_pct: 1.015
-  abnormal_return_pct: -0.3393
-  earnings_surprise_pct: -15.79
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
-  reaction_date: '2024-11-12'
-  stock_return_pct: -3.252
-  vti_return_pct: -0.3932
-  abnormal_return_pct: -2.8588
-  earnings_surprise_pct: 20.0
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
   timing: before_market_open
   reaction_date: '2025-03-12'
   stock_return_pct: 0.7168
@@ -64,13 +48,59 @@ prior_reactions:
   abnormal_return_pct: -6.8332
   earnings_surprise_pct: 11.11
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: 15.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: null
+  surprise_source: null
 reaction_statistics:
-  observations: 8
-  median_abnormal_return_pct: -1.5991
-  mean_abnormal_return_pct: -2.737
-  positive_reaction_rate: 0.375
-  median_absolute_reaction_pct: 2.1176
-  beat_observations: 5
-  median_reaction_after_beat_pct: -2.8588
-  miss_observations: 2
-  median_reaction_after_miss_pct: -0.1139
+  observations: 6
+  median_abnormal_return_pct: -2.8332
+  mean_abnormal_return_pct: -3.1163
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 3.5771
+  beat_observations: 4
+  median_reaction_after_beat_pct: -2.7771
+  miss_observations: 1
+  median_reaction_after_miss_pct: 0.1114
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.1867
+    eps_low: -0.2
+    eps_high: -0.17
+    eps_year_ago: -0.17
+    analysts: 3
+    growth: -0.0981
+    revenue_avg: 2132330
+  next_quarter:
+    eps_avg: -0.19
+    eps_low: -0.2
+    eps_high: -0.18
+    eps_year_ago: -0.14
+    analysts: 3
+    growth: -0.3571
+    revenue_avg: 3494330
+  current_year:
+    eps_avg: -0.74
+    eps_low: -0.76
+    eps_high: -0.71
+    eps_year_ago: -0.76
+    analysts: 3
+    growth: 0.0263
+    revenue_avg: 10375000
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

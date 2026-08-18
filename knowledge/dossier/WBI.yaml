@@ -1,0 +1,62 @@
+ticker: WBI
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-13'
+  stock_return_pct: -3.1409
+  vti_return_pct: -1.7716
+  abnormal_return_pct: -1.3694
+  earnings_surprise_pct: -499.79
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-05-07'
+  stock_return_pct: -4.1681
+  vti_return_pct: -0.4587
+  abnormal_return_pct: -3.7094
+  earnings_surprise_pct: -64.46
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-06'
+  stock_return_pct: -2.4739
+  vti_return_pct: -0.1528
+  abnormal_return_pct: -2.3211
+  earnings_surprise_pct: -53.1
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 3
+  median_abnormal_return_pct: -2.3211
+  mean_abnormal_return_pct: -2.4666
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 2.3211
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 3
+  median_reaction_after_miss_pct: -2.3211
+forward_estimates:
+  as_of: '2026-08-17'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.13
+    eps_low: 0.13
+    eps_high: 0.13
+    eps_year_ago: -0.3011
+    analysts: 1
+    growth: 1.4318
+    revenue_avg: 227195000
+  next_quarter:
+    eps_avg: 0.26
+    eps_low: 0.26
+    eps_high: 0.26
+    analysts: 1
+    revenue_avg: 239475000
+  current_year:
+    eps_avg: 0.46
+    eps_low: 0.46
+    eps_high: 0.46
+    analysts: 1
+    revenue_avg: 912202700
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

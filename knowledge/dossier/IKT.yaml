@@ -2,14 +2,6 @@ ticker: IKT
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-03-28'
-  stock_return_pct: -6.087
-  vti_return_pct: 0.0654
-  abnormal_return_pct: -6.1524
-  earnings_surprise_pct: 24.71
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-05-16'
   stock_return_pct: -11.5578
   vti_return_pct: -0.2703
@@ -29,7 +21,7 @@ prior_reactions:
   reaction_date: '2024-11-14'
   stock_return_pct: -2.4793
   vti_return_pct: -0.7393
-  abnormal_return_pct: -1.7401
+  abnormal_return_pct: -1.74
   earnings_surprise_pct: -35.42
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,45 @@ prior_reactions:
   abnormal_return_pct: 4.7821
   earnings_surprise_pct: 23.94
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-12'
+  stock_return_pct: -2.0408
+  vti_return_pct: 0.31
+  abnormal_return_pct: -2.3508
+  earnings_surprise_pct: -17.86
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -3.1965
-  mean_abnormal_return_pct: -2.9019
+  median_abnormal_return_pct: -2.0454
+  mean_abnormal_return_pct: -2.4267
   positive_reaction_rate: 0.375
-  median_absolute_reaction_pct: 4.7175
-  beat_observations: 4
-  median_reaction_after_beat_pct: -6.6345
-  miss_observations: 3
-  median_reaction_after_miss_pct: -1.7401
+  median_absolute_reaction_pct: 3.6096
+  beat_observations: 3
+  median_reaction_after_beat_pct: -7.1167
+  miss_observations: 4
+  median_reaction_after_miss_pct: -2.0454
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.0933
+    eps_low: -0.1
+    eps_high: -0.09
+    analysts: 3
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: -0.1133
+    eps_low: -0.12
+    eps_high: -0.11
+    analysts: 3
+    revenue_avg: 250000
+  current_year:
+    eps_avg: -0.445
+    eps_low: -0.45
+    eps_high: -0.44
+    analysts: 2
+    revenue_avg: 214290
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

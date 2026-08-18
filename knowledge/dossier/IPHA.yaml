@@ -1,0 +1,54 @@
+ticker: IPHA
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2021-04-27'
+  stock_return_pct: -2.4561
+  vti_return_pct: -0.0459
+  abnormal_return_pct: -2.4103
+  earnings_surprise_pct: -462.32
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2022-04-04'
+  stock_return_pct: -2.2535
+  vti_return_pct: 0.8487
+  abnormal_return_pct: -3.1022
+  earnings_surprise_pct: 3.01
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 2
+  median_abnormal_return_pct: -2.7562
+  mean_abnormal_return_pct: -2.7562
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 2.7562
+  beat_observations: 1
+  median_reaction_after_beat_pct: -3.1022
+  miss_observations: 1
+  median_reaction_after_miss_pct: -2.4103
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.162
+    eps_low: -0.162
+    eps_high: -0.162
+    analysts: 1
+    revenue_avg: 2600000
+  next_quarter:
+    eps_avg: -0.092
+    eps_low: -0.092
+    eps_high: -0.092
+    analysts: 1
+    revenue_avg: 7890000
+  current_year:
+    eps_avg: -0.0887
+    eps_low: -0.785
+    eps_high: 0.3
+    eps_year_ago: -0.6364
+    analysts: 3
+    growth: 0.8607
+    revenue_avg: 66447830
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

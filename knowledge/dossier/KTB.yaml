@@ -2,14 +2,6 @@ ticker: KTB
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-08-01'
-  stock_return_pct: 2.6942
-  vti_return_pct: -1.5666
-  abnormal_return_pct: 4.2608
-  earnings_surprise_pct: 11.39
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2024-10-31'
   stock_return_pct: 11.8469
   vti_return_pct: -1.8647
@@ -19,9 +11,9 @@ prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
   reaction_date: '2025-02-25'
-  stock_return_pct: -13.4501
+  stock_return_pct: -13.4502
   vti_return_pct: -0.4959
-  abnormal_return_pct: -12.9542
+  abnormal_return_pct: -12.9543
   earnings_surprise_pct: 2.17
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -35,7 +27,7 @@ prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
   reaction_date: '2025-08-07'
-  stock_return_pct: 12.8174
+  stock_return_pct: 12.8173
   vti_return_pct: -0.0578
   abnormal_return_pct: 12.8752
   earnings_surprise_pct: 46.14
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 4.6354
   earnings_surprise_pct: -7.05
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-12'
+  stock_return_pct: 8.8581
+  vti_return_pct: 0.31
+  abnormal_return_pct: 8.5481
+  earnings_surprise_pct: 2.09
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: 4.4481
-  mean_abnormal_return_pct: 4.6813
+  median_abnormal_return_pct: 6.5917
+  mean_abnormal_return_pct: 5.2172
   positive_reaction_rate: 0.75
   median_absolute_reaction_pct: 11.1099
   beat_observations: 7
-  median_reaction_after_beat_pct: 4.2608
+  median_reaction_after_beat_pct: 8.5481
   miss_observations: 1
   median_reaction_after_miss_pct: 4.6354
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 1.0383
+    eps_low: 0.91
+    eps_high: 1.23
+    eps_year_ago: 1.21
+    analysts: 9
+    growth: -0.1419
+    revenue_avg: 586953790
+  next_quarter:
+    eps_avg: 1.8222
+    eps_low: 1.71
+    eps_high: 1.9252
+    eps_year_ago: 1.73
+    analysts: 8
+    growth: 0.0533
+    revenue_avg: 808445800
+  current_year:
+    eps_avg: 5.2785
+    eps_low: 5.05
+    eps_high: 5.353
+    eps_year_ago: 5.59
+    analysts: 8
+    growth: -0.0557
+    revenue_avg: 2700924520
+  eps_revisions_last_30d:
+    up: 2
+    down: 1

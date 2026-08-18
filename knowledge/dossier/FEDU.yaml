@@ -1,0 +1,60 @@
+ticker: FEDU
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2018-01-16'
+  stock_return_pct: -15.2764
+  vti_return_pct: -0.4414
+  abnormal_return_pct: -14.835
+  earnings_surprise_pct: -16.98
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2018-05-16'
+  stock_return_pct: -4.2408
+  vti_return_pct: 0.4864
+  abnormal_return_pct: -4.7272
+  earnings_surprise_pct: -87.5
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2018-08-02'
+  stock_return_pct: -1.4286
+  vti_return_pct: 0.5935
+  abnormal_return_pct: -2.0221
+  earnings_surprise_pct: 100.25
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2018-10-24'
+  stock_return_pct: 1.7903
+  vti_return_pct: -3.108
+  abnormal_return_pct: 4.8983
+  earnings_surprise_pct: -31.11
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2019-01-28'
+  stock_return_pct: -15.9259
+  vti_return_pct: -0.7327
+  abnormal_return_pct: -15.1932
+  earnings_surprise_pct: -43.75
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2019-05-06'
+  stock_return_pct: 7.9812
+  vti_return_pct: -0.3187
+  abnormal_return_pct: 8.2999
+  earnings_surprise_pct: -158.97
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 6
+  median_abnormal_return_pct: -3.3746
+  mean_abnormal_return_pct: -3.9299
+  positive_reaction_rate: 0.3333
+  median_absolute_reaction_pct: 6.5991
+  beat_observations: 1
+  median_reaction_after_beat_pct: -2.0221
+  miss_observations: 5
+  median_reaction_after_miss_pct: -4.7272

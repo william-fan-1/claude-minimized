@@ -1,0 +1,74 @@
+ticker: SEG
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-11-11'
+  stock_return_pct: -3.1211
+  vti_return_pct: 0.2448
+  abnormal_return_pct: -3.3659
+  earnings_surprise_pct: 25.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-05'
+  stock_return_pct: -1.4549
+  vti_return_pct: -0.6476
+  abnormal_return_pct: -0.8073
+  earnings_surprise_pct: -67.07
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-07'
+  stock_return_pct: -2.8821
+  vti_return_pct: -0.4587
+  abnormal_return_pct: -2.4234
+  earnings_surprise_pct: -13.71
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-06'
+  stock_return_pct: 0.4836
+  vti_return_pct: -0.1528
+  abnormal_return_pct: 0.6364
+  earnings_surprise_pct: 108.0
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 4
+  median_abnormal_return_pct: -1.6154
+  mean_abnormal_return_pct: -1.49
+  positive_reaction_rate: 0.25
+  median_absolute_reaction_pct: 1.6154
+  beat_observations: 2
+  median_reaction_after_beat_pct: -1.3647
+  miss_observations: 2
+  median_reaction_after_miss_pct: -1.6154
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.05
+    eps_low: -0.05
+    eps_high: -0.05
+    eps_year_ago: -0.57
+    analysts: 1
+    growth: 0.9123
+    revenue_avg: 35886000
+  next_quarter:
+    eps_avg: -0.39
+    eps_low: -0.39
+    eps_high: -0.39
+    eps_year_ago: -1.37
+    analysts: 1
+    growth: 0.7153
+    revenue_avg: 26264000
+  current_year:
+    eps_avg: -1.8
+    eps_low: -1.8
+    eps_high: -1.8
+    eps_year_ago: -4.26
+    analysts: 1
+    growth: 0.5775
+    revenue_avg: 109176000
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

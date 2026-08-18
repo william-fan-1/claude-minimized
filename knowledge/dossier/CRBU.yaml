@@ -2,14 +2,6 @@ ticker: CRBU
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-07'
-  stock_return_pct: -2.8133
-  vti_return_pct: -0.7642
-  abnormal_return_pct: -2.0491
-  earnings_surprise_pct: 0.91
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-07'
   stock_return_pct: 1.0909
   vti_return_pct: 0.699
@@ -64,13 +56,45 @@ prior_reactions:
   abnormal_return_pct: 2.4502
   earnings_surprise_pct: 16.13
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-14'
+  stock_return_pct: -1.8634
+  vti_return_pct: -0.1171
+  abnormal_return_pct: -1.7463
+  earnings_surprise_pct: 21.74
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -0.761
-  mean_abnormal_return_pct: 0.2836
+  median_abnormal_return_pct: -0.6772
+  mean_abnormal_return_pct: 0.3214
   positive_reaction_rate: 0.5
   median_absolute_reaction_pct: 2.4587
   beat_observations: 8
-  median_reaction_after_beat_pct: -0.761
+  median_reaction_after_beat_pct: -0.6772
   miss_observations: 0
   median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.3025
+    eps_low: -0.33
+    eps_high: -0.27
+    analysts: 4
+    revenue_avg: 2180320
+  next_quarter:
+    eps_avg: -0.3625
+    eps_low: -0.47
+    eps_high: -0.28
+    analysts: 4
+    revenue_avg: 19202270
+  current_year:
+    eps_avg: -1.175
+    eps_low: -1.31
+    eps_high: -1.06
+    analysts: 4
+    revenue_avg: 25447420
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

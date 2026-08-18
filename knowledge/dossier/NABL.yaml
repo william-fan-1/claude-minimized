@@ -2,14 +2,6 @@ ticker: NABL
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-08-08'
-  stock_return_pct: 2.9456
-  vti_return_pct: 2.3417
-  abnormal_return_pct: 0.604
-  earnings_surprise_pct: 34.62
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2024-11-07'
   stock_return_pct: -5.9748
   vti_return_pct: 0.699
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -2.5544
   earnings_surprise_pct: 2.27
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-10'
+  stock_return_pct: -35.6713
+  vti_return_pct: -0.0393
+  abnormal_return_pct: -35.6321
+  earnings_surprise_pct: 1.7
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -0.9752
-  mean_abnormal_return_pct: -3.4978
-  positive_reaction_rate: 0.5
-  median_absolute_reaction_pct: 5.8151
+  median_abnormal_return_pct: -4.6141
+  mean_abnormal_return_pct: -8.0273
+  positive_reaction_rate: 0.375
+  median_absolute_reaction_pct: 8.5329
   beat_observations: 7
-  median_reaction_after_beat_pct: 0.604
+  median_reaction_after_beat_pct: -2.5544
   miss_observations: 1
   median_reaction_after_miss_pct: -10.7134
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.0983
+    eps_low: 0.09
+    eps_high: 0.1
+    eps_year_ago: 0.11
+    analysts: 6
+    growth: -0.1061
+    revenue_avg: 137947170
+  next_quarter:
+    eps_avg: 0.1033
+    eps_low: 0.1
+    eps_high: 0.12
+    eps_year_ago: 0.06
+    analysts: 6
+    growth: 0.7222
+    revenue_avg: 134409400
+  current_year:
+    eps_avg: 0.3883
+    eps_low: 0.37
+    eps_high: 0.41
+    eps_year_ago: 0.39
+    analysts: 6
+    growth: -0.0043
+    revenue_avg: 540832500
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

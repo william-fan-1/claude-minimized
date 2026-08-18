@@ -1,0 +1,52 @@
+ticker: OCTV
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-06-04'
+  stock_return_pct: 1.1651
+  vti_return_pct: 0.4655
+  abnormal_return_pct: 0.6996
+  earnings_surprise_pct: 10.53
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-12'
+  stock_return_pct: -3.2454
+  vti_return_pct: 0.31
+  abnormal_return_pct: -3.5554
+  earnings_surprise_pct: 15.58
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 2
+  median_abnormal_return_pct: -1.4279
+  mean_abnormal_return_pct: -1.4279
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 2.1275
+  beat_observations: 2
+  median_reaction_after_beat_pct: -1.4279
+  miss_observations: 0
+  median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.3033
+    eps_low: 0.3
+    eps_high: 0.31
+    analysts: 3
+    revenue_avg: 404750000
+  next_quarter:
+    eps_avg: 0.4333
+    eps_low: 0.43
+    eps_high: 0.44
+    analysts: 3
+    revenue_avg: 460350000
+  current_year:
+    eps_avg: 1.4392
+    eps_low: 1.37
+    eps_high: 1.62
+    analysts: 6
+    revenue_avg: 1648850000
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

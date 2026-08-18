@@ -2,14 +2,6 @@ ticker: SGRY
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-08-06'
-  stock_return_pct: 3.2033
-  vti_return_pct: 1.015
-  abnormal_return_pct: 2.1884
-  earnings_surprise_pct: 6.23
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2024-11-12'
   stock_return_pct: -5.9179
   vti_return_pct: -0.3932
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -0.4278
   earnings_surprise_pct: 77.82
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-10'
+  stock_return_pct: 2.7044
+  vti_return_pct: -0.0393
+  abnormal_return_pct: 2.7437
+  earnings_surprise_pct: 59.57
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
   median_abnormal_return_pct: -0.1621
-  mean_abnormal_return_pct: -4.8509
+  mean_abnormal_return_pct: -4.7815
   positive_reaction_rate: 0.5
-  median_absolute_reaction_pct: 1.9033
+  median_absolute_reaction_pct: 2.181
   beat_observations: 4
   median_reaction_after_beat_pct: 0.7817
   miss_observations: 4
   median_reaction_after_miss_pct: -8.4338
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.1295
+    eps_low: 0.08
+    eps_high: 0.2
+    eps_year_ago: 0.13
+    analysts: 10
+    growth: -0.0035
+    revenue_avg: 854753120
+  next_quarter:
+    eps_avg: 0.297
+    eps_low: 0.2
+    eps_high: 0.4
+    eps_year_ago: 0.12
+    analysts: 10
+    growth: 1.4748
+    revenue_avg: 906724660
+  current_year:
+    eps_avg: 0.4848
+    eps_low: 0.36
+    eps_high: 0.68
+    eps_year_ago: 0.47
+    analysts: 11
+    growth: 0.0315
+    revenue_avg: 3419105050
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

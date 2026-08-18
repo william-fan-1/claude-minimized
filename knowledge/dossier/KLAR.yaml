@@ -1,0 +1,64 @@
+ticker: KLAR
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-11-18'
+  stock_return_pct: -9.3177
+  vti_return_pct: -0.677
+  abnormal_return_pct: -8.6406
+  earnings_surprise_pct: 73.55
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-02-19'
+  stock_return_pct: -26.9129
+  vti_return_pct: -0.1889
+  abnormal_return_pct: -26.724
+  earnings_surprise_pct: 14.88
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-05-14'
+  stock_return_pct: 20.3068
+  vti_return_pct: 0.7376
+  abnormal_return_pct: 19.5692
+  earnings_surprise_pct: 96.91
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 3
+  median_abnormal_return_pct: -8.6406
+  mean_abnormal_return_pct: -5.2651
+  positive_reaction_rate: 0.3333
+  median_absolute_reaction_pct: 19.5692
+  beat_observations: 3
+  median_reaction_after_beat_pct: -8.6406
+  miss_observations: 0
+  median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.0582
+    eps_low: -0.0924
+    eps_high: -0.0406
+    analysts: 4
+    revenue_avg: 996375490
+  next_quarter:
+    eps_avg: 0.0204
+    eps_low: -0.0267
+    eps_high: 0.06
+    eps_year_ago: -0.0684
+    analysts: 4
+    growth: 1.2981
+    revenue_avg: 1108406060
+  current_year:
+    eps_avg: 0.2283
+    eps_low: 0.08
+    eps_high: 0.58
+    eps_year_ago: 0.0134
+    analysts: 6
+    growth: 16.0396
+    revenue_avg: 4423800810
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

@@ -1,0 +1,62 @@
+ticker: ELPC
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-02-27'
+  stock_return_pct: -0.9402
+  vti_return_pct: -0.5051
+  abnormal_return_pct: -0.435
+  earnings_surprise_pct: 22.66
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-06'
+  stock_return_pct: -0.9324
+  vti_return_pct: 1.3642
+  abnormal_return_pct: -2.2966
+  earnings_surprise_pct: 26.32
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-06'
+  stock_return_pct: 0.8628
+  vti_return_pct: -0.1528
+  abnormal_return_pct: 1.0156
+  earnings_surprise_pct: 116.79
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 3
+  median_abnormal_return_pct: -0.435
+  mean_abnormal_return_pct: -0.572
+  positive_reaction_rate: 0.3333
+  median_absolute_reaction_pct: 1.0156
+  beat_observations: 3
+  median_reaction_after_beat_pct: -0.435
+  miss_observations: 0
+  median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.168
+    eps_low: 0.168
+    eps_high: 0.168
+    analysts: 1
+    revenue_avg: 6970857770
+  next_quarter:
+    eps_avg: 0.137
+    eps_low: 0.137
+    eps_high: 0.137
+    analysts: 1
+    revenue_avg: 6564775850
+  current_year:
+    eps_avg: 0.227
+    eps_low: 0.227
+    eps_high: 0.227
+    eps_year_ago: 0.7016
+    analysts: 1
+    growth: -0.6764
+    revenue_avg: 27779554460
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

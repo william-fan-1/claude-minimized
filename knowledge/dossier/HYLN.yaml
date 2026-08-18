@@ -2,17 +2,9 @@ ticker: HYLN
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-05-01'
-  stock_return_pct: 20.9302
-  vti_return_pct: -0.2494
-  abnormal_return_pct: 21.1796
-  earnings_surprise_pct: 67.11
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-08-07'
   stock_return_pct: -5.2632
-  vti_return_pct: -0.7642
+  vti_return_pct: -0.7643
   abnormal_return_pct: -4.4989
   earnings_surprise_pct: 25.0
   surprise_source: Yahoo Finance (via yfinance)
@@ -20,8 +12,8 @@ prior_reactions:
   timing: after_market_close
   reaction_date: '2024-11-15'
   stock_return_pct: -2.682
-  vti_return_pct: -1.2686
-  abnormal_return_pct: -1.4134
+  vti_return_pct: -1.2685
+  abnormal_return_pct: -1.4135
   earnings_surprise_pct: 14.29
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -4.29
   earnings_surprise_pct: 20.11
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-12'
+  stock_return_pct: -0.7653
+  vti_return_pct: 0.31
+  abnormal_return_pct: -1.0753
+  earnings_surprise_pct: -13.57
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
   median_abnormal_return_pct: -3.2746
-  mean_abnormal_return_pct: -2.6219
-  positive_reaction_rate: 0.25
-  median_absolute_reaction_pct: 4.3944
-  beat_observations: 6
-  median_reaction_after_beat_pct: -3.2746
-  miss_observations: 2
-  median_reaction_after_miss_pct: -8.407
+  mean_abnormal_return_pct: -5.4038
+  positive_reaction_rate: 0.125
+  median_absolute_reaction_pct: 3.2746
+  beat_observations: 5
+  median_reaction_after_beat_pct: -4.29
+  miss_observations: 3
+  median_reaction_after_miss_pct: -1.0753
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.07
+    eps_low: -0.07
+    eps_high: -0.07
+    eps_year_ago: -0.08
+    analysts: 1
+    growth: 0.125
+    revenue_avg: 2400000
+  next_quarter:
+    eps_avg: -0.07
+    eps_low: -0.07
+    eps_high: -0.07
+    eps_year_ago: -0.0719
+    analysts: 1
+    growth: 0.0264
+    revenue_avg: 2250000
+  current_year:
+    eps_avg: -0.28
+    eps_low: -0.28
+    eps_high: -0.28
+    eps_year_ago: -0.3289
+    analysts: 1
+    growth: 0.1487
+    revenue_avg: 15026000
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

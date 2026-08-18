@@ -2,18 +2,10 @@ ticker: SNAL
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-14'
-  stock_return_pct: 3.4247
-  vti_return_pct: 0.2845
-  abnormal_return_pct: 3.1401
-  earnings_surprise_pct: -66.67
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-14'
   stock_return_pct: -12.8571
   vti_return_pct: -0.7393
-  abnormal_return_pct: -12.1179
+  abnormal_return_pct: -12.1178
   earnings_surprise_pct: -85.71
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 114.4019
   earnings_surprise_pct: 128.57
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-12'
+  stock_return_pct: -36.6013
+  vti_return_pct: 0.31
+  abnormal_return_pct: -36.9113
+  earnings_surprise_pct: -216.13
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 7
-  median_abnormal_return_pct: -9.7298
-  mean_abnormal_return_pct: 7.6776
-  positive_reaction_rate: 0.2857
-  median_absolute_reaction_pct: 12.1179
+  median_abnormal_return_pct: -12.1178
+  mean_abnormal_return_pct: 1.956
+  positive_reaction_rate: 0.1429
+  median_absolute_reaction_pct: 13.497
   beat_observations: 3
   median_reaction_after_beat_pct: -9.7298
   miss_observations: 4
-  median_reaction_after_miss_pct: -7.843
+  median_reaction_after_miss_pct: -18.5018
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.59
+    eps_low: 0.59
+    eps_high: 0.59
+    eps_year_ago: -1.05
+    analysts: 1
+    growth: 1.5619
+    revenue_avg: 30500000
+  next_quarter:
+    eps_avg: -0.03
+    eps_low: -0.03
+    eps_high: -0.03
+    eps_year_ago: -0.1
+    analysts: 1
+    growth: 0.7
+    revenue_avg: 22000000
+  current_year:
+    eps_avg: 0.48
+    eps_low: 0.48
+    eps_high: 0.48
+    eps_year_ago: -3.65
+    analysts: 1
+    growth: 1.1315
+    revenue_avg: 99471000
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

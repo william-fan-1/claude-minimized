@@ -1,0 +1,106 @@
+ticker: CURV
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-09-04'
+  stock_return_pct: 8.9577
+  vti_return_pct: -0.224
+  abnormal_return_pct: 9.1816
+  earnings_surprise_pct: 8.11
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-12-04'
+  stock_return_pct: -25.1092
+  vti_return_pct: 0.6724
+  abnormal_return_pct: -25.7815
+  earnings_surprise_pct: -135.71
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-03-21'
+  stock_return_pct: 3.9783
+  vti_return_pct: 0.0395
+  abnormal_return_pct: 3.9388
+  earnings_surprise_pct: 54.55
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-06-06'
+  stock_return_pct: -1.004
+  vti_return_pct: 1.1655
+  abnormal_return_pct: -2.1695
+  earnings_surprise_pct: 33.33
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-09-05'
+  stock_return_pct: -25.2101
+  vti_return_pct: -0.1843
+  abnormal_return_pct: -25.0258
+  earnings_surprise_pct: -29.4
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-12-04'
+  stock_return_pct: -13.7405
+  vti_return_pct: 0.1575
+  abnormal_return_pct: -13.8979
+  earnings_surprise_pct: -223.1
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-03-20'
+  stock_return_pct: 28.0
+  vti_return_pct: -1.5671
+  abnormal_return_pct: 29.5671
+  earnings_surprise_pct: 36.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-06-05'
+  stock_return_pct: 17.9856
+  vti_return_pct: -2.6782
+  abnormal_return_pct: 20.6638
+  earnings_surprise_pct: 100.0
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 8
+  median_abnormal_return_pct: 0.8846
+  mean_abnormal_return_pct: -0.4404
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 17.2809
+  beat_observations: 5
+  median_reaction_after_beat_pct: 9.1816
+  miss_observations: 3
+  median_reaction_after_miss_pct: -25.0258
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.0314
+    eps_low: -0.06
+    eps_high: -0.01
+    eps_year_ago: 0.02
+    analysts: 7
+    growth: -2.5715
+    revenue_avg: 237230570
+  next_quarter:
+    eps_avg: 0.0117
+    eps_low: -0.01
+    eps_high: 0.03
+    eps_year_ago: -0.06
+    analysts: 6
+    growth: 1.1945
+    revenue_avg: 227435860
+  current_year:
+    eps_avg: -0.0229
+    eps_low: -0.08
+    eps_high: 0.01
+    eps_year_ago: -0.07
+    analysts: 7
+    growth: 0.6734
+    revenue_avg: 951979430
+  eps_revisions_last_30d:
+    up: 0
+    down: 4

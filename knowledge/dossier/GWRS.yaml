@@ -2,14 +2,6 @@ ticker: GWRS
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-08'
-  stock_return_pct: 2.092
-  vti_return_pct: 2.3417
-  abnormal_return_pct: -0.2496
-  earnings_surprise_pct: null
-  surprise_source: null
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-07'
   stock_return_pct: -0.1481
   vti_return_pct: 0.699
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 3.7669
   earnings_surprise_pct: 50.0
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-13'
+  stock_return_pct: 16.82
+  vti_return_pct: 0.6469
+  abnormal_return_pct: 16.1731
+  earnings_surprise_pct: 33.33
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -0.5484
-  mean_abnormal_return_pct: -1.9917
-  positive_reaction_rate: 0.375
-  median_absolute_reaction_pct: 3.4632
-  beat_observations: 4
-  median_reaction_after_beat_pct: -0.3298
+  median_abnormal_return_pct: -0.3298
+  mean_abnormal_return_pct: 0.0611
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 3.7784
+  beat_observations: 5
+  median_reaction_after_beat_pct: 0.1875
   miss_observations: 3
   median_reaction_after_miss_pct: -6.2082
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.05
+    eps_low: 0.05
+    eps_high: 0.05
+    eps_year_ago: 0.067
+    analysts: 1
+    growth: -0.2537
+    revenue_avg: 16100000
+  next_quarter:
+    eps_avg: 0.01
+    eps_low: 0.01
+    eps_high: 0.01
+    eps_year_ago: -0.0103
+    analysts: 1
+    growth: 1.9709
+    revenue_avg: 14300000
+  current_year:
+    eps_avg: 0.09
+    eps_low: 0.09
+    eps_high: 0.09
+    eps_year_ago: 0.14
+    analysts: 1
+    growth: -0.3571
+    revenue_avg: 61500000
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

@@ -2,7 +2,7 @@ ticker: SENEA
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2016-08-08'
+  reaction_date: '2016-08-15'
   stock_return_pct: null
   vti_return_pct: null
   abnormal_return_pct: null
@@ -10,7 +10,7 @@ prior_reactions:
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2016-08-08'
+  reaction_date: '2016-08-15'
   stock_return_pct: null
   vti_return_pct: null
   abnormal_return_pct: null
@@ -18,7 +18,7 @@ prior_reactions:
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2016-08-08'
+  reaction_date: '2016-08-15'
   stock_return_pct: null
   vti_return_pct: null
   abnormal_return_pct: null
@@ -26,7 +26,7 @@ prior_reactions:
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2016-08-08'
+  reaction_date: '2016-08-15'
   stock_return_pct: null
   vti_return_pct: null
   abnormal_return_pct: null
@@ -34,7 +34,7 @@ prior_reactions:
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2016-08-08'
+  reaction_date: '2016-08-15'
   stock_return_pct: null
   vti_return_pct: null
   abnormal_return_pct: null
@@ -50,7 +50,7 @@ prior_reactions:
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2016-08-08'
+  reaction_date: '2016-08-15'
   stock_return_pct: null
   vti_return_pct: null
   abnormal_return_pct: null
@@ -74,3 +74,29 @@ reaction_statistics:
   median_reaction_after_beat_pct: null
   miss_observations: 1
   median_reaction_after_miss_pct: 6.6329
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 3.82
+    eps_low: 3.82
+    eps_high: 3.82
+    analysts: 1
+    revenue_avg: 506000000
+  next_quarter:
+    eps_avg: 4.83
+    eps_low: 4.83
+    eps_high: 4.83
+    analysts: 1
+    revenue_avg: 549000000
+  current_year:
+    eps_avg: 13.83
+    eps_low: 13.83
+    eps_high: 13.83
+    eps_year_ago: 16.59
+    analysts: 1
+    growth: -0.1664
+    revenue_avg: 1893000000
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

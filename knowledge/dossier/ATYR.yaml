@@ -2,14 +2,6 @@ ticker: ATYR
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-11-08'
-  stock_return_pct: 0.6452
-  vti_return_pct: 0.4673
-  abnormal_return_pct: 0.1779
-  earnings_surprise_pct: -4.55
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2025-03-14'
   stock_return_pct: -0.5013
   vti_return_pct: 2.1425
@@ -58,19 +50,57 @@ prior_reactions:
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: null
-  stock_return_pct: null
-  vti_return_pct: null
-  abnormal_return_pct: null
+  reaction_date: '2026-08-10'
+  stock_return_pct: 3.5225
+  vti_return_pct: -0.0393
+  abnormal_return_pct: 3.5618
   earnings_surprise_pct: 12.0
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-11'
+  stock_return_pct: 0.9452
+  vti_return_pct: -0.2568
+  abnormal_return_pct: 1.202
+  earnings_surprise_pct: null
+  surprise_source: null
 reaction_statistics:
-  observations: 7
-  median_abnormal_return_pct: 0.1779
-  mean_abnormal_return_pct: -1.024
-  positive_reaction_rate: 0.5714
-  median_absolute_reaction_pct: 4.9103
-  beat_observations: 4
-  median_reaction_after_beat_pct: -4.9626
-  miss_observations: 3
-  median_reaction_after_miss_pct: 0.515
+  observations: 8
+  median_abnormal_return_pct: 0.8585
+  mean_abnormal_return_pct: -0.3228
+  positive_reaction_rate: 0.625
+  median_absolute_reaction_pct: 4.2361
+  beat_observations: 5
+  median_reaction_after_beat_pct: -2.6437
+  miss_observations: 2
+  median_reaction_after_miss_pct: 3.2001
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.1014
+    eps_low: -0.12
+    eps_high: -0.08
+    eps_year_ago: -0.26
+    analysts: 7
+    growth: 0.6099
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: -0.0971
+    eps_low: -0.16
+    eps_high: -0.06
+    eps_year_ago: -0.14
+    analysts: 7
+    growth: 0.3061
+    revenue_avg: 0
+  current_year:
+    eps_avg: -0.4113
+    eps_low: -0.5
+    eps_high: -0.36
+    eps_year_ago: -0.8
+    analysts: 8
+    growth: 0.4859
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

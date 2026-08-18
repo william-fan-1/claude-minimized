@@ -1,0 +1,44 @@
+ticker: BSP
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-13'
+  stock_return_pct: -16.4557
+  vti_return_pct: 0.6469
+  abnormal_return_pct: -17.1026
+  earnings_surprise_pct: 69.5
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 1
+  median_abnormal_return_pct: -17.1026
+  mean_abnormal_return_pct: -17.1026
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 17.1026
+  beat_observations: 1
+  median_reaction_after_beat_pct: -17.1026
+  miss_observations: 0
+  median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.2999
+    eps_low: 0.21
+    eps_high: 0.34
+    analysts: 7
+    revenue_avg: 741261440
+  next_quarter:
+    eps_avg: 0.3574
+    eps_low: 0.23
+    eps_high: 0.42
+    analysts: 7
+    revenue_avg: 853862560
+  current_year:
+    eps_avg: 1.4376
+    eps_low: 1.37
+    eps_high: 1.52
+    analysts: 7
+    revenue_avg: 2898010090
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

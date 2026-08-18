@@ -1,0 +1,80 @@
+ticker: NGEN
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-05-15'
+  stock_return_pct: 10.8108
+  vti_return_pct: 0.4077
+  abnormal_return_pct: 10.4031
+  earnings_surprise_pct: 29.74
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-08-26'
+  stock_return_pct: -3.8636
+  vti_return_pct: 0.4548
+  abnormal_return_pct: -4.3184
+  earnings_surprise_pct: -51.65
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-03-31'
+  stock_return_pct: 1.0724
+  vti_return_pct: 2.9293
+  abnormal_return_pct: -1.8569
+  earnings_surprise_pct: -284.16
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-05-18'
+  stock_return_pct: 2.1038
+  vti_return_pct: -0.1048
+  abnormal_return_pct: 2.2086
+  earnings_surprise_pct: -11.79
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-13'
+  stock_return_pct: 0.0
+  vti_return_pct: 0.6469
+  abnormal_return_pct: -0.6469
+  earnings_surprise_pct: -245.68
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 5
+  median_abnormal_return_pct: -0.6469
+  mean_abnormal_return_pct: 1.1579
+  positive_reaction_rate: 0.4
+  median_absolute_reaction_pct: 2.2086
+  beat_observations: 1
+  median_reaction_after_beat_pct: 10.4031
+  miss_observations: 4
+  median_reaction_after_miss_pct: -1.2519
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.108
+    eps_low: -0.108
+    eps_high: -0.108
+    analysts: 1
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: -0.151
+    eps_low: -0.151
+    eps_high: -0.151
+    eps_year_ago: -0.2651
+    analysts: 1
+    growth: 0.4303
+    revenue_avg: 0
+  current_year:
+    eps_avg: -0.502
+    eps_low: -0.502
+    eps_high: -0.502
+    eps_year_ago: -0.437
+    analysts: 1
+    growth: -0.1487
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

@@ -2,14 +2,6 @@ ticker: TTEC
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-09'
-  stock_return_pct: -12.9344
-  vti_return_pct: 0.4317
-  abnormal_return_pct: -13.366
-  earnings_surprise_pct: -52.43
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-07'
   stock_return_pct: -11.6022
   vti_return_pct: 0.699
@@ -37,7 +29,7 @@ prior_reactions:
   reaction_date: '2025-08-08'
   stock_return_pct: 25.2747
   vti_return_pct: 0.6301
-  abnormal_return_pct: 24.6447
+  abnormal_return_pct: 24.6446
   earnings_surprise_pct: -6.38
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -12.1792
   earnings_surprise_pct: -37.5
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-11'
+  stock_return_pct: -25.7511
+  vti_return_pct: -0.2568
+  abnormal_return_pct: -25.4943
+  earnings_surprise_pct: -87.14
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
   median_abnormal_return_pct: -10.5595
-  mean_abnormal_return_pct: 1.2785
+  mean_abnormal_return_pct: -0.2376
   positive_reaction_rate: 0.375
-  median_absolute_reaction_pct: 13.4966
+  median_absolute_reaction_pct: 13.7484
   beat_observations: 2
   median_reaction_after_beat_pct: 23.1194
   miss_observations: 6
   median_reaction_after_miss_pct: -12.2402
+forward_estimates:
+  as_of: '2026-08-17'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.2333
+    eps_low: 0.21
+    eps_high: 0.25
+    eps_year_ago: 0.22
+    analysts: 3
+    growth: 0.0606
+    revenue_avg: 477927870
+  next_quarter:
+    eps_avg: 0.4667
+    eps_low: 0.4
+    eps_high: 0.5
+    eps_year_ago: 0.47
+    analysts: 3
+    growth: -0.0071
+    revenue_avg: 524460270
+  current_year:
+    eps_avg: 0.8467
+    eps_low: 0.79
+    eps_high: 0.89
+    eps_year_ago: 1.1
+    analysts: 3
+    growth: -0.2303
+    revenue_avg: 1956308330
+  eps_revisions_last_30d:
+    up: 3
+    down: 1

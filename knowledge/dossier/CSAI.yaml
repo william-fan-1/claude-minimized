@@ -1,0 +1,74 @@
+ticker: CSAI
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-08-15'
+  stock_return_pct: -4.1667
+  vti_return_pct: -0.227
+  abnormal_return_pct: -3.9397
+  earnings_surprise_pct: 6.67
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-11-13'
+  stock_return_pct: -5.5172
+  vti_return_pct: -1.7716
+  abnormal_return_pct: -3.7457
+  earnings_surprise_pct: -44.44
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-04-01'
+  stock_return_pct: -5.5921
+  vti_return_pct: 0.7574
+  abnormal_return_pct: -6.3496
+  earnings_surprise_pct: -23.81
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-07-17'
+  stock_return_pct: -28.7081
+  vti_return_pct: -0.9633
+  abnormal_return_pct: -27.7448
+  earnings_surprise_pct: -55.56
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 4
+  median_abnormal_return_pct: -5.1447
+  mean_abnormal_return_pct: -10.445
+  positive_reaction_rate: 0.0
+  median_absolute_reaction_pct: 5.1447
+  beat_observations: 1
+  median_reaction_after_beat_pct: -3.9397
+  miss_observations: 3
+  median_reaction_after_miss_pct: -6.3496
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -2.85
+    eps_low: -3.0
+    eps_high: -2.7
+    eps_year_ago: -4.2
+    analysts: 2
+    growth: 0.3214
+    revenue_avg: 1575000
+  next_quarter:
+    eps_avg: -2.25
+    eps_low: -2.4
+    eps_high: -2.1
+    eps_year_ago: -3.9
+    analysts: 2
+    growth: 0.4231
+    revenue_avg: 2550000
+  current_year:
+    eps_avg: -10.8
+    eps_low: -11.4
+    eps_high: -10.2
+    eps_year_ago: -16.5
+    analysts: 2
+    growth: 0.3455
+    revenue_avg: 8190000
+  eps_revisions_last_30d:
+    up: 0
+    down: 1

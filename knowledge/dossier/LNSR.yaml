@@ -2,14 +2,6 @@ ticker: LNSR
 prior_reactions:
 - fiscal_quarter: null
   timing: before_market_open
-  reaction_date: '2024-08-08'
-  stock_return_pct: -9.9323
-  vti_return_pct: 2.3417
-  abnormal_return_pct: -12.2739
-  earnings_surprise_pct: 59.15
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: before_market_open
   reaction_date: '2024-11-07'
   stock_return_pct: 17.2355
   vti_return_pct: 0.699
@@ -21,7 +13,7 @@ prior_reactions:
   reaction_date: '2025-02-27'
   stock_return_pct: 14.7835
   vti_return_pct: -1.5492
-  abnormal_return_pct: 16.3327
+  abnormal_return_pct: 16.3328
   earnings_surprise_pct: 45.5
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 7.0981
   earnings_surprise_pct: -140.08
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-13'
+  stock_return_pct: 31.4785
+  vti_return_pct: 0.6469
+  abnormal_return_pct: 30.8317
+  earnings_surprise_pct: 137.07
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -1.1633
-  mean_abnormal_return_pct: 2.0597
-  positive_reaction_rate: 0.375
+  median_abnormal_return_pct: 3.0838
+  mean_abnormal_return_pct: 7.4479
+  positive_reaction_rate: 0.5
   median_absolute_reaction_pct: 7.2934
   beat_observations: 4
-  median_reaction_after_beat_pct: 7.7011
+  median_reaction_after_beat_pct: 16.4346
   miss_observations: 4
   median_reaction_after_miss_pct: -1.3982
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.22
+    eps_low: -0.22
+    eps_high: -0.22
+    eps_year_ago: -0.1098
+    analysts: 1
+    growth: -1.0036
+    revenue_avg: 14300000
+  next_quarter:
+    eps_avg: -0.08
+    eps_low: -0.08
+    eps_high: -0.08
+    eps_year_ago: -0.1078
+    analysts: 1
+    growth: 0.2577
+    revenue_avg: 17050000
+  current_year:
+    eps_avg: -0.08
+    eps_low: -0.08
+    eps_high: -0.08
+    eps_year_ago: -0.5687
+    analysts: 1
+    growth: 0.8593
+    revenue_avg: 61300000
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

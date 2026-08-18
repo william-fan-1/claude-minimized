@@ -1,0 +1,74 @@
+ticker: BETA
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-12-04'
+  stock_return_pct: 1.1525
+  vti_return_pct: 0.1575
+  abnormal_return_pct: 0.9951
+  earnings_surprise_pct: -340.48
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-03-09'
+  stock_return_pct: 11.9356
+  vti_return_pct: 0.866
+  abnormal_return_pct: 11.0696
+  earnings_surprise_pct: -264.74
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-05-12'
+  stock_return_pct: -2.582
+  vti_return_pct: -0.231
+  abnormal_return_pct: -2.351
+  earnings_surprise_pct: 45.69
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-12'
+  stock_return_pct: -3.294
+  vti_return_pct: 0.31
+  abnormal_return_pct: -3.604
+  earnings_surprise_pct: 17.96
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 4
+  median_abnormal_return_pct: -0.678
+  mean_abnormal_return_pct: 1.5274
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 2.9775
+  beat_observations: 2
+  median_reaction_after_beat_pct: -2.9775
+  miss_observations: 2
+  median_reaction_after_miss_pct: 6.0324
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.56
+    eps_low: -0.56
+    eps_high: -0.56
+    eps_year_ago: -1.9381
+    analysts: 2
+    growth: 0.7111
+    revenue_avg: 10587140
+  next_quarter:
+    eps_avg: -0.52
+    eps_low: -0.56
+    eps_high: -0.48
+    eps_year_ago: -1.7143
+    analysts: 2
+    growth: 0.6967
+    revenue_avg: 11400000
+  current_year:
+    eps_avg: -2.155
+    eps_low: -2.26
+    eps_high: -2.05
+    eps_year_ago: -7.1653
+    analysts: 2
+    growth: 0.6992
+    revenue_avg: 46211460
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

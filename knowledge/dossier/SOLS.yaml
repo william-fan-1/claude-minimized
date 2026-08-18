@@ -1,0 +1,64 @@
+ticker: SOLS
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-02-11'
+  stock_return_pct: 17.4765
+  vti_return_pct: -0.0965
+  abnormal_return_pct: 17.573
+  earnings_surprise_pct: -27.5
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-05-06'
+  stock_return_pct: -1.8549
+  vti_return_pct: 1.3642
+  abnormal_return_pct: -3.2191
+  earnings_surprise_pct: 3.33
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-07-30'
+  stock_return_pct: 3.1082
+  vti_return_pct: 1.6231
+  abnormal_return_pct: 1.4851
+  earnings_surprise_pct: 13.36
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 3
+  median_abnormal_return_pct: 1.4851
+  mean_abnormal_return_pct: 5.2797
+  positive_reaction_rate: 0.6667
+  median_absolute_reaction_pct: 3.2191
+  beat_observations: 2
+  median_reaction_after_beat_pct: -0.867
+  miss_observations: 1
+  median_reaction_after_miss_pct: 17.573
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.7147
+    eps_low: 0.71
+    eps_high: 0.72
+    analysts: 6
+    revenue_avg: 1022376900
+  next_quarter:
+    eps_avg: 0.6661
+    eps_low: 0.63
+    eps_high: 0.68
+    eps_year_ago: 0.26
+    analysts: 6
+    growth: 1.5618
+    revenue_avg: 1015499600
+  current_year:
+    eps_avg: 2.8792
+    eps_low: 2.83
+    eps_high: 2.91
+    eps_year_ago: 1.49
+    analysts: 7
+    growth: 0.9323
+    revenue_avg: 4179779860
+  eps_revisions_last_30d:
+    up: 5
+    down: 0

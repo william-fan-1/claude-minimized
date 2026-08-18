@@ -1,0 +1,76 @@
+ticker: ZTEK
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2016-08-15'
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2016-08-15'
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2016-11-30'
+  stock_return_pct: -1.2821
+  vti_return_pct: -0.2367
+  abnormal_return_pct: -1.0453
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2017-02-28'
+  stock_return_pct: 0.0
+  vti_return_pct: -0.3681
+  abnormal_return_pct: 0.3681
+  earnings_surprise_pct: null
+  surprise_source: null
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2022-06-30'
+  stock_return_pct: 4.6243
+  vti_return_pct: -0.862
+  abnormal_return_pct: 5.4862
+  earnings_surprise_pct: -100.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2022-08-08'
+  stock_return_pct: -2.2222
+  vti_return_pct: 0.0915
+  abnormal_return_pct: -2.3137
+  earnings_surprise_pct: -25.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2022-11-15'
+  stock_return_pct: -1.9355
+  vti_return_pct: 1.0133
+  abnormal_return_pct: -2.9488
+  earnings_surprise_pct: -33.33
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2023-02-13'
+  stock_return_pct: -2.381
+  vti_return_pct: 1.1902
+  abnormal_return_pct: -3.5711
+  earnings_surprise_pct: null
+  surprise_source: null
+reaction_statistics:
+  observations: 6
+  median_abnormal_return_pct: -1.6795
+  mean_abnormal_return_pct: -0.6708
+  positive_reaction_rate: 0.3333
+  median_absolute_reaction_pct: 2.6312
+  beat_observations: 0
+  median_reaction_after_beat_pct: null
+  miss_observations: 3
+  median_reaction_after_miss_pct: -2.3137

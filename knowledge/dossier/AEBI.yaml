@@ -1,0 +1,82 @@
+ticker: AEBI
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-08-14'
+  stock_return_pct: -0.3281
+  vti_return_pct: -0.1479
+  abnormal_return_pct: -0.1802
+  earnings_surprise_pct: -18.21
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-11-13'
+  stock_return_pct: 4.3802
+  vti_return_pct: -1.7716
+  abnormal_return_pct: 6.1518
+  earnings_surprise_pct: 50.54
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-03-19'
+  stock_return_pct: -11.9938
+  vti_return_pct: -0.1779
+  abnormal_return_pct: -11.8159
+  earnings_surprise_pct: 32.7
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-05-14'
+  stock_return_pct: 3.5283
+  vti_return_pct: 0.7376
+  abnormal_return_pct: 2.7907
+  earnings_surprise_pct: 18.86
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-13'
+  stock_return_pct: 5.3888
+  vti_return_pct: 0.6469
+  abnormal_return_pct: 4.7419
+  earnings_surprise_pct: 19.28
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 5
+  median_abnormal_return_pct: 2.7907
+  mean_abnormal_return_pct: 0.3377
+  positive_reaction_rate: 0.6
+  median_absolute_reaction_pct: 4.7419
+  beat_observations: 4
+  median_reaction_after_beat_pct: 3.7663
+  miss_observations: 1
+  median_reaction_after_miss_pct: -0.1802
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.24
+    eps_low: 0.21
+    eps_high: 0.28
+    eps_year_ago: 0.1957
+    analysts: 3
+    growth: 0.2264
+    revenue_avg: 521707500
+  next_quarter:
+    eps_avg: 0.3533
+    eps_low: 0.32
+    eps_high: 0.38
+    eps_year_ago: 0.3406
+    analysts: 3
+    growth: 0.0374
+    revenue_avg: 584735000
+  current_year:
+    eps_avg: 0.755
+    eps_low: 0.68
+    eps_high: 0.83
+    eps_year_ago: 0.7008
+    analysts: 2
+    growth: 0.0773
+    revenue_avg: 2058355000
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

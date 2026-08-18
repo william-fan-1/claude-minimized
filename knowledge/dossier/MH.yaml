@@ -1,0 +1,74 @@
+ticker: MH
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-11-12'
+  stock_return_pct: 23.9226
+  vti_return_pct: 0.0357
+  abnormal_return_pct: 23.8869
+  earnings_surprise_pct: 297.99
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-02-12'
+  stock_return_pct: 15.9643
+  vti_return_pct: -1.599
+  abnormal_return_pct: 17.5633
+  earnings_surprise_pct: 195.67
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-06-11'
+  stock_return_pct: -3.4375
+  vti_return_pct: 1.7484
+  abnormal_return_pct: -5.1859
+  earnings_surprise_pct: 86.76
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-13'
+  stock_return_pct: 16.9828
+  vti_return_pct: 0.6469
+  abnormal_return_pct: 16.3359
+  earnings_surprise_pct: 23.68
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 4
+  median_abnormal_return_pct: 16.9496
+  mean_abnormal_return_pct: 13.1501
+  positive_reaction_rate: 0.75
+  median_absolute_reaction_pct: 16.9496
+  beat_observations: 4
+  median_reaction_after_beat_pct: 16.9496
+  miss_observations: 0
+  median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.72
+    eps_low: 0.64
+    eps_high: 0.81
+    eps_year_ago: 1.4
+    analysts: 11
+    growth: -0.4857
+    revenue_avg: 632019510
+  next_quarter:
+    eps_avg: 0.3021
+    eps_low: 0.2279
+    eps_high: 0.4
+    eps_year_ago: 0.28
+    analysts: 11
+    growth: 0.079
+    revenue_avg: 459793610
+  current_year:
+    eps_avg: 1.9714
+    eps_low: 1.8224
+    eps_high: 2.19
+    eps_year_ago: 2.04
+    analysts: 13
+    growth: -0.0336
+    revenue_avg: 2148429800
+  eps_revisions_last_30d:
+    up: 6
+    down: 2

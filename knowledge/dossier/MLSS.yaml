@@ -2,17 +2,9 @@ ticker: MLSS
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-08-15'
-  stock_return_pct: -2.9703
-  vti_return_pct: 1.7321
-  abnormal_return_pct: -4.7024
-  earnings_surprise_pct: 100.0
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-11-15'
   stock_return_pct: -4.4118
-  vti_return_pct: -1.2686
+  vti_return_pct: -1.2685
   abnormal_return_pct: -3.1432
   earnings_surprise_pct: -100.0
   surprise_source: Yahoo Finance (via yfinance)
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -3.5947
   earnings_surprise_pct: 33.33
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-14'
+  stock_return_pct: -9.0909
+  vti_return_pct: -0.1171
+  abnormal_return_pct: -8.9738
+  earnings_surprise_pct: null
+  surprise_source: null
 reaction_statistics:
   observations: 8
   median_abnormal_return_pct: -3.3689
-  mean_abnormal_return_pct: -2.0796
+  mean_abnormal_return_pct: -2.6135
   positive_reaction_rate: 0.25
   median_absolute_reaction_pct: 3.7527
-  beat_observations: 3
-  median_reaction_after_beat_pct: -3.5947
+  beat_observations: 2
+  median_reaction_after_beat_pct: -0.452
   miss_observations: 4
   median_reaction_after_miss_pct: -3.1367
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.01
+    eps_low: -0.01
+    eps_high: -0.01
+    eps_year_ago: -0.02
+    analysts: 2
+    growth: 0.5
+    revenue_avg: 2700000
+  next_quarter:
+    eps_avg: -0.01
+    eps_low: -0.01
+    eps_high: -0.01
+    eps_year_ago: -0.01
+    analysts: 2
+    growth: 0.0
+    revenue_avg: 2510000
+  current_year:
+    eps_avg: -0.035
+    eps_low: -0.04
+    eps_high: -0.03
+    eps_year_ago: -0.07
+    analysts: 2
+    growth: 0.5
+    revenue_avg: 10062000
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

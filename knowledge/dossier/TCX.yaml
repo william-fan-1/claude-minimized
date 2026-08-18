@@ -1,0 +1,76 @@
+ticker: TCX
+prior_reactions:
+- fiscal_quarter: null
+  timing: unknown
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: -39.66
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2018-08-09'
+  stock_return_pct: -3.7719
+  vti_return_pct: -0.0679
+  abnormal_return_pct: -3.704
+  earnings_surprise_pct: -36.54
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2018-11-08'
+  stock_return_pct: 14.1387
+  vti_return_pct: -0.1945
+  abnormal_return_pct: 14.3332
+  earnings_surprise_pct: 61.29
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2019-02-14'
+  stock_return_pct: 2.7062
+  vti_return_pct: -0.1768
+  abnormal_return_pct: 2.883
+  earnings_surprise_pct: -12.77
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2019-05-08'
+  stock_return_pct: 1.152
+  vti_return_pct: -0.1626
+  abnormal_return_pct: 1.3146
+  earnings_surprise_pct: -15.73
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2019-08-08'
+  stock_return_pct: 3.9465
+  vti_return_pct: 1.9023
+  abnormal_return_pct: 2.0442
+  earnings_surprise_pct: -20.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2019-11-06'
+  stock_return_pct: -1.7509
+  vti_return_pct: -0.0448
+  abnormal_return_pct: -1.7061
+  earnings_surprise_pct: 18.18
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2020-02-13'
+  stock_return_pct: -3.5008
+  vti_return_pct: -0.0408
+  abnormal_return_pct: -3.4599
+  earnings_surprise_pct: 50.0
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 7
+  median_abnormal_return_pct: 1.3146
+  mean_abnormal_return_pct: 1.6721
+  positive_reaction_rate: 0.5714
+  median_absolute_reaction_pct: 2.883
+  beat_observations: 3
+  median_reaction_after_beat_pct: -1.7061
+  miss_observations: 4
+  median_reaction_after_miss_pct: 1.6794

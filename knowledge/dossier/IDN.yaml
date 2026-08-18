@@ -2,14 +2,6 @@ ticker: IDN
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-05-14'
-  stock_return_pct: 1.6949
-  vti_return_pct: 0.488
-  abnormal_return_pct: 1.2069
-  earnings_surprise_pct: -12.0
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2024-08-09'
   stock_return_pct: -28.3737
   vti_return_pct: 0.4317
@@ -37,7 +29,7 @@ prior_reactions:
   reaction_date: '2025-05-14'
   stock_return_pct: 5.3333
   vti_return_pct: 0.0657
-  abnormal_return_pct: 5.2677
+  abnormal_return_pct: 5.2676
   earnings_surprise_pct: 52.67
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: 16.9838
   earnings_surprise_pct: 198.67
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-14'
+  stock_return_pct: -25.0667
+  vti_return_pct: -0.1171
+  abnormal_return_pct: -24.9496
+  earnings_surprise_pct: 48.57
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: 3.2373
-  mean_abnormal_return_pct: 3.569
-  positive_reaction_rate: 0.625
-  median_absolute_reaction_pct: 8.4995
-  beat_observations: 5
-  median_reaction_after_beat_pct: 5.2677
-  miss_observations: 2
-  median_reaction_after_miss_pct: -4.5824
+  median_abnormal_return_pct: 1.5966
+  mean_abnormal_return_pct: 0.2994
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 13.6778
+  beat_observations: 6
+  median_reaction_after_beat_pct: 1.5966
+  miss_observations: 1
+  median_reaction_after_miss_pct: -10.3718
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: 0.025
+    eps_low: 0.02
+    eps_high: 0.03
+    eps_year_ago: 0.0238
+    analysts: 2
+    growth: 0.0504
+    revenue_avg: 5510900
+  next_quarter:
+    eps_avg: 0.015
+    eps_low: 0.01
+    eps_high: 0.02
+    eps_year_ago: 0.0896
+    analysts: 2
+    growth: -0.8326
+    revenue_avg: 5194800
+  current_year:
+    eps_avg: 0.13
+    eps_low: 0.12
+    eps_high: 0.14
+    eps_year_ago: 0.1
+    analysts: 2
+    growth: 0.3
+    revenue_avg: 22170700
+  eps_revisions_last_30d:
+    up: 2
+    down: 0

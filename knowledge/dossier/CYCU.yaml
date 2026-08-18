@@ -1,0 +1,54 @@
+ticker: CYCU
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-05-14'
+  stock_return_pct: 0.8889
+  vti_return_pct: 0.7376
+  abnormal_return_pct: 0.1513
+  earnings_surprise_pct: 43.37
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-14'
+  stock_return_pct: -2.1429
+  vti_return_pct: -0.1171
+  abnormal_return_pct: -2.0258
+  earnings_surprise_pct: 67.3
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 2
+  median_abnormal_return_pct: -0.9372
+  mean_abnormal_return_pct: -0.9372
+  positive_reaction_rate: 0.5
+  median_absolute_reaction_pct: 1.0885
+  beat_observations: 2
+  median_reaction_after_beat_pct: -0.9372
+  miss_observations: 0
+  median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.54
+    eps_low: -0.54
+    eps_high: -0.54
+    analysts: 1
+    revenue_avg: 4415000
+  next_quarter:
+    eps_avg: -0.48
+    eps_low: -0.48
+    eps_high: -0.48
+    analysts: 1
+    revenue_avg: 4615000
+  current_year:
+    eps_avg: -2.34
+    eps_low: -2.34
+    eps_high: -2.34
+    eps_year_ago: -14.138
+    analysts: 1
+    growth: 0.8345
+    revenue_avg: 16160000
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

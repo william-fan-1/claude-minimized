@@ -2,17 +2,9 @@ ticker: MAIA
 prior_reactions:
 - fiscal_quarter: null
   timing: after_market_close
-  reaction_date: '2024-11-13'
-  stock_return_pct: -8.7786
-  vti_return_pct: -0.0473
-  abnormal_return_pct: -8.7314
-  earnings_surprise_pct: 76.6
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
-  timing: after_market_close
   reaction_date: '2025-03-24'
   stock_return_pct: -5.1136
-  vti_return_pct: 1.8505
+  vti_return_pct: 1.8504
   abnormal_return_pct: -6.9641
   earnings_surprise_pct: 43.67
   surprise_source: Yahoo Finance (via yfinance)
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -0.967
   earnings_surprise_pct: 22.22
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-10'
+  stock_return_pct: -0.7042
+  vti_return_pct: -0.0393
+  abnormal_return_pct: -0.6649
+  earnings_surprise_pct: -18.18
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 8
-  median_abnormal_return_pct: -1.7437
-  mean_abnormal_return_pct: -3.4137
+  median_abnormal_return_pct: -1.3554
+  mean_abnormal_return_pct: -2.4054
   positive_reaction_rate: 0.25
-  median_absolute_reaction_pct: 1.7437
-  beat_observations: 5
-  median_reaction_after_beat_pct: -6.9641
-  miss_observations: 2
-  median_reaction_after_miss_pct: 1.0341
+  median_absolute_reaction_pct: 1.4795
+  beat_observations: 4
+  median_reaction_after_beat_pct: -4.3539
+  miss_observations: 3
+  median_reaction_after_miss_pct: 0.8529
+forward_estimates:
+  as_of: '2026-08-16'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.12
+    eps_low: -0.12
+    eps_high: -0.12
+    eps_year_ago: -0.27
+    analysts: 1
+    growth: 0.5556
+    revenue_avg: 0
+  next_quarter:
+    eps_avg: -0.13
+    eps_low: -0.13
+    eps_high: -0.13
+    eps_year_ago: -0.1368
+    analysts: 1
+    growth: 0.0497
+    revenue_avg: 0
+  current_year:
+    eps_avg: -0.52
+    eps_low: -0.52
+    eps_high: -0.52
+    eps_year_ago: -0.7347
+    analysts: 1
+    growth: 0.2922
+    revenue_avg: 0
+  eps_revisions_last_30d:
+    up: 1
+    down: 0

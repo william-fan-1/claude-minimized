@@ -1,0 +1,76 @@
+ticker: VMAR
+prior_reactions:
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2024-01-16'
+  stock_return_pct: -0.7453
+  vti_return_pct: -0.4639
+  abnormal_return_pct: -0.2814
+  earnings_surprise_pct: 130.0
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-04-15'
+  stock_return_pct: -12.0556
+  vti_return_pct: -1.2292
+  abnormal_return_pct: -10.8264
+  earnings_surprise_pct: -4.41
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-07-15'
+  stock_return_pct: 1.0638
+  vti_return_pct: 0.4281
+  abnormal_return_pct: 0.6357
+  earnings_surprise_pct: 6.79
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2024-12-02'
+  stock_return_pct: -9.5455
+  vti_return_pct: 0.1901
+  abnormal_return_pct: -9.7356
+  earnings_surprise_pct: 138.9
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-01-14'
+  stock_return_pct: -14.6341
+  vti_return_pct: 0.2259
+  abnormal_return_pct: -14.86
+  earnings_surprise_pct: 93.92
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-04-09'
+  stock_return_pct: 12.2449
+  vti_return_pct: 10.1457
+  abnormal_return_pct: 2.0992
+  earnings_surprise_pct: 98.35
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2025-07-14'
+  stock_return_pct: -7.3668
+  vti_return_pct: 0.228
+  abnormal_return_pct: -7.5948
+  earnings_surprise_pct: -173.22
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: unknown
+  reaction_date: null
+  stock_return_pct: null
+  vti_return_pct: null
+  abnormal_return_pct: null
+  earnings_surprise_pct: 934.27
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 7
+  median_abnormal_return_pct: -7.5948
+  mean_abnormal_return_pct: -5.7948
+  positive_reaction_rate: 0.2857
+  median_absolute_reaction_pct: 7.5948
+  beat_observations: 5
+  median_reaction_after_beat_pct: -0.2814
+  miss_observations: 2
+  median_reaction_after_miss_pct: -9.2106

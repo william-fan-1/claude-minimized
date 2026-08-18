@@ -1,0 +1,52 @@
+ticker: SSM
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2022-06-22'
+  stock_return_pct: -2.4615
+  vti_return_pct: -0.0159
+  abnormal_return_pct: -2.4456
+  earnings_surprise_pct: -14.75
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2022-09-08'
+  stock_return_pct: 2.0761
+  vti_return_pct: 0.7919
+  abnormal_return_pct: 1.2843
+  earnings_surprise_pct: -82.43
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2022-12-09'
+  stock_return_pct: -17.7477
+  vti_return_pct: -0.8369
+  abnormal_return_pct: -16.9109
+  earnings_surprise_pct: 14.29
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2022-12-08'
+  stock_return_pct: -5.1282
+  vti_return_pct: 0.8645
+  abnormal_return_pct: -5.9927
+  earnings_surprise_pct: -40.19
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2023-03-06'
+  stock_return_pct: 11.7886
+  vti_return_pct: -0.1326
+  abnormal_return_pct: 11.9212
+  earnings_surprise_pct: -120.0
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 5
+  median_abnormal_return_pct: -2.4456
+  mean_abnormal_return_pct: -2.4287
+  positive_reaction_rate: 0.4
+  median_absolute_reaction_pct: 5.9927
+  beat_observations: 1
+  median_reaction_after_beat_pct: -16.9109
+  miss_observations: 4
+  median_reaction_after_miss_pct: -0.5807

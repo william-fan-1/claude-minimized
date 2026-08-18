@@ -1,0 +1,64 @@
+ticker: VIA
+prior_reactions:
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2025-11-14'
+  stock_return_pct: 1.6922
+  vti_return_pct: -0.0152
+  abnormal_return_pct: 1.7073
+  earnings_surprise_pct: 15.68
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-05-12'
+  stock_return_pct: -16.5978
+  vti_return_pct: -0.231
+  abnormal_return_pct: -16.3668
+  earnings_surprise_pct: 16.67
+  surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: before_market_open
+  reaction_date: '2026-08-06'
+  stock_return_pct: 0.9363
+  vti_return_pct: -0.1528
+  abnormal_return_pct: 1.0891
+  earnings_surprise_pct: 50.0
+  surprise_source: Yahoo Finance (via yfinance)
+reaction_statistics:
+  observations: 3
+  median_abnormal_return_pct: 1.0891
+  mean_abnormal_return_pct: -4.5235
+  positive_reaction_rate: 0.6667
+  median_absolute_reaction_pct: 1.7073
+  beat_observations: 3
+  median_reaction_after_beat_pct: 1.0891
+  miss_observations: 0
+  median_reaction_after_miss_pct: null
+forward_estimates:
+  as_of: '2026-08-17'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.0278
+    eps_low: -0.03
+    eps_high: -0.02
+    eps_year_ago: -0.3916
+    analysts: 9
+    growth: 0.9291
+    revenue_avg: 137937380
+  next_quarter:
+    eps_avg: 0.0478
+    eps_low: 0.03
+    eps_high: 0.06
+    analysts: 9
+    revenue_avg: 150676380
+  current_year:
+    eps_avg: -0.0321
+    eps_low: -0.05
+    eps_high: -0.02
+    eps_year_ago: -0.9671
+    analysts: 10
+    growth: 0.9668
+    revenue_avg: 551687740
+  eps_revisions_last_30d:
+    up: 0
+    down: 0

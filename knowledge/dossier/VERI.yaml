@@ -1,19 +1,11 @@
 ticker: VERI
 prior_reactions:
 - fiscal_quarter: null
-  timing: after_market_close
-  reaction_date: '2024-08-15'
-  stock_return_pct: 15.7377
-  vti_return_pct: 1.7321
-  abnormal_return_pct: 14.0056
-  earnings_surprise_pct: -20.0
-  surprise_source: Yahoo Finance (via yfinance)
-- fiscal_quarter: null
   timing: before_market_open
   reaction_date: '2024-11-12'
   stock_return_pct: -23.9305
   vti_return_pct: -0.3932
-  abnormal_return_pct: -23.5373
+  abnormal_return_pct: -23.5372
   earnings_surprise_pct: -19.9
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -37,7 +29,7 @@ prior_reactions:
   reaction_date: '2025-08-08'
   stock_return_pct: 22.9437
   vti_return_pct: 0.6301
-  abnormal_return_pct: 22.3137
+  abnormal_return_pct: 22.3136
   earnings_surprise_pct: 2.44
   surprise_source: Yahoo Finance (via yfinance)
 - fiscal_quarter: null
@@ -64,13 +56,51 @@ prior_reactions:
   abnormal_return_pct: -11.4282
   earnings_surprise_pct: -11.3
   surprise_source: Yahoo Finance (via yfinance)
+- fiscal_quarter: null
+  timing: after_market_close
+  reaction_date: '2026-08-14'
+  stock_return_pct: -22.8188
+  vti_return_pct: -0.1171
+  abnormal_return_pct: -22.7017
+  earnings_surprise_pct: 8.58
+  surprise_source: Yahoo Finance (via yfinance)
 reaction_statistics:
   observations: 7
-  median_abnormal_return_pct: -8.9338
-  mean_abnormal_return_pct: -1.292
-  positive_reaction_rate: 0.4286
+  median_abnormal_return_pct: -10.8602
+  mean_abnormal_return_pct: -6.5359
+  positive_reaction_rate: 0.2857
   median_absolute_reaction_pct: 11.4282
-  beat_observations: 3
-  median_reaction_after_beat_pct: 9.396
-  miss_observations: 4
-  median_reaction_after_miss_pct: -10.181
+  beat_observations: 4
+  median_reaction_after_beat_pct: -0.7321
+  miss_observations: 3
+  median_reaction_after_miss_pct: -11.4282
+forward_estimates:
+  as_of: '2026-08-17'
+  source: Yahoo Finance (via yfinance)
+  current_quarter:
+    eps_avg: -0.08
+    eps_low: -0.08
+    eps_high: -0.08
+    eps_year_ago: -0.0892
+    analysts: 1
+    growth: 0.1031
+    revenue_avg: 25816000
+  next_quarter:
+    eps_avg: 0.02
+    eps_low: 0.02
+    eps_high: 0.02
+    eps_year_ago: -0.1333
+    analysts: 1
+    growth: 1.1501
+    revenue_avg: 37328000
+  current_year:
+    eps_avg: -0.29
+    eps_low: -0.29
+    eps_high: -0.29
+    eps_year_ago: -0.6426
+    analysts: 1
+    growth: 0.5487
+    revenue_avg: 107666000
+  eps_revisions_last_30d:
+    up: 1
+    down: 0
