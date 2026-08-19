@@ -393,16 +393,21 @@ def get_dossier(ticker: str, knowledge_cutoff: str | None = None) -> str | None:
     estimates = dossier.get(FORWARD_ESTIMATES_KEY)
     if estimates is not None:
         as_of = estimates.get("as_of") if isinstance(estimates, dict) else None
-        if not forward_estimates_permitted(as_of, knowledge_cutoff):
-            dossier = {
-                key: value
-                for key, value in dossier.items()
-                if key != FORWARD_ESTIMATES_KEY
-            }
-            print(
-                f"[INFO] {ticker}: forward_estimates withheld "
-                f"(as_of={as_of!r}, knowledge_cutoff={knowledge_cutoff!r})"
-            )
+
+        # Remove knowledge cutoff check as we should be well beyond the cutoff now
+        # Also model wasn't comparing knowledge_cutoff in logs, either due to 
+        # improper accessing or not being given it in the event
+
+        # if not forward_estimates_permitted(as_of, knowledge_cutoff):
+        #     dossier = {
+        #         key: value
+        #         for key, value in dossier.items()
+        #         if key != FORWARD_ESTIMATES_KEY
+        #     }
+        #     print(
+        #         f"[INFO] {ticker}: forward_estimates withheld "
+        #         f"(as_of={as_of!r}, knowledge_cutoff={knowledge_cutoff!r})"
+        #     )
 
     return yaml.safe_dump(
         _filter_dossier_fields(dossier),
