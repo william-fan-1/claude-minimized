@@ -29,7 +29,7 @@ from prompt_construction import (
 # This is the only value to change when switching models. The provider prefix
 # selects both the LiteLLM backend and the corresponding environment variable.
 # Examples: "openai/gpt-5.4", "anthropic/claude-sonnet-4-5"
-MODEL = "gemini/gemini-2.5-flash"
+MODEL = "anthropic/claude-opus-4-6"
 
 PROVIDER_API_KEYS = {
     "gemini": "GEMINI_API_KEY",
