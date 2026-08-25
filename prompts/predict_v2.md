@@ -1,22 +1,10 @@
 <!--
 =============================================================================
 predict_v2.md — live prediction prompt
-Explaining Markets · Q3 2026 · version 3.0.0 · owner: ahi · 2026-08-13
+Explaining Markets · Q3 2026 · version 4.0.0 · owner: Will · 2026-08-24
 
-v3.0.0 restructures the order of reasoning. Through v2.1.0 the model read
-~30,000 characters of rules, anti-patterns and precedence logic BEFORE it
-reached a single fact about the company, and the output schema let it name a
-rule before it had written down what the quarter actually said. The result was
-a classifier: find the nearest matching rule, emit its range.
-
-Two changes fix that. The announcement now comes first, and the output schema
-forces the model to extract and interpret the facts before it is permitted to
-reference any rule. Because generation is sequential, the schema order is what
-actually constrains the reasoning.
-
-Also new: conviction is now binding. It sets how far from 0.50 the model is
-allowed to go. Conditional shrinkage of this kind reorders predictions and
-therefore moves R², unlike a uniform shift, which provably does not.
+Pared it down. The goal isn't to tell the model what to do, it's to see how 
+well it can reason from the information we give it.
 =============================================================================
 -->
 

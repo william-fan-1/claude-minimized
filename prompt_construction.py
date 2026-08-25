@@ -17,7 +17,7 @@ from litellm import completion
 from pydantic import BaseModel
 
 # Adjust the prompt version
-PROMPT_VERSION = "3.0.0"
+PROMPT_VERSION = "4.0.0"
 
 # Paths to prompt file, rulebooks, industry map
 ROOT = Path(__file__).resolve().parent
