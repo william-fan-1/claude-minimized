@@ -11,7 +11,9 @@ from __future__ import annotations
 import base64
 import hmac
 import json
+import sys
 import time
+from types import SimpleNamespace
 from hashlib import sha256
 
 import pytest
@@ -73,6 +75,9 @@ class FakeDict:
 
     def pop(self, key, default=None):
         return self.data.pop(key, default)
+
+    def values(self):
+        return self.data.values()
 
 
 class _Spawn:
@@ -202,3 +207,48 @@ def test_worker_submits_and_marks_done(monkeypatch) -> None:
     fake.put("evt_test_def", "in_flight")
     worker(_test_event("evt_test_def"), "evt_test_def")
     assert "evt_test_def" not in fake.data
+
+
+def test_sparse_model_output_still_submits_prediction(monkeypatch) -> None:
+    """Ledger metadata is optional; the two competition fields are enough."""
+    monkeypatch.setenv("EM_API_KEY", "test-key")
+    monkeypatch.setenv("EM_WEBHOOK_SECRET", SECRET)
+    seen = FakeDict()
+    ledger = FakeDict()
+    monkeypatch.setattr(modal_app, "seen_webhooks", seen)
+    monkeypatch.setattr(modal_app, "prediction_ledger", ledger)
+
+    event = _test_event("evt_sparse")
+    event["event_type"] = "EARNINGS_RELEASE"
+    monkeypatch.setitem(
+        sys.modules,
+        "predict",
+        SimpleNamespace(
+            predict_with_metadata=lambda event: [
+                {"identifier_value": "TEST", "predicted_percentile": 0.73}
+            ]
+        ),
+    )
+
+    submitted = []
+    import explaining_markets.client as client_mod
+    monkeypatch.setattr(
+        client_mod,
+        "submit_predictions",
+        lambda *, event_id, predictions, config: submitted.extend(predictions),
+    )
+
+    seen.put("evt_sparse", "in_flight")
+    modal_app.predict_and_submit.get_raw_f()(event, "evt_sparse")
+
+    assert submitted == [
+        {"identifier_value": "TEST", "predicted_percentile": 0.73}
+    ]
+    assert seen.data["evt_sparse"] == "done"
+    assert ledger.data["test_abc:TEST"]["confidence"] is None
+
+
+def test_empty_model_output_falls_back_to_neutral() -> None:
+    assert modal_app._submission_rows(_test_event(), []) == [
+        {"identifier_value": "TEST", "predicted_percentile": 0.5}
+    ]
