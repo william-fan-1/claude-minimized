@@ -76,6 +76,9 @@ def test_model_selects_provider_key(monkeypatch, model: str, key_name: str) -> N
 
     assert result == 0.73
     assert calls[0]["model"] == model
+    assert [message["role"] for message in calls[0]["messages"]] == [
+        "system", "user"
+    ]
     assert calls[0]["timeout"] == predict_module.LLM_TIMEOUT_SECONDS
     assert calls[0]["num_retries"] == predict_module.LLM_MAX_RETRIES
 
@@ -139,6 +142,13 @@ def test_model_metadata_and_scale_are_preserved(monkeypatch) -> None:
     assert result.predicted_percentile == 0.73
     assert result.confidence == "high"
     assert result.rules_applied == ["Q3-CAL-01", "GLB-GUID-01"]
+
+
+def test_markdown_fenced_json_is_accepted() -> None:
+    result = predict_module._parse_prediction(
+        'Here is the result:\n```json\n{"predicted_percentile": 0.64}\n```'
+    )
+    assert result.predicted_percentile == pytest.approx(0.64)
 
 
 @pytest.mark.parametrize("model", ["gpt-5.4", "unknown/model", "gemini/"])

@@ -228,6 +228,26 @@ def _normalize_percentile(value: float) -> float:
 
     return max(0.0, min(1.0, value))
 
+
+def _parse_prediction(content: str) -> Prediction:
+    """Parse plain JSON or a JSON object wrapped in model commentary/fences."""
+    if not isinstance(content, str) or not content.strip():
+        raise ValueError("model returned no text")
+
+    try:
+        return Prediction.model_validate_json(content)
+    except ValueError as direct_error:
+        decoder = json.JSONDecoder()
+        for start, character in enumerate(content):
+            if character != "{":
+                continue
+            try:
+                payload, _ = decoder.raw_decode(content[start:])
+                return Prediction.model_validate(payload)
+            except (json.JSONDecodeError, ValueError):
+                continue
+        raise direct_error
+
 def _ask_llm(*, summary: dict, ticker: str, event_type: str) -> float:
     """Compatibility wrapper returning only the competition percentile."""
     return _ask_llm_details(
@@ -266,6 +286,10 @@ def _ask_llm_details(
             model=MODEL,
             messages=[
                 {"role": "system", "content": user_prompt},
+                {
+                    "role": "user",
+                    "content": "Return the prediction as JSON using the requested schema.",
+                },
             ],
             # JSON mode is supported across the three target providers. Pydantic
             # below remains the source of truth for shape and numeric bounds.
@@ -275,7 +299,7 @@ def _ask_llm_details(
             num_retries=LLM_MAX_RETRIES,
         )
         content = resp.choices[0].message.content
-        result = Prediction.model_validate_json(content)
+        result = _parse_prediction(content)
         result.predicted_percentile = _apply_conviction_band(
             _normalize_percentile(result.predicted_percentile),
             result.confidence,
